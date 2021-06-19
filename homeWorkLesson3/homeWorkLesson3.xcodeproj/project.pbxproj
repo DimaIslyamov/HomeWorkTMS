@@ -59,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				530A0052267CA90B007E8289 /* Suporting Files */,
-				53274897267E66CD0000FE0D /* New Group */,
+				53274897267E66CD0000FE0D /* Controllers */,
 				53274894267E62AD0000FE0D /* View */,
 			);
 			path = homeWorkLesson3;
@@ -85,13 +85,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		53274897267E66CD0000FE0D /* New Group */ = {
+		53274897267E66CD0000FE0D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				530A0042267CA8F2007E8289 /* ViewController.swift */,
 				53274898267E66E50000FE0D /* Task7.swift */,
 			);
-			path = "New Group";
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
