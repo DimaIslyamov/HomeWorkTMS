@@ -18,7 +18,7 @@ class Task7: UIViewController {
     }
     
     func studentTask() {
-        
+        print("-------------Task 7-------------")
         // MARK: Student Max
         let studentMax: Students = ("Max", 3017, nil)
         

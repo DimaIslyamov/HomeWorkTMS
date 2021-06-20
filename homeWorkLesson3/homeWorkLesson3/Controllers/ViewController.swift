@@ -10,12 +10,13 @@ import UIKit
 class ViewController: UIViewController {
 
     typealias MyAchievements = (pushUps: Int, pullUps: Int, squats: Int)
+    typealias MessageOrError = (code: Int, message: String?, errorMessage: String?)
+    typealias NonCode = (message: String?, errorMessage: String?)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         butt()
         achievements()
-        errorTask6()
         task5()
         errorTask6()
         task8()
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
     // MARK: - Tasks 1 2 3 4
     
     func achievements() {
+        print("-------------Task 1 2 3 4-------------")
         // создание кортежа 1
         var myAchievements: MyAchievements = (90, 50, 65)
         print(myAchievements)
@@ -48,6 +50,7 @@ class ViewController: UIViewController {
     // MARK: - TASK 5
 
     func task5() {
+        print("-------------Task 5-------------")
         let song: String = "17"
         let album: String = "5"
         let cash: String = "35baks"
@@ -84,13 +87,29 @@ class ViewController: UIViewController {
     // MARK: - Task 6
     
     func errorTask6() {
+        print("-------------Task 6-------------")
+        // с code
+        let tupleMassege: MessageOrError = (Int.random(in: 200..<400), "Ошибки нету продолжайте", "Fatal Error!")
+        if tupleMassege.code >= 200 && tupleMassege.code <= 300 {
+            print(tupleMassege.message!)
+        } else if tupleMassege.code >= 300 && tupleMassege.code <= 400{
+            print(tupleMassege.errorMessage!)
+        }
         
+        // без code
+        let tupleNonCode: NonCode = (nil, "Проверьте пароль")
+        if tupleNonCode.message != nil {
+            print(tupleNonCode.message!)
+        } else if tupleNonCode.errorMessage != nil {
+            print(tupleNonCode.errorMessage!)
+        }
     }
     
     // MARK: - Task 8
     
     
     func task8() {
+        print("-------------Task 8-------------")
         let intTuple: (int1: Int?, int2: Int?, int3: Int?, int4: Int?, int5: Int?) = (25, 3, 56, 11, 78)
         // optional binding
         var sumOptionalBinding = 0
