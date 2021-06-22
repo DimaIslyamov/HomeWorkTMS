@@ -9,18 +9,21 @@ import UIKit
 
 class VCTask1: UIViewController {
 
-    let mechanic: (name: String, age: Int, sallary: Float) = ("Oleg", 23, 5.577)
-    let welder: (name: String, age: Int, sallary: Float) = ("Gena", 35, 8.785)
-    let machineOperator: (name: String, age: Int, sallary: Float) = ("Valera", 42, 10.125)
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         salaryCalculationByAge(name: mechanic.name, age: mechanic.age, sallary: mechanic.sallary)
         salaryCalculationByAge(name: welder.name, age: welder.age, sallary: welder.sallary)
         salaryCalculationByAge(name: machineOperator.name, age: machineOperator.age, sallary: machineOperator.sallary)
+        
+        arithmeticMeanOfNumbers(valueOne: 2.51, valueTwo: 2.2, valueTree: 3.67)
     }
     
+    // MARK: - TASK 1
+    
+    let mechanic: (name: String, age: Int, sallary: Float) = ("Oleg", 23, 5.577)
+    let welder: (name: String, age: Int, sallary: Float) = ("Gena", 35, 8.785)
+    let machineOperator: (name: String, age: Int, sallary: Float) = ("Valera", 42, 10.125)
     
     func salaryCalculationByAge(name: String, age: Int, sallary: Float) {
         var sallarySumm = sallary
@@ -37,5 +40,13 @@ class VCTask1: UIViewController {
         }
         print("Имя работника: \(name), возраст: \(age), увеличение согласно возрасту: \(sallarySumm)")
     }
+    
+    // MARK: - Task 2
+    
+    func arithmeticMeanOfNumbers(valueOne a: Float, valueTwo b: Float, valueTree c: Float) {
+        let summ = a + b + c / 3
+        
+        print("Среднее арифметическое: \(summ)")
+    }
+    
 }
-
