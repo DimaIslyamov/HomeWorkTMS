@@ -5,7 +5,6 @@
 //  Created by Moobat on 19.06.21.
 //
 
-import Foundation
 import UIKit
 
 class Task7: UIViewController {
@@ -14,164 +13,35 @@ class Task7: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        studentTask()
+        print("-------------Task 7-------------")
+        check(name: studentMax.name, carNumber: studentMax.carNumber, testResult: studentMax.testResult)
+        check(name: studentDima.name, carNumber: studentDima.carNumber, testResult: studentDima.testResult)
+        check(name: studentMisha.name, carNumber: studentMisha.carNumber, testResult: studentMisha.testResult)
+        check(name: studentOleg.name, carNumber: studentOleg.carNumber, testResult: studentOleg.testResult)
+        check(name: studentAnjey.name, carNumber: studentAnjey.carNumber, testResult: studentAnjey.testResult)
     }
     
-    func studentTask() {
-        print("-------------Task 7-------------")
-        // MARK: Student Max
-        let studentMax: Students = ("Max", 3017, nil)
+    let studentMax: Students = ("Max", 3017, nil)
+    let studentDima: Students = ("Dima", nil, 8)
+    let studentMisha: Students = ("Misha", 2567, nil)
+    let studentOleg: Students = ("Oleg", 1777, 5)
+    let studentAnjey: Students = ("Anjey", nil, 2)
+    
+    func check(name: String, carNumber: Int?, testResult: Int?) {
+        var maxResult = "Имя студента: \(name), "
         
-        var maxResult = "Имя студента: \(studentMax.name), "
-        
-        if studentMax.carNumber != nil {
-            maxResult += "машина: есть, "
+        if carNumber != nil {
+            maxResult += "машина: есть, номер машины: \(String(describing: carNumber!)), "
         } else {
-            maxResult += "машины: нету, "
+            maxResult += "машины: нету, номерa машины: нету, "
         }
         
-        if studentMax.carNumber != nil {
-            maxResult += "номер машины: \(String(describing: studentMax.carNumber!)), "
-            } else {
-                maxResult += "номер машины нету, "
-            }
-        
-        if studentMax.testResult != nil {
-            maxResult += "на контрольной был "
+        if testResult != nil {
+            maxResult += "на контрольной был, оценка: \(String(describing: testResult!)). "
         } else {
-            maxResult += "не был на контрольной "
+            maxResult += "не был на контрольной, оценка Колл 🤣."
         }
-        
-        if studentMax.testResult != nil {
-            maxResult += "оценка: \(String(describing: studentMax.testResult!)). "
-            } else {
-                maxResult += "оценка Колл 🤣."
-            }
         
         print(maxResult)
-        
-        // MARK: Student Dima
-        let studentDima: Students = ("Dima", nil, 8)
-        
-        var dimaResult = "Имя студента: \(studentDima.name), "
-
-        if studentDima.carNumber != nil {
-            dimaResult += "машина: есть, "
-        } else {
-            dimaResult += "машины: нету, "
-        }
-        
-        if studentDima.carNumber != nil {
-            dimaResult += "номер машины: \(String(describing: studentDima.carNumber!)), "
-            } else {
-                dimaResult += "номерa машины нету, "
-            }
-        
-        if studentDima.testResult != nil {
-            dimaResult += "на контрольной был "
-        } else {
-            dimaResult += "не был на контрольной "
-        }
-        
-        if studentDima.testResult != nil {
-            dimaResult += "оценка: \(String(describing: studentDima.testResult!)). "
-            } else {
-                dimaResult += "оценка Колл 🤣."
-            }
-        
-        print(dimaResult)
-        
-        // MARK: Student Misha
-        let studentMisha: Students = ("Misha", 2567, nil)
-        
-        var mishaResult = "Имя студента: \(studentMisha.name), "
-        
-        if studentMisha.carNumber != nil {
-            mishaResult += "машина: есть, "
-        } else {
-            mishaResult += "машины: нету, "
-        }
-        
-        if studentMisha.carNumber != nil {
-            mishaResult += "номер машины: \(String(describing: studentMisha.carNumber!)), "
-            } else {
-                mishaResult += "номерa машины нету, "
-            }
-        
-        if studentMisha.testResult != nil {
-            mishaResult += "на контрольной был "
-        } else {
-            mishaResult += "не был на контрольной "
-        }
-        
-        if studentMisha.testResult != nil {
-            mishaResult += "оценка: \(String(describing: studentMisha.testResult!)). "
-            } else {
-                mishaResult += "оценка Колл 🤣."
-            }
-        
-        print(mishaResult)
-
-        // MARK: Student Oleg
-        let studentOleg: Students = ("Oleg", 1777, 5)
-        
-        var olerResult = "Имя студента: \(studentOleg.name), "
-
-        if studentOleg.carNumber != nil {
-            olerResult += "машина: есть, "
-        } else {
-            olerResult += "машины: нету, "
-        }
-        
-        if studentOleg.carNumber != nil {
-            olerResult += "номер машины: \(String(describing: studentOleg.carNumber!)), "
-            } else {
-                olerResult += "номерa машины нету, "
-            }
-        
-        if studentOleg.testResult != nil {
-            olerResult += "на контрольной был "
-        } else {
-            olerResult += "не был на контрольной "
-        }
-        
-        if studentOleg.testResult != nil {
-            olerResult += "оценка: \(String(describing: studentOleg.testResult!)). "
-            } else {
-                olerResult += "оценка Колл 🤣."
-            }
-        
-        print(olerResult)
-        
-        // MARK: Student Anjey
-        let studentAnjey: Students = ("Anjey", nil, 2)
-        
-        var anjeyResult = "Имя студента: \(studentAnjey.name), "
-        
-        if studentAnjey.carNumber != nil {
-            anjeyResult += "машина: есть, "
-        } else {
-            anjeyResult += "машины: нету, "
-        }
-        
-        if studentAnjey.carNumber != nil {
-            anjeyResult += "номер машины: \(String(describing: studentAnjey.carNumber!)), "
-            } else {
-                anjeyResult += "номерa машины нету, "
-            }
-        
-        if studentAnjey.testResult != nil {
-            anjeyResult += "на контрольной был "
-        } else {
-            anjeyResult += "не был на контрольной "
-        }
-        
-        if studentAnjey.testResult != nil {
-            anjeyResult += "оценка: \(String(describing: studentAnjey.testResult!)). "
-            } else {
-                anjeyResult += "оценка Колл 🤣."
-            }
-        
-        print(anjeyResult)
     }
 }

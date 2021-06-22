@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         butt()
         achievements()
-        task5()
+ //       task5()
         errorTask6()
         task8()
     }
@@ -48,60 +48,66 @@ class ViewController: UIViewController {
     }
 
     // MARK: - TASK 5
-
-    func task5() {
-        print("-------------Task 5-------------")
-        let song: String = "17"
-        let album: String = "5"
-        let cash: String = "35baks"
-        let stars: String = "89"
-        let age: String = "7age"
-        // переменная с суммами всеx констант
-        // nil-coalescing
-        var sum = (Int(cash) ?? 0) + (Int(age) ?? 0)
-        
-        let cashCon = Int(cash)
-        let ageCon = Int(age)
-        
-        // optional binding
-        let songCon = Int(song)
-        if let song = songCon {
-            sum = sum + song
-        }
-        
-        let starsCon = Int(stars)
-        if let stars = starsCon {
-            sum = sum + stars
-        }
-        // forced unwrapping
-        let albumCon = Int(album)
-        if albumCon != nil {
-            sum += albumCon!
-        }
-        
-        let string = "\(songCon!) + \(starsCon!) + \(String(describing: cashCon)) + \(albumCon!) + \(String(describing: ageCon)) = \(sum)"
-        print(string)
-    }
-    
+//
+//    func task5() {
+//        print("-------------Task 5-------------")
+//        let song: String = "17"
+//        let album: String = "5"
+//        let cash: String = "35baks"
+//        let stars: String = "89"
+//        let age: String = "7age"
+//
+//        // nil-coalescing
+//        var sum = (Int(cash) ?? 0) + (Int(age) ?? 0)
+//
+//        var string = "\(song) + \(album) + \(cash) + \(stars) + \(age) = \(sum)"
+//
+//        string += Int(song) != nil ? song : "nil"
+//        string += Int(album) != nil ? album : "nil"
+//        string += Int(cash) != nil ? cash : "nil"
+//        string += Int(stars) != nil ? stars : "nil"
+//        string += Int(age) != nil ? age : "nil"
+//
+//        // optional binding
+//        let songCon = Int(song)
+//        if let song = songCon {
+//            sum = sum + song
+//        }
+//
+//        let starsCon = Int(stars)
+//        if let stars = starsCon {
+//            sum = sum + stars
+//        }
+//        // forced unwrapping
+//        let albumCon = Int(album)
+//        if albumCon != nil {
+//            sum += albumCon!
+//        }
+//        print(string)
+//    }
+//
     
     // MARK: - Task 6
     
     func errorTask6() {
         print("-------------Task 6-------------")
         // с code
-        let tupleMassege: MessageOrError = (Int.random(in: 200..<400), "Ошибки нету продолжайте", "Fatal Error!")
+        let tupleMassege: MessageOrError = (Int.random(in: 200..<400), "Ошибки нету продолжайте", nil)
         if tupleMassege.code >= 200 && tupleMassege.code <= 300 {
-            print(tupleMassege.message!)
+            if let massage = tupleMassege.message {
+                print(massage)
+            }
         } else if tupleMassege.code >= 300 && tupleMassege.code <= 400{
-            print(tupleMassege.errorMessage!)
+            if let error = tupleMassege.errorMessage {
+                    print("Fatal Error: \(error)")
+                }
         }
-        
         // без code
         let tupleNonCode: NonCode = (nil, "Проверьте пароль")
         if tupleNonCode.message != nil {
-            print(tupleNonCode.message!)
-        } else if tupleNonCode.errorMessage != nil {
-            print(tupleNonCode.errorMessage!)
+                print(tupleNonCode.message!)
+            } else if tupleNonCode.errorMessage != nil {
+                print(tupleNonCode.errorMessage!)
         }
     }
     
