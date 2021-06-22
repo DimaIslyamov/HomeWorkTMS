@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VCTask1: UIViewController {
+class VCTasks: UIViewController {
 
    
     override func viewDidLoad() {
