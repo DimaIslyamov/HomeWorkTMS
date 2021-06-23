@@ -17,6 +17,8 @@ class VCTasks: UIViewController {
         salaryCalculationByAge(name: machineOperator.name, age: machineOperator.age, sallary: machineOperator.sallary)
         
         arithmeticMeanOfNumbers(valueOne: 2.51, valueTwo: 2.2, valueTree: 3.67)
+        
+        calculationAmountCredit(summOfCredit: 4000, period: 8, percent: 13)
     }
     
     // MARK: - TASK 1
@@ -41,6 +43,7 @@ class VCTasks: UIViewController {
         print("Имя работника: \(name), возраст: \(age), увеличение согласно возрасту: \(sallarySumm)")
     }
     
+    
     // MARK: - Task 2
     
     func arithmeticMeanOfNumbers(valueOne a: Float, valueTwo b: Float, valueTree c: Float) {
@@ -49,4 +52,19 @@ class VCTasks: UIViewController {
         print("Среднее арифметическое: \(summ)")
     }
     
+    
+    // MARK: - TASK 3
+    
+    func calculationAmountCredit(summOfCredit summ: Int, period: Int, percent: Float) {
+        let monthlyPayment = (summ * Int(percent) * (1 + Int(percent) * period)) / (12 * ((1 + Int(percent)) * period - 1))
+        let totalAmount = (monthlyPayment * 12) * period
+        
+        print("""
+            Сумма кредита(руб.): \(summ)
+            Период(количество лет): \(period)
+            Процент: \(percent / 100)%
+            Ежемесячно: \(monthlyPayment)руб.
+            Общая сумма: \(totalAmount)руб.
+            """)
+    }
 }
