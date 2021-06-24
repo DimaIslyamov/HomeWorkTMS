@@ -18,7 +18,7 @@ class VCTasks: UIViewController {
         
         arithmeticMeanOfNumbers(valueOne: 2.51, valueTwo: 2.2, valueTree: 3.67)
         
-        calculationAmountCredit(summOfCredit: 4000, period: 8, percent: 13)
+        calculationAmountCredit(summOfCredit: 1200, period: 10, percent: 12)
     }
     
     // MARK: - TASK 1
@@ -56,15 +56,18 @@ class VCTasks: UIViewController {
     // MARK: - TASK 3
     
     func calculationAmountCredit(summOfCredit summ: Int, period: Int, percent: Float) {
-        let monthlyPayment = (summ * Int(percent) * (1 + Int(percent) * period)) / (12 * ((1 + Int(percent)) * period - 1))
-        let totalAmount = (monthlyPayment * 12) * period
+        let unitFraction = percent / 100
         
+        let monthlyPayment = (Float(summ) * unitFraction * pow((1 + unitFraction), Float(period))) / (12 * (pow((1 + unitFraction), Float(period)) - 1))
+        
+        let totalAmount = (monthlyPayment * 12) * Float(period)
+
         print("""
             Сумма кредита(руб.): \(summ)
             Период(количество лет): \(period)
-            Процент: \(percent / 100)%
-            Ежемесячно: \(monthlyPayment)руб.
-            Общая сумма: \(totalAmount)руб.
+            Процент: \(Int(percent))%
+            Ежемесячно: \(Int(monthlyPayment))руб.
+            Общая сумма: \(Int(totalAmount))руб.
             """)
     }
 }
