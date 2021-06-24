@@ -35,10 +35,8 @@ class VCTasks: UIViewController {
             sallarySumm *= 1.5
         case 31..<40:
             sallarySumm *= 2
-        case 41..<100:
-            sallarySumm *= 3
         default:
-            break
+            sallarySumm *= 3
         }
         print("Имя работника: \(name), возраст: \(age), увеличение согласно возрасту: \(sallarySumm)")
     }
