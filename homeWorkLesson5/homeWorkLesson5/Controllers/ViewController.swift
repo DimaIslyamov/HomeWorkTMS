@@ -17,15 +17,15 @@ class ViewController: UIViewController {
         task1()
         print("------- Task 2 -------")
         printDays()
-        
         print("------- Task 3 -------")
         task3()
         print("------- Task 4 -------")
-        task4()
+        task4(string: randomText)
         print("------- Task 5 -------")
-        print("\(task5FuncTwo(cwqe: quoantity))")
-//        print("------- Task 6 -------")
-//
+        print("\(task5FuncOne(array: arrays))")
+        print("\(task5FuncTwo(rang: 10, 9, 8, 7))")
+        print("------- Task 6 -------")
+        print("\(takesString(string: stringTask6))")
         print("------- Task 7 -------")
         print("Максимальное число в массиве - \(returnMaxValue(arrayValue: arrayMass))")
         print("------- Task 8 -------")
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     }
     
     
-    // MARK: - TASK 2 ????????????
+    // MARK: - TASK 2 ??????
 
     let daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     var monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -57,11 +57,39 @@ class ViewController: UIViewController {
             print("\(days)")
         }
         
+        print("----------------")
+        
         for index in 0..<monthName.count {
             print("\(monthName[index]) - \(daysInMonths[index])")
         }
         
-        // ????????
+        print("----------------")
+        
+        let tupleMonthsAndDays = [("January", 31), ("February", 28), ("March", 31), ("April", 30), ("May", 31), ("June", 30), ("July", 31), ("August", 31), ("September", 30), ("October", 31), ("November", 30), ("December", 31)]
+        
+        for index in tupleMonthsAndDays {
+            print("\(index.0) - \(index.1)")
+        }
+        
+      
+        //  ??????
+        //  ??????
+        //  ??????
+        
+        
+        print("----------------")
+        
+        // допустим
+        var daysCount = 0
+        let takeDay = (month: "October", day: 31)
+        for value in tupleMonthsAndDays {
+            if takeDay.month == value.0 {
+                daysCount += takeDay.day - 1
+                break
+            }
+            daysCount += value.1
+        }
+        print("Количество дней до даты: \(daysCount)")
         
     }
     
@@ -90,8 +118,8 @@ class ViewController: UIViewController {
     
     var quantityRandomText: QuantityRandomText = (letters: 0, numbers: 0, symbols: 0)
         
-    func task4() {
-        for value in randomText {
+    func task4(string: String) {
+        for value in string {
             switch value {
             case "a"..."z":
                 quantityRandomText.letters += 1
@@ -108,28 +136,49 @@ class ViewController: UIViewController {
     
     
     
-    // MARK: - TASK 5 ??????????
+    // MARK: - TASK 5
     
     
-    let array = [1, 2, 3, 4, 5, 6, 7]
-    let quoantity = 0...15
+    let arrays = [1, 2, 3, 4, 5, 6, 7]
     
     func task5FuncOne(array: [Any]) -> [Any] {
-        let array = array
+        var emptyArray: [Any] = []
+        for value in array {
+            emptyArray.insert(value, at: 0)
+        }
         return array.reversed()
     }
     
-    func task5FuncTwo(cwqe: ClosedRange<Int> ) -> [Any] {
-        let cwqe = quoantity
-        print("\(task5FuncOne(array: array))")
-        return cwqe.reversed()
+    func task5FuncTwo(rang: Any...) -> [Any] {
+        return task5FuncOne(array: rang)
     }
     
     
     
-    // MARK: - TASK 6 ?????????
     
+    // MARK: - TASK 6
+    var stringTask6 = "But., in certain 4 2 1, circumstances, and 5 4 owing to the. claims of duty."
     
+    func takesString(string: String) -> String {
+        var newString = ""
+        let numbers = ["zero", "one", "two", "three", "four", "five", "sex", "seven", "eight", "nine"]
+        
+        for value in string.lowercased() {
+            switch String(value) {
+            case "a", "e", "i", "o", "u", "y":
+                newString += value.uppercased()
+            case "b"..."z":
+                newString += String(value)
+            case "0"..."9":
+                newString += numbers[Int(String(value)) ?? 0]
+            case " ":
+                newString += " "
+            default:
+                break
+            }
+        }
+        return newString
+    }
     
     
     
