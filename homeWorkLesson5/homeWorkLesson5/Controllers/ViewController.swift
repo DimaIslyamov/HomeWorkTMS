@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         print("------- Task 7 -------")
         print("Максимальное число в массиве - \(returnMaxValue(arrayValue: arrayMass))")
         print("------- Task 8 -------")
-        print("\(returnBoolValue(arrayValue: arrayMass))")
+        print("\(returnBoolValue(arrayValue: arrayReturnBool))")
     }
 
     // MARK: - TASK 1
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     let englishAlphabet = "abcdefghijklmnopqrstuvwxyz"
     let oneCharacter = "m"
     
-    func task1()  {
+    func task1() {
         for (index, value) in englishAlphabet.enumerated() {
             if String(value) == oneCharacter {
                 print("Индекс в строке: \(index)")
