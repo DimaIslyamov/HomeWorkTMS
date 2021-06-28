@@ -14,11 +14,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("------- Task 1 -------")
-        task1()
+        print("Индекс в строке: \(task1(string: englishAlphabet, char: oneCharacter))")
         print("------- Task 2 -------")
         printDays()
         print("------- Task 3 -------")
-        task3()
+        print("\(task3(albhabet: albhabet))")
         print("------- Task 4 -------")
         task4(string: randomText)
         print("------- Task 5 -------")
@@ -37,12 +37,14 @@ class ViewController: UIViewController {
     let englishAlphabet = "abcdefghijklmnopqrstuvwxyz"
     let oneCharacter = "m"
     
-    func task1() {
-        for (index, value) in englishAlphabet.enumerated() {
-            if String(value) == oneCharacter {
-                print("Индекс в строке: \(index)")
+    func task1(string: String, char: String) -> Int {
+        var intindex = 0
+        for (index, value) in string.enumerated() {
+            if String(value) == char {
+                intindex += index
             }
         }
+        return intindex
     }
     
     
@@ -71,15 +73,12 @@ class ViewController: UIViewController {
             print("\(index.0) - \(index.1)")
         }
         
-      
-        //  ??????
-        //  ??????
-        //  ??????
+      // сделайте тоже самое, только выводите дни в обратном порядке (порядок в массиве не меняется) !?
+     // код =)
         
         
         print("----------------")
         
-        // допустим
         var daysCount = 0
         let takeDay = (month: "October", day: 31)
         for value in tupleMonthsAndDays {
@@ -99,13 +98,13 @@ class ViewController: UIViewController {
     // MARK: - TASK 3
     
     let albhabet = "abcdefghijklmnopqrstuvwxyz"
-    var emptyArray: [String] = []
 
-    func task3() {
-        for (_, symbol) in albhabet.enumerated().reversed() {
+    func task3(albhabet string: String) -> [String] {
+        var emptyArray: [String] = []
+        for (_, symbol) in string.enumerated() {
             emptyArray.append(String(symbol))
         }
-        print("\(emptyArray)")
+        return emptyArray.reversed()
     }
     
     
@@ -188,9 +187,9 @@ class ViewController: UIViewController {
     
     func returnMaxValue(arrayValue: [Int]) -> Int {
         var maxValue = 0
-        for valueMax in 0..<arrayMass.count {
-            if arrayMass[valueMax] > maxValue {
-                maxValue = arrayMass[valueMax]
+        for valueMax in 0..<arrayValue.count {
+            if arrayValue[valueMax] > maxValue {
+                maxValue = arrayValue[valueMax]
             }
         }
         return maxValue
@@ -203,7 +202,7 @@ class ViewController: UIViewController {
     
     func returnBoolValue(arrayValue: [Int]) -> [Bool] {
         var boolArray = [Bool]()
-        for index in arrayReturnBool {
+        for index in arrayValue {
             if index % 2 == 0 {
                 boolArray.append(true)
             } else {
