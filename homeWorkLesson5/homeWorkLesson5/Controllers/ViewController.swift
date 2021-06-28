@@ -14,16 +14,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("------- Task 1 -------")
-        print("Индекс в строке: \(task1(string: englishAlphabet, char: oneCharacter))")
+        print("Индекс в строке: \(indexInString(string: englishAlphabet, char: oneCharacter))")
         print("------- Task 2 -------")
-        printDays()
+        printDaysAneMonths()
         print("------- Task 3 -------")
-        print("\(task3(albhabet: albhabet))")
+        print("\(conversionToArray(albhabet: albhabet))")
         print("------- Task 4 -------")
-        task4(string: randomText)
+        countingTheQuantity(string: randomText)
         print("------- Task 5 -------")
-        print("\(task5FuncOne(array: arrays))")
-        print("\(task5FuncTwo(rang: 10, 9, 8, 7))")
+        print("\(retutnsArrayInReverse(array: arrays))")
+        print("\(funcWithSequence(rang: 10, 9, 8, 7))")
         print("------- Task 6 -------")
         print("\(takesString(string: stringTask6))")
         print("------- Task 7 -------")
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     let englishAlphabet = "abcdefghijklmnopqrstuvwxyz"
     let oneCharacter = "m"
     
-    func task1(string: String, char: String) -> Int {
+    func indexInString(string: String, char: String) -> Int {
         var intindex = 0
         for (index, value) in string.enumerated() {
             if String(value) == char {
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     var monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     typealias TupleOfArray = [(month: String, daysAtMonths: Int)]
 
-    func printDays(){
+    func printDaysAneMonths(){
         for days in daysInMonths {
             print("\(days)")
         }
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
         }
         
       // сделайте тоже самое, только выводите дни в обратном порядке (порядок в массиве не меняется) !?
-     // код =)
+        
         
         
         print("----------------")
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
     
     let albhabet = "abcdefghijklmnopqrstuvwxyz"
 
-    func task3(albhabet string: String) -> [String] {
+    func conversionToArray(albhabet string: String) -> [String] {
         var emptyArray: [String] = []
         for (_, symbol) in string.enumerated() {
             emptyArray.append(String(symbol))
@@ -117,7 +117,7 @@ class ViewController: UIViewController {
     
     var quantityRandomText: QuantityRandomText = (letters: 0, numbers: 0, symbols: 0)
         
-    func task4(string: String) {
+    func countingTheQuantity(string: String) {
         for value in string {
             switch value {
             case "a"..."z":
@@ -140,7 +140,7 @@ class ViewController: UIViewController {
     
     let arrays = [1, 2, 3, 4, 5, 6, 7]
     
-    func task5FuncOne(array: [Any]) -> [Any] {
+    func retutnsArrayInReverse(array: [Any]) -> [Any] {
         var emptyArray: [Any] = []
         for value in array {
             emptyArray.insert(value, at: 0)
@@ -148,8 +148,8 @@ class ViewController: UIViewController {
         return array.reversed()
     }
     
-    func task5FuncTwo(rang: Any...) -> [Any] {
-        return task5FuncOne(array: rang)
+    func funcWithSequence(rang: Any...) -> [Any] {
+        return retutnsArrayInReverse(array: rang)
     }
     
     
