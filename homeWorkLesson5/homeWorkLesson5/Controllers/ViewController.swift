@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         var intindex = 0
         for (index, value) in string.enumerated() {
             if String(value) == char {
-                intindex += index
+                intindex = index
             }
         }
         return intindex
@@ -102,9 +102,9 @@ class ViewController: UIViewController {
     func conversionToArray(albhabet string: String) -> [String] {
         var emptyArray: [String] = []
         for (_, symbol) in string.enumerated() {
-            emptyArray.append(String(symbol))
+            emptyArray.insert(String(symbol), at: 0)
         }
-        return emptyArray.reversed()
+        return emptyArray
     }
     
     
@@ -145,7 +145,7 @@ class ViewController: UIViewController {
         for value in array {
             emptyArray.insert(value, at: 0)
         }
-        return array.reversed()
+        return emptyArray
     }
     
     func funcWithSequence(rang: Any...) -> [Any] {
