@@ -29,7 +29,7 @@ class StudentsGroup {
     
     func deleteStudents(avergeScore: Int) {
         var deleteStu = juornal.count - 1
-        while deleteStu > 0 {
+        while deleteStu >= 0 {
             if juornal[deleteStu].averageScore < avergeScore {
                 juornal.remove(at: deleteStu)
             }
