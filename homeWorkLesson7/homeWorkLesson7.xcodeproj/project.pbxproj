@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		533B8848268F00DD008163F2 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B8847268F00DD008163F2 /* Artist.swift */; };
+		533B884A268F01BB008163F2 /* Dancer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B8849268F01BB008163F2 /* Dancer.swift */; };
+		533B884C268F0210008163F2 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B884B268F0210008163F2 /* Singer.swift */; };
+		533B884E268F025C008163F2 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B884D268F025C008163F2 /* Actor.swift */; };
+		533B8850268F029A008163F2 /* Painter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B884F268F029A008163F2 /* Painter.swift */; };
 		5383AADF268E8EA600453CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383AADE268E8EA600453CDA /* AppDelegate.swift */; };
 		5383AAE1268E8EA600453CDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383AAE0268E8EA600453CDA /* SceneDelegate.swift */; };
 		5383AAE3268E8EA600453CDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383AAE2268E8EA600453CDA /* ViewController.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		533B8847268F00DD008163F2 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		533B8849268F01BB008163F2 /* Dancer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dancer.swift; sourceTree = "<group>"; };
+		533B884B268F0210008163F2 /* Singer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singer.swift; sourceTree = "<group>"; };
+		533B884D268F025C008163F2 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		533B884F268F029A008163F2 /* Painter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Painter.swift; sourceTree = "<group>"; };
 		5383AADB268E8EA600453CDA /* homeWorkLesson7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homeWorkLesson7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5383AADE268E8EA600453CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5383AAE0268E8EA600453CDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +47,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		533B8843268EFC45008163F2 /* Suporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5383AADE268E8EA600453CDA /* AppDelegate.swift */,
+				5383AAE0268E8EA600453CDA /* SceneDelegate.swift */,
+				5383AAE7268E8EAC00453CDA /* Assets.xcassets */,
+				5383AAEC268E8EAC00453CDA /* Info.plist */,
+			);
+			path = "Suporting Files";
+			sourceTree = "<group>";
+		};
+		533B8844268EFC5F008163F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5383AAE4268E8EA700453CDA /* Main.storyboard */,
+				5383AAE9268E8EAC00453CDA /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		533B8845268EFC68008163F2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5383AAE2268E8EA600453CDA /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		533B8846268EFC7D008163F2 /* Models Artists  */ = {
+			isa = PBXGroup;
+			children = (
+				533B8847268F00DD008163F2 /* Artist.swift */,
+				533B8849268F01BB008163F2 /* Dancer.swift */,
+				533B884B268F0210008163F2 /* Singer.swift */,
+				533B884D268F025C008163F2 /* Actor.swift */,
+				533B884F268F029A008163F2 /* Painter.swift */,
+			);
+			path = "Models Artists ";
+			sourceTree = "<group>";
+		};
 		5383AAD2268E8EA600453CDA = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +106,10 @@
 		5383AADD268E8EA600453CDA /* homeWorkLesson7 */ = {
 			isa = PBXGroup;
 			children = (
-				5383AADE268E8EA600453CDA /* AppDelegate.swift */,
-				5383AAE0268E8EA600453CDA /* SceneDelegate.swift */,
-				5383AAE2268E8EA600453CDA /* ViewController.swift */,
-				5383AAE4268E8EA700453CDA /* Main.storyboard */,
-				5383AAE7268E8EAC00453CDA /* Assets.xcassets */,
-				5383AAE9268E8EAC00453CDA /* LaunchScreen.storyboard */,
-				5383AAEC268E8EAC00453CDA /* Info.plist */,
+				533B8843268EFC45008163F2 /* Suporting Files */,
+				533B8845268EFC68008163F2 /* Controllers */,
+				533B8846268EFC7D008163F2 /* Models Artists  */,
+				533B8844268EFC5F008163F2 /* Views */,
 			);
 			path = homeWorkLesson7;
 			sourceTree = "<group>";
@@ -137,8 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				533B884A268F01BB008163F2 /* Dancer.swift in Sources */,
+				533B884C268F0210008163F2 /* Singer.swift in Sources */,
 				5383AAE3268E8EA600453CDA /* ViewController.swift in Sources */,
+				533B8850268F029A008163F2 /* Painter.swift in Sources */,
+				533B884E268F025C008163F2 /* Actor.swift in Sources */,
 				5383AADF268E8EA600453CDA /* AppDelegate.swift in Sources */,
+				533B8848268F00DD008163F2 /* Artist.swift in Sources */,
 				5383AAE1268E8EA600453CDA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +340,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CP6Y2Q4BFL;
-				INFOPLIST_FILE = homeWorkLesson7/Info.plist;
+				INFOPLIST_FILE = "homeWorkLesson7/Suporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CP6Y2Q4BFL;
-				INFOPLIST_FILE = homeWorkLesson7/Info.plist;
+				INFOPLIST_FILE = "homeWorkLesson7/Suporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
