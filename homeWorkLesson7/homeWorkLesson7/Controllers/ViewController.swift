@@ -16,10 +16,21 @@ class ViewController: UIViewController {
         let singer = Singer(name: "Oliver", surName: "Sykes")
         let actor = Actor(name: "Johnny", surName: "Depp")
         let painter = Painter(painterArtisticName: "Banksy", name: nil, surName: nil)
-        
-        let mass: [Artist] = [dancer, singer, actor, painter]
-        for value in mass {
+
+        let massArtist: [Artist] = [dancer, singer, actor, painter]
+        for value in massArtist {
             print("\(value.performance())")
+        }
+        
+        //MARK: - Task 2
+        let plane = Plane(speed: 245, capacity: 20, costOmeKilometer: 180)
+        let ship = Ship(speed: 160, capacity: 40, costOmeKilometer: 210)
+        let helicopter = Helicopter(speed: 120, capacity: 6, costOmeKilometer: 120)
+        let car = Car(speed: 60, capacity:4, costOmeKilometer: 50)
+        
+        let massVehicle: [Vehicle] = [plane, ship, helicopter, car]
+        for value in massVehicle {
+            value.shipping(numberOfPassangers: 4, mileage: 340)
         }
         
         
