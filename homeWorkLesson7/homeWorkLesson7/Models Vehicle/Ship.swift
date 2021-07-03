@@ -9,14 +9,14 @@ import Foundation
 
 
 class Ship: Vehicle {
-    private let ship = "Корабль: 🚢"
+    private let ship = "Корабль: "
     
     override init(speed: Int, capacity: Int, costOmeKilometer: Double) {
         super.init(speed: speed, capacity: capacity, costOmeKilometer: costOmeKilometer)
     }
     
-    override func shipping(numberOfPassangers: Int, mileage: Double) {
-        print(ship)
-        super.shipping(numberOfPassangers: numberOfPassangers, mileage: mileage)
+    override func shipping(numberOfPassangers: Int, mileage: Double) -> String{
+        let value = super.shipping(numberOfPassangers: numberOfPassangers, mileage: mileage)
+        return ship + value
     }
 }

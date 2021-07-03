@@ -28,6 +28,9 @@
 		5383AAE6268E8EA700453CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5383AAE4268E8EA700453CDA /* Main.storyboard */; };
 		5383AAE8268E8EAC00453CDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5383AAE7268E8EAC00453CDA /* Assets.xcassets */; };
 		5383AAEB268E8EAC00453CDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5383AAE9268E8EAC00453CDA /* LaunchScreen.storyboard */; };
+		53E6D95B2690985F005DFEBA /* Creatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E6D95A2690985F005DFEBA /* Creatures.swift */; };
+		53E6D95D2690989B005DFEBA /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E6D95C2690989B005DFEBA /* Animals.swift */; };
+		53E6D95F269098D0005DFEBA /* FourLegged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E6D95E269098D0005DFEBA /* FourLegged.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		5383AAE7268E8EAC00453CDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5383AAEA268E8EAC00453CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5383AAEC268E8EAC00453CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53E6D95A2690985F005DFEBA /* Creatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creatures.swift; sourceTree = "<group>"; };
+		53E6D95C2690989B005DFEBA /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
+		53E6D95E269098D0005DFEBA /* FourLegged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourLegged.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 		533B885C268FDA2D008163F2 /* Models Сreatures */ = {
 			isa = PBXGroup;
 			children = (
+				53E6D9592690978B005DFEBA /* Helper Classes */,
 				533B886C268FDCE8008163F2 /* Humans.swift */,
 				533B8866268FDCA0008163F2 /* Dogs.swift */,
 				533B8868268FDCB7008163F2 /* Monkey.swift */,
@@ -158,6 +165,16 @@
 				533B8844268EFC5F008163F2 /* Views */,
 			);
 			path = homeWorkLesson7;
+			sourceTree = "<group>";
+		};
+		53E6D9592690978B005DFEBA /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				53E6D95A2690985F005DFEBA /* Creatures.swift */,
+				53E6D95C2690989B005DFEBA /* Animals.swift */,
+				53E6D95E269098D0005DFEBA /* FourLegged.swift */,
+			);
+			path = "Helper Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +251,11 @@
 				533B8867268FDCA0008163F2 /* Dogs.swift in Sources */,
 				533B886D268FDCE8008163F2 /* Humans.swift in Sources */,
 				533B884A268F01BB008163F2 /* Dancer.swift in Sources */,
+				53E6D95B2690985F005DFEBA /* Creatures.swift in Sources */,
+				53E6D95D2690989B005DFEBA /* Animals.swift in Sources */,
 				533B8859268F28C4008163F2 /* Helicopter.swift in Sources */,
 				533B8855268F2885008163F2 /* Plane.swift in Sources */,
+				53E6D95F269098D0005DFEBA /* FourLegged.swift in Sources */,
 				533B885B268F28D3008163F2 /* Car.swift in Sources */,
 				533B884C268F0210008163F2 /* Singer.swift in Sources */,
 				5383AAE3268E8EA600453CDA /* ViewController.swift in Sources */,

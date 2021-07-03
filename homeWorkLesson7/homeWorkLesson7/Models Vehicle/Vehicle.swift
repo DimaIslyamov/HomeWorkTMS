@@ -19,23 +19,19 @@ class Vehicle {
         self.costOmeKilometer = costOmeKilometer
     }
     
-    func shipping(numberOfPassangers: Int, mileage: Double) {
-        
+    func shipping(numberOfPassangers: Int, mileage: Double) -> String{
         let time = Int(mileage) / speed
-        print("Время в пути составит: \(time)ч")
         
         let sum = costOmeKilometer * mileage
-        print("Стоимость перевозки за заданный километраж: \(Int(sum))р.")
         
-        // нужна формула !
-//        let countVehicle = capacity * numberOfPassangers / 70
-//        print("количество необходимых транспортных средств: \(countVehicle) ")
-        if  numberOfPassangers <= capacity {
-            print("Это транспортное средство подойдет")
-        } else if numberOfPassangers > capacity {
-            print("Вам нужно больше транспортных средств")
+        let count: Int
+        if numberOfPassangers % capacity == 0 {
+            count = numberOfPassangers / capacity
+        } else {
+            count = (numberOfPassangers / capacity) + 1
         }
         
+        return "Время в пути составит: \(time)ч. Стоимость перевозки за заданный километраж: \(Int(sum))р. Количество транспортных средств для осуществления маршрута: \(count)"
     }
 }
 

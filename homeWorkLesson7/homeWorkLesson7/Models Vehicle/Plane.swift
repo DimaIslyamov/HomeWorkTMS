@@ -9,15 +9,15 @@ import Foundation
 
 
 class Plane: Vehicle {
-    private let plane = "Самолет: ✈️"
+    private let plane = "Самолет: "
     
     override init(speed: Int, capacity: Int, costOmeKilometer: Double) {
         super.init(speed: speed, capacity: capacity, costOmeKilometer: costOmeKilometer)
     }
     
-    override func shipping(numberOfPassangers: Int, mileage: Double) {
-        print(plane)
-        super.shipping(numberOfPassangers: numberOfPassangers, mileage: mileage)
+    override func shipping(numberOfPassangers: Int, mileage: Double) -> String{
+        let value = super.shipping(numberOfPassangers: numberOfPassangers, mileage: mileage)
+        return plane + value
     }
     
 }

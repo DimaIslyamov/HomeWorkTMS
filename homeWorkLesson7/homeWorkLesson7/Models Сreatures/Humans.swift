@@ -7,17 +7,7 @@
 
 import Foundation
 
-class Humans {
+class Humans: Creatures {
     
-    let name: String
-    let numbersOfLimbs: Int
-    let isAnimal: Bool
-    let isLiveCreature: Bool
     
-    init(name: String, numbersOfLimbs: Int, isAnimal: Bool, isLiveCreature: Bool) {
-        self.name = name
-        self.numbersOfLimbs = numbersOfLimbs
-        self.isAnimal = isAnimal
-        self.isLiveCreature = isLiveCreature
-    }
 }

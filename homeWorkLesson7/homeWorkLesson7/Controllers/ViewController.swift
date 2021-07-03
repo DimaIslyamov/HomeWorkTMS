@@ -30,60 +30,36 @@ class ViewController: UIViewController {
         
         let massVehicle: [Vehicle] = [plane, ship, helicopter, car]
         for value in massVehicle {
-            value.shipping(numberOfPassangers: 40, mileage: 340)
+            print("\(value.shipping(numberOfPassangers: 20, mileage: 240))")
         }
         
         //MARK: - Task 3
-        // люди
-        let human1 = Humans(name: "Антон",
-                            numbersOfLimbs: 2,
-                            isAnimal: false, isLiveCreature: true)
-        let human2 = Humans(name: "Вася",
-                            numbersOfLimbs: 2,
-                            isAnimal: false, isLiveCreature: true)
+//          Создайте 5 классов: люди, крокодилы, обезьяны, собаки, жирафы.
+//        - Создайте по пару объектов каждого класса и положите всех в один массив.
+//        - Пройдите по массиву и выведите
+//        - Сколько четвероногих?
+//        - Сколько здесь животных?
+//        - Сколько живых существ?
         
-        // собаки
-        let mops = Dogs(creatureName: "Мопс",
-                        numbersOfLimbs: 4,
-                        isAnimal: true, isLiveCreature: true)
-        let korgi = Dogs(creatureName: "Корги",
-                         numbersOfLimbs: 4,
-                         isAnimal: true, isLiveCreature: true)
+        // явно не так сделал, но это уже третий вариант и он хотябы зарабоатл =)
         
-        // приматы
-        let chimpanzee = Monkey(creatureName: "Шимпанзе",
-                                numbersOfLimbs: 2,
-                                isAnimal: true, isLiveCreature: true)
-        let bonobo = Monkey(creatureName: "Бонобо",
-                            numbersOfLimbs: 2,
-                            isAnimal: true, isLiveCreature: true)
+        let human1 = Humans()
+        let human2 = Humans()
+        let mops = Dogs()
+        let korgi = Dogs()
+        let chimpanzee = Monkey()
+        let bonobo = Monkey()
+        let aligator = Crocodiles()
+        let australianAligator = Crocodiles()
+        let africanGiraffe = Giraffe()
+        let numibianGiraffe = Giraffe()
         
-        // крокодилы
-        let aligator = Crocodiles(creatureName: "Алигатор",
-                                  numbersOfLimbs: 4,
-                                  isAnimal: true, isLiveCreature: true)
-        let australianAligator = Crocodiles(creatureName: "Австралийский Алигатор",
-                                            numbersOfLimbs: 4,
-                                            isAnimal: true, isLiveCreature: true)
+        let massCreatures = [human1, mops, human2, korgi, chimpanzee, aligator, bonobo, australianAligator, africanGiraffe, numibianGiraffe]
         
-        // жирафы
-        let africanGiraffe = Giraffe(creatureName: "Африканский жираф",
-                                     numbersOfLimbs: 4,
-                                     isAnimal: true, isLiveCreature: true)
-        let numibianGiraffe = Giraffe(creatureName: "Нумибийский жираф",
-                                      numbersOfLimbs: 4,
-                                      isAnimal: true, isLiveCreature: true)
+        let fourLeggeds = massCreatures.filter({$0 is FourLegged})
+        let animalsCreatures = massCreatures.filter({$0 is Animals})
         
-        
-        
-        let massCreatures: [Any] = [human1, mops, human2, korgi, chimpanzee, aligator, bonobo, australianAligator, africanGiraffe, numibianGiraffe]
-        
-        //  ??????
-        for value in massCreatures {
-            if let value = value as? Bool {
-                
-            }
-        }
+        print("Четвероногих: \(fourLeggeds.count), Животных: \(animalsCreatures.count), Живых существ: \(massCreatures.count)")
         
     }
 

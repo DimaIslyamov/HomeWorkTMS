@@ -1,5 +1,5 @@
 //
-//  Giraffe.swift
+//  FourLegged.swift
 //  homeWorkLesson7
 //
 //  Created by Moobat on 3.07.21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Giraffe: FourLegged {
+class FourLegged: Animals {
     
     
 }
