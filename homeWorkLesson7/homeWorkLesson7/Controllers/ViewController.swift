@@ -30,13 +30,62 @@ class ViewController: UIViewController {
         
         let massVehicle: [Vehicle] = [plane, ship, helicopter, car]
         for value in massVehicle {
-            value.shipping(numberOfPassangers: 4, mileage: 340)
+            value.shipping(numberOfPassangers: 40, mileage: 340)
         }
         
+        //MARK: - Task 3
+        // люди
+        let human1 = Humans(name: "Антон",
+                            numbersOfLimbs: 2,
+                            isAnimal: false, isLiveCreature: true)
+        let human2 = Humans(name: "Вася",
+                            numbersOfLimbs: 2,
+                            isAnimal: false, isLiveCreature: true)
         
+        // собаки
+        let mops = Dogs(creatureName: "Мопс",
+                        numbersOfLimbs: 4,
+                        isAnimal: true, isLiveCreature: true)
+        let korgi = Dogs(creatureName: "Корги",
+                         numbersOfLimbs: 4,
+                         isAnimal: true, isLiveCreature: true)
+        
+        // приматы
+        let chimpanzee = Monkey(creatureName: "Шимпанзе",
+                                numbersOfLimbs: 2,
+                                isAnimal: true, isLiveCreature: true)
+        let bonobo = Monkey(creatureName: "Бонобо",
+                            numbersOfLimbs: 2,
+                            isAnimal: true, isLiveCreature: true)
+        
+        // крокодилы
+        let aligator = Crocodiles(creatureName: "Алигатор",
+                                  numbersOfLimbs: 4,
+                                  isAnimal: true, isLiveCreature: true)
+        let australianAligator = Crocodiles(creatureName: "Австралийский Алигатор",
+                                            numbersOfLimbs: 4,
+                                            isAnimal: true, isLiveCreature: true)
+        
+        // жирафы
+        let africanGiraffe = Giraffe(creatureName: "Африканский жираф",
+                                     numbersOfLimbs: 4,
+                                     isAnimal: true, isLiveCreature: true)
+        let numibianGiraffe = Giraffe(creatureName: "Нумибийский жираф",
+                                      numbersOfLimbs: 4,
+                                      isAnimal: true, isLiveCreature: true)
+        
+        
+        
+        let massCreatures: [Any] = [human1, mops, human2, korgi, chimpanzee, aligator, bonobo, australianAligator, africanGiraffe, numibianGiraffe]
+        
+        //  ??????
+        for value in massCreatures {
+            if let value = value as? Bool {
+                
+            }
+        }
         
     }
-
 
 }
 

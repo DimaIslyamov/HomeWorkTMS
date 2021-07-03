@@ -17,6 +17,11 @@
 		533B8857268F289F008163F2 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B8856268F289F008163F2 /* Ship.swift */; };
 		533B8859268F28C4008163F2 /* Helicopter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B8858268F28C4008163F2 /* Helicopter.swift */; };
 		533B885B268F28D3008163F2 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B885A268F28D3008163F2 /* Car.swift */; };
+		533B8865268FDC82008163F2 /* Giraffe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B8864268FDC82008163F2 /* Giraffe.swift */; };
+		533B8867268FDCA0008163F2 /* Dogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B8866268FDCA0008163F2 /* Dogs.swift */; };
+		533B8869268FDCB7008163F2 /* Monkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B8868268FDCB7008163F2 /* Monkey.swift */; };
+		533B886B268FDCD6008163F2 /* Crocodiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B886A268FDCD6008163F2 /* Crocodiles.swift */; };
+		533B886D268FDCE8008163F2 /* Humans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B886C268FDCE8008163F2 /* Humans.swift */; };
 		5383AADF268E8EA600453CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383AADE268E8EA600453CDA /* AppDelegate.swift */; };
 		5383AAE1268E8EA600453CDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383AAE0268E8EA600453CDA /* SceneDelegate.swift */; };
 		5383AAE3268E8EA600453CDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383AAE2268E8EA600453CDA /* ViewController.swift */; };
@@ -36,6 +41,11 @@
 		533B8856268F289F008163F2 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		533B8858268F28C4008163F2 /* Helicopter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helicopter.swift; sourceTree = "<group>"; };
 		533B885A268F28D3008163F2 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		533B8864268FDC82008163F2 /* Giraffe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Giraffe.swift; sourceTree = "<group>"; };
+		533B8866268FDCA0008163F2 /* Dogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dogs.swift; sourceTree = "<group>"; };
+		533B8868268FDCB7008163F2 /* Monkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monkey.swift; sourceTree = "<group>"; };
+		533B886A268FDCD6008163F2 /* Crocodiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crocodiles.swift; sourceTree = "<group>"; };
+		533B886C268FDCE8008163F2 /* Humans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Humans.swift; sourceTree = "<group>"; };
 		5383AADB268E8EA600453CDA /* homeWorkLesson7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homeWorkLesson7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5383AADE268E8EA600453CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5383AAE0268E8EA600453CDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +119,18 @@
 			path = "Models Vehicle";
 			sourceTree = "<group>";
 		};
+		533B885C268FDA2D008163F2 /* Models Сreatures */ = {
+			isa = PBXGroup;
+			children = (
+				533B886C268FDCE8008163F2 /* Humans.swift */,
+				533B8866268FDCA0008163F2 /* Dogs.swift */,
+				533B8868268FDCB7008163F2 /* Monkey.swift */,
+				533B886A268FDCD6008163F2 /* Crocodiles.swift */,
+				533B8864268FDC82008163F2 /* Giraffe.swift */,
+			);
+			path = "Models Сreatures";
+			sourceTree = "<group>";
+		};
 		5383AAD2268E8EA600453CDA = {
 			isa = PBXGroup;
 			children = (
@@ -128,10 +150,11 @@
 		5383AADD268E8EA600453CDA /* homeWorkLesson7 */ = {
 			isa = PBXGroup;
 			children = (
-				533B8843268EFC45008163F2 /* Suporting Files */,
 				533B8845268EFC68008163F2 /* Controllers */,
 				533B8846268EFC7D008163F2 /* Models Artists  */,
 				533B8851268F261F008163F2 /* Models Vehicle */,
+				533B885C268FDA2D008163F2 /* Models Сreatures */,
+				533B8843268EFC45008163F2 /* Suporting Files */,
 				533B8844268EFC5F008163F2 /* Views */,
 			);
 			path = homeWorkLesson7;
@@ -208,6 +231,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				533B8853268F266C008163F2 /* Vehicle.swift in Sources */,
+				533B8867268FDCA0008163F2 /* Dogs.swift in Sources */,
+				533B886D268FDCE8008163F2 /* Humans.swift in Sources */,
 				533B884A268F01BB008163F2 /* Dancer.swift in Sources */,
 				533B8859268F28C4008163F2 /* Helicopter.swift in Sources */,
 				533B8855268F2885008163F2 /* Plane.swift in Sources */,
@@ -215,10 +240,13 @@
 				533B884C268F0210008163F2 /* Singer.swift in Sources */,
 				5383AAE3268E8EA600453CDA /* ViewController.swift in Sources */,
 				533B8850268F029A008163F2 /* Painter.swift in Sources */,
+				533B8865268FDC82008163F2 /* Giraffe.swift in Sources */,
 				533B8857268F289F008163F2 /* Ship.swift in Sources */,
 				533B884E268F025C008163F2 /* Actor.swift in Sources */,
 				5383AADF268E8EA600453CDA /* AppDelegate.swift in Sources */,
+				533B8869268FDCB7008163F2 /* Monkey.swift in Sources */,
 				533B8848268F00DD008163F2 /* Artist.swift in Sources */,
+				533B886B268FDCD6008163F2 /* Crocodiles.swift in Sources */,
 				5383AAE1268E8EA600453CDA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

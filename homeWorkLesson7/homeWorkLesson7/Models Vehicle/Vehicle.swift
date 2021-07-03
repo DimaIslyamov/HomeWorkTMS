@@ -27,7 +27,9 @@ class Vehicle {
         let sum = costOmeKilometer * mileage
         print("Стоимость перевозки за заданный километраж: \(Int(sum))р.")
         
-        
+        // нужна формула !
+//        let countVehicle = capacity * numberOfPassangers / 70
+//        print("количество необходимых транспортных средств: \(countVehicle) ")
         if  numberOfPassangers <= capacity {
             print("Это транспортное средство подойдет")
         } else if numberOfPassangers > capacity {
@@ -36,4 +38,5 @@ class Vehicle {
         
     }
 }
+
 
