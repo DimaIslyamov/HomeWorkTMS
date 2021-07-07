@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         sumButton.layer.cornerRadius = 10
+        chessBoard.layer.cornerRadius = 10
         addTapGestureToHideKeyboard()
     }
     
