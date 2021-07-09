@@ -7,7 +7,11 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+protocol FirstViewControllerDelegate: class {
+    
+}
+
+class FirstViewController: UIViewController, FirstViewControllerDelegate {
 
     let textField = UITextField(frame: CGRect(x: 45, y: 250, width: 300, height: 30))
     let button = UIButton(frame: CGRect(x: 120, y: 320, width: 150, height: 40))
@@ -23,16 +27,14 @@ class FirstViewController: UIViewController {
     @objc func tappedTheButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "SecondStoryboard", bundle: nil)
         if let secondVC = storyboard.instantiateInitialViewController() as? SecondViewController {
-            
-            // some code
-            
+            secondVC.receivingLableText = textField.text ?? "error"
             secondVC.modalPresentationStyle = .fullScreen
             present(secondVC, animated: true, completion: nil)
         }
     }
     
+    
     func createTextFieldAndButton() {
-
         textField.backgroundColor = .white
         textField.placeholder = " enter your name"
         textField.layer.cornerRadius = 10
