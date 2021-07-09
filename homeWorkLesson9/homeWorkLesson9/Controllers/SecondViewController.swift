@@ -7,9 +7,9 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITextFieldDelegate {
     
-    var delegate: FirstViewControllerDelegate?
+    weak var delegate: FirstViewControllerDelegate?
     var receivingLableText = ""
 
     let receivingLable = UILabel(frame: CGRect(x: 45, y: 100, width: 300, height: 200))
@@ -23,12 +23,39 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createReceivingLableTextFieldAndBackButton()
-        
-        
+        ageTextField.delegate = self
+        genderTextField.delegate = self
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == ageTextField {
+            genderTextField.becomeFirstResponder()
+        } else {
+            if textField == genderTextField {
+                genderTextField.resignFirstResponder()
+            }
+        }
+        return true
+    }
+    
+    // Пока что не понятно ))
+    
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        guard !string.isEmpty else { return true }
+//            if string == "M" || string == "F" {
+//                return true
+//            }
+//        return false
+//    }
+    
+    @objc func doneBottonAction(_ sender: UIButton) {
+        // code ???
+        dismiss(animated: true, completion: nil)
     }
     
 
-    func createReceivingLableTextFieldAndBackButton() {
+    private func createReceivingLableTextFieldAndBackButton() {
         receivingLable.textAlignment = .center
         receivingLable.font = UIFont(name: "Futura", size: 40)
         receivingLable.textColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
@@ -41,15 +68,18 @@ class SecondViewController: UIViewController {
         
         ageTextField.backgroundColor = .white
         ageTextField.placeholder = " возраст"
+        ageTextField.returnKeyType = .next
         ageTextField.layer.cornerRadius = 10
         
         genderTextField.backgroundColor = .white
-        genderTextField.placeholder = " пол М / Ж"
+        genderTextField.placeholder = " пол М / F"
+        genderTextField.returnKeyType = .done
         genderTextField.layer.cornerRadius = 10
         
         doneButton.titleLabel?.font = UIFont(name: "Futura", size: 17)
         doneButton.layer.cornerRadius = 12
         doneButton.setTitle("Done", for: .normal)
+        doneButton.addTarget(self, action: #selector(doneBottonAction(_:)), for: .touchUpInside)
         doneButton.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         
         view.addSubview(receivingLable)

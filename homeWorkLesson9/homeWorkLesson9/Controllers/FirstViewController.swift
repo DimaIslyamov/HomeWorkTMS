@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol FirstViewControllerDelegate: class {
-    
+protocol FirstViewControllerDelegate: AnyObject {
+    func changeView(age: Int, gender: String)
 }
 
 class FirstViewController: UIViewController, FirstViewControllerDelegate {
@@ -19,22 +19,24 @@ class FirstViewController: UIViewController, FirstViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         createTextFieldAndButton()
-        
-        
     }
     
+    func changeView(age: Int, gender: String) {
+        
+    }
 
     @objc func tappedTheButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "SecondStoryboard", bundle: nil)
         if let secondVC = storyboard.instantiateInitialViewController() as? SecondViewController {
             secondVC.receivingLableText = textField.text ?? "error"
+            secondVC.delegate = self
             secondVC.modalPresentationStyle = .fullScreen
             present(secondVC, animated: true, completion: nil)
         }
     }
     
     
-    func createTextFieldAndButton() {
+    private func createTextFieldAndButton() {
         textField.backgroundColor = .white
         textField.placeholder = " enter your name"
         textField.layer.cornerRadius = 10
