@@ -9,11 +9,15 @@ import UIKit
 
 class SecondViewController: UIViewController, UITextFieldDelegate {
     
+    // связь делегата контроллеров 
     weak var delegate: FirstViewControllerDelegate?
+    
+    // создание переменных
     var receivingLableText = ""
-//    let ageValue: Int
-//    let genderValue: String
+    var ageValue: Int = 0
+    var genderValue: String = ""
 
+    // создание UI elements
     let receivingLable = UILabel(frame: CGRect(x: 45, y: 100, width: 300, height: 200))
     let enterDetailsLable = UILabel(frame: CGRect(x: 45, y: 355, width: 300, height: 20))
     let ageTextField = UITextField(frame: CGRect(x: 45, y: 380, width: 300, height: 30))
@@ -29,40 +33,38 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         genderTextField.delegate = self
     }
     
-    
+    // для работы с текстФилдом
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == ageTextField {
-            
             genderTextField.becomeFirstResponder()
         } else {
             if textField == genderTextField {
-                genderTextField.resignFirstResponder()
+                textField.resignFirstResponder()
             }
         }
         return true
     }
     
-    // Пока что не понятно ))
-    
+    // Пока что не понятно как этим пользоваться ))
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let textFieldAge = ageTextField.text, !string.isEmpty  else { return true }
-        if textFieldAge.count + string.count <= 2 {
-            return true
-        }
-//        if stringGender == "M" || stringGender == "F" {
-//            return true
-//        }
-        return false
+        
+        
+        return true
     }
     
     
-    
+    // проверка и отправка данных по нажатию
     @objc func doneBottonAction(_ sender: UIButton) {
-        // code ???
+        guard let ageText = ageTextField.text, !ageText.isEmpty,
+              let genderText = genderTextField.text, !genderText.isEmpty,
+              let valueAge = Int(ageText) else { return }
+        ageValue = valueAge
+        genderValue = genderText
+        delegate?.changeView(age: ageValue, gender: genderValue)
         dismiss(animated: true, completion: nil)
     }
     
-
+    // костамизация UI elements
     private func createReceivingLableTextFieldAndBackButton() {
         receivingLable.textAlignment = .center
         receivingLable.font = UIFont(name: "Futura", size: 40)
@@ -76,9 +78,10 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         
         ageTextField.backgroundColor = .white
         ageTextField.placeholder = " возраст"
-     //   ageTextField.returnKeyType = .next
+        ageTextField.returnKeyType = .next
         ageTextField.layer.cornerRadius = 10
         ageTextField.keyboardType = .numberPad
+        ageTextField.returnKeyType = .next
         
         genderTextField.backgroundColor = .white
         genderTextField.placeholder = " пол М / F"
@@ -86,10 +89,10 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         genderTextField.layer.cornerRadius = 10
         
         doneButton.titleLabel?.font = UIFont(name: "Futura", size: 17)
+        doneButton.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         doneButton.layer.cornerRadius = 12
         doneButton.setTitle("Done", for: .normal)
         doneButton.addTarget(self, action: #selector(doneBottonAction(_:)), for: .touchUpInside)
-        doneButton.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         
         view.addSubview(receivingLable)
         view.addSubview(enterDetailsLable)
