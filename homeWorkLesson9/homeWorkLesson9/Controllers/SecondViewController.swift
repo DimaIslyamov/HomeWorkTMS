@@ -11,6 +11,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     
     weak var delegate: FirstViewControllerDelegate?
     var receivingLableText = ""
+//    let ageValue: Int
+//    let genderValue: String
 
     let receivingLable = UILabel(frame: CGRect(x: 45, y: 100, width: 300, height: 200))
     let enterDetailsLable = UILabel(frame: CGRect(x: 45, y: 355, width: 300, height: 20))
@@ -30,6 +32,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == ageTextField {
+            
             genderTextField.becomeFirstResponder()
         } else {
             if textField == genderTextField {
@@ -41,13 +44,18 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     
     // Пока что не понятно ))
     
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        guard !string.isEmpty else { return true }
-//            if string == "M" || string == "F" {
-//                return true
-//            }
-//        return false
-//    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldAge = ageTextField.text, !string.isEmpty  else { return true }
+        if textFieldAge.count + string.count <= 2 {
+            return true
+        }
+//        if stringGender == "M" || stringGender == "F" {
+//            return true
+//        }
+        return false
+    }
+    
+    
     
     @objc func doneBottonAction(_ sender: UIButton) {
         // code ???
@@ -68,8 +76,9 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         
         ageTextField.backgroundColor = .white
         ageTextField.placeholder = " возраст"
-        ageTextField.returnKeyType = .next
+     //   ageTextField.returnKeyType = .next
         ageTextField.layer.cornerRadius = 10
+        ageTextField.keyboardType = .numberPad
         
         genderTextField.backgroundColor = .white
         genderTextField.placeholder = " пол М / F"
