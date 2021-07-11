@@ -35,9 +35,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, FirstViewContr
         } else {
             if gender == "F" {
                 view.backgroundColor = .systemYellow
-            } else {
-                view.backgroundColor = .systemGreen
-            }
+            } 
         }
         // Работатет но не так как надо !!!
         //        (age > 50 && gender == "M") || (gender == "F") ? (view.backgroundColor = .systemRed) : (view.backgroundColor = .systemYellow)
