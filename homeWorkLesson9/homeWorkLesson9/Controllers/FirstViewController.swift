@@ -12,7 +12,7 @@ protocol FirstViewControllerDelegate: AnyObject {
     func changeView(age: Int, gender: String)
 }
 
-class FirstViewController: UIViewController, FirstViewControllerDelegate {
+class FirstViewController: UIViewController, UITextFieldDelegate, FirstViewControllerDelegate {
 
     // создание UI элементов
     let textFieldName = UITextField(frame: CGRect(x: 45, y: 250, width: 300, height: 30))
@@ -21,13 +21,14 @@ class FirstViewController: UIViewController, FirstViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         createTextFieldAndButton()
+        textFieldName.delegate = self
     }
     
-    // реализация метода протокола
+    // реализация метода протокола ПОРОБОАВАТЬ ЧЕРЕЗ ТЕРНАРНЫЙ ОПЕРАТОР !!!!!!!!!!!!
     func changeView(age: Int, gender: String) {
+        textFieldName.text = ""
         if age > 50 && gender == "M" {
             view.backgroundColor = .systemRed
-            button.backgroundColor = .black
         } else {
             if age > 50 && gender == "F" {
                 view.backgroundColor = .systemYellow
@@ -37,6 +38,12 @@ class FirstViewController: UIViewController, FirstViewControllerDelegate {
                 }
             }
         }
+    }
+    
+    // скрытие клавиатуры
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textFieldName.resignFirstResponder()
+        return true
     }
 
     // переход на второй сторибоард и передача данных
@@ -56,6 +63,7 @@ class FirstViewController: UIViewController, FirstViewControllerDelegate {
         textFieldName.placeholder = " enter your name"
         textFieldName.layer.cornerRadius = 10
         textFieldName.clearButtonMode = .always
+        textFieldName.returnKeyType = .done
 
         button.backgroundColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
         button.setTitle("Push", for: .normal)
@@ -67,6 +75,5 @@ class FirstViewController: UIViewController, FirstViewControllerDelegate {
         view.addSubview(textFieldName)
         view.addSubview(button)
     }
-
 }
 

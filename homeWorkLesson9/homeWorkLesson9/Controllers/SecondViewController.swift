@@ -33,7 +33,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         genderTextField.delegate = self
     }
     
-    // для работы с текстФилдом
+    // для переключения и скрытия клавиатуры
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == ageTextField {
             genderTextField.becomeFirstResponder()
@@ -45,11 +45,26 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    // Пока что не понятно как этим пользоваться ))
+    // сделал запрет на Буквы и Цыфры
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard !string.isEmpty else { return true }
+        if textField == ageTextField {
+            if Int(string) != nil{
+                return true
+            } else {
+                return false
+            }
+        }
         
-        
-        return true
+        if textField == genderTextField {
+            switch string.uppercased() {
+            case "M", "F":
+                return true
+            default:
+                return false
+            }
+        }
+        return false
     }
     
     
@@ -57,7 +72,9 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     @objc func doneBottonAction(_ sender: UIButton) {
         guard let ageText = ageTextField.text, !ageText.isEmpty,
               let genderText = genderTextField.text, !genderText.isEmpty,
-              let valueAge = Int(ageText) else { return }
+              let valueAge = Int(ageText) else {
+            receivingLable.text = "Ошибка! Одна из строк пустая!"
+            return }
         ageValue = valueAge
         genderValue = genderText
         delegate?.changeView(age: ageValue, gender: genderValue)
@@ -80,8 +97,6 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         ageTextField.placeholder = " возраст"
         ageTextField.returnKeyType = .next
         ageTextField.layer.cornerRadius = 10
-        ageTextField.keyboardType = .numberPad
-        ageTextField.returnKeyType = .next
         
         genderTextField.backgroundColor = .white
         genderTextField.placeholder = " пол М / F"
@@ -100,5 +115,4 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(genderTextField)
         view.addSubview(doneButton)
     }
-
 }
