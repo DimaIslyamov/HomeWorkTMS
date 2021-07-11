@@ -35,6 +35,9 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     
     // для переключения и скрытия клавиатуры
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            //  - переключает на второй текст филд но не выключает его -
+//        (textField == ageTextField || textField == genderTextField) ? genderTextField.becomeFirstResponder() : textField.resignFirstResponder()
+        
         if textField == ageTextField {
             genderTextField.becomeFirstResponder()
         } else {
@@ -45,7 +48,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    // сделал запрет на Буквы и Цыфры
+    // сделал запрет на Буквы и Цыфры (тоже не вышло через тернарный - Не понятно)
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard !string.isEmpty else { return true }
         if textField == ageTextField {
@@ -64,6 +67,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
                 return false
             }
         }
+        
         return false
     }
     

@@ -24,18 +24,16 @@ class FirstViewController: UIViewController, UITextFieldDelegate, FirstViewContr
         textFieldName.delegate = self
     }
     
-    // реализация метода протокола ПОРОБОАВАТЬ ЧЕРЕЗ ТЕРНАРНЫЙ ОПЕРАТОР !!!!!!!!!!!!
+    // реализация метода протокола и обработка данных со второго VC (Не получилось через тернарный) Спросить !!
     func changeView(age: Int, gender: String) {
         textFieldName.text = ""
         if age > 50 && gender == "M" {
             view.backgroundColor = .systemRed
         } else {
-            if age > 50 && gender == "F" {
+            if gender == "F" {
                 view.backgroundColor = .systemYellow
             } else {
-                if age < 50 {
-                    view.backgroundColor = .systemGreen
-                }
+                view.backgroundColor = .systemGreen
             }
         }
     }
