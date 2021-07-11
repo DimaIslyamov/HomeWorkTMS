@@ -16,7 +16,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     var receivingLableText = ""
     var ageValue: Int = 0
     var genderValue: String = ""
-
+    
     // создание UI elements
     let receivingLable = UILabel(frame: CGRect(x: 45, y: 100, width: 300, height: 200))
     let enterDetailsLable = UILabel(frame: CGRect(x: 45, y: 355, width: 300, height: 20))
@@ -33,10 +33,11 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         genderTextField.delegate = self
     }
     
+    
     // для переключения и скрытия клавиатуры
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            //  - переключает на второй текст филд но не выключает его -
-//        (textField == ageTextField || textField == genderTextField) ? genderTextField.becomeFirstResponder() : textField.resignFirstResponder()
+        //  - переключает на второй текст филд но не выключает его -
+        //        (textField == ageTextField || textField == genderTextField) ? genderTextField.becomeFirstResponder() : textField.resignFirstResponder()
         
         if textField == ageTextField {
             genderTextField.becomeFirstResponder()
@@ -48,10 +49,11 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    // сделал запрет на Буквы и Цыфры (тоже не вышло через тернарный - Не понятно)
+    
+    // сделал запрет на Буквы и Цыфры 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard !string.isEmpty else { return true }
-        if textField == ageTextField {
+        if textField == ageTextField, (ageTextField.text?.count ?? 0) + string.count <= 2 {
             if Int(string) != nil{
                 return true
             } else {
@@ -59,7 +61,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        if textField == genderTextField {
+        if textField == genderTextField, (genderTextField.text?.count ?? 0) + string.count <= 1 {
             switch string.uppercased() {
             case "M", "F":
                 return true
@@ -74,10 +76,14 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     
     // проверка и отправка данных по нажатию
     @objc func doneBottonAction(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Upsss🤬", message: "Please fill in all text fields", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alert.addAction(ok)
+        
         guard let ageText = ageTextField.text, !ageText.isEmpty,
               let genderText = genderTextField.text, !genderText.isEmpty,
               let valueAge = Int(ageText) else {
-            receivingLable.text = "Ошибка! Одна из строк пустая!"
+            present(alert, animated: true, completion: nil)
             return }
         ageValue = valueAge
         genderValue = genderText
@@ -85,25 +91,26 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
+    
     // костамизация UI elements
     private func createReceivingLableTextFieldAndBackButton() {
         receivingLable.textAlignment = .center
         receivingLable.font = UIFont(name: "Futura", size: 40)
         receivingLable.textColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-        receivingLable.text = "Привет \(receivingLableText)! Введи свои данные!"
+        receivingLable.text = "Hi \(receivingLableText)! Enter your details!"
         receivingLable.numberOfLines = 0
         
         enterDetailsLable.font = UIFont(name: "Futura", size: 15)
         enterDetailsLable.textColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-        enterDetailsLable.text = "Возраст и пол:"
+        enterDetailsLable.text = "Age and Gender M/F:"
         
         ageTextField.backgroundColor = .white
-        ageTextField.placeholder = " возраст"
+        ageTextField.placeholder = " your age"
         ageTextField.returnKeyType = .next
         ageTextField.layer.cornerRadius = 10
         
         genderTextField.backgroundColor = .white
-        genderTextField.placeholder = " пол М / F"
+        genderTextField.placeholder = " your gender M/F"
         genderTextField.returnKeyType = .done
         genderTextField.layer.cornerRadius = 10
         
