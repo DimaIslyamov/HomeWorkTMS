@@ -39,23 +39,31 @@ class ViewController: UIViewController {
     
     //MARK: - Метод Выводящий сумму или ошибку в Алерт контролере
     @objc func buttonSummTapped(_ sender: UIButton) {
-        
         let alert = UIAlertController(title: "Ошибка!", message: "ТекстФилд принимает только цифры.", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         alert.addAction(ok)
         
-        guard let valueOne = textField1.text, !valueOne.isEmpty else { return }
-        guard let valueTwo = textField2.text, !valueTwo.isEmpty else { return }
-        if let value1 = Int(valueOne) {
-            if let value2 = Int(valueTwo) {
-                let summ = value1 + value2
-                lableSumm.text = String(summ)
-            } else {
-                present(alert, animated: true, completion: nil)
-            }
-        } else {
+        // Оптимизированный
+        guard let valueOne = textField1.text, !valueOne.isEmpty,
+           let valueTwo = textField2.text, !valueTwo.isEmpty,
+           let value1 = Int(valueOne), let value2 = Int(valueTwo) else {
             present(alert, animated: true, completion: nil)
-        }
+            return }
+        lableSumm.text = "\(value1 + value2)"
+        
+        // Страый код
+//        guard let valueOne = textField1.text, !valueOne.isEmpty else { return }
+//        guard let valueTwo = textField2.text, !valueTwo.isEmpty else { return }
+//        if let value1 = Int(valueOne) {
+//            if let value2 = Int(valueTwo) {
+//                let summ = value1 + value2
+//                lableSumm.text = String(summ)
+//            } else {
+//                present(alert, animated: true, completion: nil)
+//            }
+//        } else {
+//            present(alert, animated: true, completion: nil)
+//        }
     }
     
     
