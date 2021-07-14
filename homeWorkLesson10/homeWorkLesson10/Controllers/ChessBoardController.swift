@@ -9,14 +9,16 @@ import UIKit
 
 class ChessBoardController: UIViewController {
 
-    let view1 = UIView(frame: CGRect(x: 35, y: 260, width: 320 , height: 320))
+    let mainView = UIView(frame: CGRect(x: 35, y: 260, width: 320 , height: 320))
+    let checers = CGRect(x: 10, y: 10, width: 20, height: 20)
+    
     let rows = 8
     let columns = 8
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.addSubview(view1)
+        view.addSubview(mainView)
         viewControllerBackground()
         cheesBoard()
 //        createDesk()
@@ -39,15 +41,21 @@ class ChessBoardController: UIViewController {
         for row in 0...rows - 1 {
             for column in 0...columns - 1 {
                 let view = UIView(frame: CGRect(x: row * 40, y: column * 40, width: 40 , height: 40))
-                view1.addSubview(view)
+                mainView.addSubview(view)
+                
                 if (row + column) % 2 == 0 {
                     view.backgroundColor = .white
+                    
                 } else {
                     view.backgroundColor = .black
-                    let view4 = UIView(frame: CGRect(x: 10, y: 10, width: 20, height: 20))
+                    
+                    let view4 = UIView(frame: checers)
+                    view4.layer.cornerRadius = 7
+                    
                     if (column < 3) {
                         view4.backgroundColor = .brown
                         view.addSubview(view4)
+                        
                     } else if (column > 4) {
                         view4.backgroundColor = .systemGray
                         view.addSubview(view4)
