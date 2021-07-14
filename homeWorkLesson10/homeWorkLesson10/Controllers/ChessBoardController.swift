@@ -12,6 +12,10 @@ class ChessBoardController: UIViewController {
     let mainView = UIView(frame: CGRect(x: 35, y: 260, width: 320 , height: 320))
     let checers = CGRect(x: 10, y: 10, width: 20, height: 20)
     
+    var currentView: UIView? = nil
+    var defualtOrigin: CGPoint = .zero
+    var array = [UIView]()
+    
     let rows = 8
     let columns = 8
     
@@ -22,6 +26,9 @@ class ChessBoardController: UIViewController {
         viewControllerBackground()
         cheesBoard()
 //        createDesk()
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
+        mainView.addGestureRecognizer(panGesture)
     }
     
 
@@ -50,7 +57,8 @@ class ChessBoardController: UIViewController {
                     view.backgroundColor = .black
                     
                     let view4 = UIView(frame: checers)
-                    view4.layer.cornerRadius = 7
+                    array.append(view4)
+                    panGestureAdd(checer: view4)
                     
                     if (column < 3) {
                         view4.backgroundColor = .brown
@@ -60,11 +68,24 @@ class ChessBoardController: UIViewController {
                         view4.backgroundColor = .systemGray
                         view.addSubview(view4)
                     }
+                    
                 }
             }
         }
+        
+    }
+
+    
+    
+    func panGestureAdd(checer: UIView) {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
+        checer.addGestureRecognizer(panGesture)
     }
     
+    @objc func panGesture(_ sender: UIPanGestureRecognizer) {
+        let location = sender.location(in: view)
+        let translation = sender.translation(in: view)
+    }
 
 }
 
