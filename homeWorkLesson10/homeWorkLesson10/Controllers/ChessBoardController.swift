@@ -16,13 +16,25 @@ class ChessBoardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemGreen
         view.addSubview(view1)
         viewControllerBackground()
         cheesBoard()
+//        createDesk()
     }
     
 
+//    func createDesk() {
+//        let viewDesk = UIView(frame: CGRect(x: 0, y: (view.frame.midY) - (view.frame.width) / 2, width: view.frame.width, height: view.frame.width))
+//
+//        viewDesk.backgroundColor = .white
+//        viewDesk.autoresizingMask = .flexibleLeftMargin
+//        viewDesk.autoresizingMask = .flexibleRightMargin
+//        viewDesk.autoresizingMask = .flexibleTopMargin
+//        viewDesk.autoresizingMask = .flexibleBottomMargin
+//        view.addSubview(viewDesk)
+//
+//    }
+    
     func cheesBoard() {
         for row in 0...rows - 1 {
             for column in 0...columns - 1 {
@@ -32,12 +44,25 @@ class ChessBoardController: UIViewController {
                     view.backgroundColor = .white
                 } else {
                     view.backgroundColor = .black
+                    let view4 = UIView(frame: CGRect(x: 10, y: 10, width: 20, height: 20))
+                    if (column < 3) {
+                        view4.backgroundColor = .brown
+                        view.addSubview(view4)
+                    } else if (column > 4) {
+                        view4.backgroundColor = .systemGray
+                        view.addSubview(view4)
+                    }
                 }
             }
         }
     }
+    
 
 }
+
+
+
+// MARK: - Extension
 
 extension ChessBoardController {
     func viewControllerBackground() {
