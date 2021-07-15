@@ -8,12 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var collections: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        collections.forEach { buttons in
+            buttons.layer.cornerRadius = 40
+        }
     }
-
-
+    
+    
+    
 }
-
