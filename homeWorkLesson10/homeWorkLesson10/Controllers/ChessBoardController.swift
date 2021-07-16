@@ -8,37 +8,37 @@
 import UIKit
 
 class ChessBoardController: UIViewController {
-
-    let mainView = UIView(frame: CGRect(x: 35, y: 260, width: 320 , height: 320))
+    
+    let viewDesk = UIView(frame: CGRect(x: 0, y: 249, width: 414, height: 400))
     let checers = CGRect(x: 10, y: 10, width: 20, height: 20)
-    
-    
-    var currentView: UIView? = nil
-    var defualtOrigin: CGPoint = .zero
-    var array = [UIView]()
     
     let rows = 8
     let columns = 8
     
+    var currentView: UIView? = nil
+    var defualtOrigin: CGPoint = .zero
+    
+    var array = [UIView]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.addSubview(mainView)
         viewControllerBackground()
-        cheesBoard()
+        createDesk()
+        
+        viewDesk.backgroundColor = .white
+        view.addSubview(viewDesk)
+        
     }
     
 
-
-    
-    func cheesBoard() {
+    func createDesk() {
         for row in 0...rows - 1 {
             for column in 0...columns - 1 {
-                let deask = UIView(frame: CGRect(x: row * 40, y: column * 40, width: 40 , height: 40))
-                mainView.addSubview(deask)
+                let deask = UIView(frame: CGRect(x: row * 50, y: column * 50, width: 50 , height: 50))
+                viewDesk.addSubview(deask)
                 
                 if (row + column) % 2 == 0 {
-                    deask.backgroundColor = .white
                     
                 } else {
                     deask.backgroundColor = .black
@@ -59,9 +59,8 @@ class ChessBoardController: UIViewController {
                 }
             }
         }
-        
     }
-
+    
     
     
     func panGestureAdd(checer: UIView) {
@@ -69,28 +68,30 @@ class ChessBoardController: UIViewController {
         checer.addGestureRecognizer(panGesture)
     }
     
+    
+    
     @objc func panGesture(_ sender: UIPanGestureRecognizer) {
-        let location = sender.location(in: view)
-        let translation = sender.translation(in: view)
-        
-        array.forEach { checers in
-            checers.center = sender.location(in: mainView)
+        let location = sender.location(in: viewDesk)
+        let translation = sender.translation(in: viewDesk)
+
+        array.forEach { checer in
+            switch sender.state {
+            case .began:
+                if checer.frame.contains(location) {
+                    currentView = checer
+                    defualtOrigin = checer.frame.origin
+                }
+                print("Began")
+            case .changed:
+                guard currentView != nil else { return }
+                currentView?.frame.origin = CGPoint(x: defualtOrigin.x + translation.x, y: defualtOrigin.y + translation.y)
+                print("Changed")
+            case .ended:
+                print("Ended")
+            default:
+                break
+            }
         }
-        
-        switch sender.state {
-        case .began:
-            print("began")
-        case .changed:
-            print("changed")
-        case .ended:
-            print("ended")
-        case .failed:
-            print("failed")
-        case .cancelled:
-            print("cancelled")
-        default: break
-        }
-        
     }
 
 }
@@ -127,14 +128,4 @@ extension ChessBoardController {
 
 
 
-//    func createDesk() {
-//        let viewDesk = UIView(frame: CGRect(x: 0, y: (view.frame.midY) - (view.frame.width) / 2, width: view.frame.width, height: view.frame.width))
-//
-//        viewDesk.backgroundColor = .white
-//        viewDesk.autoresizingMask = .flexibleLeftMargin
-//        viewDesk.autoresizingMask = .flexibleRightMargin
-//        viewDesk.autoresizingMask = .flexibleTopMargin
-//        viewDesk.autoresizingMask = .flexibleBottomMargin
-//        view.addSubview(viewDesk)
-//
-//    }
+
