@@ -26,20 +26,21 @@ class ChessBoardController: UIViewController {
         viewControllerBackground()
         createDesk()
         
-        viewDesk.backgroundColor = .white
         view.addSubview(viewDesk)
-        
     }
     
 
     func createDesk() {
         for row in 0...rows - 1 {
             for column in 0...columns - 1 {
-                let deask = UIView(frame: CGRect(x: row * 50, y: column * 50, width: 50 , height: 50))
+                let deask = UIView(frame: CGRect(x: row * 50,
+                                                 y: column * 50,
+                                                 width: 50 ,
+                                                 height: 50))
                 viewDesk.addSubview(deask)
                 
                 if (row + column) % 2 == 0 {
-                    
+                    deask.backgroundColor = .white
                 } else {
                     deask.backgroundColor = .black
                     
@@ -74,25 +75,32 @@ class ChessBoardController: UIViewController {
         let location = sender.location(in: viewDesk)
         let translation = sender.translation(in: viewDesk)
 
-        array.forEach { checer in
+        
             switch sender.state {
             case .began:
-                if checer.frame.contains(location) {
+                array.forEach { checer in
+                    if checer.convert(checer.frame,
+                                      to: viewDesk).contains(location) {
                     currentView = checer
                     defualtOrigin = checer.frame.origin
+                    }
                 }
                 print("Began")
+                
             case .changed:
                 guard currentView != nil else { return }
-                currentView?.frame.origin = CGPoint(x: defualtOrigin.x + translation.x, y: defualtOrigin.y + translation.y)
+                currentView?.frame.origin = CGPoint(x: defualtOrigin.x + translation.x,
+                                                    y: defualtOrigin.y + translation.y)
                 print("Changed")
+                
             case .ended:
+                currentView = nil
                 print("Ended")
+                
             default:
                 break
             }
         }
-    }
 
 }
 
