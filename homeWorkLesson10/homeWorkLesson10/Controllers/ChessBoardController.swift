@@ -10,11 +10,11 @@ import UIKit
 class ChessBoardController: UIViewController {
     
     var chessMove: UIView? = nil
-    var dafaultOrignl: CGPoint = .zero
+    var defaultOrigin: CGPoint = .zero
     
-    var viewSquareBlack: [UIView] = []
-    var viewSquareWhite: [UIView] = []
-    var chessArray: [UIView] = []
+    var blackCells: [UIView] = []
+    var whiteCells: [UIView] = []
+    var arrayOfChess: [UIView] = []
     
     var count: Int = 0
     
@@ -26,84 +26,91 @@ class ChessBoardController: UIViewController {
     
     func createCellAndChess() {
         let board = UIView(frame: CGRect(x: 30, y: 200, width: 320, height: 320))
-        let numberOfRows = 8
-        let numberOfColomns = 8
+        let rows = 8
+        let columns = 8
         
         view.addSubview(board)
         
-        for row in 0...numberOfRows - 1 {
-            for column in 0...numberOfColomns - 1  {
-                let viewSquare = UIView(frame: CGRect(x: (row * 40) + 30,
+        for row in 0...rows - 1 {
+            for column in 0...columns - 1  {
+                let cells = UIView(frame: CGRect(x: (row * 40) + 30,
                                                       y: (column * 40) + 200,
                                                       width: 40,
                                                       height: 40))
-                view.addSubview(viewSquare)
+                view.addSubview(cells)
                 
                 let chess = UIView(frame: CGRect(x: (row * 40) + 40 ,
                                                  y: (column * 40) + 210,
                                                  width: 20,
                                                  height: 20))
                 if (row + column) % 2 == 0 {
-                    viewSquare.backgroundColor = .black
-                    viewSquareBlack.append(viewSquare)
+                    cells.backgroundColor = .black
+                    blackCells.append(cells)
                     
                     switch column {
                     case 0,1,2 :
-                        chess.backgroundColor = .gray
+                        chess.backgroundColor = .brown
                         view.addSubview(chess)
+                        arrayOfChess.append(chess)
                         addPanGesture(chess)
                     case 7,6,5 :
-                        chess.backgroundColor = .red
+                        chess.backgroundColor = .systemGray
                         view.addSubview(chess)
+                        arrayOfChess.append(chess)
                         addPanGesture(chess)
                     default:
                         break
                     }
                 } else {
-                    viewSquare.backgroundColor = .white
-                    viewSquareWhite.append(viewSquare)
+                    cells.backgroundColor = .white
+                    whiteCells.append(cells)
                 }
             }
         }
     }
+    
+    
     
     func addPanGesture(_ chess: UIView) {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizer(_ :)))
         chess.addGestureRecognizer(panGesture)
     }
    
+    
+    
     @objc func panGestureRecognizer (_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
         
         switch sender.state {
+        
         case .began:
-            guard let senderView  = sender.view else { return}
+            guard let senderView = sender.view else { return }
             chessMove = senderView
-            dafaultOrignl = senderView.frame.origin
+            defaultOrigin = senderView.frame.origin
             
         case .changed:
             guard chessMove != nil else { return}
-            chessMove?.frame.origin = CGPoint(x: dafaultOrignl.x + translation.x ,
-                                              y:  dafaultOrignl.y + translation.y)
+            chessMove?.frame.origin = CGPoint(x: defaultOrigin.x + translation.x ,
+                                              y:  defaultOrigin.y + translation.y)
             view.bringSubviewToFront(chessMove!)
             
         case .ended:
-            for value in viewSquareBlack {
-                if value.frame.contains(chessMove!.frame.origin) {
-                    chessMove!.center.x = value.center.x
-                    chessMove!.center.y  = value.center.y
+            for blackChess in blackCells {
+                if blackChess.frame.contains(chessMove!.frame.origin) {
+                    chessMove!.center.x = blackChess.center.x
+                    chessMove!.center.y = blackChess.center.y
                     count = 0
-                    chessArray.forEach { value in
+                    arrayOfChess.forEach { value in
                         if chessMove!.frame == value.frame {
                             count += 1
                         } else if count == 2 {
-                            chessMove!.frame.origin = dafaultOrignl
+                            chessMove!.frame.origin = defaultOrigin
                         }
                     }
                 }
-                viewSquareWhite.forEach { whiteChess in
+                whiteCells.forEach { whiteChess in
                     if whiteChess.frame.contains(chessMove!.frame.origin) {
-                        chessMove!.frame.origin = dafaultOrignl
+                        chessMove!.frame.origin = defaultOrigin
                     }
                 }
             }
