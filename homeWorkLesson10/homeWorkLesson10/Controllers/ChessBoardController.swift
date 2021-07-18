@@ -9,101 +9,110 @@ import UIKit
 
 class ChessBoardController: UIViewController {
     
-    let viewDesk = UIView(frame: CGRect(x: 0, y: 249, width: 414, height: 400))
-    let checers = CGRect(x: 10, y: 10, width: 20, height: 20)
+    var chessMove: UIView? = nil
+    var dafaultOrignl: CGPoint = .zero
     
-    let rows = 8
-    let columns = 8
+    var viewSquareBlack: [UIView] = []
+    var viewSquareWhite: [UIView] = []
+    var chessArray: [UIView] = []
     
-    var currentView: UIView? = nil
-    var defualtOrigin: CGPoint = .zero
-    
-    var array = [UIView]()
-    
+    var count: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewControllerBackground()
-        createDesk()
-        
-        view.addSubview(viewDesk)
+       createCellAndChess()
     }
     
-
-    func createDesk() {
-        for row in 0...rows - 1 {
-            for column in 0...columns - 1 {
-                let deask = UIView(frame: CGRect(x: row * 50,
-                                                 y: column * 50,
-                                                 width: 50 ,
-                                                 height: 50))
-                viewDesk.addSubview(deask)
+    func createCellAndChess() {
+        let board = UIView(frame: CGRect(x: 30, y: 200, width: 320, height: 320))
+        let numberOfRows = 8
+        let numberOfColomns = 8
+        
+        view.addSubview(board)
+        
+        for row in 0...numberOfRows - 1 {
+            for column in 0...numberOfColomns - 1  {
+                let viewSquare = UIView(frame: CGRect(x: (row * 40) + 30,
+                                                      y: (column * 40) + 200,
+                                                      width: 40,
+                                                      height: 40))
+                view.addSubview(viewSquare)
                 
+                let chess = UIView(frame: CGRect(x: (row * 40) + 40 ,
+                                                 y: (column * 40) + 210,
+                                                 width: 20,
+                                                 height: 20))
                 if (row + column) % 2 == 0 {
-                    deask.backgroundColor = .white
+                    viewSquare.backgroundColor = .black
+                    viewSquareBlack.append(viewSquare)
+                    
+                    switch column {
+                    case 0,1,2 :
+                        chess.backgroundColor = .gray
+                        view.addSubview(chess)
+                        addPanGesture(chess)
+                    case 7,6,5 :
+                        chess.backgroundColor = .red
+                        view.addSubview(chess)
+                        addPanGesture(chess)
+                    default:
+                        break
+                    }
                 } else {
-                    deask.backgroundColor = .black
-                    
-                    let view4 = UIView(frame: checers)
-                    array.append(view4)
-                    panGestureAdd(checer: view4)
-                    
-                    if (column < 3) {
-                        view4.backgroundColor = .brown
-                        deask.addSubview(view4)
-                        
-                    } else if (column > 4) {
-                        view4.backgroundColor = .systemGray
-                        deask.addSubview(view4)
-                    }
-                    
+                    viewSquare.backgroundColor = .white
+                    viewSquareWhite.append(viewSquare)
                 }
             }
         }
     }
     
-    
-    
-    func panGestureAdd(checer: UIView) {
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
-        checer.addGestureRecognizer(panGesture)
+    func addPanGesture(_ chess: UIView) {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizer(_ :)))
+        chess.addGestureRecognizer(panGesture)
     }
-    
-    
-    
-    @objc func panGesture(_ sender: UIPanGestureRecognizer) {
-        let location = sender.location(in: viewDesk)
-        let translation = sender.translation(in: viewDesk)
-
+   
+    @objc func panGestureRecognizer (_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
         
-            switch sender.state {
-            case .began:
-                array.forEach { checer in
-                    if checer.convert(checer.frame,
-                                      to: viewDesk).contains(location) {
-                    currentView = checer
-                    defualtOrigin = checer.frame.origin
+        switch sender.state {
+        case .began:
+            guard let senderView  = sender.view else { return}
+            chessMove = senderView
+            dafaultOrignl = senderView.frame.origin
+            
+        case .changed:
+            guard chessMove != nil else { return}
+            chessMove?.frame.origin = CGPoint(x: dafaultOrignl.x + translation.x ,
+                                              y:  dafaultOrignl.y + translation.y)
+            view.bringSubviewToFront(chessMove!)
+            
+        case .ended:
+            for value in viewSquareBlack {
+                if value.frame.contains(chessMove!.frame.origin) {
+                    chessMove!.center.x = value.center.x
+                    chessMove!.center.y  = value.center.y
+                    count = 0
+                    chessArray.forEach { value in
+                        if chessMove!.frame == value.frame {
+                            count += 1
+                        } else if count == 2 {
+                            chessMove!.frame.origin = dafaultOrignl
+                        }
                     }
                 }
-                print("Began")
-                
-            case .changed:
-                guard currentView != nil else { return }
-                currentView?.frame.origin = CGPoint(x: defualtOrigin.x + translation.x,
-                                                    y: defualtOrigin.y + translation.y)
-                print("Changed")
-                
-            case .ended:
-                currentView = nil
-                print("Ended")
-                
-            default:
-                break
+                viewSquareWhite.forEach { whiteChess in
+                    if whiteChess.frame.contains(chessMove!.frame.origin) {
+                        chessMove!.frame.origin = dafaultOrignl
+                    }
+                }
             }
+            chessMove = nil
+        default:
+            break
         }
-
+    }
 }
-
 
 
 // MARK: - Extension
@@ -127,13 +136,3 @@ extension ChessBoardController {
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
-
-
-
-
-
-
-
-
-
-
