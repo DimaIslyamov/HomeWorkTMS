@@ -43,21 +43,22 @@ class ChessBoardController: UIViewController {
                                                  y: (column * 40) + 210,
                                                  width: 20,
                                                  height: 20))
+                chess.layer.cornerRadius = 10
+                
                 if (row + column) % 2 == 0 {
                     cells.backgroundColor = .black
                     blackCells.append(cells)
-                    
                     switch column {
                     case 0,1,2 :
                         chess.backgroundColor = .brown
                         view.addSubview(chess)
                         arrayOfChess.append(chess)
-                        addPanGesture(chess)
+                        panGesture(chess)
                     case 7,6,5 :
                         chess.backgroundColor = .systemGray
                         view.addSubview(chess)
                         arrayOfChess.append(chess)
-                        addPanGesture(chess)
+                        panGesture(chess)
                     default:
                         break
                     }
@@ -71,7 +72,7 @@ class ChessBoardController: UIViewController {
     
     
     
-    func addPanGesture(_ chess: UIView) {
+    func panGesture(_ chess: UIView) {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizer(_ :)))
         chess.addGestureRecognizer(panGesture)
     }
