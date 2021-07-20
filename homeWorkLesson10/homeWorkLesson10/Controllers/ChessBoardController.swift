@@ -13,7 +13,7 @@ import UIKit
 class ChessBoardController: UIViewController {
     // код мастера
     
-    var chessboard: UIView!
+    var chessboard: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +24,7 @@ class ChessBoardController: UIViewController {
     }
     
     func createChessboard() {
-        let backgraundImage = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 320, height: 320)))
-        backgraundImage.image = UIImage(named: "chessDesk")
-        
-        chessboard = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 320, height: 320)))
+        chessboard = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 320, height: 320)))
         
         for i in 0..<8 {
             for j in 0..<8 {
@@ -49,8 +46,8 @@ class ChessBoardController: UIViewController {
             }
         }
         
-        view.addSubview(backgraundImage)
-        backgraundImage.center = view.center
+        chessboard.image = UIImage(named: "chessDesk")
+        chessboard.isUserInteractionEnabled = true
         
         view.addSubview(chessboard)
         chessboard.center = view.center
