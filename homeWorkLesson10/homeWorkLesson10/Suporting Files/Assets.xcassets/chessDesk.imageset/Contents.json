@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "chessDesk.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "chessDesk.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

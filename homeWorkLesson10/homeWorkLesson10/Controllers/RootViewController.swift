@@ -7,6 +7,10 @@
 
 import UIKit
 
+// 1: Констрэйнты - чтобы на всех экранах было нормально все!
+// 2: Дизайн Придумать !!
+// 3: сделать LaunchScreen.storyboard (скачать шашку и фон какой нибудь) || (на всю имедж сделать)
+
 class RootViewController: UIViewController {
 
     
@@ -35,23 +39,48 @@ class RootViewController: UIViewController {
 
 
 
+
 // MARK: - Extension
 
 extension RootViewController {
     func createButton() {
-        let buttonToCheasBorad = UIButton(frame: CGRect(x: 100,
-                                                        y: 400,
-                                                        width: 190,
-                                                        height: 40))
+        let getStartedButton = UIButton(frame: CGRect(x: 100,
+                                                      y: 350,
+                                                      width: 190,
+                                                      height: 40))
         
-        buttonToCheasBorad.setTitle("Get Started", for: .normal)
-        buttonToCheasBorad.layer.borderWidth = 1
-        buttonToCheasBorad.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
-        buttonToCheasBorad.backgroundColor = .clear
-        buttonToCheasBorad.layer.cornerRadius = 12
-        buttonToCheasBorad.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        view.addSubview(buttonToCheasBorad)
+        let scoreButton = UIButton(frame: CGRect(x: 100,
+                                                 y: 400,
+                                                 width: 190,
+                                                 height: 40))
         
+        let settingsButton = UIButton(frame: CGRect(x: 100,
+                                                    y: 450,
+                                                    width: 190,
+                                                    height: 40))
+        
+        getStartedButton.setTitle("Start the Game", for: .normal)
+        getStartedButton.layer.borderWidth = 1
+        getStartedButton.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
+        getStartedButton.backgroundColor = .clear
+        getStartedButton.layer.cornerRadius = 12
+        getStartedButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        
+        scoreButton.backgroundColor = .clear
+        scoreButton.setTitle("⭐️ Score ⭐️", for: .normal)
+        scoreButton.layer.borderWidth = 1
+        scoreButton.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
+        scoreButton.layer.cornerRadius = 12
+        
+        settingsButton.backgroundColor = .clear
+        settingsButton.setTitle("⚙️ Settings ⚙️", for: .normal)
+        settingsButton.layer.borderWidth = 1
+        settingsButton.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
+        settingsButton.layer.cornerRadius = 12
+        
+        view.addSubview(getStartedButton)
+        view.addSubview(scoreButton)
+        view.addSubview(settingsButton)
         
     }
     
