@@ -15,6 +15,7 @@
 		534D2D32269D760500052236 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D31269D760500052236 /* RootViewController.swift */; };
 		534D2D34269D80D600052236 /* ChessBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534D2D33269D80D600052236 /* ChessBoard.storyboard */; };
 		534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D35269D80F200052236 /* ChessBoardController.swift */; };
+		537EBD4126A784FE00454D24 /* bad code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537EBD4026A784FE00454D24 /* bad code.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		534D2D31269D760500052236 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		534D2D33269D80D600052236 /* ChessBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChessBoard.storyboard; sourceTree = "<group>"; };
 		534D2D35269D80F200052236 /* ChessBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoardController.swift; sourceTree = "<group>"; };
+		537EBD4026A784FE00454D24 /* bad code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "bad code.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				534D2D31269D760500052236 /* RootViewController.swift */,
 				534D2D35269D80F200052236 /* ChessBoardController.swift */,
+				537EBD4026A784FE00454D24 /* bad code.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				534D2D1B269D757E00052236 /* AppDelegate.swift in Sources */,
 				534D2D1D269D757E00052236 /* SceneDelegate.swift in Sources */,
 				534D2D32269D760500052236 /* RootViewController.swift in Sources */,
+				537EBD4126A784FE00454D24 /* bad code.swift in Sources */,
 				534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

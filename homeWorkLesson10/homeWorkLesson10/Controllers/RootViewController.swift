@@ -7,20 +7,17 @@
 
 import UIKit
 
-// 1: Констрэйнты - чтобы на всех экранах было нормально все! - DONE !!!
-    // 1.1: Сделать нормальный бэкграунд !!
-// 2: Дизайн Придумать !!
-// 3: сделать LaunchScreen.storyboard (скачать шашку и фон какой нибудь) || (на всю имедж сделать)
-
 class RootViewController: UIViewController {
 
+    // 1: Создать экраны Score(tableView?) и Settings(tableView??)
+    
     let getStartedButton = UIButton()
     let scoreButton = UIButton()
     let settingsButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Chess Board"
+        title = "Checkers"
         
         view.addSubview(getStartedButton)
         view.addSubview(scoreButton)

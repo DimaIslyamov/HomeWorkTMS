@@ -38,7 +38,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="istockphoto" width="612" height="408"/>
+        <image name="istockphoto" width="306" height="204"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

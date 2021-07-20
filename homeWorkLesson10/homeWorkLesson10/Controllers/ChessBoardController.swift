@@ -7,23 +7,49 @@
 
 import UIKit
 
-// 1: добавить на этот экран вверху label, который показывает время с начала партии! «тут нужен таймер»
-
 class ChessBoardController: UIViewController {
     // код мастера
+    var chessboard = UIImageView()
     
-    var chessboard: UIImageView!
+    var timerCount: Int = 0
+    var timer: Timer?
+    var timerLable = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewControllerBackground()
-        view.backgroundColor = .cyan
+        view.addSubview(timerLable)
+        view.addSubview(chessboard)
         createChessboard()
+        createLableAndTimer()
     }
     
+    
+    
+    func createLableAndTimer() {
+        timerLable.translatesAutoresizingMaskIntoConstraints = false
+        timerLable.leftAnchor.constraint(equalTo: chessboard.leftAnchor).isActive = true
+        timerLable.rightAnchor.constraint(equalTo: chessboard.rightAnchor).isActive = true
+        timerLable.bottomAnchor.constraint(equalTo: chessboard.bottomAnchor, constant: 30).isActive = true
+        timerLable.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        timerLable.textColor = .white
+        timerLable.textAlignment = .center
+        timerLable.font = UIFont(name: "Futura", size: 15)
+        
+        timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+
+        RunLoop.main.add(timer!, forMode: .common)
+    }
+    
+    
+    
     func createChessboard() {
-        chessboard = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 320, height: 320)))
+        chessboard.translatesAutoresizingMaskIntoConstraints = false
+        chessboard.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        chessboard.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        chessboard.widthAnchor.constraint(equalToConstant: 320).isActive = true
+        chessboard.heightAnchor.constraint(equalToConstant: 320).isActive = true
         
         for i in 0..<8 {
             for j in 0..<8 {
@@ -47,9 +73,13 @@ class ChessBoardController: UIViewController {
         
         chessboard.image = UIImage(named: "chessDesk")
         chessboard.isUserInteractionEnabled = true
-        
-        view.addSubview(chessboard)
-        chessboard.center = view.center
+    }
+    
+    
+    
+    @objc func timerFunc() {
+        timerCount += 1
+        timerLable.text = "Time in Game: \(timerCount)"
     }
     
     
@@ -81,151 +111,3 @@ class ChessBoardController: UIViewController {
     
 
 }
-
-
-// MARK: - Extension
-
-extension ChessBoardController {
-    func viewControllerBackground() {
-        let rootViewColor = UIColor(displayP3Red: 20/255,
-                                    green: 100/255,
-                                    blue: 100/255,
-                                    alpha: 1).cgColor
-        let rootViwColorTwo = UIColor(displayP3Red: 20/255,
-                                      green: 160/255,
-                                      blue: 160/255,
-                                      alpha: 1).cgColor
-        let gradientLayer = CAGradientLayer()
-        
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = [rootViewColor, rootViwColorTwo]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0, y: 1.0)
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
-    }
-}
-
-
-    /* Мой код
- 
- var chessMove: UIView? = nil
- var defaultOrigin: CGPoint = .zero
- 
- var blackCells: [UIView] = []
- var whiteCells: [UIView] = []
- var arrayOfChess: [UIView] = []
- 
- var count: Int = 0
- 
- override func viewDidLoad() {
-     super.viewDidLoad()
-     viewControllerBackground()
-    createCellAndChess()
- }
- 
- func createCellAndChess() {
-     let board = UIView(frame: CGRect(x: 30, y: 200, width: 320, height: 320))
-     let rows = 8
-     let columns = 8
-     
-     view.addSubview(board)
-     
-     for row in 0...rows - 1 {
-         for column in 0...columns - 1  {
-             let cells = UIView(frame: CGRect(x: (row * 40) + 30,
-                                                   y: (column * 40) + 200,
-                                                   width: 40,
-                                                   height: 40))
-             view.addSubview(cells)
-             
-             let chess = UIView(frame: CGRect(x: (row * 40) + 40 ,
-                                              y: (column * 40) + 210,
-                                              width: 20,
-                                              height: 20))
-             chess.layer.cornerRadius = 10
-             
-             if (row + column) % 2 == 0 {
-                 cells.backgroundColor = .black
-                 blackCells.append(cells)
-                 /* что то вроде эттого посмотреть в разборе дз
-                  if colum > 3 && colum < 4 {
-                  chess.backgroundColor = chess > 4 ? .brown : .systemGray
-                  view.addSubview(chess)
-                  arrayOfChess.append(chess)
-                  panGesture(chess)
-                  }
-                  */
-                 switch column {
-                 case 0,1,2 :
-                     chess.backgroundColor = .brown
-                     view.addSubview(chess)
-                     arrayOfChess.append(chess)
-                     panGesture(chess)
-                 case 7,6,5 :
-                     chess.backgroundColor = .systemGray
-                     view.addSubview(chess)
-                     arrayOfChess.append(chess)
-                     panGesture(chess)
-                 default:
-                     break
-                 }
-             } else {
-                 cells.backgroundColor = .white
-                 whiteCells.append(cells)
-             }
-         }
-     }
- }
- 
- 
- 
- func panGesture(_ chess: UIView) {
-     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizer(_ :)))
-     chess.addGestureRecognizer(panGesture)
- }
-
- 
- 
- @objc func panGestureRecognizer (_ sender: UIPanGestureRecognizer) {
-     let translation = sender.translation(in: view)
-     
-     switch sender.state {
-     
-     case .began:
-         guard let senderView = sender.view else { return }
-         chessMove = senderView
-         defaultOrigin = senderView.frame.origin
-         
-     case .changed:
-         guard chessMove != nil else { return}
-         chessMove?.frame.origin = CGPoint(x: defaultOrigin.x + translation.x ,
-                                           y:  defaultOrigin.y + translation.y)
-         view.bringSubviewToFront(chessMove!)
-         
-     case .ended:
-         for blackChess in blackCells {
-             if blackChess.frame.contains(chessMove!.frame.origin) {
-                 chessMove!.center.x = blackChess.center.x
-                 chessMove!.center.y = blackChess.center.y
-                 count = 0
-                 arrayOfChess.forEach { value in
-                     if chessMove!.frame == value.frame {
-                         count += 1
-                     } else if count == 2 {
-                         chessMove!.frame.origin = defaultOrigin
-                     }
-                 }
-             }
-             whiteCells.forEach { whiteChess in
-                 if whiteChess.frame.contains(chessMove!.frame.origin) {
-                     chessMove!.frame.origin = defaultOrigin
-                 }
-             }
-         }
-         chessMove = nil
-     default:
-         break
-     }
- }
-}
- */
