@@ -8,7 +8,6 @@
 import UIKit
 
 // 1: добавить на этот экран вверху label, который показывает время с начала партии! «тут нужен таймер»
-// 2: Дизайн придумать !!
 
 class ChessBoardController: UIViewController {
     // код мастера

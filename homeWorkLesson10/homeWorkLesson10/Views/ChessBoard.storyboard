@@ -15,16 +15,30 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="istockphoto" translatesAutoresizingMaskIntoConstraints="NO" id="0rQ-GY-5cm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0rQ-GY-5cm" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="6R4-Uo-Hen"/>
+                            <constraint firstItem="0rQ-GY-5cm" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Odg-b9-ujS"/>
+                            <constraint firstItem="0rQ-GY-5cm" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="Qhs-mG-1ot"/>
+                            <constraint firstAttribute="bottom" secondItem="0rQ-GY-5cm" secondAttribute="bottom" id="jhy-Qu-kFK"/>
+                            <constraint firstItem="0rQ-GY-5cm" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" id="sMR-pU-VX0"/>
+                            <constraint firstItem="0rQ-GY-5cm" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="wPb-dx-ayU"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="70"/>
+            <point key="canvasLocation" x="44.927536231884062" y="69.642857142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="istockphoto" width="612" height="408"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -16,28 +16,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0s1-SU-UYK">
-                                <rect key="frame" x="97" y="262" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="istockphoto" translatesAutoresizingMaskIntoConstraints="NO" id="JIn-PC-aXz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JIn-PC-aXz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="2xA-hd-w2E"/>
+                            <constraint firstAttribute="bottom" secondItem="JIn-PC-aXz" secondAttribute="bottom" id="8K1-ba-ElH"/>
+                            <constraint firstItem="JIn-PC-aXz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="gCk-tG-edd"/>
+                            <constraint firstItem="JIn-PC-aXz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="plG-iv-eEx"/>
+                            <constraint firstItem="JIn-PC-aXz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="q5Y-jm-Kgd"/>
+                            <constraint firstItem="JIn-PC-aXz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y9e-jP-ALf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rOW-7x-f8W"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939.13043478260875" y="75"/>
+            <point key="canvasLocation" x="937.68115942028987" y="73.660714285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vin-gM-bRh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sxs-8C-BcT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uf5-OS-RUW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="uf5-OS-RUW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -50,6 +59,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="istockphoto" width="612" height="408"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
