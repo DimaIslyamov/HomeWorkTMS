@@ -10,6 +10,7 @@ import UIKit
 class RootViewController: UIViewController {
 
     // 1: Создать экраны Score(tableView?) и Settings(tableView??)
+    // 2: Расписать действия в коде 
     
     let getStartedButton = UIButton()
     let scoreButton = UIButton()

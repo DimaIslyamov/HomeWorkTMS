@@ -7,6 +7,8 @@
 
 import UIKit
 
+// 1: Расписать действия в коде 
+
 class ChessBoardController: UIViewController {
     // код мастера
     var chessboard = UIImageView()
