@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0B26A8983A00B7411D /* ScoreViewController.swift */; };
+		5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0D26A8984C00B7411D /* SettingsViewController.swift */; };
 		534D2D1B269D757E00052236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D1A269D757E00052236 /* AppDelegate.swift */; };
 		534D2D1D269D757E00052236 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D1C269D757E00052236 /* SceneDelegate.swift */; };
 		534D2D22269D757E00052236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534D2D20269D757E00052236 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5333EB0B26A8983A00B7411D /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		5333EB0D26A8984C00B7411D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		534D2D17269D757E00052236 /* homeWorkLesson10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homeWorkLesson10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534D2D1A269D757E00052236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		534D2D1C269D757E00052236 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 			children = (
 				534D2D31269D760500052236 /* RootViewController.swift */,
 				534D2D35269D80F200052236 /* ChessBoardController.swift */,
+				5333EB0B26A8983A00B7411D /* ScoreViewController.swift */,
+				5333EB0D26A8984C00B7411D /* SettingsViewController.swift */,
 				537EBD4026A784FE00454D24 /* bad code.swift */,
 			);
 			path = Controllers;
@@ -173,9 +179,11 @@
 			files = (
 				534D2D1B269D757E00052236 /* AppDelegate.swift in Sources */,
 				534D2D1D269D757E00052236 /* SceneDelegate.swift in Sources */,
+				5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */,
 				534D2D32269D760500052236 /* RootViewController.swift in Sources */,
 				537EBD4126A784FE00454D24 /* bad code.swift in Sources */,
 				534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */,
+				5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

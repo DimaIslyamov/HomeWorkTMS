@@ -8,17 +8,17 @@
 import UIKit
 
 class RootViewController: UIViewController {
-
-    // 1: Создать экраны Score(tableView?) и Settings(tableView??)
-    // 2: Расписать действия в коде 
+    
+    // background ImageView создал в интерфейсБилдере (во всех контроллерах).
     
     let getStartedButton = UIButton()
     let scoreButton = UIButton()
     let settingsButton = UIButton()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Checkers"
+        title = "Main menu"
         
         view.addSubview(getStartedButton)
         view.addSubview(scoreButton)
@@ -29,7 +29,7 @@ class RootViewController: UIViewController {
     }
     
     
-    
+      // метод костамизирующий UIButtons
     func buttonCustomization() {
         getStartedButton.setTitle("Start the Game", for: .normal)
         getStartedButton.layer.borderWidth = 1
@@ -37,7 +37,7 @@ class RootViewController: UIViewController {
         getStartedButton.backgroundColor = .clear
         getStartedButton.layer.cornerRadius = 12
         getStartedButton.translatesAutoresizingMaskIntoConstraints = false
-        getStartedButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        getStartedButton.addTarget(self, action: #selector(startTheGameTapped(_:)), for: .touchUpInside)
         
         scoreButton.backgroundColor = .clear
         scoreButton.setTitle("⭐️ Score ⭐️", for: .normal)
@@ -45,6 +45,7 @@ class RootViewController: UIViewController {
         scoreButton.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
         scoreButton.layer.cornerRadius = 12
         scoreButton.translatesAutoresizingMaskIntoConstraints = false
+        scoreButton.addTarget(self, action: #selector(scoreTapped(_:)), for: .touchUpInside)
         
         settingsButton.backgroundColor = .clear
         settingsButton.setTitle("⚙️ Settings ⚙️", for: .normal)
@@ -52,10 +53,11 @@ class RootViewController: UIViewController {
         settingsButton.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
         settingsButton.layer.cornerRadius = 12
         settingsButton.translatesAutoresizingMaskIntoConstraints = false
+        settingsButton.addTarget(self, action: #selector(settingsTapped(_:)), for: .touchUpInside)
     }
     
     
-    
+    // создание констрейнтов через Anchor для UIButtons
     func createButtonConstraint() {
         getStartedButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         getStartedButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -75,6 +77,18 @@ class RootViewController: UIViewController {
     
     
     
+    //MARK: - Navigation
+    
+    // score и settings находятся в сториборде Main
+    func getVC(from id: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let currentVC = storyboard.instantiateViewController(withIdentifier: id)
+        currentVC.modalPresentationStyle = .fullScreen
+        currentVC.modalTransitionStyle = .crossDissolve
+        return currentVC
+    }
+    
+    // доска находится в отдельном сториборде
     func getViewController(from id: String) -> UIViewController {
         let storyboard = UIStoryboard(name: "ChessBoard", bundle: nil)
         let currentVC = storyboard.instantiateViewController(withIdentifier: id)
@@ -85,8 +99,16 @@ class RootViewController: UIViewController {
 
     
     
-    @objc func buttonTapped(_ sender: UIButton) {
+    @objc func startTheGameTapped(_ sender: UIButton) {
         navigationController?.pushViewController(getViewController(from: "chessBoardVC"), animated: true)
+    }
+    
+    @objc func scoreTapped(_ sender: UIButton) {
+        navigationController?.pushViewController(getVC(from: "scoreViewController"), animated: true)
+    }
+    
+    @objc func settingsTapped(_ sender: UIButton) {
+        navigationController?.pushViewController(getVC(from: "settingsViewController"), animated: true)
     }
 }
 

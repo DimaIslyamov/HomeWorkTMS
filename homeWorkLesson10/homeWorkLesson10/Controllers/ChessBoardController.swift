@@ -7,10 +7,8 @@
 
 import UIKit
 
-// 1: Расписать действия в коде 
-
 class ChessBoardController: UIViewController {
-    // код мастера
+    
     var chessboard = UIImageView()
     
     var timerCount: Int = 0
@@ -28,31 +26,15 @@ class ChessBoardController: UIViewController {
     
     
     
-    func createLableAndTimer() {
-        timerLable.translatesAutoresizingMaskIntoConstraints = false
-        timerLable.leftAnchor.constraint(equalTo: chessboard.leftAnchor).isActive = true
-        timerLable.rightAnchor.constraint(equalTo: chessboard.rightAnchor).isActive = true
-        timerLable.bottomAnchor.constraint(equalTo: chessboard.bottomAnchor, constant: 30).isActive = true
-        timerLable.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        timerLable.textColor = .white
-        timerLable.textAlignment = .center
-        timerLable.font = UIFont(name: "Futura", size: 15)
-        
-        timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
-
-        RunLoop.main.add(timer!, forMode: .common)
-    }
-    
-    
-    
     func createChessboard() {
+        // констрэйнты для доски
         chessboard.translatesAutoresizingMaskIntoConstraints = false
         chessboard.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         chessboard.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         chessboard.widthAnchor.constraint(equalToConstant: 320).isActive = true
         chessboard.heightAnchor.constraint(equalToConstant: 320).isActive = true
         
+        // код мастера(сансэя)
         for i in 0..<8 {
             for j in 0..<8 {
                 let column = UIView(frame: CGRect(x: 40 * i, y: 40 * j, width: 40, height: 40))
@@ -75,6 +57,25 @@ class ChessBoardController: UIViewController {
         
         chessboard.image = UIImage(named: "chessDesk")
         chessboard.isUserInteractionEnabled = true
+    }
+    
+    
+    
+    func createLableAndTimer() {
+        // констрэйнты для лэйбла
+        timerLable.translatesAutoresizingMaskIntoConstraints = false
+        timerLable.leftAnchor.constraint(equalTo: chessboard.leftAnchor).isActive = true
+        timerLable.rightAnchor.constraint(equalTo: chessboard.rightAnchor).isActive = true
+        timerLable.bottomAnchor.constraint(equalTo: chessboard.bottomAnchor, constant: 30).isActive = true
+        timerLable.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        // настройки для лэйбла
+        timerLable.textColor = .white
+        timerLable.textAlignment = .center
+        timerLable.font = UIFont(name: "Futura", size: 15)
+        // создание таймера
+        timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+        
+        RunLoop.main.add(timer!, forMode: .common)
     }
     
     
