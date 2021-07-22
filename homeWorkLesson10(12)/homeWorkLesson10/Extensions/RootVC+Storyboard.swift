@@ -7,6 +7,7 @@
 
 import UIKit
 
+// сделал во время перерыва =)
 extension RootViewController {
     // score и settings находятся в сториборде Main
     func getVC(from id: String) -> UIViewController {

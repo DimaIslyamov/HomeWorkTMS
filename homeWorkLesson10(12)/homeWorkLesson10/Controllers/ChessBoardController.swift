@@ -25,7 +25,7 @@ class ChessBoardController: UIViewController {
         createLableAndTimer()
     }
     
-    
+    // сделал во время перерыва =)
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
