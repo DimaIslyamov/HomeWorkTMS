@@ -75,29 +75,7 @@ class RootViewController: UIViewController {
         settingsButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
-    
-    
-    //MARK: - Navigation
-    
-    // score и settings находятся в сториборде Main
-    func getVC(from id: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let currentVC = storyboard.instantiateViewController(withIdentifier: id)
-        currentVC.modalPresentationStyle = .fullScreen
-        currentVC.modalTransitionStyle = .crossDissolve
-        return currentVC
-    }
-    
-    // доска находится в отдельном сториборде
-    func getViewController(from id: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: "ChessBoard", bundle: nil)
-        let currentVC = storyboard.instantiateViewController(withIdentifier: id)
-        currentVC.modalPresentationStyle = .fullScreen
-        currentVC.modalTransitionStyle = .crossDissolve
-        return currentVC
-    }
-
-    
+  
     
     @objc func startTheGameTapped(_ sender: UIButton) {
         navigationController?.pushViewController(getViewController(from: "chessBoardVC"), animated: true)

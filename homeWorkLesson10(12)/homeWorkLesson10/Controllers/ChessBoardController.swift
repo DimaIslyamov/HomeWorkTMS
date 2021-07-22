@@ -15,6 +15,7 @@ class ChessBoardController: UIViewController {
     var timer: Timer?
     var timerLable = UILabel()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +23,14 @@ class ChessBoardController: UIViewController {
         view.addSubview(chessboard)
         createChessboard()
         createLableAndTimer()
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        timer?.invalidate()
+        timer = nil
     }
     
     
