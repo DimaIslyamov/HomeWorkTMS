@@ -130,4 +130,28 @@ func panGesture(_ chess: UIView) {
  }
 }
 }
+ 
+ // MARK: - Extension
+
+ //extension RootViewController {
+ //    func viewControllerBackground() {
+ //        let rootViewColor = UIColor(displayP3Red: 110/255,
+ //                                    green: 80/255,
+ //                                    blue: 180/255,
+ //                                    alpha: 1).cgColor
+ //        let rootViwColorTwo = UIColor(displayP3Red: 20/255,
+ //                                      green: 160/255,
+ //                                      blue: 160/255,
+ //                                      alpha: 1).cgColor
+ //        let gradientLayer = CAGradientLayer()
+ //
+ //        gradientLayer.frame = view.bounds
+ //        gradientLayer.colors = [rootViewColor, rootViwColorTwo]
+ //        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+ //        gradientLayer.endPoint = CGPoint(x: 0, y: 1.0)
+ //        self.view.layer.insertSublayer(gradientLayer, at: 0)
+ //    }
+ //}
+
+ 
 */
