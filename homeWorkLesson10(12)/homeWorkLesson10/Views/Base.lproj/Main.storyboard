@@ -40,7 +40,6 @@
         <!--Score View Controller-->
         <scene sceneID="tMo-LT-IyV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Woj-KY-7Dq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="scoreViewController" id="M7O-xb-fUX" customClass="ScoreViewController" customModule="homeWorkLesson10" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VgW-Xo-SkF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -49,13 +48,13 @@
                         <color key="backgroundColor" red="0.1019478068" green="0.10196910050000001" blue="0.1019431427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Woj-KY-7Dq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1620" y="751"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="9vW-aL-6fb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2vH-dW-6aW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="settingsViewController" id="6bm-ER-wsY" customClass="SettingsViewController" customModule="homeWorkLesson10" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3s5-rj-NSl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -64,6 +63,7 @@
                         <color key="backgroundColor" red="0.1019478068" green="0.10196910050000001" blue="0.1019431427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2vH-dW-6aW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2413.04347826087" y="750.66964285714278"/>
         </scene>
@@ -72,13 +72,16 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sxs-8C-BcT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="uf5-OS-RUW">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" barStyle="black" id="uf5-OS-RUW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6jw-cE-CKp">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lSl-hg-c98"/>
                     </connections>

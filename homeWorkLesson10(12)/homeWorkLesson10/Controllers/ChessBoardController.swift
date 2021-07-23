@@ -9,39 +9,62 @@ import UIKit
 
 class ChessBoardController: UIViewController {
     
+    // MARK: - Переменные
+    
     var chessboard = UIImageView()
+    
+    var checker = UIImageView()
     
     var timerCount: Int = 0
     var timer: Timer?
     var timerLable = UILabel()
+    var isLong = false
     
+    
+    // MARK: - Жизненный цикл
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        timerLable.text = "Time in Game: 0"
         view.addSubview(timerLable)
         view.addSubview(chessboard)
         createChessboard()
         createLableAndTimer()
     }
     
-    // сделал во время перерыва =)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
         
         timer?.invalidate()
         timer = nil
     }
     
     
+    // MARK: - Методы
     
     func createChessboard() {
+        
         // констрэйнты для доски
         chessboard.translatesAutoresizingMaskIntoConstraints = false
         chessboard.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         chessboard.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         chessboard.widthAnchor.constraint(equalToConstant: 320).isActive = true
         chessboard.heightAnchor.constraint(equalToConstant: 320).isActive = true
+        
+        // тени для доски
+        chessboard.layer.shadowColor = UIColor.black.cgColor
+        chessboard.layer.shadowRadius = 7
+        chessboard.layer.shadowOpacity = 0.9
+        chessboard.layer.shadowOffset = CGSize(width: 10, height: 10)
         
         // код мастера(сансэя)
         for i in 0..<8 {
@@ -52,14 +75,15 @@ class ChessBoardController: UIViewController {
                 
                 guard j < 3 || j > 4, column.backgroundColor == .black else { continue }
                 
-                let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
+                checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                 checker.isUserInteractionEnabled = true
                 checker.image = j < 3 ? UIImage(named: "chessBlack") : UIImage(named: "chessWhite")
-//                checker.backgroundColor = j < 3 ? .white : .lightGray
-//                checker.layer.cornerRadius = checker.bounds.size.width / 2.0
                 column.addSubview(checker)
                 
+                let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
                 let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
+                
+                checker.addGestureRecognizer(tapGesture)
                 checker.addGestureRecognizer(panGesture)
             }
         }
@@ -75,19 +99,21 @@ class ChessBoardController: UIViewController {
         timerLable.translatesAutoresizingMaskIntoConstraints = false
         timerLable.leftAnchor.constraint(equalTo: chessboard.leftAnchor).isActive = true
         timerLable.rightAnchor.constraint(equalTo: chessboard.rightAnchor).isActive = true
-        timerLable.bottomAnchor.constraint(equalTo: chessboard.bottomAnchor, constant: 30).isActive = true
-        timerLable.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        timerLable.bottomAnchor.constraint(equalTo: chessboard.bottomAnchor, constant: 60).isActive = true
+        timerLable.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        
         // настройки для лэйбла
         timerLable.textColor = .white
         timerLable.textAlignment = .center
         timerLable.font = UIFont(name: "Futura", size: 15)
+        
         // создание таймера
         timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
-        
         RunLoop.main.add(timer!, forMode: .common)
     }
     
     
+    // MARK: - Objc Методы
     
     @objc func timerFunc() {
         timerCount += 1
@@ -95,11 +121,20 @@ class ChessBoardController: UIViewController {
     }
     
     
+    @objc func tapGesture(_ sender: UILongPressGestureRecognizer) {
+        guard !isLong else { return }
+        print("tap")
+        isLong = true
+        UIView.animate(withDuration: 0.3) {
+            self.checker.transform = self.checker.transform.scaledBy(x: 3.3, y: 3.3)
+        }
+    }
+    
     
     @objc func panGesture(_ sender: UIPanGestureRecognizer) {
         let location = sender.location(in: chessboard)
         let translation = sender.translation(in: chessboard)
-
+        
         switch sender.state {
         case .changed:
             guard let column = sender.view?.superview, let cellOrigin = sender.view?.frame.origin else { return }
@@ -116,10 +151,24 @@ class ChessBoardController: UIViewController {
                 return
             }
             
+            UIView.animate(withDuration: 0.3) {
+                self.checker.transform = .identity
+            }
+            
+            isLong = false
             currentCell?.addSubview(cell)
         default: break
         }
     }
-    
+}
 
+
+
+// MARK: - Расширение UIGestureRecognizer
+
+
+extension ChessBoardController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }
