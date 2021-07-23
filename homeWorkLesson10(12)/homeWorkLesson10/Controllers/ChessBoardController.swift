@@ -12,9 +12,6 @@ class ChessBoardController: UIViewController {
     // MARK: - Переменные
     
     var chessboard = UIImageView()
-    
-    var checker = UIImageView()
-    
     var timerCount: Int = 0
     var timer: Timer?
     var timerLable = UILabel()
@@ -75,14 +72,15 @@ class ChessBoardController: UIViewController {
                 
                 guard j < 3 || j > 4, column.backgroundColor == .black else { continue }
                 
-                checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
+                let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                 checker.isUserInteractionEnabled = true
                 checker.image = j < 3 ? UIImage(named: "chessBlack") : UIImage(named: "chessWhite")
                 column.addSubview(checker)
                 
                 let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
                 let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
-                
+                tapGesture.delegate = self
+                panGesture.delegate = self
                 checker.addGestureRecognizer(tapGesture)
                 checker.addGestureRecognizer(panGesture)
             }
@@ -126,7 +124,7 @@ class ChessBoardController: UIViewController {
         print("tap")
         isLong = true
         UIView.animate(withDuration: 0.3) {
-            self.checker.transform = self.checker.transform.scaledBy(x: 3.3, y: 3.3)
+            sender.view?.transform = self.view.transform.scaledBy(x: 2.3, y: 2.3)
         }
     }
     
@@ -152,7 +150,7 @@ class ChessBoardController: UIViewController {
             }
             
             UIView.animate(withDuration: 0.3) {
-                self.checker.transform = .identity
+                self.view.transform = .identity
             }
             
             isLong = false
