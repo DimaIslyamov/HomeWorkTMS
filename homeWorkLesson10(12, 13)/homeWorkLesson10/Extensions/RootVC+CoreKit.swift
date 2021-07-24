@@ -10,19 +10,26 @@ import UIKit
 
 extension RootViewController {
     
-    // score и settings находятся в сториборде Main
-    func getVC(from id: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    // доска находится в отдельном сториборде
+    func getChessBoardVC(from id: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: "ChessBoard", bundle: nil)
         let currentVC = storyboard.instantiateViewController(withIdentifier: id)
         currentVC.modalPresentationStyle = .fullScreen
         currentVC.modalTransitionStyle = .crossDissolve
         return currentVC
     }
     
+    // score и settings находятся в сториборде Main
+    func getScoreViewController(from id: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: "Score", bundle: nil)
+        let currentVC = storyboard.instantiateViewController(withIdentifier: id)
+        currentVC.modalPresentationStyle = .fullScreen
+        currentVC.modalTransitionStyle = .crossDissolve
+        return currentVC
+    }
     
-    // доска находится в отдельном сториборде
-    func getViewController(from id: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: "ChessBoard", bundle: nil)
+    func getSettingsViewController(from id: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: "Settings", bundle: nil)
         let currentVC = storyboard.instantiateViewController(withIdentifier: id)
         currentVC.modalPresentationStyle = .fullScreen
         currentVC.modalTransitionStyle = .crossDissolve

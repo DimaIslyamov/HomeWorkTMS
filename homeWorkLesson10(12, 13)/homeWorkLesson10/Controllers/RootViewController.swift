@@ -31,14 +31,14 @@ class RootViewController: UIViewController {
     
     
     @objc func startTheGameTapped(_ sender: UIButton) {
-        navigationController?.pushViewController(getViewController(from: "chessBoardVC"), animated: true)
+        navigationController?.pushViewController(getChessBoardVC(from: "chessBoardVC"), animated: true)
     }
     
     @objc func scoreTapped(_ sender: UIButton) {
-        navigationController?.pushViewController(getVC(from: "scoreViewController"), animated: true)
+        navigationController?.pushViewController(getScoreViewController(from: "scoreViewController"), animated: true)
     }
     
     @objc func settingsTapped(_ sender: UIButton) {
-        navigationController?.pushViewController(getVC(from: "settingsViewController"), animated: true)
+        navigationController?.pushViewController(getSettingsViewController(from: "settingsViewController"), animated: true)
     }
 }

@@ -18,6 +18,8 @@
 		534D2D32269D760500052236 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D31269D760500052236 /* RootViewController.swift */; };
 		534D2D34269D80D600052236 /* ChessBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534D2D33269D80D600052236 /* ChessBoard.storyboard */; };
 		534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D35269D80F200052236 /* ChessBoardController.swift */; };
+		537B185B26AC2AEB0026D73C /* Score.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185A26AC2AEB0026D73C /* Score.storyboard */; };
+		537B185D26AC2AF40026D73C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185C26AC2AF40026D73C /* Settings.storyboard */; };
 		537EBD4126A784FE00454D24 /* bad code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537EBD4026A784FE00454D24 /* bad code.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		534D2D31269D760500052236 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		534D2D33269D80D600052236 /* ChessBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChessBoard.storyboard; sourceTree = "<group>"; };
 		534D2D35269D80F200052236 /* ChessBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoardController.swift; sourceTree = "<group>"; };
+		537B185A26AC2AEB0026D73C /* Score.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Score.storyboard; sourceTree = "<group>"; };
+		537B185C26AC2AF40026D73C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		537EBD4026A784FE00454D24 /* bad code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "bad code.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +104,8 @@
 			children = (
 				534D2D20269D757E00052236 /* Main.storyboard */,
 				534D2D33269D80D600052236 /* ChessBoard.storyboard */,
+				537B185A26AC2AEB0026D73C /* Score.storyboard */,
+				537B185C26AC2AF40026D73C /* Settings.storyboard */,
 				534D2D25269D758100052236 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -177,6 +183,8 @@
 				534D2D27269D758100052236 /* LaunchScreen.storyboard in Resources */,
 				534D2D24269D758100052236 /* Assets.xcassets in Resources */,
 				534D2D34269D80D600052236 /* ChessBoard.storyboard in Resources */,
+				537B185D26AC2AF40026D73C /* Settings.storyboard in Resources */,
+				537B185B26AC2AEB0026D73C /* Score.storyboard in Resources */,
 				534D2D22269D757E00052236 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

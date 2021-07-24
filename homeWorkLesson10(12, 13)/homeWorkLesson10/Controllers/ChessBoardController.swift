@@ -121,8 +121,8 @@ class ChessBoardController: UIViewController {
     
     @objc func tapGesture(_ sender: UILongPressGestureRecognizer) {
         guard !isLong else { return }
-        print("tap")
         isLong = true
+        
         UIView.animate(withDuration: 0.3) {
             sender.view?.transform = self.view.transform.scaledBy(x: 2.3, y: 2.3)
         }
@@ -141,7 +141,13 @@ class ChessBoardController: UIViewController {
                                                 y: cellOrigin.y + translation.y)
             
             sender.setTranslation(.zero, in: chessboard)
+            
         case .ended:
+            UIView.animate(withDuration: 0.3) {
+                sender.view?.transform = .identity
+            }
+            isLong = false
+            
             let currentCell = chessboard.subviews.first(where: {$0.frame.contains(location) && $0.backgroundColor == .black })
             
             sender.view?.frame.origin = CGPoint(x: 5, y: 5)
@@ -149,11 +155,7 @@ class ChessBoardController: UIViewController {
                 return
             }
             
-            UIView.animate(withDuration: 0.3) {
-                self.view.transform = .identity
-            }
-            
-            isLong = false
+           
             currentCell?.addSubview(cell)
         default: break
         }
