@@ -18,6 +18,7 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Main menu"
         
         view.addSubview(getStartedButton)
         view.addSubview(scoreButton)
