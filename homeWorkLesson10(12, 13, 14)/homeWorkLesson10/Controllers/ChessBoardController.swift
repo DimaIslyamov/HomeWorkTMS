@@ -12,7 +12,7 @@ class ChessBoardController: UIViewController {
     // MARK: - Переменные
     
     var chessboard = UIImageView()
-    var timerCount: Int = 0
+    var timerCount: Int = 1
     var timer: Timer?
     var timerLable = UILabel()
     var isLong = false
@@ -23,7 +23,7 @@ class ChessBoardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timerLable.text = "Time in Game: 0"
+        //        timerLable.text = "Time in Game: 0"
         view.addSubview(timerLable)
         view.addSubview(chessboard)
         createChessboard()
@@ -97,26 +97,40 @@ class ChessBoardController: UIViewController {
         timerLable.translatesAutoresizingMaskIntoConstraints = false
         timerLable.leftAnchor.constraint(equalTo: chessboard.leftAnchor).isActive = true
         timerLable.rightAnchor.constraint(equalTo: chessboard.rightAnchor).isActive = true
-        timerLable.bottomAnchor.constraint(equalTo: chessboard.bottomAnchor, constant: 60).isActive = true
+        timerLable.bottomAnchor.constraint(equalTo: chessboard.bottomAnchor, constant: 90).isActive = true
         timerLable.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
-        // настройки для лэйбла
-        timerLable.textColor = .white
         timerLable.textAlignment = .center
-        timerLable.font = UIFont(name: "Futura", size: 15)
         
         // создание таймера
-        timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+        //        timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
     }
     
     
+    
+    func timeFormatter(_ tottalSecond: Int) -> String {
+        let second: Int = tottalSecond % 60
+        let minutes: Int = (tottalSecond / 60) % 60
+        return String(format: "%02d:%02d", minutes, second)
+    }
+    
+    
+    
+    
     // MARK: - Objc Методы
     
+    
     @objc func timerFunc() {
-        timerCount += 1
-        timerLable.text = "Time in Game: \(timerCount)"
+        timerLable.attributedText = NSAttributedString(string: "Time in Game \(timeFormatter(timerCount))", attributes: [.foregroundColor : UIColor.black,
+            .font : UIFont(name: "StyleScript-Regular", size: 35) ?? UIFont.systemFont(ofSize: 35)])
+        
+        if timerCount != 0 {
+            timerCount += 1
+        }
     }
+    
     
     
     @objc func tapGesture(_ sender: UILongPressGestureRecognizer) {
@@ -155,7 +169,7 @@ class ChessBoardController: UIViewController {
                 return
             }
             
-           
+            
             currentCell?.addSubview(cell)
         default: break
         }

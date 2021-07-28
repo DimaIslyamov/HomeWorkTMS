@@ -14,8 +14,6 @@ extension RootViewController {
     func getChessBoardVC(from id: String) -> UIViewController {
         let storyboard = UIStoryboard(name: "ChessBoard", bundle: nil)
         let currentVC = storyboard.instantiateViewController(withIdentifier: id)
-        currentVC.modalPresentationStyle = .fullScreen
-        currentVC.modalTransitionStyle = .crossDissolve
         return currentVC
     }
     
@@ -23,16 +21,12 @@ extension RootViewController {
     func getScoreViewController(from id: String) -> UIViewController {
         let storyboard = UIStoryboard(name: "Score", bundle: nil)
         let currentVC = storyboard.instantiateViewController(withIdentifier: id)
-        currentVC.modalPresentationStyle = .fullScreen
-        currentVC.modalTransitionStyle = .crossDissolve
         return currentVC
     }
     
     func getSettingsViewController(from id: String) -> UIViewController {
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)
         let currentVC = storyboard.instantiateViewController(withIdentifier: id)
-        currentVC.modalPresentationStyle = .fullScreen
-        currentVC.modalTransitionStyle = .crossDissolve
         return currentVC
     }
     
