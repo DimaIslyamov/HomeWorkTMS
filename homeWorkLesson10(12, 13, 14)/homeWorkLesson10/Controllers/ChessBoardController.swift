@@ -12,7 +12,7 @@ class ChessBoardController: UIViewController {
     // MARK: - Переменные
     
     var chessboard = UIImageView()
-    var timerCount: Int = 1
+    var timerCount: Int = 0
     var timer: Timer?
     var timerLable = UILabel()
     var isLong = false
@@ -103,8 +103,11 @@ class ChessBoardController: UIViewController {
         timerLable.textAlignment = .center
         
         // создание таймера
-        //        timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+        timer = Timer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+        
+        //  создавал таймер который отсчитывт определенное время
+//        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+        
         RunLoop.main.add(timer!, forMode: .common)
     }
     
@@ -126,9 +129,11 @@ class ChessBoardController: UIViewController {
         timerLable.attributedText = NSAttributedString(string: "Time in Game \(timeFormatter(timerCount))", attributes: [.foregroundColor : UIColor.black,
             .font : UIFont(name: "StyleScript-Regular", size: 35) ?? UIFont.systemFont(ofSize: 35)])
         
-        if timerCount != 0 {
-            timerCount += 1
-        }
+        timerCount += 1
+        
+//        if timerCount != 0 {
+//            timerCount -= 1
+//        }
     }
     
     
