@@ -7,6 +7,13 @@
 
 import UIKit
 
+
+enum Chekers: Int {
+    case black = 0
+    case white = 1
+}
+
+
 class ChessBoardController: UIViewController {
     
     // MARK: - Переменные
@@ -15,7 +22,8 @@ class ChessBoardController: UIViewController {
     var timerCount: Int = 0
     var timer: Timer?
     var timerLable = UILabel()
-    var isLong = false
+    
+    var current: Chekers = .black
     
     
     // MARK: - Жизненный цикл
@@ -23,7 +31,6 @@ class ChessBoardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        timerLable.text = "Time in Game: 0"
         view.addSubview(timerLable)
         view.addSubview(chessboard)
         createChessboard()
@@ -74,10 +81,11 @@ class ChessBoardController: UIViewController {
                 
                 let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                 checker.isUserInteractionEnabled = true
+                checker.tag = j < 3 ? 0 : 1
                 checker.image = j < 3 ? UIImage(named: "chessBlack") : UIImage(named: "chessWhite")
                 column.addSubview(checker)
                 
-                let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
+                let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
                 let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
                 tapGesture.delegate = self
                 panGesture.delegate = self
@@ -138,22 +146,35 @@ class ChessBoardController: UIViewController {
     
     
     
-    @objc func tapGesture(_ sender: UILongPressGestureRecognizer) {
-        guard !isLong else { return }
-        isLong = true
+    @objc func longPressGesture(_ sender: UILongPressGestureRecognizer) {
+        guard let checker = sender.view else { return }
         
-        UIView.animate(withDuration: 0.3) {
-            sender.view?.transform = self.view.transform.scaledBy(x: 2.3, y: 2.3)
+        switch sender.state {
+        case .began:
+            UIView.animate(withDuration: 0.3) {
+                checker.transform = checker.transform.scaledBy(x: 2.2, y: 2.2)
+            }
+            
+        case .ended:
+            UIView.animate(withDuration: 0.3) {
+                checker.transform = .identity
+            }
+            
+        default : break
         }
+        
     }
     
     
     @objc func panGesture(_ sender: UIPanGestureRecognizer) {
+        guard sender.view?.tag == current.rawValue else { return }
+        
         let location = sender.location(in: chessboard)
         let translation = sender.translation(in: chessboard)
         
         switch sender.state {
         case .changed:
+            
             guard let column = sender.view?.superview, let cellOrigin = sender.view?.frame.origin else { return }
             chessboard.bringSubviewToFront(column)
             sender.view?.frame.origin = CGPoint(x: cellOrigin.x + translation.x,
@@ -162,10 +183,11 @@ class ChessBoardController: UIViewController {
             sender.setTranslation(.zero, in: chessboard)
             
         case .ended:
-            UIView.animate(withDuration: 0.3) {
-                sender.view?.transform = .identity
+            if current == .black {
+                current = .white
+            } else {
+                current = .black
             }
-            isLong = false
             
             let currentCell = chessboard.subviews.first(where: {$0.frame.contains(location) && $0.backgroundColor == .black })
             
@@ -174,8 +196,8 @@ class ChessBoardController: UIViewController {
                 return
             }
             
-            
             currentCell?.addSubview(cell)
+            
         default: break
         }
     }
