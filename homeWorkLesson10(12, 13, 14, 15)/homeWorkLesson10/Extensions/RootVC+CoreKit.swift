@@ -17,7 +17,6 @@ extension RootViewController {
         return currentVC
     }
     
-    // score и settings находятся в сториборде Main
     func getScoreViewController(from id: String) -> UIViewController {
         let storyboard = UIStoryboard(name: "Score", bundle: nil)
         let currentVC = storyboard.instantiateViewController(withIdentifier: id)
@@ -26,6 +25,12 @@ extension RootViewController {
     
     func getSettingsViewController(from id: String) -> UIViewController {
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+        let currentVC = storyboard.instantiateViewController(withIdentifier: id)
+        return currentVC
+    }
+    
+    func getAboutViewController(from id: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: "About", bundle: nil)
         let currentVC = storyboard.instantiateViewController(withIdentifier: id)
         return currentVC
     }
@@ -80,6 +85,22 @@ extension RootViewController {
         settingsButton.layer.shadowOffset = CGSize(width: 10, height: 10)
         
         settingsButton.addTarget(self, action: #selector(settingsTapped(_:)), for: .touchUpInside)
+        
+        aboutButton.backgroundColor = #colorLiteral(red: 0.3900135159, green: 0.01423221827, blue: 0.01847057045, alpha: 1)
+        aboutButton.setTitle("About", for: .normal)
+        aboutButton.setTitleColor(#colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), for: .normal)
+        aboutButton.titleLabel?.font = UIFont(name: "Kefa", size: 17)
+        aboutButton.layer.borderWidth = 2
+        aboutButton.layer.borderColor = UIColor.black.cgColor
+        aboutButton.layer.cornerRadius = 12
+        aboutButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        aboutButton.layer.shadowColor = UIColor.black.cgColor
+        aboutButton.layer.shadowRadius = 3
+        aboutButton.layer.shadowOpacity = 0.9
+        aboutButton.layer.shadowOffset = CGSize(width: 10, height: 10)
+        
+        aboutButton.addTarget(self, action: #selector(aboutTapped(_:)), for: .touchUpInside)
     }
     
     
@@ -99,5 +120,10 @@ extension RootViewController {
         settingsButton.rightAnchor.constraint(equalTo: scoreButton.rightAnchor).isActive = true
         settingsButton.topAnchor.constraint(equalTo: scoreButton.bottomAnchor, constant: 10).isActive = true
         settingsButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        aboutButton.leftAnchor.constraint(equalTo: settingsButton.leftAnchor).isActive = true
+        aboutButton.rightAnchor.constraint(equalTo: settingsButton.rightAnchor).isActive = true
+        aboutButton.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: 10).isActive = true
+        aboutButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }

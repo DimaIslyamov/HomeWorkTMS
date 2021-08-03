@@ -170,7 +170,7 @@ class ChessBoardController: UIViewController {
         switch sender.state {
         case .began:
             UIView.animate(withDuration: 0.3) {
-                checker.transform = checker.transform.scaledBy(x: 2.2, y: 2.2)
+                checker.transform = checker.transform.scaledBy(x: 2.7, y: 2.7)
             }
             
         case .ended:
@@ -222,10 +222,10 @@ class ChessBoardController: UIViewController {
     
     
     
-    // MARK: - @ACTION
+    // MARK: - @IBACTION
     
     @IBAction func backButtonAction(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        alert()
     }
     
     

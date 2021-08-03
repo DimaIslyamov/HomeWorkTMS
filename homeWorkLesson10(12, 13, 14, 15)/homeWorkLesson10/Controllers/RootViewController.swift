@@ -14,6 +14,7 @@ class RootViewController: UIViewController {
     let getStartedButton = UIButton()
     let scoreButton = UIButton()
     let settingsButton = UIButton()
+    let aboutButton = UIButton()
     
     
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class RootViewController: UIViewController {
         view.addSubview(getStartedButton)
         view.addSubview(scoreButton)
         view.addSubview(settingsButton)
+        view.addSubview(aboutButton)
         
         buttonCustomization()
         createButtonConstraint()
@@ -40,5 +42,9 @@ class RootViewController: UIViewController {
     
     @objc func settingsTapped(_ sender: UIButton) {
         navigationController?.pushViewController(getSettingsViewController(from: "settingsViewController"), animated: true)
+    }
+    
+    @objc func aboutTapped(_ sender: UIButton) {
+        navigationController?.pushViewController(getAboutViewController(from: "aboutViewController"), animated: true)
     }
 }
