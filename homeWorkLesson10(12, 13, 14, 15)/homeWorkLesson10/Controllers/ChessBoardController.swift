@@ -16,6 +16,12 @@ enum Chekers: Int {
 
 class ChessBoardController: UIViewController {
     
+    // MARK: - @OUTLETS
+    
+    @IBOutlet weak var viewOutlet: UIView!
+    @IBOutlet weak var backButtonOutlet: UIButton!
+    
+    
     // MARK: - Переменные
     
     var chessboard = UIImageView()
@@ -35,18 +41,19 @@ class ChessBoardController: UIViewController {
         view.addSubview(chessboard)
         createChessboard()
         createLableAndTimer()
+        backButtonFuncCostamize()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.isHidden = false
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        navigationController?.navigationBar.isHidden = true
+        
         
         timer?.invalidate()
         timer = nil
@@ -82,7 +89,7 @@ class ChessBoardController: UIViewController {
                 let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                 checker.isUserInteractionEnabled = true
                 checker.tag = j < 3 ? 0 : 1
-                checker.image = j < 3 ? UIImage(named: "chessBlack") : UIImage(named: "chessWhite")
+                checker.image = j < 3 ? UIImage(named: "ArtasArmi") : UIImage(named: "ElidanArmi")
                 column.addSubview(checker)
                 
                 let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
@@ -94,7 +101,7 @@ class ChessBoardController: UIViewController {
             }
         }
         
-        chessboard.image = UIImage(named: "chessDesk")
+        chessboard.image = UIImage(named: "ice7")
         chessboard.isUserInteractionEnabled = true
     }
     
@@ -128,13 +135,24 @@ class ChessBoardController: UIViewController {
     }
     
     
+    func backButtonFuncCostamize() {
+        backButtonOutlet.layer.borderWidth = 2
+        backButtonOutlet.layer.borderColor = UIColor.black.cgColor
+        backButtonOutlet.layer.cornerRadius = 12
+        
+        viewOutlet.layer.cornerRadius = 12
+        viewOutlet.layer.shadowColor = UIColor.black.cgColor
+        viewOutlet.layer.shadowRadius = 4
+        viewOutlet.layer.shadowOpacity = 0.9
+        viewOutlet.layer.shadowOffset = CGSize(width: 5, height: 5)
+    }
     
     
     // MARK: - Objc Методы
     
     
     @objc func timerFunc() {
-        timerLable.attributedText = NSAttributedString(string: "Time in Game \(timeFormatter(timerCount))", attributes: [.foregroundColor : UIColor.black,
+        timerLable.attributedText = NSAttributedString(string: "Time in Game \(timeFormatter(timerCount))", attributes: [.foregroundColor : UIColor.white,
             .font : UIFont(name: "StyleScript-Regular", size: 35) ?? UIFont.systemFont(ofSize: 35)])
         
         timerCount += 1
@@ -201,6 +219,16 @@ class ChessBoardController: UIViewController {
         default: break
         }
     }
+    
+    
+    
+    // MARK: - @ACTION
+    
+    @IBAction func backButtonAction(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
 
 

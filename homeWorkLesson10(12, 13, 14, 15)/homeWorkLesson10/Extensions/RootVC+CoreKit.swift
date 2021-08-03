@@ -34,9 +34,11 @@ extension RootViewController {
     // метод костамизирующий UIButtons
     func buttonCustomization() {
         getStartedButton.setTitle("Start the Game", for: .normal)
-        getStartedButton.layer.borderWidth = 1
-        getStartedButton.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
-        getStartedButton.backgroundColor = .clear
+        getStartedButton.setTitleColor(#colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), for: .normal)
+        getStartedButton.titleLabel?.font = UIFont(name: "Kefa", size: 17)
+        getStartedButton.layer.borderWidth = 2
+        getStartedButton.layer.borderColor = UIColor.black.cgColor
+        getStartedButton.backgroundColor = #colorLiteral(red: 0.3900135159, green: 0.01423221827, blue: 0.01847057045, alpha: 1)
         getStartedButton.layer.cornerRadius = 12
         getStartedButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -47,10 +49,12 @@ extension RootViewController {
         
         getStartedButton.addTarget(self, action: #selector(startTheGameTapped(_:)), for: .touchUpInside)
         
-        scoreButton.backgroundColor = .clear
+        scoreButton.backgroundColor = #colorLiteral(red: 0.3900135159, green: 0.01423221827, blue: 0.01847057045, alpha: 1)
         scoreButton.setTitle("Score", for: .normal)
-        scoreButton.layer.borderWidth = 1
-        scoreButton.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
+        scoreButton.setTitleColor(#colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), for: .normal)
+        scoreButton.titleLabel?.font = UIFont(name: "Kefa", size: 17)
+        scoreButton.layer.borderWidth = 2
+        scoreButton.layer.borderColor = UIColor.black.cgColor
         scoreButton.layer.cornerRadius = 12
         scoreButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -61,10 +65,12 @@ extension RootViewController {
         
         scoreButton.addTarget(self, action: #selector(scoreTapped(_:)), for: .touchUpInside)
         
-        settingsButton.backgroundColor = .clear
+        settingsButton.backgroundColor = #colorLiteral(red: 0.3900135159, green: 0.01423221827, blue: 0.01847057045, alpha: 1)
         settingsButton.setTitle("Settings", for: .normal)
-        settingsButton.layer.borderWidth = 1
-        settingsButton.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
+        settingsButton.setTitleColor(#colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), for: .normal)
+        settingsButton.titleLabel?.font = UIFont(name: "Kefa", size: 17)
+        settingsButton.layer.borderWidth = 2
+        settingsButton.layer.borderColor = UIColor.black.cgColor
         settingsButton.layer.cornerRadius = 12
         settingsButton.translatesAutoresizingMaskIntoConstraints = false
         

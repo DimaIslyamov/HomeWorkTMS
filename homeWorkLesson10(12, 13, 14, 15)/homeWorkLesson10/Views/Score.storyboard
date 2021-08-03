@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,13 +15,73 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScoreArtas" translatesAutoresizingMaskIntoConstraints="NO" id="Ppx-Et-P9G">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4i-DS-5QV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxT-UJ-Fxa">
+                                        <rect key="frame" x="16" y="8" width="98" height="28"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hlf-T7-WFl">
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="28"/>
+                                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                                <state key="normal" title="Back">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ch8-vn-Yqj"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.3900135159" green="0.014232218269999999" blue="0.018470570450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Hlf-T7-WFl" secondAttribute="bottom" id="NEW-73-3sq"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hlf-T7-WFl" secondAttribute="trailing" id="WcZ-MQ-WpL"/>
+                                            <constraint firstAttribute="width" constant="98" id="XlD-x3-kyt"/>
+                                            <constraint firstItem="Hlf-T7-WFl" firstAttribute="top" secondItem="JxT-UJ-Fxa" secondAttribute="top" id="pcd-aE-IsU"/>
+                                            <constraint firstItem="Hlf-T7-WFl" firstAttribute="leading" secondItem="JxT-UJ-Fxa" secondAttribute="leading" id="uGq-02-xId"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="JxT-UJ-Fxa" firstAttribute="top" secondItem="K4i-DS-5QV" secondAttribute="top" constant="8" id="J81-Wt-QcG"/>
+                                    <constraint firstItem="JxT-UJ-Fxa" firstAttribute="leading" secondItem="K4i-DS-5QV" secondAttribute="leading" constant="16" id="Jmh-2z-tHO"/>
+                                    <constraint firstAttribute="bottom" secondItem="JxT-UJ-Fxa" secondAttribute="bottom" constant="8" id="Tgj-t4-z8G"/>
+                                    <constraint firstItem="JxT-UJ-Fxa" firstAttribute="centerY" secondItem="K4i-DS-5QV" secondAttribute="centerY" id="oDx-TT-NxG"/>
+                                    <constraint firstAttribute="height" constant="44" id="pGJ-KS-xkJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.1019478068" green="0.10196910050000001" blue="0.1019431427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ppx-Et-P9G" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JDN-r1-cto"/>
+                            <constraint firstItem="Ppx-Et-P9G" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Yjd-Nv-Unb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ppx-Et-P9G" secondAttribute="trailing" id="ZIF-mQ-59O"/>
+                            <constraint firstItem="K4i-DS-5QV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="heD-vr-Gwk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="K4i-DS-5QV" secondAttribute="trailing" id="ibZ-O0-qxI"/>
+                            <constraint firstItem="K4i-DS-5QV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kdU-Px-xZT"/>
+                            <constraint firstAttribute="bottom" secondItem="Ppx-Et-P9G" secondAttribute="bottom" id="z6U-XZ-weJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButtonOutlet" destination="Hlf-T7-WFl" id="NAs-Hz-LbD"/>
+                        <outlet property="buttonView" destination="JxT-UJ-Fxa" id="EnK-On-XcQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="56.521739130434788" y="88.392857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ScoreArtas" width="405.5" height="530"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

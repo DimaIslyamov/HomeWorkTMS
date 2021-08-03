@@ -16,21 +16,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="istockphoto" translatesAutoresizingMaskIntoConstraints="NO" id="0rQ-GY-5cm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GameArtas" translatesAutoresizingMaskIntoConstraints="NO" id="0rQ-GY-5cm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRW-VB-4hz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYY-ZD-4ED">
+                                        <rect key="frame" x="300" y="8" width="98" height="28"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z09-JX-c1s">
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="28"/>
+                                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                                <state key="normal" title="End Game">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9uo-Q9-5R8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.3900135159" green="0.014232218269999999" blue="0.018470570450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Z09-JX-c1s" secondAttribute="trailing" id="Mg0-CA-pJZ"/>
+                                            <constraint firstItem="Z09-JX-c1s" firstAttribute="top" secondItem="yYY-ZD-4ED" secondAttribute="top" id="UHd-ws-3zz"/>
+                                            <constraint firstItem="Z09-JX-c1s" firstAttribute="leading" secondItem="yYY-ZD-4ED" secondAttribute="leading" id="UhT-eP-bFN"/>
+                                            <constraint firstAttribute="bottom" secondItem="Z09-JX-c1s" secondAttribute="bottom" id="Y2b-sW-XUo"/>
+                                            <constraint firstAttribute="width" constant="98" id="mmO-Zw-R3p"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="yYY-ZD-4ED" firstAttribute="centerY" secondItem="RRW-VB-4hz" secondAttribute="centerY" id="3xO-4J-jkh"/>
+                                    <constraint firstAttribute="trailing" secondItem="yYY-ZD-4ED" secondAttribute="trailing" constant="16" id="8H8-i9-NnY"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="E2E-Wy-xn2"/>
+                                    <constraint firstItem="yYY-ZD-4ED" firstAttribute="top" secondItem="RRW-VB-4hz" secondAttribute="top" constant="8" id="E5B-Vr-HUW"/>
+                                    <constraint firstAttribute="bottom" secondItem="yYY-ZD-4ED" secondAttribute="bottom" constant="8" id="IqD-Nk-G9V"/>
+                                    <constraint firstAttribute="height" constant="44" id="Sfw-Cy-Fh7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="6R4-Uo-Hen"/>
+                            <constraint firstItem="RRW-VB-4hz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="L4A-ra-XDt"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Odg-b9-ujS"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="Qhs-mG-1ot"/>
+                            <constraint firstItem="RRW-VB-4hz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Zbh-hH-7Vt"/>
+                            <constraint firstItem="RRW-VB-4hz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="bC8-Rl-1D3"/>
                             <constraint firstAttribute="bottom" secondItem="0rQ-GY-5cm" secondAttribute="bottom" id="jhy-Qu-kFK"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" id="sMR-pU-VX0"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="wPb-dx-ayU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButtonOutlet" destination="Z09-JX-c1s" id="0ay-oq-M5O"/>
+                        <outlet property="viewOutlet" destination="yYY-ZD-4ED" id="gxg-12-pQo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -38,9 +82,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="istockphoto" width="306" height="204"/>
+        <image name="GameArtas" width="960" height="540"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

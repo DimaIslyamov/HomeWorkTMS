@@ -9,23 +9,34 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet  var buttonViews: [UIView]!
+    @IBOutlet  var buttonOutlet: [UIButton]!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "⚙️ Settings ⚙️"
+        
+        buttonViews.forEach { can in
+            can.layer.cornerRadius = 12
+            can.layer.shadowColor = UIColor.black.cgColor
+            can.layer.shadowRadius = 4
+            can.layer.shadowOpacity = 0.9
+            can.layer.shadowOffset = CGSize(width: 5, height: 5)
+        }
+        
+        buttonOutlet.forEach { can in
+            can.layer.borderWidth = 2
+            can.layer.borderColor = UIColor.black.cgColor
+            can.layer.cornerRadius = 12
+        }
     }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.navigationBar.isHidden = false
+    @IBAction func backButtonAction(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
-
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    @IBAction func aboutButtonTapped(_ sender: UIButton) {
         
-        navigationController?.navigationBar.isHidden = true
     }
 }

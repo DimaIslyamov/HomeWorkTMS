@@ -22,6 +22,7 @@
 		537B185B26AC2AEB0026D73C /* Score.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185A26AC2AEB0026D73C /* Score.storyboard */; };
 		537B185D26AC2AF40026D73C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185C26AC2AF40026D73C /* Settings.storyboard */; };
 		537EBD4126A784FE00454D24 /* bad code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537EBD4026A784FE00454D24 /* bad code.swift */; };
+		53F8A5FE26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8A5FD26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		537B185A26AC2AEB0026D73C /* Score.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Score.storyboard; sourceTree = "<group>"; };
 		537B185C26AC2AF40026D73C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		537EBD4026A784FE00454D24 /* bad code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "bad code.swift"; sourceTree = "<group>"; };
+		53F8A5FD26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChessBoardController+CoreKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				5333EB1426A9E52B00B7411D /* RootVC+CoreKit.swift */,
+				53F8A5FD26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				534D2D32269D760500052236 /* RootViewController.swift in Sources */,
 				537EBD4126A784FE00454D24 /* bad code.swift in Sources */,
 				534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */,
+				53F8A5FE26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift in Sources */,
 				5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
