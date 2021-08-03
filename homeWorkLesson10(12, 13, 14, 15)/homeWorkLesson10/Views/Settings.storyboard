@@ -45,43 +45,15 @@
                                             <constraint firstAttribute="trailing" secondItem="IvR-2M-6XG" secondAttribute="trailing" id="zfO-au-NPT"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4C-rj-Ctb">
-                                        <rect key="frame" x="300" y="8" width="98" height="28"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVl-k9-uvc">
-                                                <rect key="frame" x="0.0" y="0.0" width="98" height="28"/>
-                                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
-                                                <state key="normal" title="About">
-                                                    <color key="titleColor" systemColor="systemYellowColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="aboutButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IC7-Un-AaP"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.3900135159" green="0.014232218269999999" blue="0.018470570450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="vVl-k9-uvc" firstAttribute="top" secondItem="B4C-rj-Ctb" secondAttribute="top" id="1Ld-e1-x6b"/>
-                                            <constraint firstAttribute="trailing" secondItem="vVl-k9-uvc" secondAttribute="trailing" id="1gA-e3-yYK"/>
-                                            <constraint firstAttribute="width" constant="98" id="VY2-ZT-cUg"/>
-                                            <constraint firstAttribute="bottom" secondItem="vVl-k9-uvc" secondAttribute="bottom" id="ZSc-tg-dpb"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="cmw-Ge-WOE"/>
-                                            <constraint firstItem="vVl-k9-uvc" firstAttribute="leading" secondItem="B4C-rj-Ctb" secondAttribute="leading" id="kOH-26-n6C"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="B4C-rj-Ctb" secondAttribute="trailing" constant="16" id="49b-v8-uQ4"/>
-                                    <constraint firstAttribute="bottom" secondItem="B4C-rj-Ctb" secondAttribute="bottom" constant="8" id="5zZ-ex-ayP"/>
                                     <constraint firstItem="vJc-oO-5Ky" firstAttribute="leading" secondItem="QMw-DD-npV" secondAttribute="leading" constant="16" id="CYh-e2-c5m"/>
                                     <constraint firstAttribute="height" constant="44" id="PGI-gW-lvz"/>
-                                    <constraint firstItem="B4C-rj-Ctb" firstAttribute="centerY" secondItem="QMw-DD-npV" secondAttribute="centerY" id="TYi-6E-x2t"/>
                                     <constraint firstAttribute="bottom" secondItem="vJc-oO-5Ky" secondAttribute="bottom" constant="8" id="YIK-8i-Zw6"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="YlB-P4-Dcv"/>
                                     <constraint firstItem="vJc-oO-5Ky" firstAttribute="top" secondItem="QMw-DD-npV" secondAttribute="top" constant="8" id="gfH-up-y2M"/>
                                     <constraint firstItem="vJc-oO-5Ky" firstAttribute="centerY" secondItem="QMw-DD-npV" secondAttribute="centerY" id="gvP-Jh-kTt"/>
-                                    <constraint firstItem="B4C-rj-Ctb" firstAttribute="top" secondItem="QMw-DD-npV" secondAttribute="top" constant="8" id="hrH-VY-1kT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -98,10 +70,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outletCollection property="buttonOutlet" destination="IvR-2M-6XG" collectionClass="NSMutableArray" id="TZR-jv-FFi"/>
-                        <outletCollection property="buttonOutlet" destination="vVl-k9-uvc" collectionClass="NSMutableArray" id="cs0-CK-Gha"/>
-                        <outletCollection property="buttonViews" destination="vJc-oO-5Ky" collectionClass="NSMutableArray" id="mJw-B1-73A"/>
-                        <outletCollection property="buttonViews" destination="B4C-rj-Ctb" collectionClass="NSMutableArray" id="6T9-3w-O1e"/>
+                        <outlet property="buttonOutlet" destination="IvR-2M-6XG" id="KOj-pW-QLi"/>
+                        <outlet property="buttonViews" destination="vJc-oO-5Ky" id="Bfs-js-KK1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
