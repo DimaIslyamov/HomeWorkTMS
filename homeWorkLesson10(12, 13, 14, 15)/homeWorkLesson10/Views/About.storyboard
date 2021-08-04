@@ -15,18 +15,210 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AbautArtas" translatesAutoresizingMaskIntoConstraints="NO" id="rvR-7I-3iY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCV-pf-a7W">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqa-eV-0Bj">
+                                        <rect key="frame" x="16" y="8" width="98" height="28"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ry-q5-5oO">
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="28"/>
+                                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                                <state key="normal" title="Back">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gD6-tc-JCZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.3900135159" green="0.014232218269999999" blue="0.018470570450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="7Ry-q5-5oO" firstAttribute="top" secondItem="Mqa-eV-0Bj" secondAttribute="top" id="Fyd-zE-hV3"/>
+                                            <constraint firstAttribute="width" constant="98" id="T4L-z5-l7s"/>
+                                            <constraint firstItem="7Ry-q5-5oO" firstAttribute="leading" secondItem="Mqa-eV-0Bj" secondAttribute="leading" id="XPe-yj-ydF"/>
+                                            <constraint firstAttribute="bottom" secondItem="7Ry-q5-5oO" secondAttribute="bottom" id="igg-Zx-RHS"/>
+                                            <constraint firstAttribute="trailing" secondItem="7Ry-q5-5oO" secondAttribute="trailing" id="nCw-bD-rf5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="5ww-Cf-imG"/>
+                                    <constraint firstItem="Mqa-eV-0Bj" firstAttribute="leading" secondItem="VCV-pf-a7W" secondAttribute="leading" constant="16" id="639-ji-7BM"/>
+                                    <constraint firstItem="Mqa-eV-0Bj" firstAttribute="centerY" secondItem="VCV-pf-a7W" secondAttribute="centerY" id="DGt-ru-unC"/>
+                                    <constraint firstAttribute="height" constant="44" id="fcj-vZ-kmA"/>
+                                    <constraint firstItem="Mqa-eV-0Bj" firstAttribute="top" secondItem="VCV-pf-a7W" secondAttribute="top" constant="8" id="kYW-di-5Px"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mqa-eV-0Bj" secondAttribute="bottom" constant="8" id="xgw-6g-Pte"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="yWJ-PB-uoY"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUH-d5-74k">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8X-tN-O5N">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1512"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W42-Ua-38Z">
+                                                <rect key="frame" x="50" y="215" width="313" height="326"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="326" id="VYg-wb-2CE"/>
+                                                </constraints>
+                                                <mutableString key="text">Checkers is a logical board game for two players, which consists in moving checkers in a certain way along the cells of the checkerboard. During the game, each player owns checkers of the same color: black or white (sometimes other colors, one of which is considered dark, and the other - light). The goal of the game is to take all the opponent's checkers or to deprive them of the opportunity to move (to lock them in). There are several variants of checkers, differing in the rules and sizes of the playing field.</mutableString>
+                                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="18"/>
+                                                <color key="textColor" red="0.78909066890000001" green="0.77365149769999997" blue="0.53805182770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eu7-Ug-176">
+                                                <rect key="frame" x="50" y="668" width="313" height="443"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="443" id="z3a-T4-Uyu"/>
+                                                </constraints>
+                                                <mutableString key="text">The basic rules of the game that apply to all variants of checkers:
+
+All checkers participating in the game are exposed before the start of the game on the board. Further, they move along the fields of the board and can be removed from it in the event of a fight with an opponent's checker.
+It is imperative to take a checker that is under attack. Exception: "Siberian Checkers".
+There are only two types of checkers: simple and kings. At the beginning of the game, all checkers are simple. A simple checker can turn into a king if it reaches the last opposite horizontal row of the board (lady square).
+Simple checkers only move forward to the next square. Ladies can walk back and forth</mutableString>
+                                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="18"/>
+                                                <color key="textColor" red="0.78909066890000001" green="0.77365149769999997" blue="0.53805182770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wow1" translatesAutoresizingMaskIntoConstraints="NO" id="HQX-rl-TWf">
+                                                <rect key="frame" x="50" y="1119" width="313" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="zkp-Fb-pcj"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0L-JA-k1t">
+                                                <rect key="frame" x="50" y="1255" width="313" height="72"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="dxS-HJ-RDK"/>
+                                                </constraints>
+                                                <string key="text">Checkers belongs to the category of so-called checker-type games, which includes a wide variety of board games for two to four players, which are played on a lined board with equivalent chips.</string>
+                                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
+                                                <color key="textColor" red="0.78909066890000001" green="0.77365149769999997" blue="0.53805182770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have a good game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wK6-fd-fR4">
+                                                <rect key="frame" x="50" y="1335" width="313" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="31" id="JbU-42-geM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="21"/>
+                                                <color key="textColor" red="0.78909066890000001" green="0.77365149769999997" blue="0.53805182770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wow1" translatesAutoresizingMaskIntoConstraints="NO" id="mRW-6F-xWJ">
+                                                <rect key="frame" x="50" y="549" width="313" height="111"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="111" id="q8i-EZ-tjP"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3E-YF-PIy">
+                                                <rect key="frame" x="50" y="28" width="313" height="162"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WorldOfPng" translatesAutoresizingMaskIntoConstraints="NO" id="ueG-6A-TOR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="313" height="162"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZf-Y6-Njh">
+                                                        <rect key="frame" x="55" y="61" width="203" height="41"/>
+                                                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="40"/>
+                                                        <color key="textColor" red="0.78909066890000001" green="0.77365149769999997" blue="0.53805182770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="ueG-6A-TOR" firstAttribute="top" secondItem="U3E-YF-PIy" secondAttribute="top" id="0WS-vR-qNv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ueG-6A-TOR" secondAttribute="trailing" id="2cO-Yg-I9U"/>
+                                                    <constraint firstAttribute="width" constant="313" id="T38-b8-Npx"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ueG-6A-TOR" secondAttribute="bottom" id="aeG-CT-Zp2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xZf-Y6-Njh" secondAttribute="trailing" constant="55" id="b67-8c-OO4"/>
+                                                    <constraint firstItem="xZf-Y6-Njh" firstAttribute="leading" secondItem="U3E-YF-PIy" secondAttribute="leading" constant="55" id="daS-fi-GHA"/>
+                                                    <constraint firstAttribute="height" constant="162" id="dmV-bU-Poy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xZf-Y6-Njh" secondAttribute="bottom" constant="60" id="rXw-wN-mNm"/>
+                                                    <constraint firstItem="ueG-6A-TOR" firstAttribute="leading" secondItem="U3E-YF-PIy" secondAttribute="leading" id="s1o-gd-hOX"/>
+                                                    <constraint firstItem="xZf-Y6-Njh" firstAttribute="top" secondItem="U3E-YF-PIy" secondAttribute="top" constant="61" id="vzu-KQ-wPh"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1512" id="2pJ-jM-T84"/>
+                                            <constraint firstAttribute="trailing" secondItem="U3E-YF-PIy" secondAttribute="trailing" constant="51" id="3sK-lj-cuc"/>
+                                            <constraint firstItem="W42-Ua-38Z" firstAttribute="leading" secondItem="U3E-YF-PIy" secondAttribute="leading" id="7Nb-3t-bNz"/>
+                                            <constraint firstItem="HQX-rl-TWf" firstAttribute="trailing" secondItem="eu7-Ug-176" secondAttribute="trailing" id="Ba0-Tp-g9a"/>
+                                            <constraint firstItem="mRW-6F-xWJ" firstAttribute="top" secondItem="W42-Ua-38Z" secondAttribute="bottom" constant="8" symbolic="YES" id="G5E-6L-6O3"/>
+                                            <constraint firstItem="H0L-JA-k1t" firstAttribute="trailing" secondItem="HQX-rl-TWf" secondAttribute="trailing" id="Hgh-qZ-QtN"/>
+                                            <constraint firstAttribute="width" constant="414" id="Ida-zJ-PsV"/>
+                                            <constraint firstItem="W42-Ua-38Z" firstAttribute="trailing" secondItem="U3E-YF-PIy" secondAttribute="trailing" id="MeF-OO-OpN"/>
+                                            <constraint firstItem="H0L-JA-k1t" firstAttribute="top" secondItem="HQX-rl-TWf" secondAttribute="bottom" constant="8" id="PML-ko-ymO"/>
+                                            <constraint firstItem="mRW-6F-xWJ" firstAttribute="leading" secondItem="W42-Ua-38Z" secondAttribute="leading" id="PZn-i4-SAR"/>
+                                            <constraint firstItem="HQX-rl-TWf" firstAttribute="leading" secondItem="eu7-Ug-176" secondAttribute="leading" id="cif-5I-Ybg"/>
+                                            <constraint firstItem="wK6-fd-fR4" firstAttribute="top" secondItem="H0L-JA-k1t" secondAttribute="bottom" constant="8" id="h7U-pz-sGM"/>
+                                            <constraint firstItem="eu7-Ug-176" firstAttribute="trailing" secondItem="mRW-6F-xWJ" secondAttribute="trailing" id="hBJ-Vk-CfN"/>
+                                            <constraint firstItem="wK6-fd-fR4" firstAttribute="leading" secondItem="H0L-JA-k1t" secondAttribute="leading" id="nbW-2N-JOo"/>
+                                            <constraint firstItem="H0L-JA-k1t" firstAttribute="leading" secondItem="HQX-rl-TWf" secondAttribute="leading" id="pCB-PC-7VE"/>
+                                            <constraint firstItem="eu7-Ug-176" firstAttribute="top" secondItem="mRW-6F-xWJ" secondAttribute="bottom" constant="8" id="q3q-k8-y4t"/>
+                                            <constraint firstItem="eu7-Ug-176" firstAttribute="leading" secondItem="mRW-6F-xWJ" secondAttribute="leading" id="ra3-PJ-SRk"/>
+                                            <constraint firstItem="wK6-fd-fR4" firstAttribute="trailing" secondItem="H0L-JA-k1t" secondAttribute="trailing" id="rsX-xq-f3I"/>
+                                            <constraint firstItem="U3E-YF-PIy" firstAttribute="top" secondItem="Y8X-tN-O5N" secondAttribute="top" constant="28" id="u67-8r-bZC"/>
+                                            <constraint firstItem="HQX-rl-TWf" firstAttribute="top" secondItem="eu7-Ug-176" secondAttribute="bottom" constant="8" id="v0m-E9-azv"/>
+                                            <constraint firstItem="mRW-6F-xWJ" firstAttribute="trailing" secondItem="W42-Ua-38Z" secondAttribute="trailing" id="vmE-9T-OIp"/>
+                                            <constraint firstItem="W42-Ua-38Z" firstAttribute="top" secondItem="U3E-YF-PIy" secondAttribute="bottom" constant="25" id="vut-fC-d61"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Y8X-tN-O5N" secondAttribute="trailing" id="Qfx-7k-dOv"/>
+                                    <constraint firstItem="Y8X-tN-O5N" firstAttribute="top" secondItem="MUH-d5-74k" secondAttribute="top" id="QvD-bQ-7vB"/>
+                                    <constraint firstItem="Y8X-tN-O5N" firstAttribute="leading" secondItem="MUH-d5-74k" secondAttribute="leading" id="gKe-G0-lio"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y8X-tN-O5N" secondAttribute="bottom" id="kzY-jn-Sf5"/>
+                                    <constraint firstAttribute="bottom" secondItem="wK6-fd-fR4" secondAttribute="bottom" constant="146" id="mwL-iJ-v9f"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MUH-d5-74k" firstAttribute="top" secondItem="VCV-pf-a7W" secondAttribute="bottom" id="4Dg-9V-zb1"/>
+                            <constraint firstItem="rvR-7I-3iY" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="6nZ-Jg-dUk"/>
+                            <constraint firstItem="MUH-d5-74k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="73K-le-sfh"/>
+                            <constraint firstAttribute="bottom" secondItem="MUH-d5-74k" secondAttribute="bottom" id="94J-G9-Y0m"/>
+                            <constraint firstAttribute="bottom" secondItem="rvR-7I-3iY" secondAttribute="bottom" id="DgH-f2-V5h"/>
+                            <constraint firstItem="rvR-7I-3iY" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="E3a-Ds-LYT"/>
+                            <constraint firstItem="VCV-pf-a7W" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Etn-DJ-jQm"/>
+                            <constraint firstItem="rvR-7I-3iY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ofl-2N-kGC"/>
+                            <constraint firstItem="VCV-pf-a7W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Xnj-Ip-OKw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rvR-7I-3iY" secondAttribute="trailing" id="lpm-Rf-Ij1"/>
+                            <constraint firstItem="VCV-pf-a7W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sqd-o5-8mk"/>
+                            <constraint firstItem="MUH-d5-74k" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="w2K-83-yaT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButtonOutlet" destination="7Ry-q5-5oO" id="tKp-xE-YnM"/>
+                        <outlet property="buttonView" destination="Mqa-eV-0Bj" id="viK-yw-A7W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="75"/>
+            <point key="canvasLocation" x="56.521739130434788" y="75"/>
         </scene>
     </scenes>
     <resources>
+        <image name="AbautArtas" width="512" height="373.5"/>
+        <image name="WorldOfPng" width="400" height="245"/>
+        <image name="wow1" width="1000" height="563"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
