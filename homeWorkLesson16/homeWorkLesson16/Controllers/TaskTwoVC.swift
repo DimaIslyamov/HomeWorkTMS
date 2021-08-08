@@ -39,7 +39,7 @@ class TaskTwoVC: UIViewController {
     
     
     @IBAction func goToTaskTreeButton(_ sender: UIButton) {
-        
+        navigationController?.pushViewController(getTaskViewController(from: "TaskTreeVC"), animated: true)
     }
     
     @IBAction func backButton(_ sender: UIButton) {
@@ -48,16 +48,24 @@ class TaskTwoVC: UIViewController {
 
 }
 
+
+
+
+// MARK: - Extension
+
+
 extension TaskTwoVC: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayOfColors.count
     }
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTwoTableViewCell") as? TaskTwoTableViewCell else {
             return UITableViewCell()
         }
-        
         cell.setColorAndName(value: arrayOfColors[indexPath.row])
         
         return cell
@@ -65,6 +73,8 @@ extension TaskTwoVC: UITableViewDataSource {
     
     
 }
+
+
 
 extension TaskTwoVC: UITableViewDelegate {
     

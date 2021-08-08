@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func goToTaskTwoButton(_ sender: UIButton) {
-        navigationController?.pushViewController(getTaskTwoViewController(from: "TaskTwoVC"), animated: true)
+        navigationController?.pushViewController(getTaskViewController(from: "TaskTwoVC"), animated: true)
     }
     
 }
