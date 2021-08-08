@@ -19,7 +19,11 @@ class ViewController: UIViewController {
         tableView.delegate = self
     }
     
-   
+    
+    @IBAction func goToTaskTwoButton(_ sender: UIButton) {
+        navigationController?.pushViewController(getTaskTwoViewController(from: "TaskTwoVC"), animated: true)
+    }
+    
 }
 
 
