@@ -14,9 +14,6 @@ class RootViewController: UIViewController {
     let settingsButton = UIButton()
     let aboutButton = UIButton()
     
-    var timerCount: Int = 0
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
