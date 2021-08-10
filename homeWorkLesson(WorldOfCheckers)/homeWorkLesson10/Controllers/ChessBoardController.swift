@@ -220,12 +220,14 @@ class ChessBoardController: UIViewController {
         }
     }
     
-    
+    // "You really want to leave?"
+    // "If you exit, the game will be over."
+
     
     // MARK: - @IBACTION
     
     @IBAction func backButtonAction(_ sender: UIButton) {
-        alert()
+        presentAlertController(with: "You really want to leave?", massage: "If you exit, the game will be over.", preferredStyle: .alert)
     }
     
     

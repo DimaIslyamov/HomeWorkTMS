@@ -21,7 +21,7 @@
 		534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D35269D80F200052236 /* ChessBoardController.swift */; };
 		537B185B26AC2AEB0026D73C /* Score.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185A26AC2AEB0026D73C /* Score.storyboard */; };
 		537B185D26AC2AF40026D73C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185C26AC2AF40026D73C /* Settings.storyboard */; };
-		537EBD4126A784FE00454D24 /* bad code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537EBD4026A784FE00454D24 /* bad code.swift */; };
+		538EA4C526C31722001D13B5 /* UIView+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */; };
 		53F8A5FE26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8A5FD26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift */; };
 		53F8A60026B9ED7E00166BD2 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F8A5FF26B9ED7E00166BD2 /* About.storyboard */; };
 		53F8A60226B9EDAF00166BD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */; };
@@ -44,7 +44,7 @@
 		534D2D35269D80F200052236 /* ChessBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoardController.swift; sourceTree = "<group>"; };
 		537B185A26AC2AEB0026D73C /* Score.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Score.storyboard; sourceTree = "<group>"; };
 		537B185C26AC2AF40026D73C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		537EBD4026A784FE00454D24 /* bad code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "bad code.swift"; sourceTree = "<group>"; };
+		538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CoreKit.swift"; sourceTree = "<group>"; };
 		53F8A5FD26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChessBoardController+CoreKit.swift"; sourceTree = "<group>"; };
 		53F8A5FF26B9ED7E00166BD2 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +74,7 @@
 			children = (
 				5333EB1426A9E52B00B7411D /* RootVC+CoreKit.swift */,
 				53F8A5FD26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift */,
+				538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -138,7 +139,6 @@
 				5333EB0B26A8983A00B7411D /* ScoreViewController.swift */,
 				5333EB0D26A8984C00B7411D /* SettingsViewController.swift */,
 				53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */,
-				537EBD4026A784FE00454D24 /* bad code.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,8 +222,8 @@
 				534D2D1D269D757E00052236 /* SceneDelegate.swift in Sources */,
 				5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */,
 				5333EB1526A9E52B00B7411D /* RootVC+CoreKit.swift in Sources */,
+				538EA4C526C31722001D13B5 /* UIView+CoreKit.swift in Sources */,
 				534D2D32269D760500052236 /* RootViewController.swift in Sources */,
-				537EBD4126A784FE00454D24 /* bad code.swift in Sources */,
 				534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */,
 				53F8A5FE26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift in Sources */,
 				53F8A60226B9EDAF00166BD2 /* AboutViewController.swift in Sources */,

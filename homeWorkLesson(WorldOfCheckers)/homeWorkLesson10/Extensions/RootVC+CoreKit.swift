@@ -10,28 +10,9 @@ import UIKit
 
 extension RootViewController {
     
-    // доска находится в отдельном сториборде
-    func getChessBoardVC(from id: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: "ChessBoard", bundle: nil)
-        let currentVC = storyboard.instantiateViewController(withIdentifier: id)
-        return currentVC
-    }
-    
-    func getScoreViewController(from id: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: "Score", bundle: nil)
-        let currentVC = storyboard.instantiateViewController(withIdentifier: id)
-        return currentVC
-    }
-    
-    func getSettingsViewController(from id: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: "Settings", bundle: nil)
-        let currentVC = storyboard.instantiateViewController(withIdentifier: id)
-        return currentVC
-    }
-    
-    func getAboutViewController(from id: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: "About", bundle: nil)
-        let currentVC = storyboard.instantiateViewController(withIdentifier: id)
+    func getViewController(from id: String) -> UIViewController? {
+        let storyboard = UIStoryboard(name: id, bundle: nil)
+        guard let currentVC = storyboard.instantiateInitialViewController() else { return nil }
         return currentVC
     }
     
