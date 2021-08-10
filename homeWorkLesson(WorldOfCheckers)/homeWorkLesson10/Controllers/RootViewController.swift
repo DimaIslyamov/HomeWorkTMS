@@ -9,17 +9,16 @@ import UIKit
 
 class RootViewController: UIViewController {
     
-    // background ImageView создал в интерфейсБилдере (во всех контроллерах).
-    
     let getStartedButton = UIButton()
     let scoreButton = UIButton()
     let settingsButton = UIButton()
     let aboutButton = UIButton()
     
+    var timerCount: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Main menu"
         
         view.addSubview(getStartedButton)
         view.addSubview(scoreButton)
@@ -34,8 +33,22 @@ class RootViewController: UIViewController {
     
     @objc func startTheGameTapped(_ sender: UIButton) {
         guard let vc = getViewController(from: "ChessBoard") else { return }
-        self.navigationController?.pushViewController(vc, animated: true)
+        presentAlertController(with: nil,
+                               massage: "Start a nawe Game, or continue?",
+                               actions: UIAlertAction(title: "Continue",
+                                                      style: .default,
+                                                      handler: { _ in
+                                                        self.navigationController?.pushViewController(vc, animated: true)
+                                                      }),
+                               
+                               UIAlertAction(title: "New Game",
+                                             style: .default,
+                                             handler: { _ in
+                                                UserDefaults.standard.removeObject(forKey: "timerT")
+                                                self.navigationController?.pushViewController(vc, animated: true)
+                                             }))
     }
+    
     
     @objc func scoreTapped(_ sender: UIButton) {
         guard let vc = getViewController(from: "Score") else { return }

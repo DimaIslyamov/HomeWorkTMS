@@ -37,6 +37,9 @@ class ChessBoardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let timerT = UserDefaults.standard.integer(forKey: "timerT")
+        timerCount = timerT
+        
         view.addSubview(timerLable)
         view.addSubview(chessboard)
         createChessboard()
@@ -47,13 +50,10 @@ class ChessBoardController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        
         
         timer?.invalidate()
         timer = nil
@@ -220,14 +220,18 @@ class ChessBoardController: UIViewController {
         }
     }
     
-    // "You really want to leave?"
-    // "If you exit, the game will be over."
+    
 
     
     // MARK: - @IBACTION
     
     @IBAction func backButtonAction(_ sender: UIButton) {
-        presentAlertController(with: "You really want to leave?", massage: "If you exit, the game will be over.", preferredStyle: .alert)
+        presentAlertController(with: nil,
+                               massage: "Seve the game?",
+                               actions: UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            UserDefaults.standard.setValue(self.timerCount, forKey: "timerT")
+            self.navigationController?.popViewController(animated: true)
+        }))
     }
     
     
