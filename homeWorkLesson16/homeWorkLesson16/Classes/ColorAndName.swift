@@ -8,6 +8,7 @@
 import UIKit
 
 class ColorAndName {
+    
     let color: UIColor
     let name: String
     
@@ -15,4 +16,5 @@ class ColorAndName {
         self.color = color
         self.name = name
     }
+    
 }

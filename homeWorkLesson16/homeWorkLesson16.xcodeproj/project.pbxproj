@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53449E4726C1D8F8008F0FC3 /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53449E4626C1D8F8008F0FC3 /* Students.swift */; };
 		53BB81A126C0547C0015F9A4 /* TaskOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB81A026C0547C0015F9A4 /* TaskOneTableViewCell.swift */; };
 		53BB81A326C0556B0015F9A4 /* ViewController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB81A226C0556B0015F9A4 /* ViewController+CoreKit.swift */; };
-		53BB81A526C059E40015F9A4 /* TaskTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB81A426C059E40015F9A4 /* TaskTwoVC.swift */; };
-		53BB81A726C059F40015F9A4 /* TaskTreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB81A626C059F40015F9A4 /* TaskTreeVC.swift */; };
+		53BB81A526C059E40015F9A4 /* RGBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB81A426C059E40015F9A4 /* RGBViewController.swift */; };
+		53BB81A726C059F40015F9A4 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB81A626C059F40015F9A4 /* StudentViewController.swift */; };
 		53BB81B226C076480015F9A4 /* ColorAndName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB81B126C076480015F9A4 /* ColorAndName.swift */; };
 		53BB81B426C07A930015F9A4 /* TaskTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB81B326C07A930015F9A4 /* TaskTwoTableViewCell.swift */; };
 		53BB81B726C086880015F9A4 /* TaskTreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB81B526C086880015F9A4 /* TaskTreeTableViewCell.swift */; };
@@ -24,10 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53449E4626C1D8F8008F0FC3 /* Students.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
 		53BB81A026C0547C0015F9A4 /* TaskOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOneTableViewCell.swift; sourceTree = "<group>"; };
 		53BB81A226C0556B0015F9A4 /* ViewController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CoreKit.swift"; sourceTree = "<group>"; };
-		53BB81A426C059E40015F9A4 /* TaskTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTwoVC.swift; sourceTree = "<group>"; };
-		53BB81A626C059F40015F9A4 /* TaskTreeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTreeVC.swift; sourceTree = "<group>"; };
+		53BB81A426C059E40015F9A4 /* RGBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBViewController.swift; sourceTree = "<group>"; };
+		53BB81A626C059F40015F9A4 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		53BB81B126C076480015F9A4 /* ColorAndName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAndName.swift; sourceTree = "<group>"; };
 		53BB81B326C07A930015F9A4 /* TaskTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTwoTableViewCell.swift; sourceTree = "<group>"; };
 		53BB81B526C086880015F9A4 /* TaskTreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTreeTableViewCell.swift; sourceTree = "<group>"; };
@@ -53,31 +55,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		53BB819F26C054430015F9A4 /* TableViewsCells */ = {
+		53BB819F26C054430015F9A4 /* RGBTableViewsCells */ = {
 			isa = PBXGroup;
 			children = (
 				53BB81A026C0547C0015F9A4 /* TaskOneTableViewCell.swift */,
 				53BB81B326C07A930015F9A4 /* TaskTwoTableViewCell.swift */,
-				53BB81B926C0868D0015F9A4 /* TaskTreeTableViewCell */,
 			);
-			path = TableViewsCells;
+			path = RGBTableViewsCells;
 			sourceTree = "<group>";
 		};
 		53BB81B026C076040015F9A4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				53BB81B126C076480015F9A4 /* ColorAndName.swift */,
+				53449E4626C1D8F8008F0FC3 /* Students.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		53BB81B926C0868D0015F9A4 /* TaskTreeTableViewCell */ = {
+		53BB81B926C0868D0015F9A4 /* StudentTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				53BB81B526C086880015F9A4 /* TaskTreeTableViewCell.swift */,
 				53BB81B626C086880015F9A4 /* TaskTreeTableViewCell.xib */,
 			);
-			path = TaskTreeTableViewCell;
+			path = StudentTableViewCell;
 			sourceTree = "<group>";
 		};
 		53D56FA926BFD31100D1A1DC = {
@@ -102,7 +104,8 @@
 				53D56FC926BFD35B00D1A1DC /* SuportingFiles */,
 				53D56FCC26BFD39700D1A1DC /* Extensions */,
 				53BB81B026C076040015F9A4 /* Classes */,
-				53BB819F26C054430015F9A4 /* TableViewsCells */,
+				53BB819F26C054430015F9A4 /* RGBTableViewsCells */,
+				53BB81B926C0868D0015F9A4 /* StudentTableViewCell */,
 				53D56FCA26BFD36B00D1A1DC /* Controllers */,
 				53D56FCB26BFD37B00D1A1DC /* storyboardViews */,
 			);
@@ -124,8 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				53D56FB926BFD31100D1A1DC /* ViewController.swift */,
-				53BB81A426C059E40015F9A4 /* TaskTwoVC.swift */,
-				53BB81A626C059F40015F9A4 /* TaskTreeVC.swift */,
+				53BB81A426C059E40015F9A4 /* RGBViewController.swift */,
+				53BB81A626C059F40015F9A4 /* StudentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -225,9 +228,10 @@
 				53BB81B726C086880015F9A4 /* TaskTreeTableViewCell.swift in Sources */,
 				53D56FB626BFD31100D1A1DC /* AppDelegate.swift in Sources */,
 				53BB81A126C0547C0015F9A4 /* TaskOneTableViewCell.swift in Sources */,
-				53BB81A526C059E40015F9A4 /* TaskTwoVC.swift in Sources */,
+				53BB81A526C059E40015F9A4 /* RGBViewController.swift in Sources */,
+				53449E4726C1D8F8008F0FC3 /* Students.swift in Sources */,
 				53D56FB826BFD31100D1A1DC /* SceneDelegate.swift in Sources */,
-				53BB81A726C059F40015F9A4 /* TaskTreeVC.swift in Sources */,
+				53BB81A726C059F40015F9A4 /* StudentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

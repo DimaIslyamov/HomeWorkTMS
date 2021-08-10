@@ -11,7 +11,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,7 +20,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func goToTaskTwoButton(_ sender: UIButton) {
-        navigationController?.pushViewController(getTaskViewController(from: "TaskTwoVC"), animated: true)
+        navigationController?.pushViewController(getTaskViewController(from: "RGBViewController"), animated: true)
     }
     
 }
@@ -36,10 +35,13 @@ extension ViewController: UITableViewDataSource {
         return 200
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TaskOneTableViewCell") as? TaskOneTableViewCell else {
             return UITableViewCell()
         }
+        
         for _ in 0..<200 {
             let green = Int.random(in: 0...255)
             let red = Int.random(in: 0...255)
@@ -47,6 +49,7 @@ extension ViewController: UITableViewDataSource {
             cell.lable.textColor = UIColor(red: CGFloat(red) / 255, green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: 1)
             cell.lable.text = "RGB: (\(red), \(green), \(blue))"
         }
+        
         return cell
     }
     

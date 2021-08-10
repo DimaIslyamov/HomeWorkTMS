@@ -9,15 +9,21 @@ import UIKit
 
 class TaskTreeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var studentNameLable: UILabel!
+    @IBOutlet weak var avgMarkLable: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func setLabels(name: String, avgMark: Double) {
+        studentNameLable.text = "\(name)"
+        avgMarkLable.text = String(format: "%.2f", avgMark)
+        studentNameLable.textColor = avgMark < 3.0 ? UIColor.red : UIColor.black
     }
     
 }
