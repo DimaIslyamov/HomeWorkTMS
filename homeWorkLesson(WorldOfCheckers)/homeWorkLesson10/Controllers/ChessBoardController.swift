@@ -43,8 +43,10 @@ class ChessBoardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let timerT = UserDefaults.standard.integer(forKey: KeysUserDefaults.timerT.rawValue)
-        timerCount = timerT
+//        let timerT = UserDefaults.standard.integer(forKey: KeysUserDefaults.timerT.rawValue)
+//        timerCount = timerT
+        
+//        getTimerAndCheckers()
         
         //        timerCount = saveTimerCheckers.timer
         
@@ -53,6 +55,8 @@ class ChessBoardController: UIViewController {
         createChessboard()
         createLableAndTimer()
         backButtonFuncCostamize()
+        
+        getTimerAndCheckers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,7 +96,10 @@ class ChessBoardController: UIViewController {
                 column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
                 chessboard.addSubview(column)
                 
-                
+                let manager = FileManager.default
+                if manager.fileExists(atPath: documentDirectory.appendingPathComponent("timer_chekers").path) {
+                    saveChecerss()
+                }
                 
                 
                 guard j < 3 || j > 4, column.backgroundColor == .black else { continue }
@@ -295,15 +302,16 @@ class ChessBoardController: UIViewController {
                                actions: UIAlertAction(title: "Yes",
                                                       style: .default,
                                                       handler: { _ in
-                                                        UserDefaults.standard.setValue(self.timerCount,
-                                                                                       forKey: KeysUserDefaults.timerT.rawValue)
+                                                        self.saveTimerAndCheckers()
+//                                                        UserDefaults.standard.setValue(self.timerCount,
+//                                                                                       forKey: KeysUserDefaults.timerT.rawValue)
                                                         self.navigationController?.popViewController(animated: true)
                                                         
                                                         
                                                       }), UIAlertAction(title: "No",
                                                                         style: .default,
                                                                         handler: { _ in
-                                                        UserDefaults.standard.removeObject(forKey: KeysUserDefaults.timerT.rawValue)
+//                                                        UserDefaults.standard.removeObject(forKey: KeysUserDefaults.timerT.rawValue)
                                                         self.navigationController?.popViewController(animated: true)
                                                                         }))
     }

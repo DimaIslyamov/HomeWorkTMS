@@ -20,6 +20,8 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getTimerAndCheckers()
+        
         view.addSubview(getStartedButton)
         view.addSubview(scoreButton)
         view.addSubview(settingsButton)
@@ -50,6 +52,7 @@ class RootViewController: UIViewController {
                                actions: UIAlertAction(title: "Continue",
                                                       style: .default,
                                                       handler: { _ in
+                                                        self.getTimerAndCheckers()
                                                         self.navigationController?.pushViewController(vc, animated: true)
                                                       }),
                                
