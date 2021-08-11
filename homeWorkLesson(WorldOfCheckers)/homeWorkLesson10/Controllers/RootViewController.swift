@@ -41,7 +41,7 @@ class RootViewController: UIViewController {
                                UIAlertAction(title: "New Game",
                                              style: .default,
                                              handler: { _ in
-                                                UserDefaults.standard.removeObject(forKey: "timerT")
+                                                UserDefaults.standard.removeObject(forKey: KeysUserDefaults.timerT.rawValue)
                                                 self.navigationController?.pushViewController(vc, animated: true)
                                              }))
     }

@@ -37,7 +37,7 @@ class ChessBoardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let timerT = UserDefaults.standard.integer(forKey: "timerT")
+        let timerT = UserDefaults.standard.integer(forKey: KeysUserDefaults.timerT.rawValue)
         timerCount = timerT
         
         view.addSubview(timerLable)
@@ -148,6 +148,21 @@ class ChessBoardController: UIViewController {
     }
     
     
+    // MARK: - Доделать 
+    
+    
+    func saveDataToUserDefaults() {
+        
+        
+    }
+    
+    
+    func applyDataFromUserDefaults() {
+        
+        
+    }
+    
+    
     // MARK: - Objc Методы
     
     
@@ -229,7 +244,7 @@ class ChessBoardController: UIViewController {
         presentAlertController(with: nil,
                                massage: "Seve the game?",
                                actions: UIAlertAction(title: "Yes", style: .default, handler: { _ in
-            UserDefaults.standard.setValue(self.timerCount, forKey: "timerT")
+                                UserDefaults.standard.setValue(self.timerCount, forKey: KeysUserDefaults.timerT.rawValue)
             self.navigationController?.popViewController(animated: true)
         }))
     }

@@ -22,6 +22,7 @@
 		537B185B26AC2AEB0026D73C /* Score.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185A26AC2AEB0026D73C /* Score.storyboard */; };
 		537B185D26AC2AF40026D73C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185C26AC2AF40026D73C /* Settings.storyboard */; };
 		538EA4C526C31722001D13B5 /* UIView+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */; };
+		538EA4C826C34583001D13B5 /* KeysUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538EA4C726C34583001D13B5 /* KeysUserDefaults.swift */; };
 		53F8A5FE26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8A5FD26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift */; };
 		53F8A60026B9ED7E00166BD2 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F8A5FF26B9ED7E00166BD2 /* About.storyboard */; };
 		53F8A60226B9EDAF00166BD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */; };
@@ -45,6 +46,7 @@
 		537B185A26AC2AEB0026D73C /* Score.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Score.storyboard; sourceTree = "<group>"; };
 		537B185C26AC2AF40026D73C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CoreKit.swift"; sourceTree = "<group>"; };
+		538EA4C726C34583001D13B5 /* KeysUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysUserDefaults.swift; sourceTree = "<group>"; };
 		53F8A5FD26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChessBoardController+CoreKit.swift"; sourceTree = "<group>"; };
 		53F8A5FF26B9ED7E00166BD2 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				53133FAD26B171900042379D /* Fonts */,
+				538EA4C626C34554001D13B5 /* Models */,
 				5333EB1326A9E4F600B7411D /* Extensions */,
 				534D2D30269D75C400052236 /* Controllers */,
 				534D2D2F269D75B700052236 /* Views */,
@@ -141,6 +144,14 @@
 				53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		538EA4C626C34554001D13B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				538EA4C726C34583001D13B5 /* KeysUserDefaults.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +239,7 @@
 				53F8A5FE26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift in Sources */,
 				53F8A60226B9EDAF00166BD2 /* AboutViewController.swift in Sources */,
 				5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */,
+				538EA4C826C34583001D13B5 /* KeysUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
