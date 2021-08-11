@@ -24,6 +24,11 @@ class ChessBoardController: UIViewController {
     
     // MARK: - Переменные
     
+    //    let userDefaults = KeysUserDefaults(rawValue: KeysUserDefaults.timerT.rawValue)
+    var saveCheckerss: [Any] = []
+    
+    var saveTimerCheckers: SaveTimerAndCheckers = SaveTimerAndCheckers()
+    
     var chessboard = UIImageView()
     var timerCount: Int = 0
     var timer: Timer?
@@ -39,6 +44,8 @@ class ChessBoardController: UIViewController {
         
         let timerT = UserDefaults.standard.integer(forKey: KeysUserDefaults.timerT.rawValue)
         timerCount = timerT
+        
+        //        timerCount = saveTimerCheckers.timer
         
         view.addSubview(timerLable)
         view.addSubview(chessboard)
@@ -84,6 +91,8 @@ class ChessBoardController: UIViewController {
                 column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
                 chessboard.addSubview(column)
                 
+                saveChecerss()
+                
                 guard j < 3 || j > 4, column.backgroundColor == .black else { continue }
                 
                 let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
@@ -121,7 +130,7 @@ class ChessBoardController: UIViewController {
         timer = Timer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
         
         //  создавал таймер который отсчитывт определенное время
-//        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+        //        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
         
         RunLoop.main.add(timer!, forMode: .common)
     }
@@ -148,7 +157,23 @@ class ChessBoardController: UIViewController {
     }
     
     
-    // MARK: - Доделать 
+    
+    
+    
+    // MARK: - Доделать
+    
+    func saveChecerss() {
+        chessboard.subviews.forEach { cell in
+            if !cell.subviews.isEmpty {
+                let saveChecers = SaveTimerAndCheckers()
+                saveChecers.checkerTag = cell.tag
+                cell.subviews.forEach { cher in
+                    print("\(String(describing: saveChecers.checkerTag))")
+                    saveCheckerss.append(saveChecers)
+                }
+            }
+        }
+    }
     
     
     func saveDataToUserDefaults() {
@@ -167,14 +192,12 @@ class ChessBoardController: UIViewController {
     
     
     @objc func timerFunc() {
-        timerLable.attributedText = NSAttributedString(string: "Time in Game \(timeFormatter(timerCount))", attributes: [.foregroundColor : UIColor.white,
-            .font : UIFont(name: "StyleScript-Regular", size: 35) ?? UIFont.systemFont(ofSize: 35)])
+        timerLable.attributedText = NSAttributedString(string: "Time in Game \(timeFormatter(timerCount))", attributes: [.foregroundColor : UIColor.white, .font : UIFont(name: "StyleScript-Regular", size: 35) ?? UIFont.systemFont(ofSize: 35)])
         
         timerCount += 1
-        
-//        if timerCount != 0 {
-//            timerCount -= 1
-//        }
+        //        if timerCount != 0 {
+        //            timerCount -= 1
+        //        }
     }
     
     
@@ -236,17 +259,33 @@ class ChessBoardController: UIViewController {
     }
     
     
-
+    /*
+     let data = try? NSKeyedArchiver.archivedData(withRootObject: self.saveTimerCheckers.timer ?? "", requiringSecureCoding: true)
+     if let data = data {
+     UserDefaults.standard.setValue(data, forKey: self.saveTimerCheckers.timer ?? "")
+     }
+     */
+    
     
     // MARK: - @IBACTION
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         presentAlertController(with: nil,
-                               massage: "Seve the game?",
-                               actions: UIAlertAction(title: "Yes", style: .default, handler: { _ in
-                                UserDefaults.standard.setValue(self.timerCount, forKey: KeysUserDefaults.timerT.rawValue)
-            self.navigationController?.popViewController(animated: true)
-        }))
+                               massage: "Save the Game?",
+                               actions: UIAlertAction(title: "Yes",
+                                                      style: .default,
+                                                      handler: { _ in
+                                                        UserDefaults.standard.setValue(self.timerCount,
+                                                                                       forKey: KeysUserDefaults.timerT.rawValue)
+                                                        self.navigationController?.popViewController(animated: true)
+                                                        
+                                                        
+                                                      }), UIAlertAction(title: "No",
+                                                                        style: .default,
+                                                                        handler: { _ in
+                                                        UserDefaults.standard.removeObject(forKey: KeysUserDefaults.timerT.rawValue)
+                                                        self.navigationController?.popViewController(animated: true)
+                                                                        }))
     }
     
     

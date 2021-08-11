@@ -9,5 +9,5 @@ import Foundation
 
 enum KeysUserDefaults: String {
     case timerT = "timerT_"
-    case cheakers = "cheakers_"
+    
 }
