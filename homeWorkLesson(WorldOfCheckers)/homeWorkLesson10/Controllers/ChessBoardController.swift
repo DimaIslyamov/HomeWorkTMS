@@ -27,6 +27,7 @@ class ChessBoardController: UIViewController {
     //    let userDefaults = KeysUserDefaults(rawValue: KeysUserDefaults.timerT.rawValue)
     var saveCheckerss: [Any] = []
     
+    let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     var saveTimerCheckers: SaveTimerAndCheckers = SaveTimerAndCheckers()
     
     var chessboard = UIImageView()
@@ -91,7 +92,8 @@ class ChessBoardController: UIViewController {
                 column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
                 chessboard.addSubview(column)
                 
-                saveChecerss()
+                
+                
                 
                 guard j < 3 || j > 4, column.backgroundColor == .black else { continue }
                 
@@ -175,6 +177,24 @@ class ChessBoardController: UIViewController {
         }
     }
     
+    
+    func saveTimerAndCheckers() {
+        let data = try? NSKeyedArchiver.archivedData(withRootObject: saveTimerCheckers, requiringSecureCoding: true)
+        let fileURL = documentDirectory.appendingPathComponent("timer_chekers")
+        try? data?.write(to: fileURL)
+    }
+    
+    func getTimerAndCheckers() {
+        let fileURL = documentDirectory.appendingPathComponent("timer_chekers")
+        guard let data = FileManager.default.contents(atPath: fileURL.absoluteString.replacingOccurrences(of: "file://", with: "")) else { return }
+        
+        do {
+            guard let object = try NSKeyedUnarchiver.unarchivedObject(ofClass: SaveTimerAndCheckers.self, from: data) else { return }
+            self.saveTimerCheckers = object
+        } catch(let a) {
+            print(a)
+        }
+    }
     
     func saveDataToUserDefaults() {
         

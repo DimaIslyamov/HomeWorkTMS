@@ -14,6 +14,9 @@ class RootViewController: UIViewController {
     let settingsButton = UIButton()
     let aboutButton = UIButton()
     
+    let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    var saveTimerCheckers: SaveTimerAndCheckers = SaveTimerAndCheckers()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +29,18 @@ class RootViewController: UIViewController {
         createButtonConstraint()
     }
     
+    
+    func getTimerAndCheckers() {
+        let fileURL = documentDirectory.appendingPathComponent("timer_chekers")
+        guard let data = FileManager.default.contents(atPath: fileURL.absoluteString.replacingOccurrences(of: "file://", with: "")) else { return }
+        
+        do {
+            guard let object = try NSKeyedUnarchiver.unarchivedObject(ofClass: SaveTimerAndCheckers.self, from: data) else { return }
+            self.saveTimerCheckers = object
+        } catch(let a) {
+            print(a)
+        }
+    }
     
     
     @objc func startTheGameTapped(_ sender: UIButton) {
