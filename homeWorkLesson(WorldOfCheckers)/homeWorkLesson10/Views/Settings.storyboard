@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -56,14 +57,59 @@
                                     <constraint firstItem="vJc-oO-5Ky" firstAttribute="centerY" secondItem="QMw-DD-npV" secondAttribute="centerY" id="gvP-Jh-kTt"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aci-Eh-lRd">
+                                <rect key="frame" x="20" y="634" width="374" height="228"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3G3-H8-Izn">
+                                        <rect key="frame" x="8" y="8" width="358" height="212"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qAx-Jd-TMC">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Q2K-0W-rp7">
+                                                <rect key="frame" x="0.0" y="42" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="t1W-Yh-ZH8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="228" id="1ww-d0-w9n"/>
+                                    <constraint firstAttribute="trailing" secondItem="3G3-H8-Izn" secondAttribute="trailing" constant="8" id="LDf-gz-Nx3"/>
+                                    <constraint firstAttribute="bottom" secondItem="3G3-H8-Izn" secondAttribute="bottom" constant="8" id="MY5-7K-Ut0"/>
+                                    <constraint firstItem="3G3-H8-Izn" firstAttribute="leading" secondItem="Aci-Eh-lRd" secondAttribute="leading" constant="8" id="gt6-05-oyp"/>
+                                    <constraint firstItem="3G3-H8-Izn" firstAttribute="top" secondItem="Aci-Eh-lRd" secondAttribute="top" constant="8" id="vH4-HC-oEM"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your destiny" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ep6-02-Uwt">
+                                <rect key="frame" x="20" y="587" width="374" height="39"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                <color key="textColor" red="0.78909066890000001" green="0.77365149769999997" blue="0.53805182770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.1019478068" green="0.10196910050000001" blue="0.1019431427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Aci-Eh-lRd" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="C0w-0D-XJa"/>
+                            <constraint firstItem="ep6-02-Uwt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="C8S-W7-wJl"/>
                             <constraint firstItem="QMw-DD-npV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="DxL-8h-UAK"/>
                             <constraint firstItem="QMw-DD-npV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Dzy-KV-rj1"/>
                             <constraint firstItem="wNJ-bX-sP5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KWj-0s-bQV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Aci-Eh-lRd" secondAttribute="trailing" constant="20" id="MhH-VZ-RZb"/>
+                            <constraint firstItem="Aci-Eh-lRd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Tc8-KS-zAX"/>
                             <constraint firstItem="QMw-DD-npV" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="WJG-7W-TKI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ep6-02-Uwt" secondAttribute="trailing" constant="20" id="Y6q-9b-Wud"/>
+                            <constraint firstItem="Aci-Eh-lRd" firstAttribute="top" secondItem="ep6-02-Uwt" secondAttribute="bottom" constant="8" symbolic="YES" id="dL5-AQ-Q4f"/>
                             <constraint firstItem="wNJ-bX-sP5" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="j3S-Yo-a6C"/>
                             <constraint firstItem="wNJ-bX-sP5" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="jKa-No-cgy"/>
                             <constraint firstAttribute="bottom" secondItem="wNJ-bX-sP5" secondAttribute="bottom" id="ntg-hq-6ch"/>

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class SaveTimerAndCheckers: NSObject, NSCoding {
-    var timer: String? = nil
+    var timer: Int? = nil
     var checkerTag: Int? = nil
     
     override init() {
@@ -24,7 +24,7 @@ class SaveTimerAndCheckers: NSObject, NSCoding {
     
     
     required init?(coder: NSCoder) {
-        self.timer = coder.decodeObject(forKey: "timer_") as? String
+        self.timer = coder.decodeObject(forKey: "timer_") as? Int
         self.checkerTag = coder.decodeObject(forKey: "checkersTag_") as? Int
     }
 }

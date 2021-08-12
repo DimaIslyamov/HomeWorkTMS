@@ -48,7 +48,7 @@ class ChessBoardController: UIViewController {
         
 //        getTimerAndCheckers()
         
-        //        timerCount = saveTimerCheckers.timer
+        timerCount = saveTimerCheckers.timer ?? 0
         
         view.addSubview(timerLable)
         view.addSubview(chessboard)
@@ -186,7 +186,7 @@ class ChessBoardController: UIViewController {
     
     
     func saveTimerAndCheckers() {
-        let data = try? NSKeyedArchiver.archivedData(withRootObject: saveTimerCheckers, requiringSecureCoding: true)
+        let data = try? NSKeyedArchiver.archivedData(withRootObject: saveTimerCheckers.timer ?? "", requiringSecureCoding: true)
         let fileURL = documentDirectory.appendingPathComponent("timer_chekers")
         try? data?.write(to: fileURL)
     }
