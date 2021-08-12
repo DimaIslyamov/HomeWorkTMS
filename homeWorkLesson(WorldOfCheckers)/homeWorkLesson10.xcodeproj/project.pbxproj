@@ -19,13 +19,13 @@
 		534D2D32269D760500052236 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D31269D760500052236 /* RootViewController.swift */; };
 		534D2D34269D80D600052236 /* ChessBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534D2D33269D80D600052236 /* ChessBoard.storyboard */; };
 		534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D35269D80F200052236 /* ChessBoardController.swift */; };
-		5360ECFF26C46CE400A0C0C6 /* SaveTimerAndCheckers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360ECFE26C46CE400A0C0C6 /* SaveTimerAndCheckers.swift */; };
+		5360ECFF26C46CE400A0C0C6 /* CellCheckers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360ECFE26C46CE400A0C0C6 /* CellCheckers.swift */; };
 		5360ED0326C49C0300A0C0C6 /* SettingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360ED0126C49C0300A0C0C6 /* SettingsCollectionViewCell.swift */; };
 		5360ED0426C49C0300A0C0C6 /* SettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5360ED0226C49C0300A0C0C6 /* SettingsCollectionViewCell.xib */; };
 		537B185B26AC2AEB0026D73C /* Score.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185A26AC2AEB0026D73C /* Score.storyboard */; };
 		537B185D26AC2AF40026D73C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185C26AC2AF40026D73C /* Settings.storyboard */; };
 		538EA4C526C31722001D13B5 /* UIView+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */; };
-		538EA4C826C34583001D13B5 /* KeysUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538EA4C726C34583001D13B5 /* KeysUserDefaults.swift */; };
+		538EA4C826C34583001D13B5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538EA4C726C34583001D13B5 /* Keys.swift */; };
 		53F8A5FE26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8A5FD26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift */; };
 		53F8A60026B9ED7E00166BD2 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F8A5FF26B9ED7E00166BD2 /* About.storyboard */; };
 		53F8A60226B9EDAF00166BD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */; };
@@ -46,13 +46,13 @@
 		534D2D31269D760500052236 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		534D2D33269D80D600052236 /* ChessBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChessBoard.storyboard; sourceTree = "<group>"; };
 		534D2D35269D80F200052236 /* ChessBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoardController.swift; sourceTree = "<group>"; };
-		5360ECFE26C46CE400A0C0C6 /* SaveTimerAndCheckers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTimerAndCheckers.swift; sourceTree = "<group>"; };
+		5360ECFE26C46CE400A0C0C6 /* CellCheckers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCheckers.swift; sourceTree = "<group>"; };
 		5360ED0126C49C0300A0C0C6 /* SettingsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewCell.swift; sourceTree = "<group>"; };
 		5360ED0226C49C0300A0C0C6 /* SettingsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCollectionViewCell.xib; sourceTree = "<group>"; };
 		537B185A26AC2AEB0026D73C /* Score.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Score.storyboard; sourceTree = "<group>"; };
 		537B185C26AC2AF40026D73C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CoreKit.swift"; sourceTree = "<group>"; };
-		538EA4C726C34583001D13B5 /* KeysUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysUserDefaults.swift; sourceTree = "<group>"; };
+		538EA4C726C34583001D13B5 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		53F8A5FD26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChessBoardController+CoreKit.swift"; sourceTree = "<group>"; };
 		53F8A5FF26B9ED7E00166BD2 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			children = (
 				5360ED0026C49BD300A0C0C6 /* SettingsCollectionViewCell */,
 				53133FAD26B171900042379D /* Fonts */,
-				538EA4C626C34554001D13B5 /* Models */,
+				538EA4C626C34554001D13B5 /* ModelsKeys */,
 				5333EB1326A9E4F600B7411D /* Extensions */,
 				534D2D30269D75C400052236 /* Controllers */,
 				534D2D2F269D75B700052236 /* Views */,
@@ -162,13 +162,13 @@
 			path = SettingsCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		538EA4C626C34554001D13B5 /* Models */ = {
+		538EA4C626C34554001D13B5 /* ModelsKeys */ = {
 			isa = PBXGroup;
 			children = (
-				538EA4C726C34583001D13B5 /* KeysUserDefaults.swift */,
-				5360ECFE26C46CE400A0C0C6 /* SaveTimerAndCheckers.swift */,
+				538EA4C726C34583001D13B5 /* Keys.swift */,
+				5360ECFE26C46CE400A0C0C6 /* CellCheckers.swift */,
 			);
-			path = Models;
+			path = ModelsKeys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,10 +256,10 @@
 				534D2D32269D760500052236 /* RootViewController.swift in Sources */,
 				534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */,
 				53F8A5FE26B9EA2400166BD2 /* ChessBoardController+CoreKit.swift in Sources */,
-				5360ECFF26C46CE400A0C0C6 /* SaveTimerAndCheckers.swift in Sources */,
+				5360ECFF26C46CE400A0C0C6 /* CellCheckers.swift in Sources */,
 				53F8A60226B9EDAF00166BD2 /* AboutViewController.swift in Sources */,
 				5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */,
-				538EA4C826C34583001D13B5 /* KeysUserDefaults.swift in Sources */,
+				538EA4C826C34583001D13B5 /* Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

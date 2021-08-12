@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum KeysUserDefaults: String {
+enum Keys: String {
+    case cellPosition = "cellPosition_"
+    case colorCheckerCell = "colorCheckerCell_"
     case timerT = "timerT_"
-    
 }

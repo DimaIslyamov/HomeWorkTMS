@@ -24,12 +24,13 @@ class ChessBoardController: UIViewController {
     
     // MARK: - Переменные
     
-    //    let userDefaults = KeysUserDefaults(rawValue: KeysUserDefaults.timerT.rawValue)
-    var saveCheckerss: [Any] = []
+    var cellCheckers: [CellCheckers] = []
     
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    var saveTimerCheckers: SaveTimerAndCheckers = SaveTimerAndCheckers()
+    var saveTimerCheckers: CellCheckers = CellCheckers()
     
+    var isNewGame = true
+    var checker = UIImageView()
     var chessboard = UIImageView()
     var timerCount: Int = 0
     var timer: Timer?
@@ -43,20 +44,33 @@ class ChessBoardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let timerT = UserDefaults.standard.integer(forKey: KeysUserDefaults.timerT.rawValue)
-//        timerCount = timerT
+        if isNewGame {
+            // удаление сэйф Гээйм
+            let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentDirectoryURL.appendingPathComponent("savedGame")
+            try? FileManager.default.removeItem(at: fileURL)
+            
+            // удаление сэйф таймера
+            UserDefaults.standard.removeObject(forKey: Keys.timerT.rawValue)
+            
+            createChessboard()
+        } else {
+            saveCheckerBoard()
+        }
         
-//        getTimerAndCheckers()
+        createLableAndTimer()
+//        drawTimer(screenSize: screenSize)
         
-        timerCount = saveTimerCheckers.timer ?? 0
+        timerCount = UserDefaults.standard.integer(forKey: Keys.timerT.rawValue)
+        
         
         view.addSubview(timerLable)
         view.addSubview(chessboard)
-        createChessboard()
-        createLableAndTimer()
+//        createChessboard()
+//        createLableAndTimer(screenSize: screenSize)
         backButtonFuncCostamize()
         
-        getTimerAndCheckers()
+//        getTimerAndCheckers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +87,11 @@ class ChessBoardController: UIViewController {
     
     
     // MARK: - Методы
+    
+    
+    func deleteSaveGame() {
+        
+    }
     
     func createChessboard() {
         
@@ -96,15 +115,9 @@ class ChessBoardController: UIViewController {
                 column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
                 chessboard.addSubview(column)
                 
-                let manager = FileManager.default
-                if manager.fileExists(atPath: documentDirectory.appendingPathComponent("timer_chekers").path) {
-                    saveChecerss()
-                }
-                
-                
                 guard j < 3 || j > 4, column.backgroundColor == .black else { continue }
                 
-                let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
+                checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                 checker.isUserInteractionEnabled = true
                 checker.tag = j < 3 ? 0 : 1
                 checker.image = j < 3 ? UIImage(named: "ArtasArmi") : UIImage(named: "ElidanArmi")
@@ -116,6 +129,64 @@ class ChessBoardController: UIViewController {
                 panGesture.delegate = self
                 checker.addGestureRecognizer(tapGesture)
                 checker.addGestureRecognizer(panGesture)
+            }
+        }
+        
+        chessboard.image = UIImage(named: "ice7")
+        chessboard.isUserInteractionEnabled = true
+    }
+    
+    
+    func saveCheckerBoard() {
+        
+        // констрэйнты для доски
+        chessboard.translatesAutoresizingMaskIntoConstraints = false
+        chessboard.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        chessboard.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        chessboard.widthAnchor.constraint(equalToConstant: 320).isActive = true
+        chessboard.heightAnchor.constraint(equalToConstant: 320).isActive = true
+        
+        // тени для доски
+        chessboard.layer.shadowColor = UIColor.black.cgColor
+        chessboard.layer.shadowRadius = 7
+        chessboard.layer.shadowOpacity = 0.9
+        chessboard.layer.shadowOffset = CGSize(width: 10, height: 10)
+        
+        //забираем данные из файла
+        let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentDirectoryURL.appendingPathComponent("savedGame")
+        
+        guard let data = FileManager.default.contents(atPath: fileURL.absoluteString.replacingOccurrences(of: "file://", with: "")),
+              let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [CellCheckers] else { return }
+        
+        self.cellCheckers = object
+        
+        // код мастера(сансэя)
+        for i in 0..<8 {
+            for j in 0..<8 {
+                let column = UIView(frame: CGRect(x: 40 * i, y: 40 * j, width: 40, height: 40))
+                column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
+                column.tag = ((i + j) % 2 == 0) ? 0 : 1
+                chessboard.addSubview(column)
+                
+                for cell in cellCheckers {
+                    if cell.cellPosition == column.frame.origin {
+                        guard j < 3 || j > 4, column.backgroundColor == .black else { continue }
+                        
+                        checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
+                        checker.isUserInteractionEnabled = true
+                        checker.tag = cell.colorCheckerCell ?? 0
+                        checker.image = j < 3 ? UIImage(named: "ArtasArmi") : UIImage(named: "ElidanArmi")
+                        column.addSubview(checker)
+                        
+                        let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
+                        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
+                        tapGesture.delegate = self
+                        panGesture.delegate = self
+                        checker.addGestureRecognizer(tapGesture)
+                        checker.addGestureRecognizer(panGesture)
+                    }
+                }
             }
         }
         
@@ -171,48 +242,37 @@ class ChessBoardController: UIViewController {
     
     // MARK: - Доделать
     
-    func saveChecerss() {
-        chessboard.subviews.forEach { cell in
-            if !cell.subviews.isEmpty {
-                let saveChecers = SaveTimerAndCheckers()
-                saveChecers.checkerTag = cell.tag
-                cell.subviews.forEach { cher in
-                    print("\(String(describing: saveChecers.checkerTag))")
-                    saveCheckerss.append(saveChecers)
-                }
-            }
-        }
-    }
+//    func saveChecerss() {
+//        chessboard.subviews.forEach { cell in
+//            if !cell.subviews.isEmpty {
+//                let saveChecers = CellCheckers()
+//                saveChecers.checkerTag = cell.tag
+//                cell.subviews.forEach { cher in
+//                    print("\(String(describing: saveChecers.checkerTag))")
+//                    saveCheckerss.append(saveChecers)
+//                }
+//            }
+//        }
+//    }
     
     
-    func saveTimerAndCheckers() {
-        let data = try? NSKeyedArchiver.archivedData(withRootObject: saveTimerCheckers.timer ?? "", requiringSecureCoding: true)
-        let fileURL = documentDirectory.appendingPathComponent("timer_chekers")
-        try? data?.write(to: fileURL)
-    }
-    
-    func getTimerAndCheckers() {
-        let fileURL = documentDirectory.appendingPathComponent("timer_chekers")
-        guard let data = FileManager.default.contents(atPath: fileURL.absoluteString.replacingOccurrences(of: "file://", with: "")) else { return }
-        
-        do {
-            guard let object = try NSKeyedUnarchiver.unarchivedObject(ofClass: SaveTimerAndCheckers.self, from: data) else { return }
-            self.saveTimerCheckers = object
-        } catch(let a) {
-            print(a)
-        }
-    }
-    
-    func saveDataToUserDefaults() {
-        
-        
-    }
-    
-    
-    func applyDataFromUserDefaults() {
-        
-        
-    }
+//    func saveTimerAndCheckers() {
+//        let data = try? NSKeyedArchiver.archivedData(withRootObject: saveTimerCheckers.timer ?? "", requiringSecureCoding: true)
+//        let fileURL = documentDirectory.appendingPathComponent("timer_chekers")
+//        try? data?.write(to: fileURL)
+//    }
+//
+//    func getTimerAndCheckers() {
+//        let fileURL = documentDirectory.appendingPathComponent("timer_chekers")
+//        guard let data = FileManager.default.contents(atPath: fileURL.absoluteString.replacingOccurrences(of: "file://", with: "")) else { return }
+//
+//        do {
+//            guard let object = try NSKeyedUnarchiver.unarchivedObject(ofClass: CellCheckers.self, from: data) else { return }
+//            self.saveTimerCheckers = object
+//        } catch(let a) {
+//            print(a)
+//        }
+//    }
     
     
     // MARK: - Objc Методы
@@ -302,15 +362,44 @@ class ChessBoardController: UIViewController {
                                actions: UIAlertAction(title: "Yes",
                                                       style: .default,
                                                       handler: { _ in
-                                                        self.saveTimerAndCheckers()
+                                                        
+                                                        let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                                                        let fileURL = documentDirectoryURL.appendingPathComponent("savedGame")
+                                                        
+                                                        UserDefaults.standard.setValue(self.timerCount, forKey: Keys.timerT.rawValue)
+                                                        
+                                                        self.cellCheckers.removeAll()
+                                                        
+                                                        for value in self.chessboard.subviews {
+                                                            if !value.subviews.isEmpty {
+                                                                for checker in value.subviews {
+                                                                    self.cellCheckers.append(CellCheckers(cellPosition: value.frame.origin, colorCheckerCell: checker.tag, timerT: value.hashValue)
+                                                                )}
+                                                            }
+                                                        }
+                                                        
+                                                        //записать в файл массив клеточек с шашками
+                                                        let data = try? NSKeyedArchiver.archivedData(withRootObject: self.cellCheckers, requiringSecureCoding: true)
+                                                        try? data?.write(to: fileURL)
+                                                        
+                                                        
+//                                                        self.saveTimerAndCheckers()
 //                                                        UserDefaults.standard.setValue(self.timerCount,
 //                                                                                       forKey: KeysUserDefaults.timerT.rawValue)
-                                                        self.navigationController?.popViewController(animated: true)
                                                         
+                                                        self.navigationController?.popViewController(animated: true)
                                                         
                                                       }), UIAlertAction(title: "No",
                                                                         style: .default,
                                                                         handler: { _ in
+                                                        //удаление файла c игрой
+                                                        let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                                                        let fileURL = documentDirectoryURL.appendingPathComponent("savedGame")
+                                                        try? FileManager.default.removeItem(at: fileURL)
+                                                                                        
+                                                        //удаление данных про сохраненный таймер
+                                                        UserDefaults.standard.removeObject(forKey: Keys.timerT.rawValue)
+                                                                                        
 //                                                        UserDefaults.standard.removeObject(forKey: KeysUserDefaults.timerT.rawValue)
                                                         self.navigationController?.popViewController(animated: true)
                                                                         }))
