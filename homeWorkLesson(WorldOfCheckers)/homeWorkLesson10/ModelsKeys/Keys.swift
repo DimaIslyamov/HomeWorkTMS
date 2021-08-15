@@ -8,7 +8,8 @@
 import Foundation
 
 enum Keys: String {
-    case cellPosition = "cellPosition_"
-    case colorCheckerCell = "colorCheckerCell_"
-    case timerT = "timerT_"
+    case cellAndChecker = "_cellAndChecker"
+    case checkerTag = "_checkerTag"
+    case cellTag = "_cellTag"
+    case timerT = "_timerT"
 }

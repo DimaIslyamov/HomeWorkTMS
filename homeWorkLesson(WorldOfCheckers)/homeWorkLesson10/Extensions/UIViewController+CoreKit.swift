@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIViewController {
-    
     func presentAlertController(with title: String?, massage: String?, preferredStyle: UIAlertController.Style = .alert, actions: UIAlertAction...) -> UIAlertController {
 //        self.view.addBlurView()
         let alert = UIAlertController(title: title, message: massage, preferredStyle: preferredStyle)
