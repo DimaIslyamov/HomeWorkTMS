@@ -34,6 +34,7 @@ class RootViewController: UIViewController {
     @objc func startTheGameTapped(_ sender: UIButton) {
         guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
         self.navigationController?.pushViewController(vc, animated: true)
+        
         // проверка есть ли файл
 //        if FileManager().fileExists(atPath: URL.saveGameURL().path) {
 //            presentAlertController(with: nil, massage: "Continue or start a New Game ?",

@@ -9,8 +9,8 @@ import UIKit
 
 
 enum Chekers: Int {
-    case black = 0
-    case white = 1
+    case white = 0
+    case black = 1
 }
 
 
@@ -33,12 +33,12 @@ class ChessBoardController: UIViewController {
     var timer: Timer?
     var timerLable: UILabel!
     
+    var tagCell: Int = 0
+    var tagChecker: Int = 0
+    
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     let userDef = UserDefaults.standard
     var cellCheckers: [CellCheckers] = []
-    
-    var tagCell: Int = 0
-    var tagChecker: Int = 0
     
     var current: Chekers = .black
     
@@ -47,14 +47,9 @@ class ChessBoardController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createTimer()
-//        view.addSubview(timerLable)
-        view.addSubview(chessboard)
-//        createChessboard()
-//        createLableAndTimer(screenSize: screenSize)
-        backButtonFuncCostamize()
         
-//        getTimerAndCheckers()
+        startOrContinue()
+        backButtonFuncCostamize()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,7 +99,7 @@ class ChessBoardController: UIViewController {
                 let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                 checker.isUserInteractionEnabled = true
                 checker.image = j < 3 ? UIImage(named: "ArtasArmi") : UIImage(named: "ElidanArmi")
-                checker.tag = j < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
+                checker.tag = j < 3 ? Chekers.white.rawValue : Chekers.black.rawValue
                 column.addSubview(checker)
                 
                 let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
@@ -154,6 +149,7 @@ class ChessBoardController: UIViewController {
 
         timerLable.textAlignment = .center
         timerView.addSubview(timerLable)
+        view.addSubview(chessboard)
     }
     
     
@@ -182,6 +178,10 @@ class ChessBoardController: UIViewController {
                 let position: CellCheckers = CellCheckers()
                 position.cellTag = cell.tag
                 cell.subviews.forEach { checker in
+//                    let savCheck: CellCheckers = CellCheckers()
+//                    savCheck.cellTag = cell.tag
+//                    savCheck.checkerTag = checker.tag
+//                    cellCheckers.append(savCheck)
                     position.checkerTag = checker.tag
                 }
                 cellCheckers.append(position)
@@ -195,9 +195,9 @@ class ChessBoardController: UIViewController {
     
     func getLastBatch() {
         let fileURL = documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
-        guard let data = FileManager.default.contents(atPath: fileURL.absoluteString.replacingOccurrences(of: "file://", with: "")),
-              let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [CellCheckers] else { return}
-        self.cellCheckers = object
+        guard let data = FileManager.default.contents(atPath: fileURL.absoluteString.replacingOccurrences(of: "file://", with: "")) else { return }
+        let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [CellCheckers]
+        self.cellCheckers = object ?? []
     }
     
     func createSaveChessboard() {
@@ -227,13 +227,14 @@ class ChessBoardController: UIViewController {
                 }
                 chessboard.addSubview(column)
                 
-//                guard j < 3 || j > 4, column.backgroundColor == .black else { continue }
+                guard j < 3 || j > 4, column.backgroundColor == .black else { continue }
+                
                 for value in cellCheckers {
                     if column.tag == value.cellTag {
                         let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                         checker.isUserInteractionEnabled = true
                         checker.image = value.checkerTag == 1 ? UIImage(named: "ArtasArmi") : UIImage(named: "ElidanArmi")
-                        checker.tag = value.checkerTag == 1 ? Chekers.black.rawValue : Chekers.white.rawValue
+                        checker.tag = value.checkerTag == 1 ? Chekers.white.rawValue : Chekers.black.rawValue
                         column.addSubview(checker)
                         
                         let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
@@ -248,10 +249,45 @@ class ChessBoardController: UIViewController {
         }
         chessboard.image = UIImage(named: "ice7")
         chessboard.isUserInteractionEnabled = true
+        view.addSubview(chessboard)
     }
     
+    func startOrContinue() {
+        presentAlertController(with: nil, massage: "Continue or start a New Game ?", actions: UIAlertAction(title: "Continue", style: .default, handler: { _ in
+                                        self.getLastBatch()
+                                        self.setDataFromUserDefaults()
+                                        self.createTimer()
+                                        self.createSaveChessboard()
+                                          do {
+                                            let fileURL = self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
+                                            try FileManager.default.removeItem(at: fileURL)
+                                         }
+                                        catch {
+                                              print(error.localizedDescription)
+                                         }
+//                                         self.cellCheckers.removeAll()
+                                   }),
+         UIAlertAction(title: "New Game", style: .default, handler: { _ in
+                                                            self.removeDataFromUserDefaults()
+                                                            self.createTimer()
+                                                            self.createChessboard()
+                                                         }))
+    }
     
+    func saveDataToUserDefaults() {
+        userDef.setValue(countSec, forKey: Keys.timerSec.rawValue)
+        userDef.setValue(countMin, forKey: Keys.timerMin.rawValue)
+    }
     
+    func removeDataFromUserDefaults() {
+        userDef.removeObject(forKey: Keys.timerSec.rawValue)
+        userDef.removeObject(forKey: Keys.timerMin.rawValue)
+    }
+    
+    func setDataFromUserDefaults() {
+        self.countSec = userDef.integer(forKey: Keys.timerSec.rawValue)
+        self.countMin = userDef.integer(forKey: Keys.timerMin.rawValue)
+    }
     
     
     // не понял как можно подключить / в теперешней ситуации
@@ -260,6 +296,8 @@ class ChessBoardController: UIViewController {
 //        let minutes: Int = (tottalSecond / 60) % 60
 //        return String(format: "%02d:%02d", minutes, second)
 //    }
+    
+    
     
     // MARK: - Objc Методы
     
@@ -276,9 +314,6 @@ class ChessBoardController: UIViewController {
         min = countMin < 10 ? "0\(countMin) " : "\(countMin) "
         timerLable.text = min + sec
         timerLable.textAlignment = .center
-//        timerLable.attributedText = NSAttributedString(string: "Time in Game \(timeFormatter(timerCount))", attributes: [.foregroundColor : UIColor.yellow, .font : UIFont(name: "StyleScript-Regular", size: 35) ?? UIFont.systemFont(ofSize: 35)])
-//
-//        timerCount += 1
     }
     
     
@@ -345,15 +380,15 @@ class ChessBoardController: UIViewController {
                                actions: UIAlertAction(title: "Yes",
                                                       style: .default,
                                                       handler: { _ in
+                                                                    self.saveDataToUserDefaults()
+                                                                    self.saveBatch()
+                                                                    self.navigationController?.popViewController(animated: true)
                                                         
-                                                        
-                                                        self.navigationController?.popViewController(animated: true)
-                                                        
-                                                      }), UIAlertAction(title: "No",
-                                                                        style: .default,
-                                                                        handler: { _ in
-                                                        
-                                                        self.navigationController?.popViewController(animated: true)
+                                }), UIAlertAction(title: "No",
+                                                  style: .default,
+                                                  handler: { _ in
+                                                                self.removeDataFromUserDefaults()
+                                                                 self.navigationController?.popViewController(animated: true)
                                                                         }))
     }
     
