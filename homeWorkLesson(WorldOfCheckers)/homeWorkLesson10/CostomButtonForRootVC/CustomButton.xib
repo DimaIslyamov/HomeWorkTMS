@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomButton" customModule="homeWorkLesson10" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonOutlet" destination="fD5-Ys-92c" id="gGi-4a-Znh"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="ned-js-nHx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fD5-Ys-92c">
+                    <rect key="frame" x="16" y="17.5" width="208" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="dSK-3Y-1Uz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cat-nM-MT2">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
+                    <connections>
+                        <action selector="bottonAction:" destination="-1" eventType="touchUpInside" id="ZrP-Hn-dcc"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="cat-nM-MT2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GtS-wn-2nQ"/>
+                <constraint firstAttribute="bottom" secondItem="cat-nM-MT2" secondAttribute="bottom" id="OE0-oi-7kf"/>
+                <constraint firstItem="fD5-Ys-92c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Tbr-AD-LDk"/>
+                <constraint firstAttribute="trailing" secondItem="fD5-Ys-92c" secondAttribute="trailing" constant="16" id="XhJ-EZ-2LG"/>
+                <constraint firstAttribute="trailing" secondItem="cat-nM-MT2" secondAttribute="trailing" id="Xvb-90-Ub4"/>
+                <constraint firstItem="fD5-Ys-92c" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Zbu-cI-Lad"/>
+                <constraint firstItem="cat-nM-MT2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jj8-8E-85w"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="4.3478260869565224" y="-95.424107142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

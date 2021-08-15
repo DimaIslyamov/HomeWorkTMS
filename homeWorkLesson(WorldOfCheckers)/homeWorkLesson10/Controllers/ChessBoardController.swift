@@ -48,7 +48,7 @@ class ChessBoardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startOrContinue()
+//        startOrContinue()
         backButtonFuncCostamize()
     }
     
@@ -99,7 +99,7 @@ class ChessBoardController: UIViewController {
                 let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                 checker.isUserInteractionEnabled = true
                 checker.image = j < 3 ? UIImage(named: "ArtasArmi") : UIImage(named: "ElidanArmi")
-                checker.tag = j < 3 ? Chekers.white.rawValue : Chekers.black.rawValue
+                checker.tag = j < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
                 column.addSubview(checker)
                 
                 let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
@@ -234,7 +234,7 @@ class ChessBoardController: UIViewController {
                         let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                         checker.isUserInteractionEnabled = true
                         checker.image = value.checkerTag == 1 ? UIImage(named: "ArtasArmi") : UIImage(named: "ElidanArmi")
-                        checker.tag = value.checkerTag == 1 ? Chekers.white.rawValue : Chekers.black.rawValue
+                        checker.tag = value.checkerTag == 1 ? Chekers.black.rawValue : Chekers.white.rawValue
                         column.addSubview(checker)
                         
                         let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))

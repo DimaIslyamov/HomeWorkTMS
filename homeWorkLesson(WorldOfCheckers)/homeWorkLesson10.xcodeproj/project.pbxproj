@@ -22,6 +22,9 @@
 		5360ECFF26C46CE400A0C0C6 /* CellCheckers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360ECFE26C46CE400A0C0C6 /* CellCheckers.swift */; };
 		5360ED0326C49C0300A0C0C6 /* SettingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360ED0126C49C0300A0C0C6 /* SettingsCollectionViewCell.swift */; };
 		5360ED0426C49C0300A0C0C6 /* SettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5360ED0226C49C0300A0C0C6 /* SettingsCollectionViewCell.xib */; };
+		5368592A26C98A4100420AF7 /* SetupCheckersImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5368592926C98A4100420AF7 /* SetupCheckersImage.swift */; };
+		5368593726C9BFD900420AF7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5368593626C9BFD900420AF7 /* CustomButton.swift */; };
+		5368593926C9C04700420AF7 /* CustomButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5368593826C9C04700420AF7 /* CustomButton.xib */; };
 		537B185B26AC2AEB0026D73C /* Score.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185A26AC2AEB0026D73C /* Score.storyboard */; };
 		537B185D26AC2AF40026D73C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185C26AC2AF40026D73C /* Settings.storyboard */; };
 		538624BB26C91DC600C6DE36 /* URL+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538624BA26C91DC600C6DE36 /* URL+CoreKit.swift */; };
@@ -50,6 +53,9 @@
 		5360ECFE26C46CE400A0C0C6 /* CellCheckers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCheckers.swift; sourceTree = "<group>"; };
 		5360ED0126C49C0300A0C0C6 /* SettingsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewCell.swift; sourceTree = "<group>"; };
 		5360ED0226C49C0300A0C0C6 /* SettingsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCollectionViewCell.xib; sourceTree = "<group>"; };
+		5368592926C98A4100420AF7 /* SetupCheckersImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCheckersImage.swift; sourceTree = "<group>"; };
+		5368593626C9BFD900420AF7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5368593826C9C04700420AF7 /* CustomButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomButton.xib; sourceTree = "<group>"; };
 		537B185A26AC2AEB0026D73C /* Score.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Score.storyboard; sourceTree = "<group>"; };
 		537B185C26AC2AF40026D73C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		538624BA26C91DC600C6DE36 /* URL+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+CoreKit.swift"; sourceTree = "<group>"; };
@@ -109,8 +115,9 @@
 		534D2D19269D757E00052236 /* homeWorkLesson10 */ = {
 			isa = PBXGroup;
 			children = (
+				5368593526C9BF8C00420AF7 /* CostomButtonForRootVC */,
 				538624BC26C9232300C6DE36 /* Classes */,
-				5360ED0026C49BD300A0C0C6 /* SettingsCollectionViewCell */,
+				5368592F26C9A06900420AF7 /* Choose Checkers */,
 				53133FAD26B171900042379D /* Fonts */,
 				538EA4C626C34554001D13B5 /* ModelsKeys */,
 				5333EB1326A9E4F600B7411D /* Extensions */,
@@ -166,10 +173,28 @@
 			path = SettingsCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		5368592F26C9A06900420AF7 /* Choose Checkers */ = {
+			isa = PBXGroup;
+			children = (
+				5360ED0026C49BD300A0C0C6 /* SettingsCollectionViewCell */,
+			);
+			path = "Choose Checkers";
+			sourceTree = "<group>";
+		};
+		5368593526C9BF8C00420AF7 /* CostomButtonForRootVC */ = {
+			isa = PBXGroup;
+			children = (
+				5368593626C9BFD900420AF7 /* CustomButton.swift */,
+				5368593826C9C04700420AF7 /* CustomButton.xib */,
+			);
+			path = CostomButtonForRootVC;
+			sourceTree = "<group>";
+		};
 		538624BC26C9232300C6DE36 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				5360ECFE26C46CE400A0C0C6 /* CellCheckers.swift */,
+				5368592926C98A4100420AF7 /* SetupCheckersImage.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -247,6 +272,7 @@
 				534D2D34269D80D600052236 /* ChessBoard.storyboard in Resources */,
 				537B185D26AC2AF40026D73C /* Settings.storyboard in Resources */,
 				537B185B26AC2AEB0026D73C /* Score.storyboard in Resources */,
+				5368593926C9C04700420AF7 /* CustomButton.xib in Resources */,
 				534D2D22269D757E00052236 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +288,7 @@
 				534D2D1D269D757E00052236 /* SceneDelegate.swift in Sources */,
 				5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */,
 				5333EB1526A9E52B00B7411D /* RootVC+CoreKit.swift in Sources */,
+				5368593726C9BFD900420AF7 /* CustomButton.swift in Sources */,
 				538EA4C526C31722001D13B5 /* UIView+CoreKit.swift in Sources */,
 				5360ED0326C49C0300A0C0C6 /* SettingsCollectionViewCell.swift in Sources */,
 				534D2D32269D760500052236 /* RootViewController.swift in Sources */,
@@ -272,6 +299,7 @@
 				53F8A60226B9EDAF00166BD2 /* AboutViewController.swift in Sources */,
 				5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */,
 				538EA4C826C34583001D13B5 /* Keys.swift in Sources */,
+				5368592A26C98A4100420AF7 /* SetupCheckersImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

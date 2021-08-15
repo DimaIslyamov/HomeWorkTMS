@@ -31,29 +31,33 @@ class RootViewController: UIViewController {
     }
     
     
+    
     @objc func startTheGameTapped(_ sender: UIButton) {
         guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-        // проверка есть ли файл
-//        if FileManager().fileExists(atPath: URL.saveGameURL().path) {
-//            presentAlertController(with: nil, massage: "Continue or start a New Game ?",
-//                                   actions: UIAlertAction(title: "Continue",
-//                                                          style: .default,
-//                                                          handler: { _ in
-//                                                            
-//                                                            self.navigationController?.pushViewController(vc, animated: true)
-//                                                          }),
-//                                   
-//                                   
-//                                   UIAlertAction(title: "New Game",
-//                                                 style: .default,
-//                                                 handler: { _ in
-//                                                    
-//                                                    self.navigationController?.pushViewController(vc, animated: true)
-//                                                 }))
-//        }
+        presentAlertController(with: nil, massage: "Continue or start a New Game ?",
+                  actions: UIAlertAction(title: "Continue", style: .default, handler: { _ in
+              vc.getLastBatch()
+              vc.setDataFromUserDefaults()
+              vc.createTimer()
+              vc.createSaveChessboard()
+                 do {
+         let fileURL = self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
+          try FileManager.default.removeItem(at: fileURL)
+                 } catch {
+                     print("error")
+                  vc.cellCheckers.removeAll()
+                 }
+           self.navigationController?.pushViewController(vc, animated: true)
+        }),
+                  
+         UIAlertAction(title: "New Game", style: .default, handler: { _ in
+              vc.removeDataFromUserDefaults()
+              vc.createTimer()
+              vc.createChessboard()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }))
     }
+    
     
     
     @objc func scoreTapped(_ sender: UIButton) {

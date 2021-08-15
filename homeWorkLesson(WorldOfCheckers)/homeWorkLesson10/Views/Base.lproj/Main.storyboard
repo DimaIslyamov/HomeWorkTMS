@@ -19,12 +19,39 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainArtas" translatesAutoresizingMaskIntoConstraints="NO" id="JIn-PC-aXz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4u-Hm-tcP">
+                                <rect key="frame" x="87" y="356" width="240" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="km2-PZ-dvo" customClass="CustomButton" customModule="homeWorkLesson10" customModuleProvider="target">
+                                <rect key="frame" x="87" y="410.5" width="240" height="75"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="dJH-td-srm"/>
+                                    <constraint firstAttribute="width" constant="240" id="k6U-ba-7tR"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.19719788520000001" green="0.19719788520000001" blue="0.19719788520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAnimated" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JIn-PC-aXz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="2xA-hd-w2E"/>
                             <constraint firstAttribute="bottom" secondItem="JIn-PC-aXz" secondAttribute="bottom" id="8K1-ba-ElH"/>
+                            <constraint firstItem="km2-PZ-dvo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ref-fO-JSG"/>
+                            <constraint firstItem="km2-PZ-dvo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X8T-4E-eyO"/>
                             <constraint firstItem="JIn-PC-aXz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="gCk-tG-edd"/>
                             <constraint firstItem="JIn-PC-aXz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="plG-iv-eEx"/>
                             <constraint firstItem="JIn-PC-aXz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="q5Y-jm-Kgd"/>
