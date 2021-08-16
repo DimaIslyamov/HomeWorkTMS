@@ -47,11 +47,13 @@ class CustomButtonForScore: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        setupCostamizationForButton()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
+        setupCostamizationForButton()
     }
     
     private func setupView() {
@@ -59,9 +61,12 @@ class CustomButtonForScore: UIView {
         contentView.frame = self.bounds
         self.addSubview(contentView)
     }
-    // func setAttributes(_ attrs: [NSAttributedString.Key : Any]?, range: NSRange)
+    
     private func setupCostamizationForButton() {
-        
+        lableOutlet.layer.shadowColor = UIColor.black.cgColor
+        lableOutlet.layer.shadowRadius = 3
+        lableOutlet.layer.shadowOpacity = 0.9
+        lableOutlet.layer.shadowOffset = CGSize(width: 5, height: 5)
     }
     
     private func creatAnimationIfNeeded() {

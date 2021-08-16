@@ -21,11 +21,11 @@ class SettingsViewController: UIViewController  {
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "SettingsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SettingsCollectionViewCell")
         
-        setupCostamizationForBack()
+        backButtonCostamization()
     }
     
     
-    func setupCostamizationForBack() {
+    func backButtonCostamization() {
         buttonViews.layer.cornerRadius = 12
         buttonViews.layer.shadowColor = UIColor.black.cgColor
         buttonViews.layer.shadowRadius = 4
@@ -42,6 +42,7 @@ class SettingsViewController: UIViewController  {
         navigationController?.popViewController(animated: true)
     }
 }
+
 
 
 // MARK: - Extension

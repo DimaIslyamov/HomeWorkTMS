@@ -16,6 +16,4 @@ extension RootViewController {
     }
     
     
-    // метод костамизирующий UIButtons
-    
 }

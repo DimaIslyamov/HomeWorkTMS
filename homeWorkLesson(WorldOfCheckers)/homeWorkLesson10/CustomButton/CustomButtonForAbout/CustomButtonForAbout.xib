@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomButtonForAbout" customModule="homeWorkLesson10" customModuleProvider="target">
+            <connections>
+                <outlet property="aboutImageView" destination="dqD-wR-FRV" id="TDd-qE-lhs"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="K6b-qX-iFY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="dqD-wR-FRV">
+                    <rect key="frame" x="6" y="6" width="38" height="38"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDq-Sb-uwL">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <connections>
+                        <action selector="buttonAction:" destination="-1" eventType="touchUpInside" id="AYy-RO-b0f"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.1172281882" green="0.33559992300000002" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dqD-wR-FRV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="8Rw-F0-0Xk"/>
+                <constraint firstItem="rDq-Sb-uwL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EJr-Zg-9Kc"/>
+                <constraint firstAttribute="trailing" secondItem="rDq-Sb-uwL" secondAttribute="trailing" id="Jch-dZ-sO9"/>
+                <constraint firstItem="rDq-Sb-uwL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LqF-s3-hRg"/>
+                <constraint firstAttribute="bottom" secondItem="rDq-Sb-uwL" secondAttribute="bottom" id="NSS-K7-SEc"/>
+                <constraint firstItem="dqD-wR-FRV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="bHr-fO-lXu"/>
+                <constraint firstAttribute="bottom" secondItem="dqD-wR-FRV" secondAttribute="bottom" constant="6" id="dqd-6P-tGi"/>
+                <constraint firstAttribute="trailing" secondItem="dqD-wR-FRV" secondAttribute="trailing" constant="6" id="y5w-a6-Ycr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="132" y="99"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="info" width="256" height="256"/>
+    </resources>
+</document>

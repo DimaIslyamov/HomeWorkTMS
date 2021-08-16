@@ -52,13 +52,10 @@ class ChessBoardController: UIViewController {
         backButtonFuncCostamize()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         self.view.removeBlurView()
         timer?.invalidate()
         timer = nil

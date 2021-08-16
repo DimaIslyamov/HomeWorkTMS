@@ -15,7 +15,11 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        backButtonCostamization()
+    }
+    
+    
+    func backButtonCostamization() {
         buttonView.layer.cornerRadius = 12
         
         backButtonOutlet.layer.borderWidth = 2
@@ -26,12 +30,13 @@ class AboutViewController: UIViewController {
         buttonView.layer.shadowRadius = 4
         buttonView.layer.shadowOpacity = 0.9
         buttonView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        
     }
+    
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
-
+    
+    
 }

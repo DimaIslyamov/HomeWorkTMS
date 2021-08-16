@@ -16,6 +16,12 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backButtonCostamization()
+    }
+    
+    
+    
+    func backButtonCostamization() {
         buttonView.layer.cornerRadius = 12
         
         backButtonOutlet.layer.borderWidth = 2
@@ -28,9 +34,13 @@ class ScoreViewController: UIViewController {
         buttonView.layer.shadowOffset = CGSize(width: 5, height: 5)
     }
     
+    
+    
     @IBAction func backButtonAction(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
+    
+   
     
 }

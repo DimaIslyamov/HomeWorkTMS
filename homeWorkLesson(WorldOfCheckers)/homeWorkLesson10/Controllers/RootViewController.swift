@@ -8,13 +8,11 @@
 import UIKit
 
 class RootViewController: UIViewController {
+    
     @IBOutlet weak var newGameButton: CustomButton!
     @IBOutlet weak var scoreButton: CustomButtonForScore!
-    
-//    let getStartedButton = UIButton()
-//    let scoreButton = UIButton()
-    let settingsButton = UIButton()
-    let aboutButton = UIButton()
+    @IBOutlet weak var settingButton: CustomButtonForSettings!
+    @IBOutlet weak var aboutButton: CustomButtonForAbout!
     
     
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -25,6 +23,8 @@ class RootViewController: UIViewController {
         
         newGameButton.delegate = self
         scoreButton.delegate = self
+        settingButton.delegate = self
+        aboutButton.delegate = self
     }
     
     
@@ -35,29 +35,26 @@ class RootViewController: UIViewController {
     }
     
     
-//    @objc func settingsTapped(_ sender: UIButton) {
-//        guard let vc = getViewController(from: "Settings") else { return }
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
-//
-//    @objc func aboutTapped(_ sender: UIButton) {
-//        guard let vc = getViewController(from: "About") else { return }
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
 }
 
 
+
+
+
+// MARK: - Extension
+
 extension RootViewController: CustomButtonDelegate {
     func buttonDidTap(_ sender: CustomButton) {
+        
         guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
-        presentAlertController(with: nil, massage: "Continue or start a New Game ?",
-                  actions: UIAlertAction(title: "Continue", style: .default, handler: { _ in
+        
+        presentAlertController(with: nil, massage: "Начать новую партию или продолжить старую?", actions: UIAlertAction(title: "Продолжить партию", style: .default, handler: { _ in
               vc.getLastBatch()
               vc.setDataFromUserDefaults()
               vc.createTimer()
               vc.createSaveChessboard()
                  do {
-         let fileURL = self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
+                    let fileURL = self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
                     try FileManager.default.removeItem(at: fileURL)
                  } catch {
                      print("error")
@@ -66,7 +63,7 @@ extension RootViewController: CustomButtonDelegate {
            self.navigationController?.pushViewController(vc, animated: true)
         }),
                   
-         UIAlertAction(title: "New Game", style: .default, handler: { _ in
+         UIAlertAction(title: "Начать новую партию", style: .default, handler: { _ in
               vc.removeDataFromUserDefaults()
               vc.createTimer()
               vc.createChessboard()
@@ -75,11 +72,26 @@ extension RootViewController: CustomButtonDelegate {
     }
 }
 
+
 extension RootViewController: CustomButtonForScoreDelegate {
     func buttonDidTap(_ sender: CustomButtonForScore) {
         guard let vc = getViewController(from: "Score") else { return }
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
+}
+
+
+extension RootViewController: CustomButtonForSettingsDelegate {
+    func buttonDidTap(_ sender: CustomButtonForSettings) {
+        guard let vc = getViewController(from: "Settings") else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+extension RootViewController: CustomButtonForAboutDelegate {
+    func buttonDidTap(_ sender: CustomButtonForAbout) {
+        guard let vc = getViewController(from: "About") else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

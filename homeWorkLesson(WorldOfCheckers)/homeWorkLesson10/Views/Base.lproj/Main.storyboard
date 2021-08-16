@@ -25,18 +25,18 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="km2-PZ-dvo" customClass="CustomButton" customModule="homeWorkLesson10" customModuleProvider="target">
-                                <rect key="frame" x="87" y="423" width="240" height="50"/>
+                                <rect key="frame" x="97" y="423" width="220" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="dJH-td-srm"/>
-                                    <constraint firstAttribute="width" constant="240" id="k6U-ba-7tR"/>
+                                    <constraint firstAttribute="width" constant="220" id="7wu-I3-ViG"/>
+                                    <constraint firstAttribute="height" constant="50" id="qSI-L7-hE1"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.19719788520000001" green="0.19719788520000001" blue="0.19719788520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="5"/>
@@ -45,18 +45,17 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymX-8Y-BAn" customClass="CustomButtonForScore" customModule="homeWorkLesson10" customModuleProvider="target">
-                                <rect key="frame" x="87" y="480.5" width="240" height="50"/>
+                                <rect key="frame" x="97" y="481" width="220" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8Ut-O7-m0b"/>
-                                    <constraint firstAttribute="width" constant="240" id="S4S-eh-lXa"/>
+                                    <constraint firstAttribute="height" constant="50" id="lyk-e3-i3a"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.19719788520000001" green="0.19719788520000001" blue="0.19719788520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="5"/>
@@ -64,27 +63,71 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAnimated" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sK1-2v-K0s" customClass="CustomButtonForSettings" customModule="homeWorkLesson10" customModuleProvider="target">
+                                <rect key="frame" x="97" y="539" width="220" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XCl-f5-rYP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7v-K1-QvN" customClass="CustomButtonForAbout" customModule="homeWorkLesson10" customModuleProvider="target">
+                                <rect key="frame" x="344" y="812" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Map-cg-d90"/>
+                                    <constraint firstAttribute="width" constant="50" id="NA9-oM-chr"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ymX-8Y-BAn" firstAttribute="top" secondItem="km2-PZ-dvo" secondAttribute="bottom" constant="7.5" id="0Hd-cc-IVb"/>
                             <constraint firstItem="JIn-PC-aXz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="2xA-hd-w2E"/>
-                            <constraint firstItem="ymX-8Y-BAn" firstAttribute="leading" secondItem="km2-PZ-dvo" secondAttribute="leading" id="5tw-Jf-5Mo"/>
+                            <constraint firstItem="sK1-2v-K0s" firstAttribute="trailing" secondItem="ymX-8Y-BAn" secondAttribute="trailing" id="3XI-p9-hkw"/>
                             <constraint firstAttribute="bottom" secondItem="JIn-PC-aXz" secondAttribute="bottom" id="8K1-ba-ElH"/>
-                            <constraint firstItem="km2-PZ-dvo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ref-fO-JSG"/>
-                            <constraint firstItem="ymX-8Y-BAn" firstAttribute="trailing" secondItem="km2-PZ-dvo" secondAttribute="trailing" id="SBo-EZ-HsI"/>
-                            <constraint firstItem="km2-PZ-dvo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X8T-4E-eyO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P7v-K1-QvN" secondAttribute="trailing" constant="20" id="9QF-iC-nEm"/>
+                            <constraint firstItem="sK1-2v-K0s" firstAttribute="top" secondItem="ymX-8Y-BAn" secondAttribute="bottom" constant="8" symbolic="YES" id="Ada-WO-ajX"/>
+                            <constraint firstItem="ymX-8Y-BAn" firstAttribute="trailing" secondItem="km2-PZ-dvo" secondAttribute="trailing" id="Cre-2G-Ssy"/>
+                            <constraint firstItem="km2-PZ-dvo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FbO-xh-u22"/>
+                            <constraint firstItem="sK1-2v-K0s" firstAttribute="leading" secondItem="ymX-8Y-BAn" secondAttribute="leading" id="TMf-w4-ZZ7"/>
+                            <constraint firstItem="ymX-8Y-BAn" firstAttribute="leading" secondItem="km2-PZ-dvo" secondAttribute="leading" id="c6e-3F-lFm"/>
                             <constraint firstItem="JIn-PC-aXz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="gCk-tG-edd"/>
+                            <constraint firstItem="ymX-8Y-BAn" firstAttribute="top" secondItem="km2-PZ-dvo" secondAttribute="bottom" constant="8" symbolic="YES" id="jn1-FF-4bH"/>
                             <constraint firstItem="JIn-PC-aXz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="plG-iv-eEx"/>
                             <constraint firstItem="JIn-PC-aXz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="q5Y-jm-Kgd"/>
+                            <constraint firstItem="P7v-K1-QvN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vik-dw-krP"/>
+                            <constraint firstItem="km2-PZ-dvo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wfr-ZJ-PKn"/>
                             <constraint firstItem="JIn-PC-aXz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y9e-jP-ALf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rOW-7x-f8W"/>
                     <connections>
+                        <outlet property="aboutButton" destination="P7v-K1-QvN" id="u2l-Yo-ydI"/>
                         <outlet property="newGameButton" destination="km2-PZ-dvo" id="2L6-yM-Uqh"/>
                         <outlet property="scoreButton" destination="ymX-8Y-BAn" id="Fj0-8r-WbC"/>
+                        <outlet property="settingButton" destination="sK1-2v-K0s" id="k4B-lU-jDj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
