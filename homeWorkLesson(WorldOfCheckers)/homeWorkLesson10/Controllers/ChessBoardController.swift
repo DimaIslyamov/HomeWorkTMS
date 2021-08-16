@@ -20,12 +20,11 @@ class ChessBoardController: UIViewController {
     
     @IBOutlet weak var viewOutlet: UIView!
     @IBOutlet weak var backButtonOutlet: UIButton!
-//    @IBOutlet weak var timerLable: UILabel!
+    
     
     
     // MARK: - Переменные
     
-//    var checker = UIImageView()
     var chessboard = UIImageView()
     
     var countSec: Int = 0
@@ -43,12 +42,13 @@ class ChessBoardController: UIViewController {
     var current: Chekers = .black
     
     
+    
+    
     // MARK: - Жизненный цикл
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        startOrContinue()
         backButtonFuncCostamize()
     }
     
@@ -59,34 +59,23 @@ class ChessBoardController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        self.view.removeBlurView()
         timer?.invalidate()
         timer = nil
     }
     
     
+    
+    
     // MARK: - Методы
     
     func createChessboard() {
-        // констрэйнты для доски
-        chessboard.translatesAutoresizingMaskIntoConstraints = false
-        chessboard.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        chessboard.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        chessboard.widthAnchor.constraint(equalToConstant: 320).isActive = true
-        chessboard.heightAnchor.constraint(equalToConstant: 320).isActive = true
+        chessboardCostamization()
         
-        // тени для доски
-        chessboard.layer.shadowColor = UIColor.black.cgColor
-        chessboard.layer.shadowRadius = 7
-        chessboard.layer.shadowOpacity = 0.9
-        chessboard.layer.shadowOffset = CGSize(width: 10, height: 10)
-        
-        // код мастера(сансэя)
         for i in 0..<8 {
             for j in 0..<8 {
                 let column = UIView(frame: CGRect(x: 40 * i, y: 40 * j, width: 40, height: 40))
                 column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
-                // присвоение тэга column
                 column.tag = ((i + j) % 2) == 0 ? 0 : tagCell
                 if ((i + j) % 2) == 1 {
                     tagCell += 1
@@ -110,7 +99,6 @@ class ChessBoardController: UIViewController {
                 checker.addGestureRecognizer(panGesture)
             }
         }
-        
         chessboard.image = UIImage(named: "ice7")
         chessboard.isUserInteractionEnabled = true
     }
@@ -119,7 +107,6 @@ class ChessBoardController: UIViewController {
    
     
     func createTimer() {
-        // создание таймера
         timer = Timer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
         
@@ -153,149 +140,13 @@ class ChessBoardController: UIViewController {
     }
     
     
-    
-    func backButtonFuncCostamize() {
-        backButtonOutlet.layer.borderWidth = 2
-        backButtonOutlet.layer.borderColor = UIColor.black.cgColor
-        backButtonOutlet.layer.cornerRadius = 12
-        
-        viewOutlet.layer.cornerRadius = 12
-        viewOutlet.layer.shadowColor = UIColor.black.cgColor
-        viewOutlet.layer.shadowRadius = 4
-        viewOutlet.layer.shadowOpacity = 0.9
-        viewOutlet.layer.shadowOffset = CGSize(width: 5, height: 5)
-    }
-    
-    
-    
-    
-    
-    // MARK: - Доделать
-    
-    func saveBatch() {
-        chessboard.subviews.forEach { cell in
-            if !cell.subviews.isEmpty {
-                let position: CellCheckers = CellCheckers()
-                position.cellTag = cell.tag
-                cell.subviews.forEach { checker in
-//                    let savCheck: CellCheckers = CellCheckers()
-//                    savCheck.cellTag = cell.tag
-//                    savCheck.checkerTag = checker.tag
-//                    cellCheckers.append(savCheck)
-                    position.checkerTag = checker.tag
-                }
-                cellCheckers.append(position)
-            }
-        }
-        let data = try? NSKeyedArchiver.archivedData(withRootObject: cellCheckers, requiringSecureCoding: true)
-        let fileURL = documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
-        try? data?.write(to: fileURL)
-    }
-    
-    
-    func getLastBatch() {
-        let fileURL = documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
-        guard let data = FileManager.default.contents(atPath: fileURL.absoluteString.replacingOccurrences(of: "file://", with: "")) else { return }
-        let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [CellCheckers]
-        self.cellCheckers = object ?? []
-    }
-    
-    func createSaveChessboard() {
-        // констрэйнты для доски
-        chessboard.translatesAutoresizingMaskIntoConstraints = false
-        chessboard.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        chessboard.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        chessboard.widthAnchor.constraint(equalToConstant: 320).isActive = true
-        chessboard.heightAnchor.constraint(equalToConstant: 320).isActive = true
-        
-        // тени для доски
-        chessboard.layer.shadowColor = UIColor.black.cgColor
-        chessboard.layer.shadowRadius = 7
-        chessboard.layer.shadowOpacity = 0.9
-        chessboard.layer.shadowOffset = CGSize(width: 10, height: 10)
-        
-        // код мастера(сансэя)
-        for i in 0..<8 {
-            for j in 0..<8 {
-                let column = UIView(frame: CGRect(x: 40 * i, y: 40 * j, width: 40, height: 40))
-                column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
-                // присвоение тэга column
-                column.tag = ((i + j) % 2) == 0 ? 0 : tagCell
-                if ((i + j) % 2) == 1 {
-                    tagCell += 1
-                    column.tag = tagCell
-                }
-                chessboard.addSubview(column)
-                
-                guard j < 3 || j > 4, column.backgroundColor == .black else { continue }
-                
-                for value in cellCheckers {
-                    if column.tag == value.cellTag {
-                        let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
-                        checker.isUserInteractionEnabled = true
-                        checker.image = value.checkerTag == 1 ? UIImage(named: "ArtasArmi") : UIImage(named: "ElidanArmi")
-                        checker.tag = value.checkerTag == 1 ? Chekers.black.rawValue : Chekers.white.rawValue
-                        column.addSubview(checker)
-                        
-                        let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
-                        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
-                        tapGesture.delegate = self
-                        panGesture.delegate = self
-                        checker.addGestureRecognizer(tapGesture)
-                        checker.addGestureRecognizer(panGesture)
-                    }
-                }
-            }
-        }
-        chessboard.image = UIImage(named: "ice7")
-        chessboard.isUserInteractionEnabled = true
-        view.addSubview(chessboard)
-    }
-    
-    func startOrContinue() {
-        presentAlertController(with: nil, massage: "Continue or start a New Game ?", actions: UIAlertAction(title: "Continue", style: .default, handler: { _ in
-                                        self.getLastBatch()
-                                        self.setDataFromUserDefaults()
-                                        self.createTimer()
-                                        self.createSaveChessboard()
-                                          do {
-                                            let fileURL = self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
-                                            try FileManager.default.removeItem(at: fileURL)
-                                         }
-                                        catch {
-                                              print(error.localizedDescription)
-                                         }
-//                                         self.cellCheckers.removeAll()
-                                   }),
-         UIAlertAction(title: "New Game", style: .default, handler: { _ in
-                                                            self.removeDataFromUserDefaults()
-                                                            self.createTimer()
-                                                            self.createChessboard()
-                                                         }))
-    }
-    
-    func saveDataToUserDefaults() {
-        userDef.setValue(countSec, forKey: Keys.timerSec.rawValue)
-        userDef.setValue(countMin, forKey: Keys.timerMin.rawValue)
-    }
-    
-    func removeDataFromUserDefaults() {
-        userDef.removeObject(forKey: Keys.timerSec.rawValue)
-        userDef.removeObject(forKey: Keys.timerMin.rawValue)
-    }
-    
-    func setDataFromUserDefaults() {
-        self.countSec = userDef.integer(forKey: Keys.timerSec.rawValue)
-        self.countMin = userDef.integer(forKey: Keys.timerMin.rawValue)
-    }
-    
-    
     // не понял как можно подключить / в теперешней ситуации
 //    func timeFormatter(_ tottalSecond: Int) -> String {
 //        let second: Int = tottalSecond % 60
 //        let minutes: Int = (tottalSecond / 60) % 60
 //        return String(format: "%02d:%02d", minutes, second)
 //    }
+    
     
     
     
@@ -376,18 +227,20 @@ class ChessBoardController: UIViewController {
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         presentAlertController(with: nil,
-                               massage: "Save the Game?",
-                               actions: UIAlertAction(title: "Yes",
+                               massage: "Вы действительно хотите выйти из игры?",
+                               actions: UIAlertAction(title: "Выйти и сохранить партию",
                                                       style: .default,
                                                       handler: { _ in
                                                                     self.saveDataToUserDefaults()
                                                                     self.saveBatch()
+//                                                                    self.view.removeBlurView()
                                                                     self.navigationController?.popViewController(animated: true)
                                                         
-                                }), UIAlertAction(title: "No",
+                                }), UIAlertAction(title: "Выйти и не сохранять партию",
                                                   style: .default,
                                                   handler: { _ in
                                                                 self.removeDataFromUserDefaults()
+//                                                                self.view.removeBlurView()
                                                                  self.navigationController?.popViewController(animated: true)
                                                                         }))
     }

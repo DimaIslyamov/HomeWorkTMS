@@ -9,8 +9,8 @@ import Foundation
 
 enum Keys: String {
     case cellAndChecker = "cellAndChecker_"
-    case checkerTag = "checkerTag_"
     case cellTag = "cellTag_"
     case timerSec = "timerSec_"
+    case checkerTag = "checkerTag_"
     case timerMin = "timerMin_"
 }

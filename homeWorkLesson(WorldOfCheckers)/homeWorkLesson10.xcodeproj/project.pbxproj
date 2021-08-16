@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53031ECA26CADA2500483567 /* ChessBoardController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53031EC926CADA2500483567 /* ChessBoardController+CoreKit.swift */; };
 		53133FAF26B171A50042379D /* StyleScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53133FAE26B171A50042379D /* StyleScript-Regular.ttf */; };
 		5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0B26A8983A00B7411D /* ScoreViewController.swift */; };
 		5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0D26A8984C00B7411D /* SettingsViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53031EC926CADA2500483567 /* ChessBoardController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChessBoardController+CoreKit.swift"; sourceTree = "<group>"; };
 		53133FAE26B171A50042379D /* StyleScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "StyleScript-Regular.ttf"; sourceTree = "<group>"; };
 		5333EB0B26A8983A00B7411D /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		5333EB0D26A8984C00B7411D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				53F8A5FD26B9EA2400166BD2 /* UIViewController+CoreKit.swift */,
 				538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */,
 				538624BA26C91DC600C6DE36 /* URL+CoreKit.swift */,
+				53031EC926CADA2500483567 /* ChessBoardController+CoreKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -123,7 +126,7 @@
 				538624BC26C9232300C6DE36 /* Classes */,
 				5368592F26C9A06900420AF7 /* Choose Checkers */,
 				53133FAD26B171900042379D /* Fonts */,
-				538EA4C626C34554001D13B5 /* ModelsKeys */,
+				538EA4C626C34554001D13B5 /* Keys */,
 				5333EB1326A9E4F600B7411D /* Extensions */,
 				534D2D30269D75C400052236 /* Controllers */,
 				534D2D2F269D75B700052236 /* Views */,
@@ -203,12 +206,12 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		538EA4C626C34554001D13B5 /* ModelsKeys */ = {
+		538EA4C626C34554001D13B5 /* Keys */ = {
 			isa = PBXGroup;
 			children = (
 				538EA4C726C34583001D13B5 /* Keys.swift */,
 			);
-			path = ModelsKeys;
+			path = Keys;
 			sourceTree = "<group>";
 		};
 		53D8368726CA2CB800D34B1C /* CustomButton */ = {
@@ -314,6 +317,7 @@
 				5368593726C9BFD900420AF7 /* CustomButton.swift in Sources */,
 				538EA4C526C31722001D13B5 /* UIView+CoreKit.swift in Sources */,
 				5360ED0326C49C0300A0C0C6 /* SettingsCollectionViewCell.swift in Sources */,
+				53031ECA26CADA2500483567 /* ChessBoardController+CoreKit.swift in Sources */,
 				53D8368A26CA2D5B00D34B1C /* CustomButtonForScore.swift in Sources */,
 				534D2D32269D760500052236 /* RootViewController.swift in Sources */,
 				534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */,

@@ -21,7 +21,7 @@ class CellCheckers: NSObject, NSCoding, NSSecureCoding {
     }
 
     func encode(with coder: NSCoder) { // кодировка
-        coder.encode(cellTag, forKey: Keys.checkerTag.rawValue)
+        coder.encode(cellTag, forKey: Keys.cellTag.rawValue)
         coder.encode(checkerTag, forKey: Keys.checkerTag.rawValue)
     }
     

@@ -11,7 +11,7 @@ class RootViewController: UIViewController {
     @IBOutlet weak var newGameButton: CustomButton!
     @IBOutlet weak var scoreButton: CustomButtonForScore!
     
-    let getStartedButton = UIButton()
+//    let getStartedButton = UIButton()
 //    let scoreButton = UIButton()
     let settingsButton = UIButton()
     let aboutButton = UIButton()
@@ -25,19 +25,30 @@ class RootViewController: UIViewController {
         
         newGameButton.delegate = self
         scoreButton.delegate = self
-        
-//        view.addSubview(getStartedButton)
-//        view.addSubview(scoreButton)
-//        view.addSubview(settingsButton)
-//        view.addSubview(aboutButton)
-        
-//        buttonCustomization()
-//        createButtonConstraint()
     }
     
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.view.removeBlurView()
+    }
     
-    @objc func startTheGameTapped(_ sender: UIButton) {
+    
+//    @objc func settingsTapped(_ sender: UIButton) {
+//        guard let vc = getViewController(from: "Settings") else { return }
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
+//
+//    @objc func aboutTapped(_ sender: UIButton) {
+//        guard let vc = getViewController(from: "About") else { return }
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
+}
+
+
+extension RootViewController: CustomButtonDelegate {
+    func buttonDidTap(_ sender: CustomButton) {
         guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
         presentAlertController(with: nil, massage: "Continue or start a New Game ?",
                   actions: UIAlertAction(title: "Continue", style: .default, handler: { _ in
@@ -47,7 +58,7 @@ class RootViewController: UIViewController {
               vc.createSaveChessboard()
                  do {
          let fileURL = self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
-          try FileManager.default.removeItem(at: fileURL)
+                    try FileManager.default.removeItem(at: fileURL)
                  } catch {
                      print("error")
                   vc.cellCheckers.removeAll()
@@ -62,29 +73,12 @@ class RootViewController: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }))
     }
-    
-    
-    
-    @objc func scoreTapped(_ sender: UIButton) {
-        guard let vc = getViewController(from: "Score") else { return }
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc func settingsTapped(_ sender: UIButton) {
-        guard let vc = getViewController(from: "Settings") else { return }
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc func aboutTapped(_ sender: UIButton) {
-        guard let vc = getViewController(from: "About") else { return }
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
-
-extension RootViewController: CustomButtonDelegate {
-    func buttonDidTap(_ sender: CustomButton) {
-        print("button was tapped")
+extension RootViewController: CustomButtonForScoreDelegate {
+    func buttonDidTap(_ sender: CustomButtonForScore) {
+        guard let vc = getViewController(from: "Score") else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
