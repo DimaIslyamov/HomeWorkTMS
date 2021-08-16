@@ -8,9 +8,11 @@
 import UIKit
 
 class RootViewController: UIViewController {
+    @IBOutlet weak var newGameButton: CustomButton!
+    @IBOutlet weak var scoreButton: CustomButtonForScore!
     
     let getStartedButton = UIButton()
-    let scoreButton = UIButton()
+//    let scoreButton = UIButton()
     let settingsButton = UIButton()
     let aboutButton = UIButton()
     
@@ -21,13 +23,16 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(getStartedButton)
-        view.addSubview(scoreButton)
-        view.addSubview(settingsButton)
-        view.addSubview(aboutButton)
+        newGameButton.delegate = self
+        scoreButton.delegate = self
         
-        buttonCustomization()
-        createButtonConstraint()
+//        view.addSubview(getStartedButton)
+//        view.addSubview(scoreButton)
+//        view.addSubview(settingsButton)
+//        view.addSubview(aboutButton)
+        
+//        buttonCustomization()
+//        createButtonConstraint()
     }
     
     
@@ -74,4 +79,13 @@ class RootViewController: UIViewController {
         guard let vc = getViewController(from: "About") else { return }
         self.navigationController?.pushViewController(vc, animated: true)
     }
+}
+
+
+extension RootViewController: CustomButtonDelegate {
+    func buttonDidTap(_ sender: CustomButton) {
+        print("button was tapped")
+    }
+    
+    
 }

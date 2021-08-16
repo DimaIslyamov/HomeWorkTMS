@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CustomButtonDelegate: AnyObject {
+    func buttonDidTap(_ sender: CustomButton)
+}
+
 @IBDesignable
 class CustomButton: UIView {
     @IBOutlet var contentView: UIView!
@@ -32,17 +36,14 @@ class CustomButton: UIView {
         }
     }
     
-    private var isAnimated_: Bool = false
+    @IBInspectable var isAnimated: Bool = false
     
-    @IBInspectable var isAnimated: Bool {
-        get {
-            isAnimated_ = newValue
-        } set {
-            return isAnimated_
-        }
+    weak var delegate: CustomButtonDelegate?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        creatAnimationIfNeeded()
     }
-    
-   
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -64,7 +65,7 @@ class CustomButton: UIView {
         
     }
     
-    private func creatAnimation() {
+    private func creatAnimationIfNeeded() {
         guard isAnimated else { return }
         UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat, .autoreverse]) {
             self.contentView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
@@ -72,6 +73,6 @@ class CustomButton: UIView {
     }
     
     @IBAction func bottonAction(_ sender: UIButton) {
-        
+        delegate?.buttonDidTap(self)
     }
 }

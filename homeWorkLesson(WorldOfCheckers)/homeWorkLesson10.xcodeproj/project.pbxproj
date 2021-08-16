@@ -30,6 +30,8 @@
 		538624BB26C91DC600C6DE36 /* URL+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538624BA26C91DC600C6DE36 /* URL+CoreKit.swift */; };
 		538EA4C526C31722001D13B5 /* UIView+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */; };
 		538EA4C826C34583001D13B5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538EA4C726C34583001D13B5 /* Keys.swift */; };
+		53D8368A26CA2D5B00D34B1C /* CustomButtonForScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8368926CA2D5B00D34B1C /* CustomButtonForScore.swift */; };
+		53D8368C26CA2D6200D34B1C /* CustomButtonForScore.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53D8368B26CA2D6200D34B1C /* CustomButtonForScore.xib */; };
 		53F8A5FE26B9EA2400166BD2 /* UIViewController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8A5FD26B9EA2400166BD2 /* UIViewController+CoreKit.swift */; };
 		53F8A60026B9ED7E00166BD2 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F8A5FF26B9ED7E00166BD2 /* About.storyboard */; };
 		53F8A60226B9EDAF00166BD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */; };
@@ -61,6 +63,8 @@
 		538624BA26C91DC600C6DE36 /* URL+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+CoreKit.swift"; sourceTree = "<group>"; };
 		538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CoreKit.swift"; sourceTree = "<group>"; };
 		538EA4C726C34583001D13B5 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		53D8368926CA2D5B00D34B1C /* CustomButtonForScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonForScore.swift; sourceTree = "<group>"; };
+		53D8368B26CA2D6200D34B1C /* CustomButtonForScore.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomButtonForScore.xib; sourceTree = "<group>"; };
 		53F8A5FD26B9EA2400166BD2 /* UIViewController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreKit.swift"; sourceTree = "<group>"; };
 		53F8A5FF26B9ED7E00166BD2 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +119,7 @@
 		534D2D19269D757E00052236 /* homeWorkLesson10 */ = {
 			isa = PBXGroup;
 			children = (
-				5368593526C9BF8C00420AF7 /* CostomButtonForRootVC */,
+				53D8368726CA2CB800D34B1C /* CustomButton */,
 				538624BC26C9232300C6DE36 /* Classes */,
 				5368592F26C9A06900420AF7 /* Choose Checkers */,
 				53133FAD26B171900042379D /* Fonts */,
@@ -207,6 +211,24 @@
 			path = ModelsKeys;
 			sourceTree = "<group>";
 		};
+		53D8368726CA2CB800D34B1C /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				53D8368826CA2D1900D34B1C /* CustomButtonForScore */,
+				5368593526C9BF8C00420AF7 /* CostomButtonForRootVC */,
+			);
+			path = CustomButton;
+			sourceTree = "<group>";
+		};
+		53D8368826CA2D1900D34B1C /* CustomButtonForScore */ = {
+			isa = PBXGroup;
+			children = (
+				53D8368926CA2D5B00D34B1C /* CustomButtonForScore.swift */,
+				53D8368B26CA2D6200D34B1C /* CustomButtonForScore.xib */,
+			);
+			path = CustomButtonForScore;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,6 +296,7 @@
 				537B185B26AC2AEB0026D73C /* Score.storyboard in Resources */,
 				5368593926C9C04700420AF7 /* CustomButton.xib in Resources */,
 				534D2D22269D757E00052236 /* Main.storyboard in Resources */,
+				53D8368C26CA2D6200D34B1C /* CustomButtonForScore.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +314,7 @@
 				5368593726C9BFD900420AF7 /* CustomButton.swift in Sources */,
 				538EA4C526C31722001D13B5 /* UIView+CoreKit.swift in Sources */,
 				5360ED0326C49C0300A0C0C6 /* SettingsCollectionViewCell.swift in Sources */,
+				53D8368A26CA2D5B00D34B1C /* CustomButtonForScore.swift in Sources */,
 				534D2D32269D760500052236 /* RootViewController.swift in Sources */,
 				534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */,
 				53F8A5FE26B9EA2400166BD2 /* UIViewController+CoreKit.swift in Sources */,
