@@ -110,15 +110,15 @@ class ChessBoardController: UIViewController {
         let attrs: [NSAttributedString.Key: Any] = [ .foregroundColor : UIColor.yellow,
                                                      .font: UIFont(name: "StyleScript-Regular", size: 35) ?? "" ]
 
-        let timerView = UIView(frame: CGRect(x: view.center.x, y: 130, width: 170, height: 60))
+        let timerView = UIView(frame: CGRect(x: view.center.x, y: 130, width: 170, height: 50))
         timerView.center.x = view.center.x
-        timerView.backgroundColor = #colorLiteral(red: 0.3900135159, green: 0.01423221827, blue: 0.01847057045, alpha: 1)
+        timerView.backgroundColor = #colorLiteral(red: 0.1176470588, green: 0.337254902, blue: 0.5019607843, alpha: 1)
         timerView.layer.cornerRadius = 15
-        timerView.layer.borderWidth = 5
+        timerView.layer.borderWidth = 3
         timerView.layer.borderColor = UIColor.black.cgColor
         view.addSubview(timerView)
 
-        timerLable = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 130, height: 60)))
+        timerLable = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 130, height: 50)))
         timerLable.frame.origin.x += 20
 
         if countMin > 0 || countSec > 0 {
@@ -228,21 +228,17 @@ class ChessBoardController: UIViewController {
                                actions: UIAlertAction(title: "Выйти и сохранить партию",
                                                       style: .default,
                                                       handler: { _ in
-                                                                    self.saveDataToUserDefaults()
-                                                                    self.saveBatch()
-//                                                                    self.view.removeBlurView()
-                                                                    self.navigationController?.popViewController(animated: true)
+                                                        self.saveDataToUserDefaults()
+                                                        self.saveBatch()
+                                                        self.navigationController?.popViewController(animated: true)
                                                         
                                 }), UIAlertAction(title: "Выйти и не сохранять партию",
                                                   style: .default,
                                                   handler: { _ in
-                                                                self.removeDataFromUserDefaults()
-//                                                                self.view.removeBlurView()
-                                                                 self.navigationController?.popViewController(animated: true)
-                                                                        }))
-    }
-    
-    
+                                                    self.removeDataFromUserDefaults()
+                                                    self.navigationController?.popViewController(animated: true)
+                                                  }))
+        }
 }
 
 

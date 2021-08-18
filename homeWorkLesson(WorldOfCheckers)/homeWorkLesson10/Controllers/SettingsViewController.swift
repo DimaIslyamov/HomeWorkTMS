@@ -24,6 +24,27 @@ class SettingsViewController: UIViewController  {
         backButtonCostamization()
     }
     
+    private func selectChooseMedia() {
+        let picker = UIImagePickerController()
+        presentAlertController(with: nil,
+                               massage: nil,
+                               preferredStyle: .actionSheet,
+                               actions: UIAlertAction(title: "Camera",
+                                                      style: .default,
+                                                      handler: { _ in
+                                                        
+                                                        self.view.removeBlurView()
+                                                      }),
+                               UIAlertAction(title: "Media",
+                                             style: .default,
+                                             handler: { _ in
+                                                picker.sourceType = .photoLibrary
+                                                self.present(picker, animated: true, completion: nil)
+                                                self.view.removeBlurView()
+                                             }))
+        
+    }
+    
     
     func backButtonCostamization() {
         buttonViews.layer.cornerRadius = 12
@@ -37,6 +58,9 @@ class SettingsViewController: UIViewController  {
         buttonOutlet.layer.cornerRadius = 12
     }
     
+    @IBAction func backgraoundReplasmentAction(_ sender: UIButton) {
+        selectChooseMedia()
+    }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
