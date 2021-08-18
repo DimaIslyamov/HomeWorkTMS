@@ -26,13 +26,20 @@ class SettingsViewController: UIViewController  {
     
     private func selectChooseMedia() {
         let picker = UIImagePickerController()
+        picker.delegate = self
         presentAlertController(with: nil,
                                massage: nil,
                                preferredStyle: .actionSheet,
                                actions: UIAlertAction(title: "Camera",
                                                       style: .default,
                                                       handler: { _ in
-                                                        
+                                                        /*
+                                                        #if targetEnvironment(simulator)
+                                                        print("Error, no camera!")
+                                                        #else
+                                                        picker.sourceType = .camera
+                                                        self.present(picker, animated: true, completion: nil)
+                                                        */
                                                         self.view.removeBlurView()
                                                       }),
                                UIAlertAction(title: "Media",
@@ -85,8 +92,17 @@ extension SettingsViewController: UICollectionViewDataSource {
     
 }
 
+
 extension SettingsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 197, height: 129)
+    }
+}
+
+
+extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        guard let image = info[.originalImage] as? UIImage else { return }
+        print()
     }
 }
