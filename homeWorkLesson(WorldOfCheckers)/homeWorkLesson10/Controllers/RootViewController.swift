@@ -14,16 +14,11 @@ class RootViewController: UIViewController {
     @IBOutlet weak var settingButton: CustomButtonForSettings!
     @IBOutlet weak var aboutButton: CustomButtonForAbout!
     
-    @IBOutlet weak var backgraoundImage: UIImageView!
-    var image: UIImage?
-    
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     var saveTimerCheckers: CellCheckers = CellCheckers()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(setBackground(with: "MainArtas"))
         
         newGameButton.delegate = self
         scoreButton.delegate = self

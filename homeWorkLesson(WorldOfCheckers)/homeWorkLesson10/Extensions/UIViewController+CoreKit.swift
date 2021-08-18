@@ -33,6 +33,7 @@ extension UIViewController {
         let ImageViewSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height)
         imageView.frame = CGRect(origin: .zero, size: ImageViewSize)
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.layer.zPosition = -1
         return imageView
     }

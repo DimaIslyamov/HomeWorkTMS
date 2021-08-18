@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIn-PC-aXz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainArtas" translatesAutoresizingMaskIntoConstraints="NO" id="JIn-PC-aXz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4u-Hm-tcP">
@@ -125,7 +125,6 @@
                     <navigationItem key="navigationItem" id="rOW-7x-f8W"/>
                     <connections>
                         <outlet property="aboutButton" destination="P7v-K1-QvN" id="u2l-Yo-ydI"/>
-                        <outlet property="backgraoundImage" destination="JIn-PC-aXz" id="8HO-Sg-aRI"/>
                         <outlet property="newGameButton" destination="km2-PZ-dvo" id="2L6-yM-Uqh"/>
                         <outlet property="scoreButton" destination="ymX-8Y-BAn" id="Fj0-8r-WbC"/>
                         <outlet property="settingButton" destination="sK1-2v-K0s" id="k4B-lU-jDj"/>
@@ -160,6 +159,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="MainArtas" width="750" height="1000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

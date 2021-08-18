@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GameArtas" translatesAutoresizingMaskIntoConstraints="NO" id="0rQ-GY-5cm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0rQ-GY-5cm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRW-VB-4hz">
@@ -73,6 +73,7 @@
                     </view>
                     <connections>
                         <outlet property="backButtonOutlet" destination="Z09-JX-c1s" id="0ay-oq-M5O"/>
+                        <outlet property="backgraoundImage" destination="0rQ-GY-5cm" id="rHG-tO-ko8"/>
                         <outlet property="viewOutlet" destination="yYY-ZD-4ED" id="gxg-12-pQo"/>
                     </connections>
                 </viewController>
@@ -82,7 +83,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GameArtas" width="960" height="540"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

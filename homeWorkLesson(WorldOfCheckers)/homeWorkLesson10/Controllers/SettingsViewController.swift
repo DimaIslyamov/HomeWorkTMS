@@ -53,7 +53,7 @@ class SettingsViewController: UIViewController  {
     }
     
     
-    func backButtonCostamization() {
+    private func backButtonCostamization() {
         buttonViews.layer.cornerRadius = 12
         buttonViews.layer.shadowColor = UIColor.black.cgColor
         buttonViews.layer.shadowRadius = 4
@@ -102,7 +102,11 @@ extension SettingsViewController: UICollectionViewDelegateFlowLayout {
 
 extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        guard let image = info[.originalImage] as? UIImage else { return }
-        print()
+        
+        let story = UIStoryboard(name: "ChessBoard", bundle: nil)
+        guard let image = info[.originalImage] as? UIImage,
+              let vc = story.instantiateInitialViewController() as? ChessBoardController else { return }
+        vc.image = image
+        picker.dismiss(animated: true, completion: nil)
     }
 }

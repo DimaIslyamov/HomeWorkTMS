@@ -25,6 +25,9 @@ class ChessBoardController: UIViewController {
     
     // MARK: - Переменные
     
+    @IBOutlet weak var backgraoundImage: UIImageView!
+    var image: UIImage?
+    
     var chessboard = UIImageView()
     
     var countSec: Int = 0
@@ -48,6 +51,9 @@ class ChessBoardController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // not working
+        backgraoundImage.image = image
+        view.addSubview(setBackground(with: "GameArtas"))
         
         backButtonFuncCostamize()
     }
