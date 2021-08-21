@@ -12,6 +12,8 @@
 		53031ED126CAE2FC00483567 /* CustomButtonForSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53031ED026CAE2FC00483567 /* CustomButtonForSettings.xib */; };
 		53031ED426CB07B300483567 /* CustomButtonForAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53031ED326CB07B300483567 /* CustomButtonForAbout.swift */; };
 		53031ED626CB07BE00483567 /* CustomButtonForAbout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53031ED526CB07BE00483567 /* CustomButtonForAbout.xib */; };
+		530C29BB26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530C29B926D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.swift */; };
+		530C29BC26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 530C29BA26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.xib */; };
 		53133FAF26B171A50042379D /* StyleScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53133FAE26B171A50042379D /* StyleScript-Regular.ttf */; };
 		5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0B26A8983A00B7411D /* ScoreViewController.swift */; };
 		5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0D26A8984C00B7411D /* SettingsViewController.swift */; };
@@ -26,12 +28,10 @@
 		5360ECFF26C46CE400A0C0C6 /* CellCheckers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360ECFE26C46CE400A0C0C6 /* CellCheckers.swift */; };
 		5360ED0326C49C0300A0C0C6 /* SettingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360ED0126C49C0300A0C0C6 /* SettingsCollectionViewCell.swift */; };
 		5360ED0426C49C0300A0C0C6 /* SettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5360ED0226C49C0300A0C0C6 /* SettingsCollectionViewCell.xib */; };
-		5368592A26C98A4100420AF7 /* SetupCheckersImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5368592926C98A4100420AF7 /* SetupCheckersImage.swift */; };
 		5368593726C9BFD900420AF7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5368593626C9BFD900420AF7 /* CustomButton.swift */; };
 		5368593926C9C04700420AF7 /* CustomButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5368593826C9C04700420AF7 /* CustomButton.xib */; };
 		537B185B26AC2AEB0026D73C /* Score.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185A26AC2AEB0026D73C /* Score.storyboard */; };
 		537B185D26AC2AF40026D73C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185C26AC2AF40026D73C /* Settings.storyboard */; };
-		538624BB26C91DC600C6DE36 /* URL+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538624BA26C91DC600C6DE36 /* URL+CoreKit.swift */; };
 		538EA4C526C31722001D13B5 /* UIView+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */; };
 		538EA4C826C34583001D13B5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538EA4C726C34583001D13B5 /* Keys.swift */; };
 		53D8368A26CA2D5B00D34B1C /* CustomButtonForScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8368926CA2D5B00D34B1C /* CustomButtonForScore.swift */; };
@@ -47,6 +47,8 @@
 		53031ED026CAE2FC00483567 /* CustomButtonForSettings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomButtonForSettings.xib; sourceTree = "<group>"; };
 		53031ED326CB07B300483567 /* CustomButtonForAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonForAbout.swift; sourceTree = "<group>"; };
 		53031ED526CB07BE00483567 /* CustomButtonForAbout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomButtonForAbout.xib; sourceTree = "<group>"; };
+		530C29B926D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCheckersCollectionViewCell.swift; sourceTree = "<group>"; };
+		530C29BA26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhiteCheckersCollectionViewCell.xib; sourceTree = "<group>"; };
 		53133FAE26B171A50042379D /* StyleScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "StyleScript-Regular.ttf"; sourceTree = "<group>"; };
 		5333EB0B26A8983A00B7411D /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		5333EB0D26A8984C00B7411D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -63,12 +65,10 @@
 		5360ECFE26C46CE400A0C0C6 /* CellCheckers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCheckers.swift; sourceTree = "<group>"; };
 		5360ED0126C49C0300A0C0C6 /* SettingsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewCell.swift; sourceTree = "<group>"; };
 		5360ED0226C49C0300A0C0C6 /* SettingsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCollectionViewCell.xib; sourceTree = "<group>"; };
-		5368592926C98A4100420AF7 /* SetupCheckersImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCheckersImage.swift; sourceTree = "<group>"; };
 		5368593626C9BFD900420AF7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5368593826C9C04700420AF7 /* CustomButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomButton.xib; sourceTree = "<group>"; };
 		537B185A26AC2AEB0026D73C /* Score.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Score.storyboard; sourceTree = "<group>"; };
 		537B185C26AC2AF40026D73C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		538624BA26C91DC600C6DE36 /* URL+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+CoreKit.swift"; sourceTree = "<group>"; };
 		538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CoreKit.swift"; sourceTree = "<group>"; };
 		538EA4C726C34583001D13B5 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		53D8368926CA2D5B00D34B1C /* CustomButtonForScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonForScore.swift; sourceTree = "<group>"; };
@@ -107,6 +107,15 @@
 			path = CustomButtonForAbout;
 			sourceTree = "<group>";
 		};
+		530C29B826D0FEC3001A4C81 /* WhiteCheckersCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				530C29B926D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.swift */,
+				530C29BA26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.xib */,
+			);
+			path = WhiteCheckersCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		53133FAD26B171900042379D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,7 +129,6 @@
 			children = (
 				53F8A5FD26B9EA2400166BD2 /* UIViewController+CoreKit.swift */,
 				538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */,
-				538624BA26C91DC600C6DE36 /* URL+CoreKit.swift */,
 				53031EC926CADA2500483567 /* ChessBoardController+CoreKit.swift */,
 			);
 			path = Extensions;
@@ -206,6 +214,7 @@
 		5368592F26C9A06900420AF7 /* Choose Checkers */ = {
 			isa = PBXGroup;
 			children = (
+				530C29B826D0FEC3001A4C81 /* WhiteCheckersCollectionViewCell */,
 				5360ED0026C49BD300A0C0C6 /* SettingsCollectionViewCell */,
 			);
 			path = "Choose Checkers";
@@ -224,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				5360ECFE26C46CE400A0C0C6 /* CellCheckers.swift */,
-				5368592926C98A4100420AF7 /* SetupCheckersImage.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 				53031ED126CAE2FC00483567 /* CustomButtonForSettings.xib in Resources */,
 				537B185B26AC2AEB0026D73C /* Score.storyboard in Resources */,
 				5368593926C9C04700420AF7 /* CustomButton.xib in Resources */,
+				530C29BC26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.xib in Resources */,
 				534D2D22269D757E00052236 /* Main.storyboard in Resources */,
 				53D8368C26CA2D6200D34B1C /* CustomButtonForScore.xib in Resources */,
 				53031ED626CB07BE00483567 /* CustomButtonForAbout.xib in Resources */,
@@ -346,16 +355,15 @@
 				53031ECA26CADA2500483567 /* ChessBoardController+CoreKit.swift in Sources */,
 				53D8368A26CA2D5B00D34B1C /* CustomButtonForScore.swift in Sources */,
 				534D2D32269D760500052236 /* RootViewController.swift in Sources */,
+				530C29BB26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.swift in Sources */,
 				534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */,
 				53F8A5FE26B9EA2400166BD2 /* UIViewController+CoreKit.swift in Sources */,
-				538624BB26C91DC600C6DE36 /* URL+CoreKit.swift in Sources */,
 				5360ECFF26C46CE400A0C0C6 /* CellCheckers.swift in Sources */,
 				53F8A60226B9EDAF00166BD2 /* AboutViewController.swift in Sources */,
 				53031ECF26CAE2F000483567 /* CustomButtonForSettings.swift in Sources */,
 				5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */,
 				538EA4C826C34583001D13B5 /* Keys.swift in Sources */,
 				53031ED426CB07B300483567 /* CustomButtonForAbout.swift in Sources */,
-				5368592A26C98A4100420AF7 /* SetupCheckersImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

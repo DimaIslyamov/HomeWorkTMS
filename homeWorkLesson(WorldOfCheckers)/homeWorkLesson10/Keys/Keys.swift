@@ -13,5 +13,6 @@ enum Keys: String {
     case timerSec = "timerSec_"
     case checkerTag = "checkerTag_"
     case timerMin = "timerMin_"
-    case checkerImage = "checkerImage_"
+    case checkerImageBlack = "checkerImageBlack_"
+    case checkerImageWhite = "checkerImageWhite_"
 }

@@ -90,7 +90,7 @@ class ChessBoardController: UIViewController {
                 
                 let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                 checker.isUserInteractionEnabled = true
-                checker.image = j < 3 ? UIImage(named: "ArtasArmi") : UIImage(named: "ElidanArmi")
+                checker.image = UIImage(named: j < 3 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
                 checker.tag = j < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
                 column.addSubview(checker)
                 

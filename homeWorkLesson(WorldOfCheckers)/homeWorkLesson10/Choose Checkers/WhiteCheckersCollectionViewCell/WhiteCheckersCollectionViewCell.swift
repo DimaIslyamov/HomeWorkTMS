@@ -1,13 +1,13 @@
 //
-//  SettingsCollectionViewCell.swift
+//  WhiteCheckersCollectionViewCell.swift
 //  homeWorkLesson10
 //
-//  Created by Moobat on 12.08.21.
+//  Created by Moobat on 21.08.21.
 //
 
 import UIKit
 
-class SettingsCollectionViewCell: UICollectionViewCell {
+class WhiteCheckersCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var checkerImageView: UIImageView!
     @IBOutlet weak var checkerSelectedImageView: UIImageView!
@@ -31,4 +31,5 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         checkerImageView.image = checkerImage
         checkerImageView.contentMode = .scaleAspectFit
     }
+
 }

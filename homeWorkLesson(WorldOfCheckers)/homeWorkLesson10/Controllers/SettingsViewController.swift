@@ -11,16 +11,22 @@ class SettingsViewController: UIViewController  {
     
     @IBOutlet weak var buttonViews: UIView!
     @IBOutlet weak var buttonOutlet: UIButton!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewA: UICollectionView!
+    @IBOutlet weak var collectionViewB: UICollectionView!
     
-    var arrayOfCheckersImage = ["ArtasArmi", "ElidanArmi", "PaladinArmi"]
+    var arrayOfBlackCheckersImage = ["ArtasArmi", "ElidanArmi", "PaladinArmi", "nerzulArmi", "ordaArmi", "ximikArmi"]
+    var arrayOfWhiteCheckersImage = ["elfeArmi", "gnomArmi", "pandaArmi", "darkElfeArmi", "somthingArmi", "warrorsArmi"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(UINib(nibName: "SettingsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SettingsCollectionViewCell")
+        collectionViewA.dataSource = self
+        collectionViewA.delegate = self
+        collectionViewA.register(UINib(nibName: "SettingsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SettingsCollectionViewCell")
+        
+        collectionViewB.dataSource = self
+        collectionViewB.delegate = self
+        collectionViewB.register(UINib(nibName: "WhiteCheckersCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WhiteCheckersCollectionViewCell")
         
         backButtonCostamization()
     }
@@ -80,32 +86,68 @@ class SettingsViewController: UIViewController  {
 // MARK: - Extension
 
 extension SettingsViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayOfCheckersImage.count
+        if collectionView == self.collectionViewA {
+            return arrayOfBlackCheckersImage.count
+        }
+        return arrayOfWhiteCheckersImage.count
     }
     
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SettingsCollectionViewCell", for: indexPath) as? SettingsCollectionViewCell else {
-            return UICollectionViewCell()
+       
+        if collectionView == collectionViewA {
+            guard let cellA = collectionViewA.dequeueReusableCell(withReuseIdentifier: "SettingsCollectionViewCell", for: indexPath) as? SettingsCollectionViewCell else { return UICollectionViewCell()}
+            if UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue) == arrayOfBlackCheckersImage[indexPath.row] {
+                cellA.checkerSelectedImageView.isHidden = false
+            }
+            cellA.setupImageForCheckers(checkerImage: UIImage(named: arrayOfBlackCheckersImage[indexPath.row]) ?? UIImage())
+            
+            return cellA
+            
+        } else if collectionView == collectionViewB {
+            guard let cellB = collectionViewB.dequeueReusableCell(withReuseIdentifier: "WhiteCheckersCollectionViewCell", for: indexPath) as? WhiteCheckersCollectionViewCell else { return UICollectionViewCell()}
+            if UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue) == arrayOfWhiteCheckersImage[indexPath.row] {
+                cellB.checkerSelectedImageView.isHidden = false
+            }
+            cellB.setupImageForCheckers(checkerImage: UIImage(named: arrayOfWhiteCheckersImage[indexPath.row]) ?? UIImage())
+            
+            return cellB
         }
-        
-        cell.setupImageForCheckers(checkerImage: UIImage(named: arrayOfCheckersImage[indexPath.row]) ?? UIImage())
-        
-        return cell
+        return UICollectionViewCell()
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        UserDefaults.standard.setValue(arrayOfCheckersImage[indexPath.row], forKey: Keys.checkerImage.rawValue)
+        if collectionView == self.collectionViewA {
+            
+            UserDefaults.standard.setValue(arrayOfBlackCheckersImage[indexPath.row], forKey: Keys.checkerImageBlack.rawValue)
+            collectionView.visibleCells.forEach { cell in
+                (cell as? SettingsCollectionViewCell)?.checkerSelectedImageView.isHidden = true
+            }
+            guard let cellA = collectionView.cellForItem(at: indexPath) as? SettingsCollectionViewCell else { return }
+            cellA.checkerSelectedImageView.isHidden = false
+            
+        } else if collectionView == self.collectionViewB {
+            
+            UserDefaults.standard.setValue(arrayOfWhiteCheckersImage[indexPath.row], forKey: Keys.checkerImageWhite.rawValue)
+            collectionView.visibleCells.forEach { cell in
+                (cell as? WhiteCheckersCollectionViewCell)?.checkerSelectedImageView.isHidden = true
+            }
+            guard let cellB = collectionView.cellForItem(at: indexPath) as? WhiteCheckersCollectionViewCell else { return }
+            cellB.checkerSelectedImageView.isHidden = false
+        }
     }
+    
     
 }
 
 
 extension SettingsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 137, height: 128)
+        return CGSize(width: 132, height: 117)
     }
 }
 

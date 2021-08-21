@@ -83,7 +83,7 @@ extension ChessBoardController {
                     if column.tag == value.cellTag {
                         let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                         checker.isUserInteractionEnabled = true
-                        checker.image = value.checkerTag == 1 ? UIImage(named: "ArtasArmi") : UIImage(named: "ElidanArmi")
+                        checker.image = UIImage(named: j < 3 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
                         checker.tag = value.checkerTag == 1 ? Chekers.black.rawValue : Chekers.white.rawValue
                         column.addSubview(checker)
                         
