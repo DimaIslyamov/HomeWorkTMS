@@ -11,7 +11,6 @@ import UIKit
 class CellCheckers: NSObject, NSCoding, NSSecureCoding {
     static var supportsSecureCoding: Bool = true
     
-//    var cellAndChecker: Int?
     var checkerTag: Int?
     var cellTag: Int?
     

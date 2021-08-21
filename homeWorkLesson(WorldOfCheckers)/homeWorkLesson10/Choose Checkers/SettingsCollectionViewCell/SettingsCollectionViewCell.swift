@@ -9,18 +9,19 @@ import UIKit
 
 class SettingsCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var darkImage: UIImageView!
-    @IBOutlet weak var lightImage: UIImageView!
-    @IBOutlet weak var chooseChecker: UISwitch!
-    
+    @IBOutlet weak var checkerImageView: UIImageView!
+    @IBOutlet weak var checkerSelectedImageView: UIImageView!
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        imageBlackChecker.image = UIImage(named: "ArtasArmi")
-//        imageWhiteChecker.image = UIImage(named: "ElidanArmi")
+        checkerImageView.image = checkerSelectedImageView.image?.withRenderingMode(.alwaysTemplate)
+        checkerSelectedImageView.isHidden = true
     }
 
-    
+    func setupImageForCheckers(checkerImage: UIImage) {
+        checkerImageView.image = checkerImage
+        checkerImageView.contentMode = .scaleAspectFit
+    }
 }

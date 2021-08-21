@@ -10,63 +10,55 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SettingsCollectionViewCell" id="gTV-IL-0wX" customClass="SettingsCollectionViewCell" customModule="homeWorkLesson10" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="209" height="142"/>
+            <rect key="frame" x="0.0" y="0.0" width="137" height="128"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="209" height="142"/>
+                <rect key="frame" x="0.0" y="0.0" width="137" height="128"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvD-gj-oLQ">
-                        <rect key="frame" x="6" y="6" width="197" height="129"/>
+                        <rect key="frame" x="0.0" y="0.0" width="137" height="128"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArtasArmi" translatesAutoresizingMaskIntoConstraints="NO" id="1nD-DT-iKK" customClass="Sett">
-                                <rect key="frame" x="11" y="13" width="87" height="69"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArtasArmi" translatesAutoresizingMaskIntoConstraints="NO" id="1nD-DT-iKK">
+                                <rect key="frame" x="0.0" y="0.0" width="137" height="128"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="qMD-cd-QXd">
+                                <rect key="frame" x="8" y="91" width="31" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="87" id="tLo-MQ-1Jw"/>
-                                    <constraint firstAttribute="height" constant="69" id="ykY-eg-V6V"/>
+                                    <constraint firstAttribute="height" constant="29" id="FMa-6p-ANT"/>
+                                    <constraint firstAttribute="width" constant="31" id="lFF-Th-6ZW"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PaladinArmi" translatesAutoresizingMaskIntoConstraints="NO" id="Mhb-uy-2GR">
-                                <rect key="frame" x="106" y="13" width="83" height="69"/>
-                            </imageView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h3u-cc-9sX">
-                                <rect key="frame" x="74" y="90" width="49" height="31"/>
-                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1nD-DT-iKK" firstAttribute="top" secondItem="pvD-gj-oLQ" secondAttribute="top" constant="13" id="2Rf-Xk-FuG"/>
-                            <constraint firstAttribute="bottom" secondItem="h3u-cc-9sX" secondAttribute="bottom" constant="8" id="2kg-Xn-B2o"/>
-                            <constraint firstItem="Mhb-uy-2GR" firstAttribute="width" secondItem="1nD-DT-iKK" secondAttribute="width" multiplier="0.954023" id="KsZ-eY-Yd2"/>
-                            <constraint firstItem="Mhb-uy-2GR" firstAttribute="top" secondItem="1nD-DT-iKK" secondAttribute="top" id="TDl-JF-It7"/>
-                            <constraint firstItem="1nD-DT-iKK" firstAttribute="leading" secondItem="pvD-gj-oLQ" secondAttribute="leading" constant="11" id="TRg-ri-t1a"/>
-                            <constraint firstItem="Mhb-uy-2GR" firstAttribute="leading" secondItem="1nD-DT-iKK" secondAttribute="trailing" constant="8" symbolic="YES" id="X3F-dj-bD7"/>
-                            <constraint firstItem="h3u-cc-9sX" firstAttribute="top" secondItem="1nD-DT-iKK" secondAttribute="bottom" constant="8" symbolic="YES" id="YAw-ws-cKT"/>
-                            <constraint firstAttribute="trailing" secondItem="h3u-cc-9sX" secondAttribute="trailing" constant="76" id="gP1-28-24I"/>
-                            <constraint firstItem="Mhb-uy-2GR" firstAttribute="bottom" secondItem="1nD-DT-iKK" secondAttribute="bottom" id="ie5-NJ-xFd"/>
-                            <constraint firstItem="h3u-cc-9sX" firstAttribute="leading" secondItem="pvD-gj-oLQ" secondAttribute="leading" constant="74" id="y9u-a1-f3o"/>
+                            <constraint firstAttribute="trailing" secondItem="1nD-DT-iKK" secondAttribute="trailing" id="JZg-gX-xWL"/>
+                            <constraint firstItem="1nD-DT-iKK" firstAttribute="top" secondItem="pvD-gj-oLQ" secondAttribute="top" id="QZo-pe-PNA"/>
+                            <constraint firstItem="1nD-DT-iKK" firstAttribute="leading" secondItem="pvD-gj-oLQ" secondAttribute="leading" id="QuS-Nr-QbF"/>
+                            <constraint firstAttribute="bottom" secondItem="qMD-cd-QXd" secondAttribute="bottom" constant="8" id="Usl-UI-4Pi"/>
+                            <constraint firstItem="qMD-cd-QXd" firstAttribute="leading" secondItem="pvD-gj-oLQ" secondAttribute="leading" constant="8" id="agT-Zw-3rd"/>
+                            <constraint firstAttribute="bottom" secondItem="1nD-DT-iKK" secondAttribute="bottom" id="gha-nh-XMf"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="pvD-gj-oLQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="0uV-pE-do8"/>
-                <constraint firstItem="pvD-gj-oLQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="MKg-fV-Pqz"/>
-                <constraint firstAttribute="bottom" secondItem="pvD-gj-oLQ" secondAttribute="bottom" constant="7" id="WOu-bI-l0H"/>
-                <constraint firstAttribute="trailing" secondItem="pvD-gj-oLQ" secondAttribute="trailing" constant="6" id="mA3-eX-jvS"/>
+                <constraint firstAttribute="trailing" secondItem="pvD-gj-oLQ" secondAttribute="trailing" id="6Ze-cN-96w"/>
+                <constraint firstItem="pvD-gj-oLQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VPe-f7-2Xc"/>
+                <constraint firstItem="pvD-gj-oLQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="d2k-Td-Upi"/>
+                <constraint firstAttribute="bottom" secondItem="pvD-gj-oLQ" secondAttribute="bottom" id="jwi-Pr-J7I"/>
             </constraints>
-            <size key="customSize" width="209" height="128"/>
+            <size key="customSize" width="137" height="114"/>
             <connections>
-                <outlet property="chooseChecker" destination="h3u-cc-9sX" id="Jlh-rX-RwP"/>
-                <outlet property="darkImage" destination="1nD-DT-iKK" id="rir-fb-BiO"/>
-                <outlet property="lightImage" destination="Mhb-uy-2GR" id="N1F-dc-yuI"/>
+                <outlet property="checkerImageView" destination="1nD-DT-iKK" id="F0a-zC-N16"/>
+                <outlet property="checkerSelectedImageView" destination="qMD-cd-QXd" id="m0V-Nz-Ctr"/>
             </connections>
-            <point key="canvasLocation" x="200.72463768115944" y="113.16964285714285"/>
+            <point key="canvasLocation" x="148.55072463768118" y="108.48214285714285"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="ArtasArmi" width="283" height="236"/>
-        <image name="PaladinArmi" width="248" height="252"/>
+        <image name="check" width="256" height="256"/>
     </resources>
 </document>

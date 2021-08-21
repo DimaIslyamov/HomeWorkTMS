@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController  {
     @IBOutlet weak var buttonOutlet: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var arrayOfCheckersImage = ["ArtasArmi", "ElidanArmi", "PaladinArmi"]
     
     
     override func viewDidLoad() {
@@ -80,14 +81,23 @@ class SettingsViewController: UIViewController  {
 
 extension SettingsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return arrayOfCheckersImage.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SettingsCollectionViewCell", for: indexPath) as? SettingsCollectionViewCell else {
             return UICollectionViewCell()
         }
+        
+        cell.setupImageForCheckers(checkerImage: UIImage(named: arrayOfCheckersImage[indexPath.row]) ?? UIImage())
+        
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        UserDefaults.standard.setValue(arrayOfCheckersImage[indexPath.row], forKey: Keys.checkerImage.rawValue)
     }
     
 }
@@ -95,7 +105,7 @@ extension SettingsViewController: UICollectionViewDataSource {
 
 extension SettingsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 197, height: 129)
+        return CGSize(width: 137, height: 128)
     }
 }
 
