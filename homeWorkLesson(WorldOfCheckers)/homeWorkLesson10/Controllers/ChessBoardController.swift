@@ -26,7 +26,8 @@ class ChessBoardController: UIViewController {
     // MARK: - Переменные
     
     @IBOutlet weak var backgraoundImage: UIImageView!
-    var image: UIImage?
+//    var image: UIImage?
+    var data: Data?
     
     var chessboard = UIImageView()
     
@@ -51,9 +52,15 @@ class ChessBoardController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // not working
+        
+        let fileURL = documentDirectory.appendingPathComponent("saveBackraound")
+        guard let data = FileManager.default.contents(atPath: fileURL.absoluteString.replacingOccurrences(of: "file://", with: "")),
+              let object = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIImage.self, from: data) else { return }
+        
+        let image = object
         backgraoundImage.image = image
-        view.addSubview(setBackground(with: "GameArtas"))
+        backgraoundImage.contentMode = .scaleAspectFill
+        view.addSubview(backgraoundImage)
         
         backButtonFuncCostamize()
     }

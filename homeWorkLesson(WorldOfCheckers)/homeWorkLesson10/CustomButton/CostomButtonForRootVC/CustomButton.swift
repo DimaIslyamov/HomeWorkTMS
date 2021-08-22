@@ -38,6 +38,11 @@ class CustomButton: UIView {
     
     @IBInspectable var isAnimated: Bool = false
     
+    @IBInspectable var text: String {
+        set { self.buttonOutlet.text = newValue }
+        get { return self.buttonOutlet.text ?? "" }
+    }
+    
     weak var delegate: CustomButtonDelegate?
     
     override func awakeFromNib() {

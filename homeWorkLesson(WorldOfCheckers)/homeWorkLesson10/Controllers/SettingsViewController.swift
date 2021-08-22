@@ -140,8 +140,6 @@ extension SettingsViewController: UICollectionViewDataSource {
             cellB.checkerSelectedImageView.isHidden = false
         }
     }
-    
-    
 }
 
 
@@ -155,10 +153,15 @@ extension SettingsViewController: UICollectionViewDelegateFlowLayout {
 extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        let story = UIStoryboard(name: "ChessBoard", bundle: nil)
-        guard let image = info[.originalImage] as? UIImage,
-              let vc = story.instantiateInitialViewController() as? ChessBoardController else { return }
-        vc.image = image
+        let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentDirectoryURL.appendingPathComponent("saveBackraound")
+        try? FileManager.default.removeItem(at: fileURL)
+        
+        guard let image = info[.originalImage] else { return }
+        
+        let data = try? NSKeyedArchiver.archivedData(withRootObject: image, requiringSecureCoding: true)
+        try? data?.write(to: fileURL)
+        
         picker.dismiss(animated: true, completion: nil)
     }
 }

@@ -42,6 +42,7 @@
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAnimated" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Start Game"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymX-8Y-BAn" customClass="CustomButtonForScore" customModule="homeWorkLesson10" customModuleProvider="target">
@@ -61,6 +62,7 @@
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAnimated" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Score"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sK1-2v-K0s" customClass="CustomButtonForSettings" customModule="homeWorkLesson10" customModuleProvider="target">
@@ -125,7 +127,7 @@
                     <navigationItem key="navigationItem" id="rOW-7x-f8W"/>
                     <connections>
                         <outlet property="aboutButton" destination="P7v-K1-QvN" id="u2l-Yo-ydI"/>
-                        <outlet property="newGameButton" destination="km2-PZ-dvo" id="2L6-yM-Uqh"/>
+                        <outlet property="newGameButton" destination="km2-PZ-dvo" id="f85-Wq-qyw"/>
                         <outlet property="scoreButton" destination="ymX-8Y-BAn" id="Fj0-8r-WbC"/>
                         <outlet property="settingButton" destination="sK1-2v-K0s" id="k4B-lU-jDj"/>
                     </connections>
