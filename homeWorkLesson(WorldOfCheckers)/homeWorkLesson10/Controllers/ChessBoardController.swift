@@ -20,14 +20,11 @@ class ChessBoardController: UIViewController {
     
     @IBOutlet weak var viewOutlet: UIView!
     @IBOutlet weak var backButtonOutlet: UIButton!
-    
+    @IBOutlet weak var backgraoundImage: UIImageView!
+    @IBOutlet weak var lableForBackground: UILabel!
     
     
     // MARK: - Переменные
-    
-    @IBOutlet weak var backgraoundImage: UIImageView!
-//    var image: UIImage?
-    var data: Data?
     
     var chessboard = UIImageView()
     
@@ -53,15 +50,7 @@ class ChessBoardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fileURL = documentDirectory.appendingPathComponent("saveBackraound")
-        guard let data = FileManager.default.contents(atPath: fileURL.absoluteString.replacingOccurrences(of: "file://", with: "")),
-              let object = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIImage.self, from: data) else { return }
-        
-        let image = object
-        backgraoundImage.image = image
-        backgraoundImage.contentMode = .scaleAspectFill
-        view.addSubview(backgraoundImage)
-        
+        view.addSubview(setBackground(with: "GameArtas"))
         backButtonFuncCostamize()
     }
     
@@ -73,7 +62,6 @@ class ChessBoardController: UIViewController {
         timer?.invalidate()
         timer = nil
     }
-    
     
     
     
@@ -120,7 +108,7 @@ class ChessBoardController: UIViewController {
         timer = Timer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
         
-        let attrs: [NSAttributedString.Key: Any] = [ .foregroundColor : UIColor.yellow,
+        let attrs: [NSAttributedString.Key: Any] = [ .foregroundColor : UIColor.systemYellow,
                                                      .font: UIFont(name: "StyleScript-Regular", size: 35) ?? "" ]
 
         let timerView = UIView(frame: CGRect(x: view.center.x, y: 130, width: 170, height: 50))
@@ -129,6 +117,12 @@ class ChessBoardController: UIViewController {
         timerView.layer.cornerRadius = 15
         timerView.layer.borderWidth = 3
         timerView.layer.borderColor = UIColor.black.cgColor
+        
+        timerView.layer.shadowColor = UIColor.black.cgColor
+        timerView.layer.shadowRadius = 7
+        timerView.layer.shadowOpacity = 0.9
+        timerView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        
         view.addSubview(timerView)
 
         timerLable = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 130, height: 50)))
@@ -148,6 +142,7 @@ class ChessBoardController: UIViewController {
         timerView.addSubview(timerLable)
         view.addSubview(chessboard)
     }
+    
     
     
     // не понял как можно подключить / в теперешней ситуации
@@ -252,6 +247,16 @@ class ChessBoardController: UIViewController {
                                                     self.navigationController?.popViewController(animated: true)
                                                   }))
         }
+    
+    
+    @IBAction func chooseBackground(_ sender: UISwitch) {
+        if sender.isOn {
+            getBackground()
+        } else {
+            backgraoundImage.image = UIImage(named: "GameArtas")
+        }
+    }
+    
 }
 
 

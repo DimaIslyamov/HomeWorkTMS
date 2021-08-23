@@ -33,6 +33,11 @@ extension ChessBoardController {
         viewOutlet.layer.shadowRadius = 4
         viewOutlet.layer.shadowOpacity = 0.9
         viewOutlet.layer.shadowOffset = CGSize(width: 5, height: 5)
+        
+        lableForBackground.layer.shadowColor = UIColor.black.cgColor
+        lableForBackground.layer.shadowRadius = 5
+        lableForBackground.layer.shadowOpacity = 0.7
+        lableForBackground.layer.shadowOffset = CGSize(width: 5, height: 5)
     }
     
     
@@ -102,6 +107,17 @@ extension ChessBoardController {
         view.addSubview(chessboard)
     }
     
+    
+    func getBackground() {
+        // доделать: _сделать функию и выбор по default!!
+        guard let data = FileManager.default.contents(atPath: URL.getBackgroundURL().absoluteString.replacingOccurrences(of: "file://", with: "")),
+              let object = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIImage.self, from: data) else { return }
+        
+        let image = object
+        backgraoundImage.image = image
+        backgraoundImage.contentMode = .scaleAspectFill
+        
+    }
     
     
     func saveDataToUserDefaults() {

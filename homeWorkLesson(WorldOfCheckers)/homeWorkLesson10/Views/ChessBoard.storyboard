@@ -56,14 +56,35 @@
                                     <constraint firstAttribute="height" constant="44" id="Sfw-Cy-Fh7"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Original / Task 19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7I3-KD-3lI">
+                                <rect key="frame" x="20" y="829" width="242" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="242" id="KGD-9X-ACf"/>
+                                    <constraint firstAttribute="height" constant="33" id="gAJ-qL-jSO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="X5u-P1-I1j">
+                                <rect key="frame" x="270" y="830" width="51" height="31"/>
+                                <connections>
+                                    <action selector="chooseBackground:" destination="Y6W-OH-hqX" eventType="valueChanged" id="wEU-y4-eys"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="6R4-Uo-Hen"/>
+                            <constraint firstItem="X5u-P1-I1j" firstAttribute="leading" secondItem="7I3-KD-3lI" secondAttribute="trailing" constant="8" symbolic="YES" id="76m-Lw-bEN"/>
+                            <constraint firstItem="X5u-P1-I1j" firstAttribute="height" secondItem="7I3-KD-3lI" secondAttribute="height" multiplier="0.939394" id="90Q-Cx-ga8"/>
+                            <constraint firstItem="X5u-P1-I1j" firstAttribute="centerY" secondItem="7I3-KD-3lI" secondAttribute="centerY" id="F1h-bL-HaS"/>
                             <constraint firstItem="RRW-VB-4hz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="L4A-ra-XDt"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Odg-b9-ujS"/>
+                            <constraint firstItem="7I3-KD-3lI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ovt-Yc-qhB"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="Qhs-mG-1ot"/>
+                            <constraint firstItem="7I3-KD-3lI" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Uaf-SA-5W9"/>
                             <constraint firstItem="RRW-VB-4hz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Zbh-hH-7Vt"/>
                             <constraint firstItem="RRW-VB-4hz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="bC8-Rl-1D3"/>
                             <constraint firstAttribute="bottom" secondItem="0rQ-GY-5cm" secondAttribute="bottom" id="jhy-Qu-kFK"/>
@@ -74,6 +95,7 @@
                     <connections>
                         <outlet property="backButtonOutlet" destination="Z09-JX-c1s" id="0ay-oq-M5O"/>
                         <outlet property="backgraoundImage" destination="0rQ-GY-5cm" id="rHG-tO-ko8"/>
+                        <outlet property="lableForBackground" destination="7I3-KD-3lI" id="FZl-BN-gZB"/>
                         <outlet property="viewOutlet" destination="yYY-ZD-4ED" id="gxg-12-pQo"/>
                     </connections>
                 </viewController>

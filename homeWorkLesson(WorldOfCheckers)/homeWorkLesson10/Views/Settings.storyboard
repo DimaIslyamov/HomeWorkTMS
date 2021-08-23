@@ -69,6 +69,11 @@
                                     <constraint firstAttribute="width" constant="340" id="stU-4c-bnQ"/>
                                     <constraint firstItem="8aw-hQ-Peg" firstAttribute="centerY" secondItem="Nu1-t2-Cy5" secondAttribute="centerY" id="xmD-w4-bF2"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMw-DD-npV">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -167,6 +172,11 @@
                                     <constraint firstItem="kb6-Wx-1GW" firstAttribute="top" secondItem="SWG-yy-TCM" secondAttribute="top" constant="28" id="fXh-la-b0y"/>
                                     <constraint firstItem="kb6-Wx-1GW" firstAttribute="leading" secondItem="SWG-yy-TCM" secondAttribute="leading" constant="8" id="u49-IN-Rdp"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Black Checkers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYL-js-P7i">
                                 <rect key="frame" x="87" y="362" width="290" height="39"/>

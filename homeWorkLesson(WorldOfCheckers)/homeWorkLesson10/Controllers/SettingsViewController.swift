@@ -153,14 +153,10 @@ extension SettingsViewController: UICollectionViewDelegateFlowLayout {
 extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let fileURL = documentDirectoryURL.appendingPathComponent("saveBackraound")
-        try? FileManager.default.removeItem(at: fileURL)
-        
+        try? FileManager.default.removeItem(at: URL.getBackgroundURL())
         guard let image = info[.originalImage] else { return }
-        
         let data = try? NSKeyedArchiver.archivedData(withRootObject: image, requiringSecureCoding: true)
-        try? data?.write(to: fileURL)
+        try? data?.write(to: URL.getBackgroundURL())
         
         picker.dismiss(animated: true, completion: nil)
     }
