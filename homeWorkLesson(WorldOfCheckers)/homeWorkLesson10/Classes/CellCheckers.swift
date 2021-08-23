@@ -15,7 +15,6 @@ class CellCheckers: NSObject, NSCoding, NSSecureCoding {
     var cellTag: Int?
     var imageForBlackChecker: UIImageView?
     var imageForWhiteChecker: UIImageView?
-    var backgroundImageView: UIImageView?
     
     override init() {
         super.init()
@@ -26,7 +25,6 @@ class CellCheckers: NSObject, NSCoding, NSSecureCoding {
         coder.encode(checkerTag, forKey: Keys.checkerTag.rawValue)
         coder.encode(imageForBlackChecker, forKey: Keys.checkerImageBlack.rawValue)
         coder.encode(imageForWhiteChecker, forKey: Keys.checkerImageWhite.rawValue)
-        coder.encode(backgroundImageView, forKey: Keys.backgraundImage.rawValue)
     }
     
     
@@ -35,6 +33,5 @@ class CellCheckers: NSObject, NSCoding, NSSecureCoding {
         self.checkerTag = coder.decodeObject(forKey: Keys.checkerTag.rawValue) as? Int
         self.imageForBlackChecker = coder.decodeObject(forKey: Keys.checkerImageBlack.rawValue) as? UIImageView
         self.imageForWhiteChecker = coder.decodeObject(forKey: Keys.checkerImageWhite.rawValue) as? UIImageView
-        self.backgroundImageView = coder.decodeObject(forKey: Keys.backgraundImage.rawValue) as? UIImageView
     }
 }
