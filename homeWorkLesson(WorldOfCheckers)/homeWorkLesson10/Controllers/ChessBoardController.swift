@@ -38,7 +38,9 @@ class ChessBoardController: UIViewController {
     
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     let userDef = UserDefaults.standard
+    
     var cellCheckers: [CellCheckers] = []
+    var cellsMove: [UIView] = []
     
     var current: Chekers = .black
     

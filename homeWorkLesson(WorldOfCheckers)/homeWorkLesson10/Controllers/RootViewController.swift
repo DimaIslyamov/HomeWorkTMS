@@ -10,8 +10,8 @@ import UIKit
 class RootViewController: UIViewController {
     
     @IBOutlet weak var newGameButton: CustomButton!
-    @IBOutlet weak var scoreButton: CustomButtonForScore!
-    @IBOutlet weak var settingButton: CustomButtonForSettings!
+    @IBOutlet weak var scoreButton: CustomButton!
+    @IBOutlet weak var settingButton: CustomButton!
     @IBOutlet weak var aboutButton: CustomButtonForAbout!
     
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -32,8 +32,6 @@ class RootViewController: UIViewController {
         
         self.view.removeBlurView()
     }
-    
-    
 }
 
 
@@ -42,57 +40,47 @@ class RootViewController: UIViewController {
 
 extension RootViewController: CustomButtonDelegate {
     func buttonDidTap(_ sender: CustomButton) {
-        guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
-        
-        presentAlertController(with: nil,
-                               massage: "Начать новую партию или продолжить старую?",
-                               actions: UIAlertAction(title: "Продолжить партию",
-                                                      style: .default,
-                                                      handler: { _ in
-                                                        vc.getLastBatch()
-                                                        vc.setDataFromUserDefaults()
-                                                        vc.createTimer()
-                                                        vc.createSaveChessboard()
-                                                        do {
-                                                            let fileURL = self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
-                                                            try FileManager.default.removeItem(at: fileURL)
-                                                        } catch {
-                                                            print("error")
-                                                            vc.cellCheckers.removeAll()
-                                                        }
-                                                        self.navigationController?.pushViewController(vc, animated: true)
-                                                      }),
-                  
-                               UIAlertAction(title: "Начать новую партию",
-                                             style: .default,
-                                             handler: { _ in
-                                                vc.removeDataFromUserDefaults()
-                                                vc.createTimer()
-                                                vc.createChessboard()
-                                                self.navigationController?.pushViewController(vc, animated: true)
-                                             }))
+        switch sender {
+        case newGameButton:
+            guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
+            presentAlertController(with: nil,
+                                   massage: "Начать новую партию или продолжить старую?",
+                                   actions: UIAlertAction(title: "Продолжить партию",
+                                                          style: .default,
+                                                          handler: { _ in
+                                                            vc.getLastBatch()
+                                                            vc.setDataFromUserDefaults()
+                                                            vc.createTimer()
+                                                            vc.createSaveChessboard()
+                                                            do {
+                                                                let fileURL = self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
+                                                                try FileManager.default.removeItem(at: fileURL)
+                                                            } catch {
+                                                                print("error")
+                                                                vc.cellCheckers.removeAll()
+                                                            }
+                                                            self.navigationController?.pushViewController(vc, animated: true)
+                                                          }),
+
+                                   UIAlertAction(title: "Начать новую партию",
+                                                 style: .default,
+                                                 handler: { _ in
+                                                    vc.removeDataFromUserDefaults()
+                                                    vc.createTimer()
+                                                    vc.createChessboard()
+                                                    self.navigationController?.pushViewController(vc, animated: true)
+                                                 }))
+        case scoreButton:
+            guard let vc = getViewController(from: "Score") else { return }
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        case settingButton:
+            guard let vc = getViewController(from: "Settings") else { return }
+            self.navigationController?.pushViewController(vc, animated: true)
+        default : break
         }
-}
-
-
-
-extension RootViewController: CustomButtonForScoreDelegate {
-    func buttonDidTap(_ sender: CustomButtonForScore) {
-        guard let vc = getViewController(from: "Score") else { return }
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
-
-
-extension RootViewController: CustomButtonForSettingsDelegate {
-    func buttonDidTap(_ sender: CustomButtonForSettings) {
-        guard let vc = getViewController(from: "Settings") else { return }
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-}
-
-
 
 extension RootViewController: CustomButtonForAboutDelegate {
     func buttonDidTap(_ sender: CustomButtonForAbout) {

@@ -45,7 +45,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Start Game"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymX-8Y-BAn" customClass="CustomButtonForScore" customModule="homeWorkLesson10" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymX-8Y-BAn" customClass="CustomButton" customModule="homeWorkLesson10" customModuleProvider="target">
                                 <rect key="frame" x="97" y="481" width="220" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -65,7 +65,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Score"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sK1-2v-K0s" customClass="CustomButtonForSettings" customModule="homeWorkLesson10" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sK1-2v-K0s" customClass="CustomButton" customModule="homeWorkLesson10" customModuleProvider="target">
                                 <rect key="frame" x="97" y="539" width="220" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -81,6 +81,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Settings"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7v-K1-QvN" customClass="CustomButtonForAbout" customModule="homeWorkLesson10" customModuleProvider="target">

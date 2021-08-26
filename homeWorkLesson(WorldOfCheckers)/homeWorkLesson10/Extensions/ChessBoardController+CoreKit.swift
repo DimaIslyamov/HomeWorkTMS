@@ -134,4 +134,23 @@ extension ChessBoardController {
         self.countSec = userDef.integer(forKey: Keys.timerSec.rawValue)
         self.countMin = userDef.integer(forKey: Keys.timerMin.rawValue)
     }
+    
+    
+    // MARK: - Moving
+    
+    func moving(for checker: UIView) {
+        let cell = checker.superview
+        chessboard.subviews.forEach { cellMove in
+            guard cellMove.subviews.isEmpty, let startCell = cell else { return }
+            let diff1 = current == .white ? 7 : -7
+            let diff2 = current == .white ? 9 : -9
+            if cellMove.tag == startCell.tag + diff1 || cellMove.tag == startCell.tag + diff2 {
+                cellsMove.append(cellMove)
+            }
+        }
+    }
 }
+
+
+
+
