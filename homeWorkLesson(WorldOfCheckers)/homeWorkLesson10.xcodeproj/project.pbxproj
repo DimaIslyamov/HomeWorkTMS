@@ -13,6 +13,8 @@
 		530C29BB26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530C29B926D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.swift */; };
 		530C29BC26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 530C29BA26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.xib */; };
 		53133FAF26B171A50042379D /* StyleScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53133FAE26B171A50042379D /* StyleScript-Regular.ttf */; };
+		5315ACB326DA55C0003CD6FE /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315ACB226DA55C0003CD6FE /* Date+Format.swift */; };
+		5315ACB526DA5BB8003CD6FE /* SettingViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315ACB426DA5BB8003CD6FE /* SettingViewController+Extension.swift */; };
 		5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0B26A8983A00B7411D /* ScoreViewController.swift */; };
 		5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0D26A8984C00B7411D /* SettingsViewController.swift */; };
 		534D2D1B269D757E00052236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D1A269D757E00052236 /* AppDelegate.swift */; };
@@ -45,6 +47,8 @@
 		530C29B926D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCheckersCollectionViewCell.swift; sourceTree = "<group>"; };
 		530C29BA26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhiteCheckersCollectionViewCell.xib; sourceTree = "<group>"; };
 		53133FAE26B171A50042379D /* StyleScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "StyleScript-Regular.ttf"; sourceTree = "<group>"; };
+		5315ACB226DA55C0003CD6FE /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
+		5315ACB426DA5BB8003CD6FE /* SettingViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingViewController+Extension.swift"; sourceTree = "<group>"; };
 		5333EB0B26A8983A00B7411D /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		5333EB0D26A8984C00B7411D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		534D2D17269D757E00052236 /* homeWorkLesson10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homeWorkLesson10.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +119,7 @@
 				53F8A5FD26B9EA2400166BD2 /* UIViewController+CoreKit.swift */,
 				538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */,
 				53B9837126D3BF1C002F4D4C /* URL+CoreKit.swift */,
+				5315ACB226DA55C0003CD6FE /* Date+Format.swift */,
 			);
 			path = "UI+Extension";
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				53031EC926CADA2500483567 /* ChessBoardController+CoreKit.swift */,
+				5315ACB426DA5BB8003CD6FE /* SettingViewController+Extension.swift */,
 			);
 			path = "Controllers+Extension";
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5315ACB326DA55C0003CD6FE /* Date+Format.swift in Sources */,
 				534D2D1B269D757E00052236 /* AppDelegate.swift in Sources */,
 				534D2D1D269D757E00052236 /* SceneDelegate.swift in Sources */,
 				5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */,
@@ -351,6 +358,7 @@
 				53F8A60226B9EDAF00166BD2 /* AboutViewController.swift in Sources */,
 				5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */,
 				538EA4C826C34583001D13B5 /* Keys.swift in Sources */,
+				5315ACB526DA5BB8003CD6FE /* SettingViewController+Extension.swift in Sources */,
 				53031ED426CB07B300483567 /* CustomButtonForAbout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

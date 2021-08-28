@@ -8,41 +8,46 @@
 import UIKit
 
 extension ChessBoardController {
-    func chessboardCostamization() {
-        // констрэйнты для доски
-        chessboard.translatesAutoresizingMaskIntoConstraints = false
-        chessboard.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        chessboard.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        chessboard.widthAnchor.constraint(equalToConstant: 320).isActive = true
-        chessboard.heightAnchor.constraint(equalToConstant: 320).isActive = true
+    // MARK: - Методы создания новой партии
+    
+    func createChessboard() {
+        chessboardCostamization()
         
-        // тени для доски
-        chessboard.layer.shadowColor = UIColor.black.cgColor
-        chessboard.layer.shadowRadius = 7
-        chessboard.layer.shadowOpacity = 0.9
-        chessboard.layer.shadowOffset = CGSize(width: 10, height: 10)
+        for i in 0..<8 {
+            for j in 0..<8 {
+                let column = UIView(frame: CGRect(x: 40 * j, y: 40 * i, width: 40, height: 40))
+                column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
+                column.tag = ((i + j) % 2) == 0 ? 0 : tagCell
+                if ((i + j) % 2) == 1 {
+                    tagCell += 1
+                    column.tag = tagCell
+                }
+                chessboard.addSubview(column)
+                
+                guard i < 3 || i > 4, column.backgroundColor == .black else { continue }
+                
+                let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
+                checker.isUserInteractionEnabled = true
+                checker.image = UIImage(named: i < 3 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
+                checker.tag = i < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
+                column.addSubview(checker)
+                
+                let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
+                let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
+                tapGesture.delegate = self
+                panGesture.delegate = self
+                checker.addGestureRecognizer(tapGesture)
+                checker.addGestureRecognizer(panGesture)
+            }
+        }
+        chessboard.image = UIImage(named: "ice7")
+        chessboard.isUserInteractionEnabled = true
     }
     
-    func backButtonFuncCostamize() {
-        backButtonOutlet.layer.borderWidth = 2
-        backButtonOutlet.layer.borderColor = UIColor.black.cgColor
-        backButtonOutlet.layer.cornerRadius = 12
-        
-        viewOutlet.layer.cornerRadius = 12
-        viewOutlet.layer.shadowColor = UIColor.black.cgColor
-        viewOutlet.layer.shadowRadius = 4
-        viewOutlet.layer.shadowOpacity = 0.9
-        viewOutlet.layer.shadowOffset = CGSize(width: 5, height: 5)
-        
-        lableForBackground.layer.shadowColor = UIColor.black.cgColor
-        lableForBackground.layer.shadowRadius = 5
-        lableForBackground.layer.shadowOpacity = 0.7
-        lableForBackground.layer.shadowOffset = CGSize(width: 5, height: 5)
-    }
     
     
-    // MARK: - Get Save Batch
     
+    // MARK: - методы сохраняющие партию
     
     func saveBatch() {
         chessboard.subviews.forEach { cell in
@@ -108,6 +113,62 @@ extension ChessBoardController {
     }
     
     
+    
+    // MARK: - Создание Таймера
+    
+    func createTimer() {
+        timer = Timer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
+        
+        let attrs: [NSAttributedString.Key: Any] = [ .foregroundColor : UIColor.systemYellow,
+                                                     .font: UIFont(name: "StyleScript-Regular", size: 35) ?? "" ]
+
+        let timerView = UIView(frame: CGRect(x: view.center.x, y: 130, width: 170, height: 50))
+        timerView.center.x = view.center.x
+        timerView.backgroundColor = #colorLiteral(red: 0.1176470588, green: 0.337254902, blue: 0.5019607843, alpha: 1)
+        timerView.layer.cornerRadius = 15
+        timerView.layer.borderWidth = 3
+        timerView.layer.borderColor = UIColor.black.cgColor
+        
+        timerView.layer.shadowColor = UIColor.black.cgColor
+        timerView.layer.shadowRadius = 7
+        timerView.layer.shadowOpacity = 0.9
+        timerView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        
+        view.addSubview(timerView)
+
+        timerLable = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 130, height: 50)))
+        timerLable.frame.origin.x += 20
+
+        if countMin > 0 || countSec > 0 {
+            var sec: String
+            var min: String
+            sec = countSec < 10 ? ": 0\(countSec)" : ": \(countSec)"
+            min = countMin < 10 ? "0\(countMin) " : "\(countMin) "
+            timerLable.attributedText = NSAttributedString(string: min + sec, attributes: attrs)
+        } else {
+            timerLable.attributedText = NSAttributedString(string: "0\(countMin) : 0\(countSec)", attributes: attrs)
+        }
+
+        timerLable.textAlignment = .center
+        timerView.addSubview(timerLable)
+        view.addSubview(chessboard)
+    }
+    
+    
+    
+    // не понял как можно подключить / в теперешней ситуации
+//    func timeFormatter(_ tottalSecond: Int) -> String {
+//        let second: Int = tottalSecond % 60
+//        let minutes: Int = (tottalSecond / 60) % 60
+//        return String(format: "%02d:%02d", minutes, second)
+//    }
+    
+    
+    
+    
+    // MARK: - Сохранение FileManager.default для Background контроллера с доской
+    
     func getBackground() {
         // доделать: _сделать функию и выбор по default!!
         guard let data = FileManager.default.contents(atPath: URL.getBackgroundURL().absoluteString.replacingOccurrences(of: "file://", with: "")),
@@ -119,6 +180,9 @@ extension ChessBoardController {
         
     }
     
+    
+    
+    // MARK: - Сохранение UserDefaults для таймера
     
     func saveDataToUserDefaults() {
         userDef.setValue(countSec, forKey: Keys.timerSec.rawValue)
@@ -136,7 +200,9 @@ extension ChessBoardController {
     }
     
     
-    // MARK: - Moving
+    
+    
+    // MARK: - Moving метод
     
     func moving(for checker: UIView) {
         let cell = checker.superview
@@ -154,6 +220,43 @@ extension ChessBoardController {
                 cellsMove.append(cellMove)
             }
         }
+    }
+    
+    
+    
+    
+    // MARK: - Методы костамизации доски и кнопки назад
+    
+    func chessboardCostamization() {
+        // констрэйнты для доски
+        chessboard.translatesAutoresizingMaskIntoConstraints = false
+        chessboard.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        chessboard.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        chessboard.widthAnchor.constraint(equalToConstant: 320).isActive = true
+        chessboard.heightAnchor.constraint(equalToConstant: 320).isActive = true
+        
+        // тени для доски
+        chessboard.layer.shadowColor = UIColor.black.cgColor
+        chessboard.layer.shadowRadius = 7
+        chessboard.layer.shadowOpacity = 0.9
+        chessboard.layer.shadowOffset = CGSize(width: 10, height: 10)
+    }
+    
+    func backButtonFuncCostamize() {
+        backButtonOutlet.layer.borderWidth = 2
+        backButtonOutlet.layer.borderColor = UIColor.black.cgColor
+        backButtonOutlet.layer.cornerRadius = 12
+        
+        viewOutlet.layer.cornerRadius = 12
+        viewOutlet.layer.shadowColor = UIColor.black.cgColor
+        viewOutlet.layer.shadowRadius = 4
+        viewOutlet.layer.shadowOpacity = 0.9
+        viewOutlet.layer.shadowOffset = CGSize(width: 5, height: 5)
+        
+        lableForBackground.layer.shadowColor = UIColor.black.cgColor
+        lableForBackground.layer.shadowRadius = 5
+        lableForBackground.layer.shadowOpacity = 0.7
+        lableForBackground.layer.shadowOffset = CGSize(width: 5, height: 5)
     }
 }
 
