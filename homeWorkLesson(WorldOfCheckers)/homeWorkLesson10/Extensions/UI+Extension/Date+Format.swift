@@ -10,7 +10,7 @@ import UIKit
 extension Date {
     var currentDate: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "dd MMMM yyyy"
         return dateFormatter.string(from: self)
     }
     

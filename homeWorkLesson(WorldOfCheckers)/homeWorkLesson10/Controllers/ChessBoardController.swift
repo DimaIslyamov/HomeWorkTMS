@@ -55,6 +55,8 @@ class ChessBoardController: UIViewController {
         
         view.addSubview(setBackground(with: "GameArtas"))
         backButtonFuncCostamize()
+        
+        dateLable.text = Date().currentDate
     }
     
     
