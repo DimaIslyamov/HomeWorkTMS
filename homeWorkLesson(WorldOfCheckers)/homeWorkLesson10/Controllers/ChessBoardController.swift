@@ -22,6 +22,7 @@ class ChessBoardController: UIViewController {
     @IBOutlet weak var backButtonOutlet: UIButton!
     @IBOutlet weak var backgraoundImage: UIImageView!
     @IBOutlet weak var lableForBackground: UILabel!
+    @IBOutlet weak var dateLable: UILabel!
     
     
     // MARK: - Переменные
@@ -74,7 +75,7 @@ class ChessBoardController: UIViewController {
         
         for i in 0..<8 {
             for j in 0..<8 {
-                let column = UIView(frame: CGRect(x: 40 * i, y: 40 * j, width: 40, height: 40))
+                let column = UIView(frame: CGRect(x: 40 * j, y: 40 * i, width: 40, height: 40))
                 column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
                 column.tag = ((i + j) % 2) == 0 ? 0 : tagCell
                 if ((i + j) % 2) == 1 {
@@ -83,12 +84,12 @@ class ChessBoardController: UIViewController {
                 }
                 chessboard.addSubview(column)
                 
-                guard j < 3 || j > 4, column.backgroundColor == .black else { continue }
+                guard i < 3 || i > 4, column.backgroundColor == .black else { continue }
                 
                 let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                 checker.isUserInteractionEnabled = true
-                checker.image = UIImage(named: j < 3 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
-                checker.tag = j < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
+                checker.image = UIImage(named: i < 3 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
+                checker.tag = i < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
                 column.addSubview(checker)
                 
                 let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
@@ -178,6 +179,7 @@ class ChessBoardController: UIViewController {
     
     @objc func longPressGesture(_ sender: UILongPressGestureRecognizer) {
         guard let checker = sender.view else { return }
+        moving(for: checker)
         switch sender.state {
         case .began:
             UIView.animate(withDuration: 0.3) {

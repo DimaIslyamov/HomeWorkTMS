@@ -109,13 +109,29 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		5333EB1326A9E4F600B7411D /* Extensions */ = {
+		5315ACB026DA5542003CD6FE /* UI+Extension */ = {
 			isa = PBXGroup;
 			children = (
 				53F8A5FD26B9EA2400166BD2 /* UIViewController+CoreKit.swift */,
 				538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */,
-				53031EC926CADA2500483567 /* ChessBoardController+CoreKit.swift */,
 				53B9837126D3BF1C002F4D4C /* URL+CoreKit.swift */,
+			);
+			path = "UI+Extension";
+			sourceTree = "<group>";
+		};
+		5315ACB126DA5554003CD6FE /* Controllers+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				53031EC926CADA2500483567 /* ChessBoardController+CoreKit.swift */,
+			);
+			path = "Controllers+Extension";
+			sourceTree = "<group>";
+		};
+		5333EB1326A9E4F600B7411D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5315ACB126DA5554003CD6FE /* Controllers+Extension */,
+				5315ACB026DA5542003CD6FE /* UI+Extension */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
