@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomLable" customModule="homeWorkLesson10" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="A6P-WY-cc7"/>
+                <outlet property="playerCheckerImage" destination="Lqf-52-Fjd" id="gYs-K2-OzN"/>
+                <outlet property="playerLable" destination="WHw-pv-ojr" id="Emj-Wn-MLy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="314" height="63"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lqf-52-Fjd">
+                    <rect key="frame" x="5" y="4" width="62" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="JAP-Tz-r3N"/>
+                        <constraint firstAttribute="height" constant="55" id="VZM-64-Imk"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHw-pv-ojr">
+                    <rect key="frame" x="75" y="4" width="233" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="233" id="tau-4r-fsh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                    <color key="textColor" systemColor="systemYellowColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="WHw-pv-ojr" firstAttribute="leading" secondItem="Lqf-52-Fjd" secondAttribute="trailing" constant="8" symbolic="YES" id="L1m-MM-abt"/>
+                <constraint firstAttribute="trailing" secondItem="WHw-pv-ojr" secondAttribute="trailing" constant="6" id="fFv-5D-xgY"/>
+                <constraint firstItem="Lqf-52-Fjd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="hS8-jI-aQ9"/>
+                <constraint firstItem="WHw-pv-ojr" firstAttribute="top" secondItem="Lqf-52-Fjd" secondAttribute="top" id="nMT-vo-b9e"/>
+                <constraint firstItem="WHw-pv-ojr" firstAttribute="bottom" secondItem="Lqf-52-Fjd" secondAttribute="bottom" id="rAi-br-Icl"/>
+                <constraint firstItem="Lqf-52-Fjd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="uxt-8P-AbW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="88" y="-171"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

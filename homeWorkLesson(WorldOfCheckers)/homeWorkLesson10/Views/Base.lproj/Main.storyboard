@@ -41,7 +41,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAnimated" value="NO"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Start Game"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -61,7 +60,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAnimated" value="NO"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Score"/>
                                 </userDefinedRuntimeAttributes>
                             </view>

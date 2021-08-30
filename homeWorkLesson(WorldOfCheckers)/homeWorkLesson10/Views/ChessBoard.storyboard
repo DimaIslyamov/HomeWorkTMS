@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0rQ-GY-5cm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRW-VB-4hz">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <subviews>
@@ -78,9 +81,14 @@
                                     <action selector="chooseBackground:" destination="Y6W-OH-hqX" eventType="valueChanged" id="wEU-y4-eys"/>
                                 </connections>
                             </switch>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0rQ-GY-5cm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGv-za-PE8" customClass="CustomLable" customModule="homeWorkLesson10" customModuleProvider="target">
+                                <rect key="frame" x="50" y="661" width="314" height="63"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="314" id="IAA-Z3-yEX"/>
+                                    <constraint firstAttribute="height" constant="63" id="gCs-wl-quk"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -89,9 +97,12 @@
                             <constraint firstItem="X5u-P1-I1j" firstAttribute="leading" secondItem="7I3-KD-3lI" secondAttribute="trailing" constant="8" symbolic="YES" id="76m-Lw-bEN"/>
                             <constraint firstItem="X5u-P1-I1j" firstAttribute="height" secondItem="7I3-KD-3lI" secondAttribute="height" multiplier="0.939394" id="90Q-Cx-ga8"/>
                             <constraint firstItem="X5u-P1-I1j" firstAttribute="centerY" secondItem="7I3-KD-3lI" secondAttribute="centerY" id="F1h-bL-HaS"/>
+                            <constraint firstItem="7I3-KD-3lI" firstAttribute="top" secondItem="aGv-za-PE8" secondAttribute="bottom" constant="105" id="GeN-ah-1aB"/>
                             <constraint firstItem="RRW-VB-4hz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="L4A-ra-XDt"/>
+                            <constraint firstItem="aGv-za-PE8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="Lwr-Fy-5fO"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Odg-b9-ujS"/>
                             <constraint firstItem="7I3-KD-3lI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ovt-Yc-qhB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aGv-za-PE8" secondAttribute="trailing" constant="50" id="Q0r-mb-Qh6"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="Qhs-mG-1ot"/>
                             <constraint firstItem="7I3-KD-3lI" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Uaf-SA-5W9"/>
                             <constraint firstItem="RRW-VB-4hz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Zbh-hH-7Vt"/>
@@ -106,6 +117,7 @@
                         <outlet property="backgraoundImage" destination="0rQ-GY-5cm" id="rHG-tO-ko8"/>
                         <outlet property="dateLable" destination="g1f-gb-tOt" id="zgT-wb-5tt"/>
                         <outlet property="lableForBackground" destination="7I3-KD-3lI" id="FZl-BN-gZB"/>
+                        <outlet property="playersLable" destination="aGv-za-PE8" id="mNY-Yl-IqP"/>
                         <outlet property="viewOutlet" destination="yYY-ZD-4ED" id="gxg-12-pQo"/>
                     </connections>
                 </viewController>

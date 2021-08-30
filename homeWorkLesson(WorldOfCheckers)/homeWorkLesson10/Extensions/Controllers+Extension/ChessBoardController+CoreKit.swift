@@ -26,18 +26,19 @@ extension ChessBoardController {
                 
                 guard i < 3 || i > 4, column.backgroundColor == .black else { continue }
                 
-                let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
-                checker.isUserInteractionEnabled = true
-                checker.image = UIImage(named: i < 3 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
-                checker.tag = i < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
-                column.addSubview(checker)
+                
+                checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
+                checkerImage.isUserInteractionEnabled = true
+                checkerImage.image = UIImage(named: i < 3 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
+                checkerImage.tag = i < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
+                column.addSubview(checkerImage)
                 
                 let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
                 let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
                 tapGesture.delegate = self
                 panGesture.delegate = self
-                checker.addGestureRecognizer(tapGesture)
-                checker.addGestureRecognizer(panGesture)
+                checkerImage.addGestureRecognizer(tapGesture)
+                checkerImage.addGestureRecognizer(panGesture)
             }
         }
         chessboard.image = UIImage(named: "ice7")
@@ -91,18 +92,18 @@ extension ChessBoardController {
                 
                 for value in cellCheckers {
                     if column.tag == value.cellTag {
-                        let checker = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
-                        checker.isUserInteractionEnabled = true
-                        checker.image = UIImage(named: j < 3 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
-                        checker.tag = value.checkerTag == 1 ? Chekers.black.rawValue : Chekers.white.rawValue
-                        column.addSubview(checker)
+                        checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
+                        checkerImage.isUserInteractionEnabled = true
+                        checkerImage.image = UIImage(named: j < 3 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
+                        checkerImage.tag = value.checkerTag == 1 ? Chekers.black.rawValue : Chekers.white.rawValue
+                        column.addSubview(checkerImage)
                         
                         let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
                         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
                         tapGesture.delegate = self
                         panGesture.delegate = self
-                        checker.addGestureRecognizer(tapGesture)
-                        checker.addGestureRecognizer(panGesture)
+                        checkerImage.addGestureRecognizer(tapGesture)
+                        checkerImage.addGestureRecognizer(panGesture)
                     }
                 }
             }
@@ -110,6 +111,45 @@ extension ChessBoardController {
         chessboard.image = UIImage(named: "ice7")
         chessboard.isUserInteractionEnabled = true
         view.addSubview(chessboard)
+    }
+    
+    
+    
+    //MARK: - Vетод вызывающий алер с текст филдом - доработать
+    
+    func openAlertForPlayersName(){
+        let alertController = UIAlertController(title: "Введите имена игроков", message: "", preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Игрок 1"
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Игрок 2"
+        }
+
+        let saveAction = UIAlertAction(title: "Подтвердить", style: .default, handler: { _ in
+            let firstTextField = alertController.textFields![0] as UITextField
+            let secondTextField = alertController.textFields![1] as UITextField
+            guard let myString = firstTextField.text, !myString.isEmpty,
+                  let myString2 = secondTextField.text, !myString2.isEmpty else {
+                print("empty")
+                return }
+            self.player1 = myString
+            self.player2 = myString2
+//            print("\(self.player1) --- \(self.player2)")
+//            self.player1 = firstTextField.text ?? ""
+//            self.player2 = secondTextField.text ?? ""
+        })
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default, handler: {
+            (action : UIAlertAction!) -> Void in
+            self.navigationController?.popViewController(animated: true)
+        })
+
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        alertController.preferredAction = saveAction
+
+        self.present(alertController, animated: true, completion: nil)
     }
     
     

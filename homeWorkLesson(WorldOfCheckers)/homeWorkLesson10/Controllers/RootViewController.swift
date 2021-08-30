@@ -69,6 +69,7 @@ extension RootViewController: CustomButtonDelegate {
                                                     vc.createTimer()
                                                     vc.createChessboard()
                                                     self.navigationController?.pushViewController(vc, animated: true)
+                                                    vc.openAlertForPlayersName()
                                                  }))
         case scoreButton:
             guard let vc = getViewController(from: "Score") else { return }

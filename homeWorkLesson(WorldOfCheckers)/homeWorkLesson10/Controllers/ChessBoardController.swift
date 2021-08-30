@@ -24,6 +24,8 @@ class ChessBoardController: UIViewController {
     @IBOutlet weak var lableForBackground: UILabel!
     @IBOutlet weak var dateLable: UILabel!
     
+    @IBOutlet weak var playersLable: CustomLable!
+    
     
     // MARK: - Переменные и Константы
     
@@ -45,7 +47,9 @@ class ChessBoardController: UIViewController {
     
     var current: Chekers = .black
     
-    
+    var player1 = ""
+    var player2 = ""
+    var checkerImage = UIImageView()
     
     
     // MARK: - Жизненный цикл
@@ -98,6 +102,18 @@ class ChessBoardController: UIViewController {
                 checker.transform = checker.transform.scaledBy(x: 2.7, y: 2.7)
             }
             moving(for: checker)
+            
+            // выводит имя игрока в лэйбл
+            if current == .black {
+                playersLable.playerLable.text = player1
+//                playersLable.playerCheckerImage.image = checkerImage.image
+//                playersLable.text = player1
+            } else if current == .white {
+                playersLable.playerLable.text = player2
+//                playersLable.playerCheckerImage.image = checkerImage.image
+//                playersLable.text = player2
+            }
+            
         case .ended:
             UIView.animate(withDuration: 0.3) {
                 checker.transform = .identity
@@ -137,7 +153,7 @@ class ChessBoardController: UIViewController {
             sender.view?.frame.origin = CGPoint(x: 5, y: 5)
             
             chessboard.subviews.forEach { value in
-                value.layer.borderWidth = 0
+//                value.layer.borderWidth = 0
                 if value.backgroundColor == #colorLiteral(red: 0.1639071378, green: 0.1639071378, blue: 0.1639071378, alpha: 1) {
                     value.backgroundColor = .black
                 }
