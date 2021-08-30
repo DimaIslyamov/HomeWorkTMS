@@ -90,19 +90,23 @@ class ChessBoardController: UIViewController {
     
     
     @objc func longPressGesture(_ sender: UILongPressGestureRecognizer) {
-        guard let checker = sender.view else { return }
-        moving(for: checker)
+        guard let checker = sender.view, checker.tag == current.rawValue else { return }
         switch sender.state {
         case .began:
+            cellsMove.removeAll()
             UIView.animate(withDuration: 0.3) {
                 checker.transform = checker.transform.scaledBy(x: 2.7, y: 2.7)
             }
-            
+            moving(for: checker)
         case .ended:
             UIView.animate(withDuration: 0.3) {
                 checker.transform = .identity
             }
-            
+            chessboard.subviews.forEach { value in
+                if value.backgroundColor == #colorLiteral(red: 0.1639071378, green: 0.1639071378, blue: 0.1639071378, alpha: 1) {
+                    value.backgroundColor = .black
+                }
+            }
         default : break
         }
         
@@ -124,18 +128,25 @@ class ChessBoardController: UIViewController {
             sender.setTranslation(.zero, in: chessboard)
             
         case .ended:
-            if current == .black {
-                current = .white
-            } else {
-                current = .black
+            var currentCells: UIView? = nil
+            cellsMove.forEach { value in
+                if value.frame.contains(location) {
+                    currentCells = value
+                }
             }
-            
-            let currentCell = chessboard.subviews.first(where: {$0.frame.contains(location) && $0.backgroundColor == .black })
             sender.view?.frame.origin = CGPoint(x: 5, y: 5)
-            guard let newCell = currentCell, newCell.subviews.isEmpty, let cell = sender.view else {
-                return
+            
+            chessboard.subviews.forEach { value in
+                value.layer.borderWidth = 0
+                if value.backgroundColor == #colorLiteral(red: 0.1639071378, green: 0.1639071378, blue: 0.1639071378, alpha: 1) {
+                    value.backgroundColor = .black
+                }
             }
-            currentCell?.addSubview(cell)
+            guard let newCell = currentCells, let cell = sender.view else { return }
+            newCell.addSubview(cell)
+            
+            current = current == .black ? .white : .black
+            cellsMove.removeAll()
             
         default: break
         }
