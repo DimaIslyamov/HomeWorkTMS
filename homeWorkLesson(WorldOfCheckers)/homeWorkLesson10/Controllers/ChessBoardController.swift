@@ -49,7 +49,6 @@ class ChessBoardController: UIViewController {
     
     var player1 = ""
     var player2 = ""
-//    var checkerImage = UIImageView()
     
     
     // MARK: - Жизненный цикл

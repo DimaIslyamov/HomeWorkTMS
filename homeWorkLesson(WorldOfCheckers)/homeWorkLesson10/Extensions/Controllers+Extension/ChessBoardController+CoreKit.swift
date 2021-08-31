@@ -239,16 +239,22 @@ extension ChessBoardController {
     func saveDataToUserDefaults() {
         userDef.setValue(countSec, forKey: Keys.timerSec.rawValue)
         userDef.setValue(countMin, forKey: Keys.timerMin.rawValue)
+        userDef.setValue(player1, forKey: Keys.player1.rawValue)
+        userDef.setValue(player2, forKey: Keys.player2.rawValue)
     }
     
     func removeDataFromUserDefaults() {
         userDef.removeObject(forKey: Keys.timerSec.rawValue)
         userDef.removeObject(forKey: Keys.timerMin.rawValue)
+        userDef.removeObject(forKey: Keys.player1.rawValue)
+        userDef.removeObject(forKey: Keys.player2.rawValue)
     }
     
     func setDataFromUserDefaults() {
         self.countSec = userDef.integer(forKey: Keys.timerSec.rawValue)
         self.countMin = userDef.integer(forKey: Keys.timerMin.rawValue)
+        self.player1 = userDef.string(forKey: Keys.player1.rawValue) ?? ""
+        self.player2 = userDef.string(forKey: Keys.player2.rawValue) ?? ""
     }
     
     

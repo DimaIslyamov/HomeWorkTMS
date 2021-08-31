@@ -16,4 +16,7 @@ enum Keys: String {
     case checkerImageBlack = "checkerImageBlack_"
     case checkerImageWhite = "checkerImageWhite_"
     case backgraundImage = "backgraundImage_"
+    case date = "date_"
+    case player1 = "player_1"
+    case player2 = "player_2"
 }

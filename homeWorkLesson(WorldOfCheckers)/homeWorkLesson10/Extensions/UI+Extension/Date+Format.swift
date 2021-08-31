@@ -10,7 +10,7 @@ import UIKit
 extension Date {
     var currentDate: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy"
+        dateFormatter.dateFormat = "Начало партии: dd MMMM yyyy"
         return dateFormatter.string(from: self)
     }
     
