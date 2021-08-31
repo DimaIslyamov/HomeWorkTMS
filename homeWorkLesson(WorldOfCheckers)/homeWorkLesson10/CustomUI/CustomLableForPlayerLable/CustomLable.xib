@@ -10,7 +10,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomLable" customModule="homeWorkLesson10" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="A6P-WY-cc7"/>
-                <outlet property="playerCheckerImage" destination="Lqf-52-Fjd" id="gYs-K2-OzN"/>
                 <outlet property="playerLable" destination="WHw-pv-ojr" id="Emj-Wn-MLy"/>
             </connections>
         </placeholder>
@@ -19,31 +18,20 @@
             <rect key="frame" x="0.0" y="0.0" width="314" height="63"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lqf-52-Fjd">
-                    <rect key="frame" x="5" y="4" width="62" height="55"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="62" id="JAP-Tz-r3N"/>
-                        <constraint firstAttribute="height" constant="55" id="VZM-64-Imk"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHw-pv-ojr">
-                    <rect key="frame" x="75" y="4" width="233" height="55"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="233" id="tau-4r-fsh"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHw-pv-ojr">
+                    <rect key="frame" x="8" y="8" width="298" height="47"/>
+                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
                     <color key="textColor" systemColor="systemYellowColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="WHw-pv-ojr" firstAttribute="leading" secondItem="Lqf-52-Fjd" secondAttribute="trailing" constant="8" symbolic="YES" id="L1m-MM-abt"/>
-                <constraint firstAttribute="trailing" secondItem="WHw-pv-ojr" secondAttribute="trailing" constant="6" id="fFv-5D-xgY"/>
-                <constraint firstItem="Lqf-52-Fjd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="hS8-jI-aQ9"/>
-                <constraint firstItem="WHw-pv-ojr" firstAttribute="top" secondItem="Lqf-52-Fjd" secondAttribute="top" id="nMT-vo-b9e"/>
-                <constraint firstItem="WHw-pv-ojr" firstAttribute="bottom" secondItem="Lqf-52-Fjd" secondAttribute="bottom" id="rAi-br-Icl"/>
-                <constraint firstItem="Lqf-52-Fjd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="uxt-8P-AbW"/>
+                <constraint firstItem="WHw-pv-ojr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Mcl-Og-2Ge"/>
+                <constraint firstAttribute="bottom" secondItem="WHw-pv-ojr" secondAttribute="bottom" constant="8" id="YAD-C2-rDv"/>
+                <constraint firstItem="WHw-pv-ojr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="e65-iB-Zg3"/>
+                <constraint firstAttribute="trailing" secondItem="WHw-pv-ojr" secondAttribute="trailing" constant="8" id="fOM-wc-yHQ"/>
+                <constraint firstItem="WHw-pv-ojr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="keJ-3R-sEL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="88" y="-171"/>

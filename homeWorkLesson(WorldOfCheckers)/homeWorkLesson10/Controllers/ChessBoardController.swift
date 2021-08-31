@@ -49,7 +49,7 @@ class ChessBoardController: UIViewController {
     
     var player1 = ""
     var player2 = ""
-    var checkerImage = UIImageView()
+//    var checkerImage = UIImageView()
     
     
     // MARK: - Жизненный цикл
@@ -106,12 +106,8 @@ class ChessBoardController: UIViewController {
             // выводит имя игрока в лэйбл
             if current == .black {
                 playersLable.playerLable.text = player1
-//                playersLable.playerCheckerImage.image = checkerImage.image
-//                playersLable.text = player1
             } else if current == .white {
                 playersLable.playerLable.text = player2
-//                playersLable.playerCheckerImage.image = checkerImage.image
-//                playersLable.text = player2
             }
             
         case .ended:
@@ -136,7 +132,6 @@ class ChessBoardController: UIViewController {
         
         switch sender.state {
         case .changed:
-            
             guard let column = sender.view?.superview, let cellOrigin = sender.view?.frame.origin else { return }
             chessboard.bringSubviewToFront(column)
             sender.view?.frame.origin = CGPoint(x: cellOrigin.x + translation.x,
@@ -152,16 +147,10 @@ class ChessBoardController: UIViewController {
             }
             sender.view?.frame.origin = CGPoint(x: 5, y: 5)
             
-            chessboard.subviews.forEach { value in
-//                value.layer.borderWidth = 0
-                if value.backgroundColor == #colorLiteral(red: 0.1639071378, green: 0.1639071378, blue: 0.1639071378, alpha: 1) {
-                    value.backgroundColor = .black
-                }
-            }
             guard let newCell = currentCells, let cell = sender.view else { return }
             newCell.addSubview(cell)
             
-            current = current == .black ? .white : .black
+            current = current == .white ? .black : .white
             cellsMove.removeAll()
             
         default: break

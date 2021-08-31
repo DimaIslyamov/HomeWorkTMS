@@ -27,7 +27,7 @@ extension ChessBoardController {
                 guard i < 3 || i > 4, column.backgroundColor == .black else { continue }
                 
                 
-                checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
+                 let checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                 checkerImage.isUserInteractionEnabled = true
                 checkerImage.image = UIImage(named: i < 3 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
                 checkerImage.tag = i < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
@@ -81,7 +81,7 @@ extension ChessBoardController {
         
         for i in 0..<8 {
             for j in 0..<8 {
-                let column = UIView(frame: CGRect(x: 40 * i, y: 40 * j, width: 40, height: 40))
+                let column = UIView(frame: CGRect(x: 40 * j, y: 40 * i, width: 40, height: 40))
                 column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
                 column.tag = ((i + j) % 2) == 0 ? 0 : tagCell
                 if ((i + j) % 2) == 1 {
@@ -90,11 +90,12 @@ extension ChessBoardController {
                 }
                 chessboard.addSubview(column)
                 
+                
                 for value in cellCheckers {
                     if column.tag == value.cellTag {
-                        checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
+                        let checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                         checkerImage.isUserInteractionEnabled = true
-                        checkerImage.image = UIImage(named: j < 3 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
+                        checkerImage.image = UIImage(named: value.checkerTag == 1 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
                         checkerImage.tag = value.checkerTag == 1 ? Chekers.black.rawValue : Chekers.white.rawValue
                         column.addSubview(checkerImage)
                         
@@ -110,7 +111,7 @@ extension ChessBoardController {
         }
         chessboard.image = UIImage(named: "ice7")
         chessboard.isUserInteractionEnabled = true
-        view.addSubview(chessboard)
+//        view.addSubview(chessboard)
     }
     
     
@@ -118,6 +119,8 @@ extension ChessBoardController {
     //MARK: - Vетод вызывающий алер с текст филдом - доработать
     
     func openAlertForPlayersName(){
+        view.addBlurView()
+        self.stopTimer()
         let alertController = UIAlertController(title: "Введите имена игроков", message: "", preferredStyle: .alert)
         alertController.addTextField { (textField) in
             textField.placeholder = "Игрок 1"
@@ -131,13 +134,15 @@ extension ChessBoardController {
             let secondTextField = alertController.textFields![1] as UITextField
             guard let myString = firstTextField.text, !myString.isEmpty,
                   let myString2 = secondTextField.text, !myString2.isEmpty else {
-                print("empty")
+                self.player1 = "Move: Anton"
+                self.player2 = "Move: Lera"
+                self.startTimer()
+                self.view.removeBlurView()
                 return }
-            self.player1 = myString
-            self.player2 = myString2
-//            print("\(self.player1) --- \(self.player2)")
-//            self.player1 = firstTextField.text ?? ""
-//            self.player2 = secondTextField.text ?? ""
+            self.player1 = "Move: \(myString)"
+            self.player2 = "Move: \(myString2)"
+            self.startTimer()
+            self.view.removeBlurView()
         })
         
         let cancelAction = UIAlertAction(title: "Отмена", style: .default, handler: {
@@ -155,6 +160,15 @@ extension ChessBoardController {
     
     
     // MARK: - Создание Таймера
+    
+    func startTimer() {
+        timer = Timer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+    }
     
     func createTimer() {
         timer = Timer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
@@ -210,10 +224,8 @@ extension ChessBoardController {
     // MARK: - Сохранение FileManager.default для Background контроллера с доской
     
     func getBackground() {
-        // доделать: _сделать функию и выбор по default!!
         guard let data = FileManager.default.contents(atPath: URL.getBackgroundURL().absoluteString.replacingOccurrences(of: "file://", with: "")),
               let object = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIImage.self, from: data) else { return }
-        
         let image = object
         backgraoundImage.image = image
         backgraoundImage.contentMode = .scaleAspectFill

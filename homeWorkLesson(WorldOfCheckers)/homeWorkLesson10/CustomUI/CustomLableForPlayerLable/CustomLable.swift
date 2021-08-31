@@ -9,7 +9,6 @@ import UIKit
 
 class CustomLable: UIView {
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var playerCheckerImage: UIImageView!
     @IBOutlet weak var playerLable: UILabel!
     
     override init(frame: CGRect) {
