@@ -24,6 +24,13 @@ class RootViewController: UIViewController {
         scoreButton.delegate = self
         settingButton.delegate = self
         aboutButton.delegate = self
+        
+        if UserDefaults.standard.value(forKey: Keys.checkerImageBlack.rawValue) == nil {
+            UserDefaults.standard.setValue("ArtasArmi", forKey: Keys.checkerImageBlack.rawValue)
+        }
+        if UserDefaults.standard.value(forKey: Keys.checkerImageWhite.rawValue) == nil {
+            UserDefaults.standard.setValue("somthingArmi", forKey: Keys.checkerImageWhite.rawValue)
+        }
     }
     
     
