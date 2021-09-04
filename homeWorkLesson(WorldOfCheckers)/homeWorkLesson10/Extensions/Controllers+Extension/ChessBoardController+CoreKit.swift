@@ -29,7 +29,7 @@ extension ChessBoardController {
                 
                  let checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                 checkerImage.isUserInteractionEnabled = true
-                checkerImage.image = UIImage(named: i < 3 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
+                checkerImage.image = UIImage(named: i < 3 ? (SettingManager.shared.saveBlackChecker) ?? "" : (SettingManager.shared.saveWhiteChecker) ?? "")
                 checkerImage.tag = i < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
                 column.addSubview(checkerImage)
                 
@@ -95,7 +95,7 @@ extension ChessBoardController {
                     if column.tag == value.cellTag {
                         let checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                         checkerImage.isUserInteractionEnabled = true
-                        checkerImage.image = UIImage(named: value.checkerTag == 1 ? UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue)! : UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue)!)
+                        checkerImage.image = UIImage(named: value.checkerTag == 1 ? (SettingManager.shared.saveBlackChecker) ?? "" : (SettingManager.shared.saveWhiteChecker) ?? "")
                         checkerImage.tag = value.checkerTag == 1 ? Chekers.black.rawValue : Chekers.white.rawValue
                         column.addSubview(checkerImage)
                         
@@ -124,23 +124,27 @@ extension ChessBoardController {
         let alertController = UIAlertController(title: "Введите имена игроков", message: "", preferredStyle: .alert)
         alertController.addTextField { (textField) in
             textField.placeholder = "Игрок 1"
+            textField.returnKeyType = .next
         }
         alertController.addTextField { (textField) in
             textField.placeholder = "Игрок 2"
+            textField.returnKeyType = .done
         }
 
         let saveAction = UIAlertAction(title: "Подтвердить", style: .default, handler: { _ in
-            let firstTextField = alertController.textFields![0] as UITextField
-            let secondTextField = alertController.textFields![1] as UITextField
-            guard let myString = firstTextField.text, !myString.isEmpty,
-                  let myString2 = secondTextField.text, !myString2.isEmpty else {
-                self.player1 = "Move: Anton"
-                self.player2 = "Move: Lera"
-                self.startTimer()
-                self.view.removeBlurView()
-                return }
-            self.player1 = "Move: \(myString)"
-            self.player2 = "Move: \(myString2)"
+            guard let fields = alertController.textFields, fields.count == 2 else { return }
+            let firstTextField = fields[0]
+            let secondTextField = fields[1]
+            guard let firstField = firstTextField.text, !firstField.isEmpty,
+                  let secondField = secondTextField.text, !secondField.isEmpty else {
+                
+                // дописать логику при пустой строке
+                
+                print("Invalid entries")
+                return
+            }
+            self.player1 = "Move: \(firstField)"
+            self.player2 = "Move: \(secondField)"
             self.startTimer()
             self.view.removeBlurView()
         })
@@ -237,24 +241,24 @@ extension ChessBoardController {
     // MARK: - Сохранение UserDefaults для таймера
     
     func saveDataToUserDefaults() {
-        userDef.setValue(countSec, forKey: Keys.timerSec.rawValue)
-        userDef.setValue(countMin, forKey: Keys.timerMin.rawValue)
-        userDef.setValue(player1, forKey: Keys.player1.rawValue)
-        userDef.setValue(player2, forKey: Keys.player2.rawValue)
+        SettingManager.shared.saveTimerSec = self.countSec
+        SettingManager.shared.saveTimerMin = self.countMin
+//        userDef.setValue(player1, forKey: Keys.player1.rawValue)
+//        userDef.setValue(player2, forKey: Keys.player2.rawValue)
     }
     
     func removeDataFromUserDefaults() {
         userDef.removeObject(forKey: Keys.timerSec.rawValue)
         userDef.removeObject(forKey: Keys.timerMin.rawValue)
-        userDef.removeObject(forKey: Keys.player1.rawValue)
-        userDef.removeObject(forKey: Keys.player2.rawValue)
+//        userDef.removeObject(forKey: Keys.player1.rawValue)
+//        userDef.removeObject(forKey: Keys.player2.rawValue)
     }
     
     func setDataFromUserDefaults() {
-        self.countSec = userDef.integer(forKey: Keys.timerSec.rawValue)
-        self.countMin = userDef.integer(forKey: Keys.timerMin.rawValue)
-        self.player1 = userDef.string(forKey: Keys.player1.rawValue) ?? ""
-        self.player2 = userDef.string(forKey: Keys.player2.rawValue) ?? ""
+        self.countSec = SettingManager.shared.saveTimerSec
+        self.countMin = SettingManager.shared.saveTimerMin
+//        self.player1 = userDef.string(forKey: Keys.player1.rawValue) ?? ""
+//        self.player2 = userDef.string(forKey: Keys.player2.rawValue) ?? ""
     }
     
     

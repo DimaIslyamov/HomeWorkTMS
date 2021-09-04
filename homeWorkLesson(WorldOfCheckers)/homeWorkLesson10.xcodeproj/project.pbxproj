@@ -36,6 +36,7 @@
 		538EA4C826C34583001D13B5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538EA4C726C34583001D13B5 /* Keys.swift */; };
 		5394381926DD826100036853 /* CustomLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394381826DD826100036853 /* CustomLable.swift */; };
 		5394381B26DD827F00036853 /* CustomLable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5394381A26DD827F00036853 /* CustomLable.xib */; };
+		53985BEB26E38295005B5714 /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53985BEA26E38295005B5714 /* SettingManager.swift */; };
 		53B9837226D3BF1C002F4D4C /* URL+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B9837126D3BF1C002F4D4C /* URL+CoreKit.swift */; };
 		53F8A5FE26B9EA2400166BD2 /* UIViewController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8A5FD26B9EA2400166BD2 /* UIViewController+CoreKit.swift */; };
 		53F8A60026B9ED7E00166BD2 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F8A5FF26B9ED7E00166BD2 /* About.storyboard */; };
@@ -74,6 +75,7 @@
 		538EA4C726C34583001D13B5 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		5394381826DD826100036853 /* CustomLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLable.swift; sourceTree = "<group>"; };
 		5394381A26DD827F00036853 /* CustomLable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomLable.xib; sourceTree = "<group>"; };
+		53985BEA26E38295005B5714 /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
 		53B9837126D3BF1C002F4D4C /* URL+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+CoreKit.swift"; sourceTree = "<group>"; };
 		53F8A5FD26B9EA2400166BD2 /* UIViewController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreKit.swift"; sourceTree = "<group>"; };
 		53F8A5FF26B9ED7E00166BD2 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		534D2D19269D757E00052236 /* homeWorkLesson10 */ = {
 			isa = PBXGroup;
 			children = (
+				53985BE926E3826B005B5714 /* SettingManager */,
 				53D8368726CA2CB800D34B1C /* CustomUI */,
 				5368592F26C9A06900420AF7 /* Choose Checkers */,
 				538624BC26C9232300C6DE36 /* Classes */,
@@ -266,6 +269,14 @@
 			path = CustomLableForPlayerLable;
 			sourceTree = "<group>";
 		};
+		53985BE926E3826B005B5714 /* SettingManager */ = {
+			isa = PBXGroup;
+			children = (
+				53985BEA26E38295005B5714 /* SettingManager.swift */,
+			);
+			path = SettingManager;
+			sourceTree = "<group>";
+		};
 		53D8368726CA2CB800D34B1C /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +375,7 @@
 				538EA4C526C31722001D13B5 /* UIView+CoreKit.swift in Sources */,
 				5360ED0326C49C0300A0C0C6 /* SettingsCollectionViewCell.swift in Sources */,
 				53031ECA26CADA2500483567 /* ChessBoardController+CoreKit.swift in Sources */,
+				53985BEB26E38295005B5714 /* SettingManager.swift in Sources */,
 				534D2D32269D760500052236 /* RootViewController.swift in Sources */,
 				530C29BB26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.swift in Sources */,
 				534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */,
