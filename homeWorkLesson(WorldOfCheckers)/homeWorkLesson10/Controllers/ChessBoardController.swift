@@ -44,7 +44,6 @@ class ChessBoardController: UIViewController {
     
     var cellCheckers: [CellCheckers] = []
     var cellsMove: [UIView] = []
-    
     var current: Chekers = .black
     
     var player1 = ""
@@ -57,9 +56,10 @@ class ChessBoardController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(setBackground(with: "GameArtas"))
+        backgraoundImage.contentMode = .scaleAspectFill
         backButtonFuncCostamize()
         
-        dateLable.text = Date().currentDate
+        dateLable.text = Date().getCurrentDate()
     }
     
     
@@ -164,6 +164,7 @@ class ChessBoardController: UIViewController {
     @IBAction func backButtonAction(_ sender: UIButton) {
         presentAlertController(with: nil,
                                massage: "Вы действительно хотите выйти из игры?",
+                               preferredStyle: .alert,
                                actions: UIAlertAction(title: "Выйти и сохранить партию",
                                                       style: .default,
                                                       handler: { _ in
@@ -181,8 +182,9 @@ class ChessBoardController: UIViewController {
     
     
     @IBAction func chooseBackground(_ sender: UISwitch) {
+        guard let image = SettingManager.shared.saveBackgroundForCheckerViewController as? UIImage else { return }
         if sender.isOn {
-            getBackground()
+            backgraoundImage.image = image
         } else {
             backgraoundImage.image = UIImage(named: "GameArtas")
         }

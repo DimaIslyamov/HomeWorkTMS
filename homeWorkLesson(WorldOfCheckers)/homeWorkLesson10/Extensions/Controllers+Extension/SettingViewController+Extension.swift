@@ -75,10 +75,8 @@ extension SettingsViewController: UICollectionViewDelegateFlowLayout {
 extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        try? FileManager.default.removeItem(at: URL.getBackgroundURL())
         guard let image = info[.originalImage] else { return }
-        let data = try? NSKeyedArchiver.archivedData(withRootObject: image, requiringSecureCoding: true)
-        try? data?.write(to: URL.getBackgroundURL())
+        SettingManager.shared.saveBackgroundForCheckerViewController = image
         
         picker.dismiss(animated: true, completion: nil)
     }

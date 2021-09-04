@@ -61,18 +61,7 @@ extension ChessBoardController {
                 cellCheckers.append(position)
             }
         }
-        let data = try? NSKeyedArchiver.archivedData(withRootObject: cellCheckers, requiringSecureCoding: true)
-        let fileURL = documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
-        try? data?.write(to: fileURL)
-    }
-    
-    
-    
-    func getLastBatch() {
-        let fileURL = documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
-        guard let data = FileManager.default.contents(atPath: fileURL.absoluteString.replacingOccurrences(of: "file://", with: "")) else { return }
-        let newArray = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [CellCheckers]
-        self.cellCheckers = newArray ?? []
+        SettingManager.shared.saveCellsCheckers = self.cellCheckers
     }
     
     
@@ -224,46 +213,6 @@ extension ChessBoardController {
     
     
     
-    
-    // MARK: - Сохранение FileManager.default для Background контроллера с доской
-    
-    func getBackground() {
-        guard let data = FileManager.default.contents(atPath: URL.getBackgroundURL().absoluteString.replacingOccurrences(of: "file://", with: "")),
-              let object = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIImage.self, from: data) else { return }
-        let image = object
-        backgraoundImage.image = image
-        backgraoundImage.contentMode = .scaleAspectFill
-        
-    }
-    
-    
-    
-    // MARK: - Сохранение UserDefaults для таймера
-    
-    func saveDataToUserDefaults() {
-        SettingManager.shared.saveTimerSec = self.countSec
-        SettingManager.shared.saveTimerMin = self.countMin
-//        userDef.setValue(player1, forKey: Keys.player1.rawValue)
-//        userDef.setValue(player2, forKey: Keys.player2.rawValue)
-    }
-    
-    func removeDataFromUserDefaults() {
-        userDef.removeObject(forKey: Keys.timerSec.rawValue)
-        userDef.removeObject(forKey: Keys.timerMin.rawValue)
-//        userDef.removeObject(forKey: Keys.player1.rawValue)
-//        userDef.removeObject(forKey: Keys.player2.rawValue)
-    }
-    
-    func setDataFromUserDefaults() {
-        self.countSec = SettingManager.shared.saveTimerSec
-        self.countMin = SettingManager.shared.saveTimerMin
-//        self.player1 = userDef.string(forKey: Keys.player1.rawValue) ?? ""
-//        self.player2 = userDef.string(forKey: Keys.player2.rawValue) ?? ""
-    }
-    
-    
-    
-    
     // MARK: - Moving метод
     
     func moving(for checker: UIView) {
@@ -277,43 +226,6 @@ extension ChessBoardController {
                 cellsMove.append(cellMove)
             }
         }
-    }
-    
-    
-    
-    
-    // MARK: - Методы костамизации доски и кнопки назад
-    
-    func chessboardCostamization() {
-        // констрэйнты для доски
-        chessboard.translatesAutoresizingMaskIntoConstraints = false
-        chessboard.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        chessboard.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        chessboard.widthAnchor.constraint(equalToConstant: 320).isActive = true
-        chessboard.heightAnchor.constraint(equalToConstant: 320).isActive = true
-        
-        // тени для доски
-        chessboard.layer.shadowColor = UIColor.black.cgColor
-        chessboard.layer.shadowRadius = 7
-        chessboard.layer.shadowOpacity = 0.9
-        chessboard.layer.shadowOffset = CGSize(width: 10, height: 10)
-    }
-    
-    func backButtonFuncCostamize() {
-        backButtonOutlet.layer.borderWidth = 2
-        backButtonOutlet.layer.borderColor = UIColor.black.cgColor
-        backButtonOutlet.layer.cornerRadius = 12
-        
-        viewOutlet.layer.cornerRadius = 12
-        viewOutlet.layer.shadowColor = UIColor.black.cgColor
-        viewOutlet.layer.shadowRadius = 4
-        viewOutlet.layer.shadowOpacity = 0.9
-        viewOutlet.layer.shadowOffset = CGSize(width: 5, height: 5)
-        
-        lableForBackground.layer.shadowColor = UIColor.black.cgColor
-        lableForBackground.layer.shadowRadius = 5
-        lableForBackground.layer.shadowOpacity = 0.7
-        lableForBackground.layer.shadowOffset = CGSize(width: 5, height: 5)
     }
 }
 

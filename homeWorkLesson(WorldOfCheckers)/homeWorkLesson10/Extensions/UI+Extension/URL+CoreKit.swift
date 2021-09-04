@@ -14,4 +14,16 @@ extension URL {
         let fileURL = documentDirectoryURL.appendingPathComponent("saveBackraound")
         return fileURL
     }
+    
+    static func saveCellsCheckerURL() -> URL {
+        let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentDirectoryURL.appendingPathComponent("saveCheckers")
+        return fileURL
+    }
+    
+//    static func saveDateURL() -> URL {
+//        let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+//        let fileURL = documentDirectoryURL.appendingPathComponent("saveDate")
+//        return fileURL
+//    }
 }

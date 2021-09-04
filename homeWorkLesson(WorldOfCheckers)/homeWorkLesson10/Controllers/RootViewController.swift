@@ -52,10 +52,11 @@ extension RootViewController: CustomButtonDelegate {
             guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
             presentAlertController(with: nil,
                                    massage: "Начать новую партию или продолжить старую?",
+                                   preferredStyle: .alert,
                                    actions: UIAlertAction(title: "Продолжить партию",
                                                           style: .default,
                                                           handler: { _ in
-                                                            vc.getLastBatch()
+                                                            vc.cellCheckers = SettingManager.shared.saveCellsCheckers
                                                             vc.setDataFromUserDefaults()
                                                             vc.createTimer()
                                                             vc.createSaveChessboard()

@@ -28,6 +28,54 @@ class SettingManager {
     var saveTimerMin: Int {
         set { UserDefaults.standard.setValue(newValue, forKey: Keys.timerMin.rawValue) }
         get { UserDefaults.standard.integer(forKey: Keys.timerMin.rawValue) }
-        
+    }
+    
+    var savePlayerOne: String? {
+        set { UserDefaults.standard.setValue(newValue, forKey: Keys.player1.rawValue) }
+        get { UserDefaults.standard.string(forKey: Keys.player1.rawValue)}
+    }
+    
+    var savePlayerTwo: String? {
+        set { UserDefaults.standard.setValue(newValue, forKey: Keys.player2.rawValue) }
+        get { UserDefaults.standard.string(forKey: Keys.player2.rawValue)}
+    }
+    
+    // не работает !!
+    var saveDate: String? {
+        set { UserDefaults.standard.setValue(newValue, forKey: Keys.dateFormatter.rawValue) }
+        get { UserDefaults.standard.string(forKey: Keys.dateFormatter.rawValue) }
+    }
+    
+    var saveBackgroundForCheckerViewController: Any {
+        set {
+            try? FileManager.default.removeItem(at: URL.getBackgroundURL())
+            let data = try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: true)
+            try? data?.write(to: URL.getBackgroundURL())
+        }
+        get {
+            guard let data = FileManager.default.contents(
+                    atPath: URL.getBackgroundURL().absoluteString.replacingOccurrences(of: "file://",
+                                                                                       with: "")),
+                  let object = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIImage.self, from: data) else {
+                return UIImage()
+            }
+            return object
+        }
+    }
+    
+    var saveCellsCheckers: [CellCheckers] {
+        set {
+            let data = try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: true)
+            try? data?.write(to: URL.saveCellsCheckerURL())
+        }
+        get {
+            guard let data = FileManager.default.contents(
+                    atPath: URL.saveCellsCheckerURL().absoluteString.replacingOccurrences(of: "file://",
+                                                                                      with: "")),
+                  let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [CellCheckers] else {
+                return []
+            }
+            return object
+        }
     }
 }

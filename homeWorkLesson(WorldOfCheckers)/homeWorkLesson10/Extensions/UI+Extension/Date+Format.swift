@@ -14,13 +14,9 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
-    func getCurrentDate(from dateFormat: String = "dd MMMM yyyy HH:mm:ss",
-                        locale : Locale = .current,
-                        timeZone: TimeZone = .current) -> String{
+    func getCurrentDate(from dateFormat: String = "dd MMMM yyyy") -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
-        dateFormatter.locale = locale
-        dateFormatter.timeZone = timeZone
         return dateFormatter.string(from: self)
     }
 }
