@@ -21,7 +21,7 @@ struct CurrentWeather {
     }
     
     let conditionCode: Int
-    var systemIconNameString: String {
+    var iconImageNameString: String {
         switch conditionCode {
         case 200...232: return "cloud.bolt.rain.fill"
         case 300...321: return "cloud.drizzle.fill"

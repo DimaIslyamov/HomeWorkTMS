@@ -33,7 +33,7 @@ class WeatherViewController: UIViewController {
             self.cityLable.text = weather.cityName
             self.temperatureLable.text = weather.temperatureString
             self.feelsLike.text = weather.feelsLikeTemperatureString
-            self.wheathreIconImage.image = UIImage(systemName: weather.systemIconNameString)
+            self.wheathreIconImage.image = UIImage(systemName: weather.iconImageNameString)
         }
     }
     
