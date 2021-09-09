@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3160F20B67F4C031C0C833A6 /* Pods_homeWorkLesson23_WheatherAndNews_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A1A67078FC313C67F7C091 /* Pods_homeWorkLesson23_WheatherAndNews_.framework */; };
 		53985BFB26E604D8005B5714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53985BFA26E604D8005B5714 /* AppDelegate.swift */; };
 		53985BFD26E604D8005B5714 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53985BFC26E604D8005B5714 /* SceneDelegate.swift */; };
 		53985C0226E604D8005B5714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53985C0026E604D8005B5714 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F810980373F868E7B1A63A6 /* Pods-homeWorkLesson23(WheatherAndNews).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeWorkLesson23(WheatherAndNews).debug.xcconfig"; path = "Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)/Pods-homeWorkLesson23(WheatherAndNews).debug.xcconfig"; sourceTree = "<group>"; };
 		53985BF726E604D8005B5714 /* homeWorkLesson23(WheatherAndNews).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "homeWorkLesson23(WheatherAndNews).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53985BFA26E604D8005B5714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53985BFC26E604D8005B5714 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +44,8 @@
 		53985C2326E630AC005B5714 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		53985C2526E631B3005B5714 /* CurrentWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherData.swift; sourceTree = "<group>"; };
 		53985C2726E632ED005B5714 /* WheatherViewController+NWMDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheatherViewController+NWMDelegate.swift"; sourceTree = "<group>"; };
+		C5A1A67078FC313C67F7C091 /* Pods_homeWorkLesson23_WheatherAndNews_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homeWorkLesson23_WheatherAndNews_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBDDBA939CD0FAE9014B8170 /* Pods-homeWorkLesson23(WheatherAndNews).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeWorkLesson23(WheatherAndNews).release.xcconfig"; path = "Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)/Pods-homeWorkLesson23(WheatherAndNews).release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +53,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3160F20B67F4C031C0C833A6 /* Pods_homeWorkLesson23_WheatherAndNews_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E89C9F862E2FEA73ACFC23D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5A1A67078FC313C67F7C091 /* Pods_homeWorkLesson23_WheatherAndNews_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		53985BEE26E604D8005B5714 = {
 			isa = PBXGroup;
 			children = (
 				53985BF926E604D8005B5714 /* homeWorkLesson23(WheatherAndNews) */,
 				53985BF826E604D8005B5714 /* Products */,
+				8FCF0FBAAE6C9E4DAFF46F4F /* Pods */,
+				0E89C9F862E2FEA73ACFC23D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +157,16 @@
 			path = "API Key";
 			sourceTree = "<group>";
 		};
+		8FCF0FBAAE6C9E4DAFF46F4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F810980373F868E7B1A63A6 /* Pods-homeWorkLesson23(WheatherAndNews).debug.xcconfig */,
+				FBDDBA939CD0FAE9014B8170 /* Pods-homeWorkLesson23(WheatherAndNews).release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53985C0B26E604DE005B5714 /* Build configuration list for PBXNativeTarget "homeWorkLesson23(WheatherAndNews)" */;
 			buildPhases = (
+				41A103D664ECBC93C0A8DD8A /* [CP] Check Pods Manifest.lock */,
 				53985BF326E604D8005B5714 /* Sources */,
 				53985BF426E604D8005B5714 /* Frameworks */,
 				53985BF526E604D8005B5714 /* Resources */,
+				13076823858371E6445180EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +233,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13076823858371E6445180EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)/Pods-homeWorkLesson23(WheatherAndNews)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)/Pods-homeWorkLesson23(WheatherAndNews)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)/Pods-homeWorkLesson23(WheatherAndNews)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41A103D664ECBC93C0A8DD8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-homeWorkLesson23(WheatherAndNews)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		53985BF326E604D8005B5714 /* Sources */ = {
@@ -367,6 +436,7 @@
 		};
 		53985C0C26E604DE005B5714 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F810980373F868E7B1A63A6 /* Pods-homeWorkLesson23(WheatherAndNews).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -386,6 +456,7 @@
 		};
 		53985C0D26E604DE005B5714 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBDDBA939CD0FAE9014B8170 /* Pods-homeWorkLesson23(WheatherAndNews).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
