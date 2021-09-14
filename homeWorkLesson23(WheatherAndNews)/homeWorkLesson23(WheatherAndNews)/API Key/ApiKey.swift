@@ -7,4 +7,6 @@
 
 import Foundation
 
-let apiKey = "edc9968386932be8a1a98e573a2a13c9"
+enum ApiKey: String {
+    case apiKey = "edc9968386932be8a1a98e573a2a13c9"
+}

@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3160F20B67F4C031C0C833A6 /* Pods_homeWorkLesson23_WheatherAndNews_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A1A67078FC313C67F7C091 /* Pods_homeWorkLesson23_WheatherAndNews_.framework */; };
+		5365609826F1436900914DE8 /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5365609726F1436900914DE8 /* ParseManager.swift */; };
 		53985BFB26E604D8005B5714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53985BFA26E604D8005B5714 /* AppDelegate.swift */; };
 		53985BFD26E604D8005B5714 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53985BFC26E604D8005B5714 /* SceneDelegate.swift */; };
 		53985C0226E604D8005B5714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53985C0026E604D8005B5714 /* Main.storyboard */; };
@@ -22,11 +23,11 @@
 		53985C2226E62F2C005B5714 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53985C2126E62F2C005B5714 /* ApiKey.swift */; };
 		53985C2426E630AC005B5714 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53985C2326E630AC005B5714 /* CurrentWeather.swift */; };
 		53985C2626E631B3005B5714 /* CurrentWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53985C2526E631B3005B5714 /* CurrentWeatherData.swift */; };
-		53985C2826E632ED005B5714 /* WheatherViewController+NWMDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53985C2726E632ED005B5714 /* WheatherViewController+NWMDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F810980373F868E7B1A63A6 /* Pods-homeWorkLesson23(WheatherAndNews).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeWorkLesson23(WheatherAndNews).debug.xcconfig"; path = "Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)/Pods-homeWorkLesson23(WheatherAndNews).debug.xcconfig"; sourceTree = "<group>"; };
+		5365609726F1436900914DE8 /* ParseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
 		53985BF726E604D8005B5714 /* homeWorkLesson23(WheatherAndNews).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "homeWorkLesson23(WheatherAndNews).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53985BFA26E604D8005B5714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53985BFC26E604D8005B5714 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		53985C2126E62F2C005B5714 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		53985C2326E630AC005B5714 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		53985C2526E631B3005B5714 /* CurrentWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherData.swift; sourceTree = "<group>"; };
-		53985C2726E632ED005B5714 /* WheatherViewController+NWMDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheatherViewController+NWMDelegate.swift"; sourceTree = "<group>"; };
 		C5A1A67078FC313C67F7C091 /* Pods_homeWorkLesson23_WheatherAndNews_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homeWorkLesson23_WheatherAndNews_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDDBA939CD0FAE9014B8170 /* Pods-homeWorkLesson23(WheatherAndNews).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeWorkLesson23(WheatherAndNews).release.xcconfig"; path = "Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)/Pods-homeWorkLesson23(WheatherAndNews).release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +135,7 @@
 				53985C1E26E62C7C005B5714 /* NewtworWeatherManager.swift */,
 				53985C2326E630AC005B5714 /* CurrentWeather.swift */,
 				53985C2526E631B3005B5714 /* CurrentWeatherData.swift */,
+				5365609726F1436900914DE8 /* ParseManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,7 +145,6 @@
 			children = (
 				53985C1A26E62715005B5714 /* UIView+CoreKit.swift */,
 				53985C1C26E6272C005B5714 /* UIViewController+CoreKit.swift */,
-				53985C2726E632ED005B5714 /* WheatherViewController+NWMDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -163,7 +163,6 @@
 				0F810980373F868E7B1A63A6 /* Pods-homeWorkLesson23(WheatherAndNews).debug.xcconfig */,
 				FBDDBA939CD0FAE9014B8170 /* Pods-homeWorkLesson23(WheatherAndNews).release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -291,8 +290,8 @@
 				53985BFD26E604D8005B5714 /* SceneDelegate.swift in Sources */,
 				53985C2226E62F2C005B5714 /* ApiKey.swift in Sources */,
 				53985C1F26E62C7C005B5714 /* NewtworWeatherManager.swift in Sources */,
-				53985C2826E632ED005B5714 /* WheatherViewController+NWMDelegate.swift in Sources */,
 				53985C2626E631B3005B5714 /* CurrentWeatherData.swift in Sources */,
+				5365609826F1436900914DE8 /* ParseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

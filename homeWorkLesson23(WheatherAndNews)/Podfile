@@ -8,5 +8,7 @@ target 'homeWorkLesson23(WheatherAndNews)' do
   # Pods for homeWorkLesson23(WheatherAndNews)
   pod 'SSBouncyButton', '~> 1.0'
   pod 'Alamofire', '~> 5.4'
-
+  pod 'AlamofireNetworkActivityLogger', '~> 3.4'
+  pod 'SwiftyJSON', '~> 4.0'
+  
 end

@@ -17,16 +17,24 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var cityLable: UILabel!
     
     var newtworWeatherManager = NewtworWeatherManager()
+    var city = ""
     
+    var currentWeatherData: [CurrentWeatherData] = [] {
+        didSet {
+            print()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        newtworWeatherManager.delegate = self
+//        newtworWeatherManager.delegate = self
         view.addSubview(setBackground(with: "WheathreBackground"))
     }
     
-    
+    func getTheCurrentWeather() -> String {
+        return "https://api.openweathermap.org/data/2.5/weather?q=\(city)&apikey=\(ApiKey.apiKey.rawValue)&units=metric"
+    }
     
     func updateInterfaceWith(weather: CurrentWeather) {
         DispatchQueue.main.async {
@@ -41,7 +49,7 @@ class WeatherViewController: UIViewController {
     
     @IBAction private func searchButton(_ sender: UIButton) {
         presentSearchAlertController(withTitle: "Enter city name", massage: nil, style: .alert) { city in
-            self.newtworWeatherManager.getTheCurrentWeather(for: .cityName(city: city))
+            self.cityLable.text = city
         }
     }
     
