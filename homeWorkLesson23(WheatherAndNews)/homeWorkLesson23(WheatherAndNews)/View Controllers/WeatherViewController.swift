@@ -17,7 +17,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var cityLable: UILabel!
     
     var newtworWeatherManager = NewtworWeatherManager()
-    var city = ""
+    var city = "Minsk"
     
     var currentWeatherData: [CurrentWeatherData] = [] {
         didSet {
@@ -28,6 +28,10 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        NewtworWeatherManager.shared.getWheather(getTheCurrentWeather()) { wheather in
+            self.currentWeatherData = wheather
+        }
 //        newtworWeatherManager.delegate = self
         view.addSubview(setBackground(with: "WheathreBackground"))
     }
@@ -36,21 +40,21 @@ class WeatherViewController: UIViewController {
         return "https://api.openweathermap.org/data/2.5/weather?q=\(city)&apikey=\(ApiKey.apiKey.rawValue)&units=metric"
     }
     
-    func updateInterfaceWith(weather: CurrentWeather) {
-        DispatchQueue.main.async {
-            self.cityLable.text = weather.cityName
-            self.temperatureLable.text = weather.temperatureString
-            self.feelsLike.text = weather.feelsLikeTemperatureString
-            self.wheathreIconImage.image = UIImage(systemName: weather.iconImageNameString)
-        }
-    }
+//    func updateInterfaceWith(weather: CurrentWeather) {
+//        DispatchQueue.main.async {
+//            self.cityLable.text = weather.cityName
+//            self.temperatureLable.text = weather.temperatureString
+//            self.feelsLike.text = weather.feelsLikeTemperatureString
+//            self.wheathreIconImage.image = UIImage(systemName: weather.iconImageNameString)
+//        }
+//    }
     
     
     
     @IBAction private func searchButton(_ sender: UIButton) {
-        presentSearchAlertController(withTitle: "Enter city name", massage: nil, style: .alert) { city in
-            self.cityLable.text = city
-        }
+//        presentSearchAlertController(withTitle: "Enter city name", massage: nil, style: .alert) { city in
+//            self.cityLable.text = city
+//        }
     }
     
     
