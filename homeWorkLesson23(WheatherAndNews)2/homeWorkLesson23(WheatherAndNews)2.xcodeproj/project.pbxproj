@@ -13,17 +13,14 @@
 		530E3C3A26F2604B00292BFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 530E3C3826F2604B00292BFE /* Main.storyboard */; };
 		530E3C3C26F2604F00292BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 530E3C3B26F2604F00292BFE /* Assets.xcassets */; };
 		530E3C3F26F2604F00292BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 530E3C3D26F2604F00292BFE /* LaunchScreen.storyboard */; };
-		530E3C4F26F2633A00292BFE /* WheathreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C4E26F2633A00292BFE /* WheathreViewController.swift */; };
 		530E3C5326F2657C00292BFE /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5226F2657C00292BFE /* ApiKey.swift */; };
 		530E3C5826F265EA00292BFE /* Wheather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5726F265EA00292BFE /* Wheather.swift */; };
 		530E3C5A26F2664700292BFE /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5926F2664700292BFE /* HttpManager.swift */; };
 		530E3C5C26F2668A00292BFE /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5B26F2668A00292BFE /* ParseManager.swift */; };
 		530E3C5E26F26E6F00292BFE /* UIView+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */; };
 		530E3C6026F26E9600292BFE /* UIViewController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */; };
-		530E3C6226F272F000292BFE /* Wheather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 530E3C6126F272EF00292BFE /* Wheather.storyboard */; };
-		530E3C6626F2731400292BFE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 530E3C6526F2731400292BFE /* Settings.storyboard */; };
 		530E3C6826F274E100292BFE /* Root(Main)ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C6726F274E100292BFE /* Root(Main)ViewController.swift */; };
-		530E3C6A26F274FB00292BFE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C6926F274FB00292BFE /* SettingViewController.swift */; };
+		53FB580926F3B87B0043F811 /* WheathreViewController+CorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FB580826F3B87B0043F811 /* WheathreViewController+CorKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,17 +32,14 @@
 		530E3C3B26F2604F00292BFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		530E3C3E26F2604F00292BFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		530E3C4026F2604F00292BFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		530E3C4E26F2633A00292BFE /* WheathreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheathreViewController.swift; sourceTree = "<group>"; };
 		530E3C5226F2657C00292BFE /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		530E3C5726F265EA00292BFE /* Wheather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wheather.swift; sourceTree = "<group>"; };
 		530E3C5926F2664700292BFE /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		530E3C5B26F2668A00292BFE /* ParseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
 		530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CoreKit.swift"; sourceTree = "<group>"; };
 		530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreKit.swift"; sourceTree = "<group>"; };
-		530E3C6126F272EF00292BFE /* Wheather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wheather.storyboard; sourceTree = "<group>"; };
-		530E3C6526F2731400292BFE /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		530E3C6726F274E100292BFE /* Root(Main)ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Root(Main)ViewController.swift"; sourceTree = "<group>"; };
-		530E3C6926F274FB00292BFE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		53FB580826F3B87B0043F811 /* WheathreViewController+CorKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheathreViewController+CorKit.swift"; sourceTree = "<group>"; };
 		9C64028E9857EEDAC675E3A8 /* Pods-homeWorkLesson23(WheatherAndNews)2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeWorkLesson23(WheatherAndNews)2.release.xcconfig"; path = "Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)2/Pods-homeWorkLesson23(WheatherAndNews)2.release.xcconfig"; sourceTree = "<group>"; };
 		F1CBEA93B16922496262CC02 /* Pods_homeWorkLesson23_WheatherAndNews_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homeWorkLesson23_WheatherAndNews_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,9 +119,7 @@
 		530E3C4826F260BA00292BFE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				530E3C4E26F2633A00292BFE /* WheathreViewController.swift */,
 				530E3C6726F274E100292BFE /* Root(Main)ViewController.swift */,
-				530E3C6926F274FB00292BFE /* SettingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -136,8 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				530E3C3826F2604B00292BFE /* Main.storyboard */,
-				530E3C6126F272EF00292BFE /* Wheather.storyboard */,
-				530E3C6526F2731400292BFE /* Settings.storyboard */,
 				530E3C3D26F2604F00292BFE /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -155,8 +145,8 @@
 		530E3C4B26F260F100292BFE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */,
-				530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */,
+				53FB580726F3B8480043F811 /* extension-UI */,
+				53FB580626F3B8380043F811 /* extensionViewControllers */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,6 +157,23 @@
 				530E3C5726F265EA00292BFE /* Wheather.swift */,
 			);
 			path = ModelWheathre;
+			sourceTree = "<group>";
+		};
+		53FB580626F3B8380043F811 /* extensionViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				53FB580826F3B87B0043F811 /* WheathreViewController+CorKit.swift */,
+			);
+			path = extensionViewControllers;
+			sourceTree = "<group>";
+		};
+		53FB580726F3B8480043F811 /* extension-UI */ = {
+			isa = PBXGroup;
+			children = (
+				530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */,
+				530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */,
+			);
+			path = "extension-UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +237,6 @@
 			files = (
 				530E3C3F26F2604F00292BFE /* LaunchScreen.storyboard in Resources */,
 				530E3C3C26F2604F00292BFE /* Assets.xcassets in Resources */,
-				530E3C6626F2731400292BFE /* Settings.storyboard in Resources */,
-				530E3C6226F272F000292BFE /* Wheather.storyboard in Resources */,
 				530E3C3A26F2604B00292BFE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,16 +291,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				530E3C3326F2604B00292BFE /* AppDelegate.swift in Sources */,
-				530E3C4F26F2633A00292BFE /* WheathreViewController.swift in Sources */,
 				530E3C5E26F26E6F00292BFE /* UIView+CoreKit.swift in Sources */,
 				530E3C6826F274E100292BFE /* Root(Main)ViewController.swift in Sources */,
 				530E3C5C26F2668A00292BFE /* ParseManager.swift in Sources */,
 				530E3C6026F26E9600292BFE /* UIViewController+CoreKit.swift in Sources */,
 				530E3C5326F2657C00292BFE /* ApiKey.swift in Sources */,
 				530E3C5826F265EA00292BFE /* Wheather.swift in Sources */,
+				53FB580926F3B87B0043F811 /* WheathreViewController+CorKit.swift in Sources */,
 				530E3C3526F2604B00292BFE /* SceneDelegate.swift in Sources */,
 				530E3C5A26F2664700292BFE /* HttpManager.swift in Sources */,
-				530E3C6A26F274FB00292BFE /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
