@@ -20,6 +20,8 @@
 		530E3C5E26F26E6F00292BFE /* UIView+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */; };
 		530E3C6026F26E9600292BFE /* UIViewController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */; };
 		530E3C6826F274E100292BFE /* Root(Main)ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C6726F274E100292BFE /* Root(Main)ViewController.swift */; };
+		5350104A26F76F1A00AEC5D2 /* Rain - 20885.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5350104926F76F1A00AEC5D2 /* Rain - 20885.mp4 */; };
+		5350104C26F77C9600AEC5D2 /* zvuki-prirody.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5350104B26F77C9600AEC5D2 /* zvuki-prirody.mp3 */; };
 		53FB580926F3B87B0043F811 /* WheathreViewController+CorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FB580826F3B87B0043F811 /* WheathreViewController+CorKit.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CoreKit.swift"; sourceTree = "<group>"; };
 		530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreKit.swift"; sourceTree = "<group>"; };
 		530E3C6726F274E100292BFE /* Root(Main)ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Root(Main)ViewController.swift"; sourceTree = "<group>"; };
+		5350104926F76F1A00AEC5D2 /* Rain - 20885.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rain - 20885.mp4"; sourceTree = "<group>"; };
+		5350104B26F77C9600AEC5D2 /* zvuki-prirody.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "zvuki-prirody.mp3"; sourceTree = "<group>"; };
 		53FB580826F3B87B0043F811 /* WheathreViewController+CorKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheathreViewController+CorKit.swift"; sourceTree = "<group>"; };
 		9C64028E9857EEDAC675E3A8 /* Pods-homeWorkLesson23(WheatherAndNews)2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeWorkLesson23(WheatherAndNews)2.release.xcconfig"; path = "Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)2/Pods-homeWorkLesson23(WheatherAndNews)2.release.xcconfig"; sourceTree = "<group>"; };
 		F1CBEA93B16922496262CC02 /* Pods_homeWorkLesson23_WheatherAndNews_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homeWorkLesson23_WheatherAndNews_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +116,8 @@
 				530E3C3B26F2604F00292BFE /* Assets.xcassets */,
 				530E3C4026F2604F00292BFE /* Info.plist */,
 				530E3C5226F2657C00292BFE /* ApiKey.swift */,
+				5350104926F76F1A00AEC5D2 /* Rain - 20885.mp4 */,
+				5350104B26F77C9600AEC5D2 /* zvuki-prirody.mp3 */,
 			);
 			path = SuportingFiles;
 			sourceTree = "<group>";
@@ -236,6 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				530E3C3F26F2604F00292BFE /* LaunchScreen.storyboard in Resources */,
+				5350104C26F77C9600AEC5D2 /* zvuki-prirody.mp3 in Resources */,
+				5350104A26F76F1A00AEC5D2 /* Rain - 20885.mp4 in Resources */,
 				530E3C3C26F2604F00292BFE /* Assets.xcassets in Resources */,
 				530E3C3A26F2604B00292BFE /* Main.storyboard in Resources */,
 			);
@@ -450,6 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CP6Y2Q4BFL;
 				INFOPLIST_FILE = "homeWorkLesson23(WheatherAndNews)2/SuportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,6 +479,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CP6Y2Q4BFL;
 				INFOPLIST_FILE = "homeWorkLesson23(WheatherAndNews)2/SuportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
