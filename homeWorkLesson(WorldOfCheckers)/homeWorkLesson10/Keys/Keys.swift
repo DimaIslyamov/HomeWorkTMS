@@ -19,4 +19,5 @@ enum Keys: String {
     case dateFormatter = "dateFormatter_"
     case player1 = "player_1"
     case player2 = "player_2"
+    case currentLanguageCode = "currentLanguageCode_"
 }

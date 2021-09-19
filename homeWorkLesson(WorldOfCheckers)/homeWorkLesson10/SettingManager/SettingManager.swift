@@ -10,6 +10,11 @@ import UIKit
 class SettingManager {
     static let shared = SettingManager()
     
+    var currentLanguageCode: String {
+        set { UserDefaults.standard.setValue(newValue, forKey: Keys.currentLanguageCode.rawValue) }
+        get { return UserDefaults.standard.string(forKey:Keys.currentLanguageCode.rawValue) ?? "en" }
+    }
+    
     var saveWhiteChecker: String? {
         set { UserDefaults.standard.setValue(newValue, forKey: Keys.checkerImageWhite.rawValue) }
         get { UserDefaults.standard.string(forKey: Keys.checkerImageWhite.rawValue) }

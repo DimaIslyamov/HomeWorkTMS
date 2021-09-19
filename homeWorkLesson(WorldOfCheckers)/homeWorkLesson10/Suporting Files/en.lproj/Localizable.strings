@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  homeWorkLesson10
+
+  Created by Moobat on 19.09.21.
+  
+*/
+
+// settings view controller
+"Back_buuton_text" = "Back";
+"Sound_off/on_text" = "Sound off/on";
+"Background replacement_text" = "Background replacement";
+"Choose Black Checkers_text" = "Choose Black Checkers";
+"Choose White Checkers_text" = "Choose White Checkers";
+
+// main view controller
+//"Start Game_text" = "Start Game"
+
+// score view controller
+//"Back_button_score" = "Back"
+
+// about view controller

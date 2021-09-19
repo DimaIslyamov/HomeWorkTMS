@@ -25,6 +25,10 @@
 		534D2D32269D760500052236 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D31269D760500052236 /* RootViewController.swift */; };
 		534D2D34269D80D600052236 /* ChessBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534D2D33269D80D600052236 /* ChessBoard.storyboard */; };
 		534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D35269D80F200052236 /* ChessBoardController.swift */; };
+		5350105826F7B22F00AEC5D2 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 5350105526F7B22E00AEC5D2 /* en.lproj */; };
+		5350105926F7B22F00AEC5D2 /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 5350105626F7B22E00AEC5D2 /* pl.lproj */; };
+		5350105A26F7B22F00AEC5D2 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 5350105726F7B22E00AEC5D2 /* ru.lproj */; };
+		5350105C26F7BA9100AEC5D2 /* String+Localaized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350105B26F7BA9100AEC5D2 /* String+Localaized.swift */; };
 		5360ECFF26C46CE400A0C0C6 /* CellCheckers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360ECFE26C46CE400A0C0C6 /* CellCheckers.swift */; };
 		5360ED0326C49C0300A0C0C6 /* SettingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360ED0126C49C0300A0C0C6 /* SettingsCollectionViewCell.swift */; };
 		5360ED0426C49C0300A0C0C6 /* SettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5360ED0226C49C0300A0C0C6 /* SettingsCollectionViewCell.xib */; };
@@ -65,6 +69,10 @@
 		534D2D31269D760500052236 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		534D2D33269D80D600052236 /* ChessBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChessBoard.storyboard; sourceTree = "<group>"; };
 		534D2D35269D80F200052236 /* ChessBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoardController.swift; sourceTree = "<group>"; };
+		5350105526F7B22E00AEC5D2 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = file; name = en.lproj; path = "homeWorkLesson10/Suporting Files/en.lproj"; sourceTree = SOURCE_ROOT; };
+		5350105626F7B22E00AEC5D2 /* pl.lproj */ = {isa = PBXFileReference; lastKnownFileType = file; name = pl.lproj; path = "homeWorkLesson10/Suporting Files/pl.lproj"; sourceTree = SOURCE_ROOT; };
+		5350105726F7B22E00AEC5D2 /* ru.lproj */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru.lproj; path = "homeWorkLesson10/Suporting Files/ru.lproj"; sourceTree = SOURCE_ROOT; };
+		5350105B26F7BA9100AEC5D2 /* String+Localaized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localaized.swift"; sourceTree = "<group>"; };
 		5360ECFE26C46CE400A0C0C6 /* CellCheckers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCheckers.swift; sourceTree = "<group>"; };
 		5360ED0126C49C0300A0C0C6 /* SettingsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewCell.swift; sourceTree = "<group>"; };
 		5360ED0226C49C0300A0C0C6 /* SettingsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 				538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */,
 				53B9837126D3BF1C002F4D4C /* URL+CoreKit.swift */,
 				5315ACB226DA55C0003CD6FE /* Date+Format.swift */,
+				5350105B26F7BA9100AEC5D2 /* String+Localaized.swift */,
 			);
 			path = "UI+Extension";
 			sourceTree = "<group>";
@@ -187,6 +196,7 @@
 		534D2D2E269D759100052236 /* Suporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5350105426F7B1FC00AEC5D2 /* Localaized */,
 				534D2D1A269D757E00052236 /* AppDelegate.swift */,
 				534D2D1C269D757E00052236 /* SceneDelegate.swift */,
 				534D2D23269D758100052236 /* Assets.xcassets */,
@@ -218,6 +228,16 @@
 				53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5350105426F7B1FC00AEC5D2 /* Localaized */ = {
+			isa = PBXGroup;
+			children = (
+				5350105526F7B22E00AEC5D2 /* en.lproj */,
+				5350105626F7B22E00AEC5D2 /* pl.lproj */,
+				5350105726F7B22E00AEC5D2 /* ru.lproj */,
+			);
+			path = Localaized;
 			sourceTree = "<group>";
 		};
 		5360ED0026C49BD300A0C0C6 /* BlackCheckersCollectionViewCell */ = {
@@ -331,6 +351,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				pl,
 			);
 			mainGroup = 534D2D0E269D757E00052236;
 			productRefGroup = 534D2D18269D757E00052236 /* Products */;
@@ -347,9 +369,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5350105826F7B22F00AEC5D2 /* en.lproj in Resources */,
 				534D2D27269D758100052236 /* LaunchScreen.storyboard in Resources */,
 				534D2D24269D758100052236 /* Assets.xcassets in Resources */,
 				5360ED0426C49C0300A0C0C6 /* SettingsCollectionViewCell.xib in Resources */,
+				5350105A26F7B22F00AEC5D2 /* ru.lproj in Resources */,
 				53F8A60026B9ED7E00166BD2 /* About.storyboard in Resources */,
 				53133FAF26B171A50042379D /* StyleScript-Regular.ttf in Resources */,
 				534D2D34269D80D600052236 /* ChessBoard.storyboard in Resources */,
@@ -359,6 +383,7 @@
 				5368593926C9C04700420AF7 /* CustomButton.xib in Resources */,
 				530C29BC26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.xib in Resources */,
 				534D2D22269D757E00052236 /* Main.storyboard in Resources */,
+				5350105926F7B22F00AEC5D2 /* pl.lproj in Resources */,
 				53031ED626CB07BE00483567 /* CustomButtonForAbout.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +405,7 @@
 				53031ECA26CADA2500483567 /* ChessBoardController+CoreKit.swift in Sources */,
 				53985BEB26E38295005B5714 /* SettingManager.swift in Sources */,
 				534D2D32269D760500052236 /* RootViewController.swift in Sources */,
+				5350105C26F7BA9100AEC5D2 /* String+Localaized.swift in Sources */,
 				530C29BB26D0FF0D001A4C81 /* WhiteCheckersCollectionViewCell.swift in Sources */,
 				534D2D36269D80F200052236 /* ChessBoardController.swift in Sources */,
 				53B9837226D3BF1C002F4D4C /* URL+CoreKit.swift in Sources */,
@@ -421,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -482,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

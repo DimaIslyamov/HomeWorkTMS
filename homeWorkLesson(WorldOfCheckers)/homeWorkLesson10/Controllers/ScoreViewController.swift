@@ -16,10 +16,13 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        localaized()
         backButtonCostamization()
     }
     
-    
+//    func localaized() {
+//        backButtonOutlet.setTitle("Back_button_score".localaized, for: .normal)
+//    }
     
     func backButtonCostamization() {
         buttonView.layer.cornerRadius = 12

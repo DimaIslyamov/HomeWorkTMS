@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  homeWorkLesson10
+
+  Created by Moobat on 19.09.21.
+  
+*/
+
+// settings view controller
+"Back_buuton_text" = "Plecy";
+"Sound_off/on_text" = "Dźwięk off/on";
+"Background replacement_text" = "Wymiana tła";
+"Choose Black Checkers_text" = "Wybierz czarne warcaby";
+"Choose White Checkers_text" = "Wybierz białe warcaby";
+
+
+// main view controller
+//"Start Game_text" = "Zacząć gre"
+
+// score view controller
+//"Back_button_score" = "Plecy"
+
+// about view controller

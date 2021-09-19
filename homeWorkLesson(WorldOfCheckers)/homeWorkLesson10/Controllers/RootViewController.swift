@@ -31,6 +31,8 @@ class RootViewController: UIViewController {
         if UserDefaults.standard.value(forKey: Keys.checkerImageWhite.rawValue) == nil {
             UserDefaults.standard.setValue("somthingArmi", forKey: Keys.checkerImageWhite.rawValue)
         }
+        
+//        localaized()
     }
     
     
@@ -39,6 +41,11 @@ class RootViewController: UIViewController {
         
         self.view.removeBlurView()
     }
+    
+    
+//    func localaized() {
+//        newGameButton.text = "Start Game_text".localaized
+//    }
 }
 
 

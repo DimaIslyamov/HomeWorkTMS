@@ -80,4 +80,5 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
         
         picker.dismiss(animated: true, completion: nil)
     }
+    
 }

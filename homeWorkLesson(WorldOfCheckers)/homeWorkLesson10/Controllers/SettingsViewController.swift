@@ -7,16 +7,43 @@
 
 import UIKit
 
+
+enum Language: Int {
+    case english = 0
+    case russian = 1
+    case polish = 2
+}
+
+
 class SettingsViewController: UIViewController  {
     
     @IBOutlet weak var buttonViews: UIView!
     @IBOutlet weak var buttonOutlet: UIButton!
     @IBOutlet weak var collectionViewA: UICollectionView!
     @IBOutlet weak var collectionViewB: UICollectionView!
+    @IBOutlet weak var languageControl: UISegmentedControl!
+    @IBOutlet weak var soundLable: UILabel!
+    @IBOutlet weak var backgroundReplacementLable: UILabel!
+    @IBOutlet weak var chooseBlackCheckersLable: UILabel!
+    @IBOutlet weak var chooseWhiteCheckersLable: UILabel!
+    
     
     var arrayOfBlackCheckersImage = ["ArtasArmi", "ElidanArmi", "PaladinArmi", "nerzulArmi", "ordaArmi", "ximikArmi"]
     var arrayOfWhiteCheckersImage = ["elfeArmi", "gnomArmi", "pandaArmi", "darkElfeArmi", "somthingArmi", "warrorsArmi"]
     
+    var lCodes: [String] = ["en", "ru", "pl"]
+    
+    var currentLanguage: Language = .english {
+        didSet {
+            switch self.currentLanguage {
+            case .english: SettingManager.shared.currentLanguageCode = "en"
+            case .russian: SettingManager.shared.currentLanguageCode = "ru"
+            case .polish: SettingManager.shared.currentLanguageCode = "pl"
+            }
+            
+            localaized()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +55,25 @@ class SettingsViewController: UIViewController  {
         collectionViewB.delegate = self
         collectionViewB.register(UINib(nibName: "WhiteCheckersCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WhiteCheckersCollectionViewCell")
         
+        if let indexCode = lCodes.firstIndex(of: SettingManager.shared.currentLanguageCode) {
+            languageControl.selectedSegmentIndex = indexCode
+            currentLanguage = Language(rawValue: indexCode) ?? .english
+        }
+        
         backButtonCostamization()
     }
+    
+    
+    
+    func localaized() {
+        buttonOutlet.setTitle("Back_buuton_text".localaized, for: .normal)
+        soundLable.text = "Sound_off/on_text".localaized
+        backgroundReplacementLable.text = "Background replacement_text".localaized
+        chooseBlackCheckersLable.text = "Choose Black Checkers_text".localaized
+        chooseWhiteCheckersLable.text = "Choose White Checkers_text".localaized
+    }
+    
+    
     
     private func selectChooseMedia() {
         let picker = UIImagePickerController()
@@ -60,7 +104,7 @@ class SettingsViewController: UIViewController  {
     }
     
     
-    private func backButtonCostamization() {
+     func backButtonCostamization() {
         buttonViews.layer.cornerRadius = 12
         buttonViews.layer.shadowColor = UIColor.black.cgColor
         buttonViews.layer.shadowRadius = 4
@@ -78,5 +122,12 @@ class SettingsViewController: UIViewController  {
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @IBAction func chengeLocalaiz(_ sender: UISegmentedControl) {
+        guard let selectedLanguage = Language(rawValue: sender.selectedSegmentIndex),
+              selectedLanguage != currentLanguage  else { return }
+        currentLanguage = selectedLanguage
     }
 }
