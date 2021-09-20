@@ -14,9 +14,17 @@
 "Choose White Checkers_text" = "Выбери белые шашки";
 
 // main view controller
-//"Start Game_text" = "Начать игру"
+"Start Game_text" = "Начать игру";
+"Score_button_text" = "Счет";
+"Settings_button_text" = "Настройки";
 
 // score view controller
-//"Back_button_score" = "Назад"
+"Back_button_score" = "Назад";
 
 // about view controller
+"Back_button_about" = "Назад";
+
+// cheasboard view controller
+"End Game_button_text" = "Выйти";
+"Move:_text_lable" = "Ход:";
+"Original / Task 19_text" = "Оригинал/Дз19";

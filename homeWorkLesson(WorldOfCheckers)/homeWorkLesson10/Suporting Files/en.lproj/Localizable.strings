@@ -14,9 +14,17 @@
 "Choose White Checkers_text" = "Choose White Checkers";
 
 // main view controller
-//"Start Game_text" = "Start Game"
+"Start Game_text" = "Start Game";
+"Score_button_text" = "Score";
+"Settings_button_text" = "Settings";
 
 // score view controller
-//"Back_button_score" = "Back"
+"Back_button_score" = "Back";
 
 // about view controller
+"Back_button_about" = "Back";
+
+// cheasboard view controller
+"End Game_button_text" = "End Game";
+"Move:_text_lable" = "Move:";
+"Original / Task 19_text" = "Original/Task19";

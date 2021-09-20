@@ -14,12 +14,15 @@ class RootViewController: UIViewController {
     @IBOutlet weak var settingButton: CustomButton!
     @IBOutlet weak var aboutButton: CustomButtonForAbout!
     
+    
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     var saveTimerCheckers: CellCheckers = CellCheckers()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         newGameButton.delegate = self
         scoreButton.delegate = self
         settingButton.delegate = self
@@ -31,8 +34,14 @@ class RootViewController: UIViewController {
         if UserDefaults.standard.value(forKey: Keys.checkerImageWhite.rawValue) == nil {
             UserDefaults.standard.setValue("somthingArmi", forKey: Keys.checkerImageWhite.rawValue)
         }
+    }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-//        localaized()
+        localaized()
     }
     
     
@@ -43,9 +52,12 @@ class RootViewController: UIViewController {
     }
     
     
-//    func localaized() {
-//        newGameButton.text = "Start Game_text".localaized
-//    }
+    
+    func localaized() {
+        newGameButton.text = "Start Game_text".localaized
+        scoreButton.text = "Score_button_text".localaized
+        settingButton.text = "Settings_button_text".localaized
+    }
 }
 
 
@@ -97,6 +109,7 @@ extension RootViewController: CustomButtonDelegate {
         }
     }
 }
+
 
 extension RootViewController: CustomButtonForAboutDelegate {
     func buttonDidTap(_ sender: CustomButtonForAbout) {

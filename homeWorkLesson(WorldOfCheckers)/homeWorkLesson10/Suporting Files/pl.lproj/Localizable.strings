@@ -15,9 +15,17 @@
 
 
 // main view controller
-//"Start Game_text" = "Zacząć gre"
+"Start Game_text" = "Zacząć gre";
+"Score_button_text" = "Sprawdzać";
+"Settings_button_text" = "Ustawienia";
 
 // score view controller
-//"Back_button_score" = "Plecy"
+"Back_button_score" = "Plecy";
 
 // about view controller
+"Back_button_about" = "Plecy";
+
+// cheasboard view controller
+"End Game_button_text" = "Wyloguj";
+//"Move:_text_lable" = "";
+"Original / Task 19_text" = "Oryginał/Dz19";

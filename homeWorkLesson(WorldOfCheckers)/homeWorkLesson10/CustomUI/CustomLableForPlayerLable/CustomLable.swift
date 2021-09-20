@@ -21,6 +21,11 @@ class CustomLable: UIView {
         setupView()
     }
     
+    @IBInspectable var text: String {
+        set { self.playerLable.text = newValue }
+        get { return self.playerLable.text ?? "" }
+    }
+    
     private func setupView() {
         Bundle(for: CustomLable.self).loadNibNamed("CustomLable", owner: self, options: nil)
         contentView.frame = self.bounds

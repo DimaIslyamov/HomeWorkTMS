@@ -126,9 +126,13 @@ extension ChessBoardController {
             let secondTextField = fields[1]
             guard let firstField = firstTextField.text, !firstField.isEmpty,
                   let secondField = secondTextField.text, !secondField.isEmpty else {
-                
-                // дописать логику при пустой строке
-                
+                let alertController = UIAlertController(title: "Введите двоих игроков", message: nil, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "Ok", style: .cancel) { _ in
+                    self.navigationController?.popViewController(animated: true)
+                    self.view.removeBlurView()
+                }
+                alertController.addAction(ok)
+                self.present(alertController, animated: true, completion: nil)
                 print("Invalid entries")
                 return
             }

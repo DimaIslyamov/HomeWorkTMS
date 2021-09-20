@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="314" height="63"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHw-pv-ojr">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHw-pv-ojr">
                     <rect key="frame" x="8" y="8" width="298" height="47"/>
                     <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
                     <color key="textColor" systemColor="systemYellowColor"/>

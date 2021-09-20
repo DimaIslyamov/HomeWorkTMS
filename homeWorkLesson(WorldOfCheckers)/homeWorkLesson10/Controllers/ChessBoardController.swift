@@ -23,7 +23,6 @@ class ChessBoardController: UIViewController {
     @IBOutlet weak var backgraoundImage: UIImageView!
     @IBOutlet weak var lableForBackground: UILabel!
     @IBOutlet weak var dateLable: UILabel!
-    
     @IBOutlet weak var playersLable: CustomLable!
     
     
@@ -62,6 +61,10 @@ class ChessBoardController: UIViewController {
         dateLable.text = Date().getCurrentDate()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localaized()
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -72,7 +75,11 @@ class ChessBoardController: UIViewController {
     }
     
     
-    
+    func localaized() {
+        backButtonOutlet.setTitle("End Game_button_text".localaized, for: .normal)
+        lableForBackground.text = "Original / Task 19_text".localaized
+        
+    }
     
     // MARK: - Objc Методы и Жесты
     
