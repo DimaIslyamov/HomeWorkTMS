@@ -26,7 +26,6 @@ extension ChessBoardController {
                 
                 guard i < 3 || i > 4, column.backgroundColor == .black else { continue }
                 
-                
                  let checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
                 checkerImage.isUserInteractionEnabled = true
                 checkerImage.image = UIImage(named: i < 3 ? (SettingManager.shared.saveBlackChecker) ?? "" : (SettingManager.shared.saveWhiteChecker) ?? "")
@@ -53,7 +52,7 @@ extension ChessBoardController {
     func saveBatch() {
         chessboard.subviews.forEach { cell in
             if !cell.subviews.isEmpty {
-                let position: CellCheckers = CellCheckers()
+             let position: CellCheckers = CellCheckers()
                 position.cellTag = cell.tag
                 cell.subviews.forEach { checker in
                     position.checkerTag = checker.tag
@@ -100,7 +99,6 @@ extension ChessBoardController {
         }
         chessboard.image = UIImage(named: "ice7")
         chessboard.isUserInteractionEnabled = true
-//        view.addSubview(chessboard)
     }
     
     
@@ -221,13 +219,13 @@ extension ChessBoardController {
     
     func moving(for checker: UIView) {
         let cell = checker.superview
-        chessboard.subviews.forEach { cellMove in
-            guard cellMove.subviews.isEmpty, let startCell = cell else { return }
+        chessboard.subviews.forEach { cellForMove in
+            guard cellForMove.subviews.isEmpty, cellForMove.backgroundColor == .black, let startCell = cell else { return }
             let diff1 = current == .white ? -4 : +4
             let diff2 = current == .white ? -5 : +5
-            if cellMove.tag == startCell.tag + diff1 || cellMove.tag == startCell.tag + diff2 {
-                cellMove.backgroundColor = #colorLiteral(red: 0.1639071378, green: 0.1639071378, blue: 0.1639071378, alpha: 1)
-                cellsMove.append(cellMove)
+            if cellForMove.tag == startCell.tag + diff1 || cellForMove.tag == startCell.tag + diff2 {
+                cellForMove.backgroundColor = #colorLiteral(red: 0.1639071378, green: 0.1639071378, blue: 0.1639071378, alpha: 1)
+                cellsMove.append(cellForMove)
             }
         }
     }

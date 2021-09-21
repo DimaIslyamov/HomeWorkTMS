@@ -61,10 +61,12 @@ class ChessBoardController: UIViewController {
         dateLable.text = Date().getCurrentDate()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         localaized()
     }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

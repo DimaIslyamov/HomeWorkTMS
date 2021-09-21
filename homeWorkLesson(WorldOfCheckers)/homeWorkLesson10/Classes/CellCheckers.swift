@@ -18,6 +18,7 @@ class CellCheckers: NSObject, NSCoding, NSSecureCoding {
     
     override init() {
         super.init()
+        
     }
 
     func encode(with coder: NSCoder) { // кодировка
