@@ -8,6 +8,7 @@
 import UIKit
 
 class RootViewController: UIViewController {
+    // MARK: - @OUTLETS
     
     @IBOutlet weak var newGameButton: CustomButton!
     @IBOutlet weak var scoreButton: CustomButton!
@@ -15,10 +16,13 @@ class RootViewController: UIViewController {
     @IBOutlet weak var aboutButton: CustomButtonForAbout!
     
     
+    // MARK: - Переменные и Константы
+    
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     var saveTimerCheckers: CellCheckers = CellCheckers()
     
     
+    // MARK: - Жизненный цикл
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +41,6 @@ class RootViewController: UIViewController {
     }
     
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -52,6 +55,7 @@ class RootViewController: UIViewController {
     }
     
     
+    // MARK: - Методы
     
     func localaized() {
         newGameButton.text = "Start Game_text".localaized

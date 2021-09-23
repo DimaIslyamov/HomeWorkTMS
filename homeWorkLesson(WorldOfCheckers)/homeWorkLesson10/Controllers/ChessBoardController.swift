@@ -23,7 +23,7 @@ class ChessBoardController: UIViewController {
     @IBOutlet weak var backgraoundImage: UIImageView!
     @IBOutlet weak var lableForBackground: UILabel!
     @IBOutlet weak var dateLable: UILabel!
-    @IBOutlet weak var playersLable: CustomLable!
+    @IBOutlet weak var playersLable: UILabel!
     
     
     // MARK: - Переменные и Константы
@@ -47,6 +47,9 @@ class ChessBoardController: UIViewController {
     
     var player1 = ""
     var player2 = ""
+    var getNames: [SaveNames] = [SaveNames(nameOne: "", nameTwo: "")]
+    var names: [SaveNames] = []
+    var randomName: [String] = []
     
     
     // MARK: - Жизненный цикл
@@ -57,7 +60,6 @@ class ChessBoardController: UIViewController {
         view.addSubview(setBackground(with: "GameArtas"))
         backgraoundImage.contentMode = .scaleAspectFill
         backButtonFuncCostamize()
-        
         dateLable.text = Date().getCurrentDate()
     }
     
@@ -77,11 +79,6 @@ class ChessBoardController: UIViewController {
     }
     
     
-    func localaized() {
-        backButtonOutlet.setTitle("End Game_button_text".localaized, for: .normal)
-        lableForBackground.text = "Original / Task 19_text".localaized
-        
-    }
     
     // MARK: - Objc Методы и Жесты
     
@@ -105,27 +102,22 @@ class ChessBoardController: UIViewController {
         guard let checker = sender.view, checker.tag == current.rawValue else { return }
         switch sender.state {
         case .began:
-            cellsMove.removeAll()
+            
             UIView.animate(withDuration: 0.3) {
                 checker.transform = checker.transform.scaledBy(x: 2.7, y: 2.7)
             }
+            cellsMove.removeAll()
             moving(for: checker)
-            
-            // выводит имя игрока в лэйбл
-            if current == .black {
-                playersLable.playerLable.text = player1
-            } else if current == .white {
-                playersLable.playerLable.text = player2
-            }
             
         case .ended:
             UIView.animate(withDuration: 0.3) {
                 checker.transform = .identity
             }
             chessboard.subviews.forEach { value in
-                if value.backgroundColor == #colorLiteral(red: 0.1639071378, green: 0.1639071378, blue: 0.1639071378, alpha: 1) {
-                    value.backgroundColor = .black
-                }
+                value.layer.borderWidth = 0
+//                if value.backgroundColor == #colorLiteral(red: 0.1639071378, green: 0.1639071378, blue: 0.1639071378, alpha: 1) {
+//                    value.backgroundColor = .black
+//                }
             }
         default : break
         }
@@ -151,6 +143,7 @@ class ChessBoardController: UIViewController {
             cellsMove.forEach { value in
                 if value.frame.contains(location) {
                     currentCells = value
+                    cellsMove.removeAll()
                 }
             }
             sender.view?.frame.origin = CGPoint(x: 5, y: 5)
@@ -159,6 +152,7 @@ class ChessBoardController: UIViewController {
             newCell.addSubview(cell)
             
             current = current == .white ? .black : .white
+            playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
             cellsMove.removeAll()
             
         default: break

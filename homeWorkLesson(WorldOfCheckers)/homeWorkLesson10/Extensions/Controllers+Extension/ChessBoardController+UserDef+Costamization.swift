@@ -16,8 +16,6 @@ extension ChessBoardController {
         SettingManager.shared.saveTimerMin = self.countMin
         SettingManager.shared.savePlayerOne = self.player1
         SettingManager.shared.savePlayerTwo = self.player2
-        // not working!
-//        SettingManager.shared.saveDate = self.dateLable.text
     }
     
     func removeDataFromUserDefaults() {
@@ -25,8 +23,6 @@ extension ChessBoardController {
         userDef.removeObject(forKey: Keys.timerMin.rawValue)
         userDef.removeObject(forKey: Keys.player1.rawValue)
         userDef.removeObject(forKey: Keys.player2.rawValue)
-        // not working!
-//        userDef.removeObject(forKey: Keys.dateFormatter.rawValue)
     }
     
     func setDataFromUserDefaults() {
@@ -34,21 +30,12 @@ extension ChessBoardController {
         self.countMin = SettingManager.shared.saveTimerMin
         self.player1 = SettingManager.shared.savePlayerOne ?? "Anton"
         self.player2 = SettingManager.shared.savePlayerTwo ?? "Lera"
-        // not working! Error here
-//        dateLable.text = SettingManager.shared.saveDate
     }
     
     
     // MARK: - Методы костамизации доски и кнопки назад
     
     func chessboardCostamization() {
-        // констрэйнты для доски
-        chessboard.translatesAutoresizingMaskIntoConstraints = false
-        chessboard.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        chessboard.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        chessboard.widthAnchor.constraint(equalToConstant: 320).isActive = true
-        chessboard.heightAnchor.constraint(equalToConstant: 320).isActive = true
-        
         // тени для доски
         chessboard.layer.shadowColor = UIColor.black.cgColor
         chessboard.layer.shadowRadius = 7

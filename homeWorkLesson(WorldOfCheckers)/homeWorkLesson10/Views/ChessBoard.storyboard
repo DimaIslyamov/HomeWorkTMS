@@ -81,35 +81,34 @@
                                     <action selector="chooseBackground:" destination="Y6W-OH-hqX" eventType="valueChanged" id="wEU-y4-eys"/>
                                 </connections>
                             </switch>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGv-za-PE8" customClass="CustomLable" customModule="homeWorkLesson10" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuP-hQ-HJS">
                                 <rect key="frame" x="50" y="661" width="314" height="63"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="314" id="IAA-Z3-yEX"/>
-                                    <constraint firstAttribute="height" constant="63" id="gCs-wl-quk"/>
+                                    <constraint firstAttribute="width" constant="314" id="blX-Lp-Ree"/>
+                                    <constraint firstAttribute="height" constant="63" id="kNz-Fe-zIJ"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Move:"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="PuP-hQ-HJS" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="5sJ-10-CGB"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="6R4-Uo-Hen"/>
                             <constraint firstItem="X5u-P1-I1j" firstAttribute="leading" secondItem="7I3-KD-3lI" secondAttribute="trailing" constant="8" symbolic="YES" id="76m-Lw-bEN"/>
                             <constraint firstItem="X5u-P1-I1j" firstAttribute="height" secondItem="7I3-KD-3lI" secondAttribute="height" multiplier="0.939394" id="90Q-Cx-ga8"/>
                             <constraint firstItem="X5u-P1-I1j" firstAttribute="centerY" secondItem="7I3-KD-3lI" secondAttribute="centerY" id="F1h-bL-HaS"/>
-                            <constraint firstItem="7I3-KD-3lI" firstAttribute="top" secondItem="aGv-za-PE8" secondAttribute="bottom" constant="105" id="GeN-ah-1aB"/>
+                            <constraint firstItem="PuP-hQ-HJS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="FQM-lu-LI3"/>
                             <constraint firstItem="RRW-VB-4hz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="L4A-ra-XDt"/>
-                            <constraint firstItem="aGv-za-PE8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="Lwr-Fy-5fO"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Odg-b9-ujS"/>
                             <constraint firstItem="7I3-KD-3lI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ovt-Yc-qhB"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aGv-za-PE8" secondAttribute="trailing" constant="50" id="Q0r-mb-Qh6"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="Qhs-mG-1ot"/>
                             <constraint firstItem="7I3-KD-3lI" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Uaf-SA-5W9"/>
                             <constraint firstItem="RRW-VB-4hz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Zbh-hH-7Vt"/>
                             <constraint firstItem="RRW-VB-4hz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="bC8-Rl-1D3"/>
+                            <constraint firstItem="X5u-P1-I1j" firstAttribute="top" secondItem="PuP-hQ-HJS" secondAttribute="bottom" constant="106" id="g41-RJ-Ujf"/>
                             <constraint firstAttribute="bottom" secondItem="0rQ-GY-5cm" secondAttribute="bottom" id="jhy-Qu-kFK"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" id="sMR-pU-VX0"/>
                             <constraint firstItem="0rQ-GY-5cm" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="wPb-dx-ayU"/>
@@ -120,7 +119,7 @@
                         <outlet property="backgraoundImage" destination="0rQ-GY-5cm" id="rHG-tO-ko8"/>
                         <outlet property="dateLable" destination="g1f-gb-tOt" id="zgT-wb-5tt"/>
                         <outlet property="lableForBackground" destination="7I3-KD-3lI" id="FZl-BN-gZB"/>
-                        <outlet property="playersLable" destination="aGv-za-PE8" id="mNY-Yl-IqP"/>
+                        <outlet property="playersLable" destination="PuP-hQ-HJS" id="GUd-qW-sMw"/>
                         <outlet property="viewOutlet" destination="yYY-ZD-4ED" id="gxg-12-pQo"/>
                     </connections>
                 </viewController>

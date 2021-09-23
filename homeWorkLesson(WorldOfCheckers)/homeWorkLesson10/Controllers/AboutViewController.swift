@@ -8,9 +8,13 @@
 import UIKit
 
 class AboutViewController: UIViewController {
-
+    // MARK: - @OUTLETS
+    
     @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var backButtonOutlet: UIButton!
+    
+    
+    // MARK: - Жизненный цикл
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +23,12 @@ class AboutViewController: UIViewController {
         backButtonCostamization()
     }
     
+    // MARK: - Методы
+    
     func localaized() {
         backButtonOutlet.setTitle("Back_button_about".localaized, for: .normal)
     }
+    
     
     func backButtonCostamization() {
         buttonView.layer.cornerRadius = 12
@@ -36,6 +43,8 @@ class AboutViewController: UIViewController {
         buttonView.layer.shadowOffset = CGSize(width: 5, height: 5)
     }
     
+    
+    // MARK: - @IBAction
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)

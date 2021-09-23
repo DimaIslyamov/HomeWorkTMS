@@ -16,6 +16,7 @@ enum Language: Int {
 
 
 class SettingsViewController: UIViewController  {
+    // MARK: - @OUTLETS
     
     @IBOutlet weak var buttonViews: UIView!
     @IBOutlet weak var buttonOutlet: UIButton!
@@ -27,6 +28,8 @@ class SettingsViewController: UIViewController  {
     @IBOutlet weak var chooseBlackCheckersLable: UILabel!
     @IBOutlet weak var chooseWhiteCheckersLable: UILabel!
     
+    
+    // MARK: - Переменные и Константы
     
     var arrayOfBlackCheckersImage = ["ArtasArmi", "ElidanArmi", "PaladinArmi", "nerzulArmi", "ordaArmi", "ximikArmi"]
     var arrayOfWhiteCheckersImage = ["elfeArmi", "gnomArmi", "pandaArmi", "darkElfeArmi", "somthingArmi", "warrorsArmi"]
@@ -44,6 +47,9 @@ class SettingsViewController: UIViewController  {
             localaized()
         }
     }
+    
+    
+    // MARK: - Жизненный цикл
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +70,7 @@ class SettingsViewController: UIViewController  {
     }
     
     
+    // MARK: - Методы
     
     func localaized() {
         buttonOutlet.setTitle("Back_buuton_text".localaized, for: .normal)
@@ -115,6 +122,9 @@ class SettingsViewController: UIViewController  {
         buttonOutlet.layer.borderColor = UIColor.black.cgColor
         buttonOutlet.layer.cornerRadius = 12
     }
+    
+    
+    // MARK: - @IBAction
     
     @IBAction func backgraoundReplasmentAction(_ sender: UIButton) {
         selectChooseMedia()

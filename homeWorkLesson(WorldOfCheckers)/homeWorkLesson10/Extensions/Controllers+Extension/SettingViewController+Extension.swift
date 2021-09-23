@@ -8,6 +8,7 @@
 import UIKit
 
 extension SettingsViewController: UICollectionViewDataSource {
+    // MARK: - numberOfItemsInSection
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionViewA {
@@ -17,6 +18,7 @@ extension SettingsViewController: UICollectionViewDataSource {
     }
     
     
+    // MARK: - cellForItemAt indexPath
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
@@ -42,6 +44,8 @@ extension SettingsViewController: UICollectionViewDataSource {
     }
     
     
+    // MARK: - didSelectItemAt
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionViewA {
             // ??? settingManager
@@ -65,12 +69,16 @@ extension SettingsViewController: UICollectionViewDataSource {
 }
 
 
+// MARK: - sizeForItemAt
+
 extension SettingsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 132, height: 117)
     }
 }
 
+
+// MARK: - didFinishPickingMediaWithInfo
 
 extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

@@ -45,11 +45,38 @@ class SettingManager {
         get { UserDefaults.standard.string(forKey: Keys.player2.rawValue)}
     }
     
-    // не работает !!
-    var saveDate: String? {
-        set { UserDefaults.standard.setValue(newValue, forKey: Keys.dateFormatter.rawValue) }
-        get { UserDefaults.standard.string(forKey: Keys.dateFormatter.rawValue) }
+    
+    var saveNamePlayers: [SaveNames] {
+        set {
+            let data = try? NSKeyedArchiver.archivedData(withRootObject: Keys.namePlayers.rawValue, requiringSecureCoding: true)
+            try? data?.write(to: URL.saveNameURL())
+        }
+        get {
+            guard let data = FileManager.default.contents(atPath: URL.saveNameURL().absoluteString.replacingOccurrences(of: "file://", with: "")),
+                  let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [SaveNames] else {
+                return []
+            }
+            return object
+        }
     }
+    
+    
+    var saveCellsCheckers: [CellCheckers] {
+        set {
+            let data = try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: true)
+            try? data?.write(to: URL.saveCellsCheckerURL())
+        }
+        get {
+            guard let data = FileManager.default.contents(
+                    atPath: URL.saveCellsCheckerURL().absoluteString.replacingOccurrences(of: "file://",
+                                                                                      with: "")),
+                  let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [CellCheckers] else {
+                return []
+            }
+            return object
+        }
+    }
+    
     
     var saveBackgroundForCheckerViewController: Any {
         set {
@@ -68,19 +95,5 @@ class SettingManager {
         }
     }
     
-    var saveCellsCheckers: [CellCheckers] {
-        set {
-            let data = try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: true)
-            try? data?.write(to: URL.saveCellsCheckerURL())
-        }
-        get {
-            guard let data = FileManager.default.contents(
-                    atPath: URL.saveCellsCheckerURL().absoluteString.replacingOccurrences(of: "file://",
-                                                                                      with: "")),
-                  let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [CellCheckers] else {
-                return []
-            }
-            return object
-        }
-    }
+    
 }

@@ -8,11 +8,14 @@
 import UIKit
 
 class ScoreViewController: UIViewController {
+    // MARK: - @OUTLETS
     
     @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var backButtonOutlet: UIButton!
     
     
+    // MARK: - Жизненный цикл
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,9 +23,13 @@ class ScoreViewController: UIViewController {
         backButtonCostamization()
     }
     
+    
+    // MARK: - Методы
+    
     func localaized() {
         backButtonOutlet.setTitle("Back_button_score".localaized, for: .normal)
     }
+    
     
     func backButtonCostamization() {
         buttonView.layer.cornerRadius = 12
@@ -39,6 +46,8 @@ class ScoreViewController: UIViewController {
     
     
     
+    // MARK: - @IBAction
+
     @IBAction func backButtonAction(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }

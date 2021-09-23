@@ -8,99 +8,12 @@
 import UIKit
 
 extension ChessBoardController {
-    // MARK: - Методы создания новой партии
+    // MARK: - Локалицазация
     
-    func createChessboard() {
-        chessboardCostamization()
-        
-        for i in 0..<8 {
-            for j in 0..<8 {
-                let column = UIView(frame: CGRect(x: 40 * j, y: 40 * i, width: 40, height: 40))
-                column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
-                column.tag = ((i + j) % 2) == 0 ? 0 : tagCell
-                if ((i + j) % 2) == 1 {
-                    tagCell += 1
-                    column.tag = tagCell
-                }
-                chessboard.addSubview(column)
-                
-                guard i < 3 || i > 4, column.backgroundColor == .black else { continue }
-                
-                 let checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
-                checkerImage.isUserInteractionEnabled = true
-                checkerImage.image = UIImage(named: i < 3 ? (SettingManager.shared.saveBlackChecker) ?? "" : (SettingManager.shared.saveWhiteChecker) ?? "")
-                checkerImage.tag = i < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
-                column.addSubview(checkerImage)
-                
-                let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
-                let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
-                tapGesture.delegate = self
-                panGesture.delegate = self
-                checkerImage.addGestureRecognizer(tapGesture)
-                checkerImage.addGestureRecognizer(panGesture)
-            }
-        }
-        chessboard.image = UIImage(named: "ice7")
-        chessboard.isUserInteractionEnabled = true
+    func localaized() {
+        backButtonOutlet.setTitle("End Game_button_text".localaized, for: .normal)
+        lableForBackground.text = "Original / Task 19_text".localaized
     }
-    
-    
-    
-    
-    // MARK: - методы сохраняющие партию
-    
-    func saveBatch() {
-        chessboard.subviews.forEach { cell in
-            if !cell.subviews.isEmpty {
-             let position: CellCheckers = CellCheckers()
-                position.cellTag = cell.tag
-                cell.subviews.forEach { checker in
-                    position.checkerTag = checker.tag
-                }
-                cellCheckers.append(position)
-            }
-        }
-        SettingManager.shared.saveCellsCheckers = self.cellCheckers
-    }
-    
-    
-    func createSaveChessboard() {
-        chessboardCostamization()
-        
-        for i in 0..<8 {
-            for j in 0..<8 {
-                let column = UIView(frame: CGRect(x: 40 * j, y: 40 * i, width: 40, height: 40))
-                column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
-                column.tag = ((i + j) % 2) == 0 ? 0 : tagCell
-                if ((i + j) % 2) == 1 {
-                    tagCell += 1
-                    column.tag = tagCell
-                }
-                chessboard.addSubview(column)
-                
-                
-                for value in cellCheckers {
-                    if column.tag == value.cellTag {
-                        let checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
-                        checkerImage.isUserInteractionEnabled = true
-                        checkerImage.image = UIImage(named: value.checkerTag == 1 ? (SettingManager.shared.saveBlackChecker) ?? "" : (SettingManager.shared.saveWhiteChecker) ?? "")
-                        checkerImage.tag = value.checkerTag == 1 ? Chekers.black.rawValue : Chekers.white.rawValue
-                        column.addSubview(checkerImage)
-                        
-                        let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
-                        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
-                        tapGesture.delegate = self
-                        panGesture.delegate = self
-                        checkerImage.addGestureRecognizer(tapGesture)
-                        checkerImage.addGestureRecognizer(panGesture)
-                    }
-                }
-            }
-        }
-        chessboard.image = UIImage(named: "ice7")
-        chessboard.isUserInteractionEnabled = true
-    }
-    
     
     
     //MARK: - Vетод вызывающий алер с текст филдом - доработать
@@ -134,8 +47,9 @@ extension ChessBoardController {
                 print("Invalid entries")
                 return
             }
-            self.player1 = "Move: \(firstField)"
-            self.player2 = "Move: \(secondField)"
+            self.getNames = [SaveNames(nameOne: firstField, nameTwo: secondField)]
+            self.saveNames()
+            self.getSetAndRandomNames()
             self.startTimer()
             self.view.removeBlurView()
         })
@@ -152,6 +66,30 @@ extension ChessBoardController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    
+    // MARK: - получение и сохраненние миени игроков
+    
+    func getSetAndRandomNames() {
+        self.names = SettingManager.shared.saveNamePlayers
+        
+        self.names.forEach { value in
+            self.randomName.append(value.nameOne)
+            self.randomName.append(value.nameTwo)
+        }
+        
+        if !FileManager.default.fileExists(atPath: documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue).path) {
+            player1 = randomName.randomElement() ?? ""
+            player2 = (player1 == randomName[0]) ?self.randomName[1] : randomName[0]
+            playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
+        }
+    }
+    
+    
+    func saveNames() {
+         let data = try? NSKeyedArchiver.archivedData(withRootObject: getNames, requiringSecureCoding: true)
+         let fileURL = documentDirectory.appendingPathComponent(Keys.namePlayers.rawValue)
+         try? data?.write(to: fileURL)
+    }
     
     
     // MARK: - Создание Таймера
@@ -206,15 +144,6 @@ extension ChessBoardController {
     
     
     
-    // не понял как можно подключить / в теперешней ситуации
-//    func timeFormatter(_ tottalSecond: Int) -> String {
-//        let second: Int = tottalSecond % 60
-//        let minutes: Int = (tottalSecond / 60) % 60
-//        return String(format: "%02d:%02d", minutes, second)
-//    }
-    
-    
-    
     // MARK: - Moving метод
     
     func moving(for checker: UIView) {
@@ -224,7 +153,9 @@ extension ChessBoardController {
             let diff1 = current == .white ? -4 : +4
             let diff2 = current == .white ? -5 : +5
             if cellForMove.tag == startCell.tag + diff1 || cellForMove.tag == startCell.tag + diff2 {
-                cellForMove.backgroundColor = #colorLiteral(red: 0.1639071378, green: 0.1639071378, blue: 0.1639071378, alpha: 1)
+//                cellForMove.backgroundColor = #colorLiteral(red: 0.1639071378, green: 0.1639071378, blue: 0.1639071378, alpha: 1)
+                cellForMove.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+                cellForMove.layer.borderWidth = 3
                 cellsMove.append(cellForMove)
             }
         }
