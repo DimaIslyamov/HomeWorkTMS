@@ -33,8 +33,10 @@ extension ChessBoardController {
 
         let saveAction = UIAlertAction(title: "Подтвердить", style: .default, handler: { _ in
             guard let fields = alertController.textFields, fields.count == 2 else { return }
+            
             let firstTextField = fields[0]
             let secondTextField = fields[1]
+            
             guard let firstField = firstTextField.text, !firstField.isEmpty,
                   let secondField = secondTextField.text, !secondField.isEmpty else {
                 let alertController = UIAlertController(title: "Введите двоих игроков", message: nil, preferredStyle: .alert)
@@ -42,11 +44,13 @@ extension ChessBoardController {
                     self.navigationController?.popViewController(animated: true)
                     self.view.removeBlurView()
                 }
+                
                 alertController.addAction(ok)
                 self.present(alertController, animated: true, completion: nil)
                 print("Invalid entries")
                 return
             }
+            
             self.getNames = [SaveNames(nameOne: firstField, nameTwo: secondField)]
             self.saveNames()
             self.getSetAndRandomNames()

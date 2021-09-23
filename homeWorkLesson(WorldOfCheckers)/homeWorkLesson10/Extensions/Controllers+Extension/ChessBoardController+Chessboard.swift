@@ -59,7 +59,7 @@ extension ChessBoardController {
     
     
     
-    // MARK: - методы сохраняющие партию
+    // MARK: - методы сохранения и создания партии(сохраненной) - надо как то сделать один !!
     
     func saveBatch() {
         chessboard.subviews.forEach { cell in
