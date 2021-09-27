@@ -39,6 +39,7 @@ extension ChessBoardController {
             
             guard let firstField = firstTextField.text, !firstField.isEmpty,
                   let secondField = secondTextField.text, !secondField.isEmpty else {
+                
                 let alertController = UIAlertController(title: "Введите двоих игроков", message: nil, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "Ok", style: .cancel) { _ in
                     self.navigationController?.popViewController(animated: true)
@@ -90,9 +91,9 @@ extension ChessBoardController {
     
     
     func saveNames() {
-         let data = try? NSKeyedArchiver.archivedData(withRootObject: getNames, requiringSecureCoding: true)
+        let data = try? NSKeyedArchiver.archivedData(withRootObject: getNames, requiringSecureCoding: true)
          let fileURL = documentDirectory.appendingPathComponent(Keys.namePlayers.rawValue)
-         try? data?.write(to: fileURL)
+        try? data?.write(to: URL.saveNameSSURL())
     }
     
     

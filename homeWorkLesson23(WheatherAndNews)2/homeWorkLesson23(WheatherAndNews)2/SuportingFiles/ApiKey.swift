@@ -8,5 +8,5 @@
 import Foundation
 
 enum ApiKey: String {
-    case key = "edc9968386932be8a1a98e573a2a13c9"
+    case key = "0d57d3e9a5a28faf808952624c65ff9e"
 }

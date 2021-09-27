@@ -19,9 +19,15 @@
 		530E3C5C26F2668A00292BFE /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5B26F2668A00292BFE /* ParseManager.swift */; };
 		530E3C5E26F26E6F00292BFE /* UIView+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */; };
 		530E3C6026F26E9600292BFE /* UIViewController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */; };
-		530E3C6826F274E100292BFE /* Root(Main)ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C6726F274E100292BFE /* Root(Main)ViewController.swift */; };
+		530E3C6826F274E100292BFE /* WheathreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C6726F274E100292BFE /* WheathreViewController.swift */; };
+		5336CEDA27026DCF00941403 /* CLPlacemark+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336CED927026DCF00941403 /* CLPlacemark+CoreKit.swift */; };
+		5336CEDC27026E3600941403 /* MapViewController+MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336CEDB27026E3600941403 /* MapViewController+MapDelegate.swift */; };
+		5336CEDE27026FE500941403 /* MapViewController+WeatherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336CEDD27026FE500941403 /* MapViewController+WeatherExtension.swift */; };
 		5350104A26F76F1A00AEC5D2 /* Rain - 20885.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5350104926F76F1A00AEC5D2 /* Rain - 20885.mp4 */; };
 		5350104C26F77C9600AEC5D2 /* zvuki-prirody.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5350104B26F77C9600AEC5D2 /* zvuki-prirody.mp3 */; };
+		53CAFD1426FF0DFF00AEAD48 /* WheathreViewController+Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CAFD1326FF0DFF00AEAD48 /* WheathreViewController+Media.swift */; };
+		53CAFD1626FF0EB400AEAD48 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CAFD1526FF0EB400AEAD48 /* TabBarViewController.swift */; };
+		53CAFD1826FF0EF900AEAD48 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CAFD1726FF0EF900AEAD48 /* MapViewController.swift */; };
 		53FB580926F3B87B0043F811 /* WheathreViewController+CorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FB580826F3B87B0043F811 /* WheathreViewController+CorKit.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,9 +46,15 @@
 		530E3C5B26F2668A00292BFE /* ParseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
 		530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CoreKit.swift"; sourceTree = "<group>"; };
 		530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreKit.swift"; sourceTree = "<group>"; };
-		530E3C6726F274E100292BFE /* Root(Main)ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Root(Main)ViewController.swift"; sourceTree = "<group>"; };
+		530E3C6726F274E100292BFE /* WheathreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheathreViewController.swift; sourceTree = "<group>"; };
+		5336CED927026DCF00941403 /* CLPlacemark+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLPlacemark+CoreKit.swift"; sourceTree = "<group>"; };
+		5336CEDB27026E3600941403 /* MapViewController+MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MapDelegate.swift"; sourceTree = "<group>"; };
+		5336CEDD27026FE500941403 /* MapViewController+WeatherExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+WeatherExtension.swift"; sourceTree = "<group>"; };
 		5350104926F76F1A00AEC5D2 /* Rain - 20885.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rain - 20885.mp4"; sourceTree = "<group>"; };
 		5350104B26F77C9600AEC5D2 /* zvuki-prirody.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "zvuki-prirody.mp3"; sourceTree = "<group>"; };
+		53CAFD1326FF0DFF00AEAD48 /* WheathreViewController+Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheathreViewController+Media.swift"; sourceTree = "<group>"; };
+		53CAFD1526FF0EB400AEAD48 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		53CAFD1726FF0EF900AEAD48 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		53FB580826F3B87B0043F811 /* WheathreViewController+CorKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheathreViewController+CorKit.swift"; sourceTree = "<group>"; };
 		9C64028E9857EEDAC675E3A8 /* Pods-homeWorkLesson23(WheatherAndNews)2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeWorkLesson23(WheatherAndNews)2.release.xcconfig"; path = "Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)2/Pods-homeWorkLesson23(WheatherAndNews)2.release.xcconfig"; sourceTree = "<group>"; };
 		F1CBEA93B16922496262CC02 /* Pods_homeWorkLesson23_WheatherAndNews_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homeWorkLesson23_WheatherAndNews_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +137,9 @@
 		530E3C4826F260BA00292BFE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				530E3C6726F274E100292BFE /* Root(Main)ViewController.swift */,
+				53CAFD1526FF0EB400AEAD48 /* TabBarViewController.swift */,
+				530E3C6726F274E100292BFE /* WheathreViewController.swift */,
+				53CAFD1726FF0EF900AEAD48 /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -169,6 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				53FB580826F3B87B0043F811 /* WheathreViewController+CorKit.swift */,
+				53CAFD1326FF0DFF00AEAD48 /* WheathreViewController+Media.swift */,
+				5336CEDB27026E3600941403 /* MapViewController+MapDelegate.swift */,
+				5336CEDD27026FE500941403 /* MapViewController+WeatherExtension.swift */,
 			);
 			path = extensionViewControllers;
 			sourceTree = "<group>";
@@ -178,6 +195,7 @@
 			children = (
 				530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */,
 				530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */,
+				5336CED927026DCF00941403 /* CLPlacemark+CoreKit.swift */,
 			);
 			path = "extension-UI";
 			sourceTree = "<group>";
@@ -299,14 +317,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				530E3C3326F2604B00292BFE /* AppDelegate.swift in Sources */,
+				53CAFD1426FF0DFF00AEAD48 /* WheathreViewController+Media.swift in Sources */,
 				530E3C5E26F26E6F00292BFE /* UIView+CoreKit.swift in Sources */,
-				530E3C6826F274E100292BFE /* Root(Main)ViewController.swift in Sources */,
+				530E3C6826F274E100292BFE /* WheathreViewController.swift in Sources */,
+				53CAFD1626FF0EB400AEAD48 /* TabBarViewController.swift in Sources */,
 				530E3C5C26F2668A00292BFE /* ParseManager.swift in Sources */,
+				53CAFD1826FF0EF900AEAD48 /* MapViewController.swift in Sources */,
 				530E3C6026F26E9600292BFE /* UIViewController+CoreKit.swift in Sources */,
+				5336CEDE27026FE500941403 /* MapViewController+WeatherExtension.swift in Sources */,
 				530E3C5326F2657C00292BFE /* ApiKey.swift in Sources */,
 				530E3C5826F265EA00292BFE /* Wheather.swift in Sources */,
 				53FB580926F3B87B0043F811 /* WheathreViewController+CorKit.swift in Sources */,
+				5336CEDA27026DCF00941403 /* CLPlacemark+CoreKit.swift in Sources */,
 				530E3C3526F2604B00292BFE /* SceneDelegate.swift in Sources */,
+				5336CEDC27026E3600941403 /* MapViewController+MapDelegate.swift in Sources */,
 				530E3C5A26F2664700292BFE /* HttpManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -439,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

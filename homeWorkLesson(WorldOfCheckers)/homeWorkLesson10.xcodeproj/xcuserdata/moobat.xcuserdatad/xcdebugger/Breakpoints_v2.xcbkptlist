@@ -264,48 +264,16 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4F5F84A9-CF68-4323-BC47-094FABFF5D41"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homeWorkLesson10/Extensions/Controllers+Extension/ChessBoardController+CoreKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "getSetAndRandomNames()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4F5F84A9-CF68-4323-BC47-094FABFF5D41 - 9c0f64219029b803"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "homeWorkLesson10.ChessBoardController.getSetAndRandomNames() -&gt; ()"
-                  moduleName = "homeWorkLesson10"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/moobat/HomeWorkTMS/homeWorkLesson(WorldOfCheckers)/homeWorkLesson10/Extensions/Controllers+Extension/ChessBoardController+CoreKit.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "1723">
-               </Location>
-               <Location
-                  uuid = "4F5F84A9-CF68-4323-BC47-094FABFF5D41 - 6e634646a63447bb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (homeWorkLesson10.SaveNames) -&gt; () in homeWorkLesson10.ChessBoardController.getSetAndRandomNames() -&gt; ()"
-                  moduleName = "homeWorkLesson10"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/moobat/HomeWorkTMS/homeWorkLesson(WorldOfCheckers)/homeWorkLesson10/Extensions/Controllers+Extension/ChessBoardController+CoreKit.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "37">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -321,6 +289,54 @@
             startingLineNumber = "50"
             endingLineNumber = "50"
             landmarkName = "saveNamePlayers"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AC4D5A68-236D-4691-988C-73F46CAE9C17"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homeWorkLesson10/Extensions/Controllers+Extension/ChessBoardController+CoreKit.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "saveNames()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4DD704DE-359E-4E50-BE91-F42BDB9C206A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homeWorkLesson10/Extensions/Controllers+Extension/ChessBoardController+CoreKit.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "openAlertForPlayersName()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFABD144-986C-4EDB-9149-D355B7C23204"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homeWorkLesson10/SettingManager/SettingManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "savePlayerTwo"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>

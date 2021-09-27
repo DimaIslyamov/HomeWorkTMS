@@ -13,6 +13,7 @@ extension WheathreViewController {
     }
     
     
+    
      func setWheather(_ wheather: [Wheather])  {
         guard !wheather.isEmpty else {
             print("city not found")
@@ -64,14 +65,7 @@ extension WheathreViewController {
             HttpManager.shared.getWeather(self.getUrl()) { wheather in
                 self.wheather = wheather
             }
-            self.wheathreIconImage.isHidden = false
-            self.temperatureLable.isHidden = false
-            self.feelsLike.isHidden = false
-            self.cityNameLable.isHidden = false
-            self.lableFeelsLikeText.isHidden = false
-            self.mainSearchButton.isHidden = true
-            self.miniSearchButton.isHidden = false
-            self.lableFeelsLikeText.text = "Feels like"
+            self.lableFeelsLikeText.text = "Feels Like"
             self.view.removeBlurView()
         }
         
@@ -86,7 +80,7 @@ extension WheathreViewController {
     
     
     func settuoForSSButton() {
-        followButton.frame = CGRect(x: 50, y: 750, width: 300, height: 30)
+        followButton.frame = CGRect(x: 50, y: 680, width: 300, height: 30)
         followButton.setTitle("Follow", for: .normal)
         followButton.setTitle("Following", for: .selected)
         followButton.addTarget(self, action: #selector(buttonDidPress(_:)), for: .touchUpInside)

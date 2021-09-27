@@ -7,49 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "44B6AD30-D1B6-4ED3-B8E1-0C28825A8999"
+            uuid = "BFB21747-12D8-4E93-92E7-271C14544277"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "homeWorkLesson23(WheatherAndNews)2/Controllers/Root(Main)ViewController.swift"
+            filePath = "homeWorkLesson23(WheatherAndNews)2/Extensions/extensionViewControllers/MapViewController+WeatherExtension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "setBackgraundVideoView()"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "setWheather(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "44B6AD30-D1B6-4ED3-B8E1-0C28825A8999 - 882935f57c62cc73"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "homeWorkLesson23_WheatherAndNews_2.WheathreViewController.setBackgraundVideoView() -&gt; ()"
-                  moduleName = "homeWorkLesson23(WheatherAndNews)2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/moobat/HomeWorkTMS/homeWorkLesson23(WheatherAndNews)2/homeWorkLesson23(WheatherAndNews)2/Controllers/Root(Main)ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "2187">
-               </Location>
-               <Location
-                  uuid = "44B6AD30-D1B6-4ED3-B8E1-0C28825A8999 - a99c7f2de475ea5b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Foundation.Notification) -&gt; () in homeWorkLesson23_WheatherAndNews_2.WheathreViewController.setBackgraundVideoView() -&gt; ()"
-                  moduleName = "homeWorkLesson23(WheatherAndNews)2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/moobat/HomeWorkTMS/homeWorkLesson23(WheatherAndNews)2/homeWorkLesson23(WheatherAndNews)2/Controllers/Root(Main)ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "63">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

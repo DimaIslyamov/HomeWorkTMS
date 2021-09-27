@@ -26,4 +26,10 @@ extension URL {
         let fileURL = documentDirectoryURL.appendingPathComponent("saveName")
         return fileURL
     }
+    
+    static func saveNameSSURL() -> URL {
+        let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentDirectoryURL.appendingPathComponent("saveNameSS")
+        return fileURL
+    }
 }

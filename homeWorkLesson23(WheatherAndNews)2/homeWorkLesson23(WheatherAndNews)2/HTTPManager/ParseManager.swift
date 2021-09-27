@@ -29,7 +29,7 @@ class ParseManager {
         
         wheatherArray.append(Wheather(temp: tem,
                                       tempFeelsLike: feelsLike,
-                                      forecastId: forecastId.rawValue as! Int,
+                                      forecastId: forecastId.rawValue as? Int ?? 0,
                                       forecast: forecast,
                                       city: city ?? ""))
         return wheatherArray
