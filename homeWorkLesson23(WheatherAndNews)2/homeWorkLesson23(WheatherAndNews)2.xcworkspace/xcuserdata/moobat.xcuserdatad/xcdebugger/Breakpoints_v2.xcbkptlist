@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BFB21747-12D8-4E93-92E7-271C14544277"
+            uuid = "FF04C5C2-5D38-4B5A-8AFD-BFE1BCD35BF3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "homeWorkLesson23(WheatherAndNews)2/Extensions/extensionViewControllers/MapViewController+WeatherExtension.swift"
+            filePath = "homeWorkLesson23(WheatherAndNews)2/Extensions/extensionViewControllers/MapViewController+MapDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "setWheather(_:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "mapViewDidChangeVisibleRegion(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

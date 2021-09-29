@@ -11,11 +11,6 @@ extension MapViewController {
     func getUrl() -> String {
        return "https://api.openweathermap.org/data/2.5/weather?q=\(city)&apikey=\(ApiKey.key.rawValue)&units=metric"
    }
-   
-    
-    func getLatitudeLongitude() -> String {
-        return "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)}&lon=\(longitude)&apikey=\(ApiKey.key.rawValue)&units=metric"
-    }
     
    
     func setWheather(_ wheather: [Wheather])  {

@@ -24,7 +24,6 @@ extension MapViewController: MKMapViewDelegate {
         _anatation.coordinate = mapView.centerCoordinate
         
         self.cityNameLable.text = "......"
-        self.streetNameLable.text = "...."
         
         self.dispatchWorkItem?.cancel()
         self.dispatchWorkItem = DispatchWorkItem {
@@ -43,6 +42,7 @@ extension MapViewController: MKMapViewDelegate {
                     
                     self.cityNameLable.text = countryAndCity
                     self.streetNameLable.text = streetNameNumber
+                    self.city = place.city ?? ""
                     
                     HttpManager.shared.getWeather(self.getUrl()) { wheather in
                         self.wheather = wheather

@@ -22,10 +22,6 @@ class MapViewController: UIViewController {
     let _anatation = MKPointAnnotation()
     var dispatchWorkItem: DispatchWorkItem?
     
-    var userLocation: CLLocationCoordinate2D?
-    var latitude = CLLocationDegrees()
-    var longitude = CLLocationDegrees()
-    
     var city = ""
     var wheather: [Wheather] = [] {
         didSet {

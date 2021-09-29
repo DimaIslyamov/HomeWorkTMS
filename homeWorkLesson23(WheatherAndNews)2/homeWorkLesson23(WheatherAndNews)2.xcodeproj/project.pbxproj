@@ -179,13 +179,29 @@
 			path = ModelWheathre;
 			sourceTree = "<group>";
 		};
-		53FB580626F3B8380043F811 /* extensionViewControllers */ = {
+		53115DCB2704F02200E453DF /* WheathreViewControllerExtension */ = {
 			isa = PBXGroup;
 			children = (
 				53FB580826F3B87B0043F811 /* WheathreViewController+CorKit.swift */,
 				53CAFD1326FF0DFF00AEAD48 /* WheathreViewController+Media.swift */,
+			);
+			path = WheathreViewControllerExtension;
+			sourceTree = "<group>";
+		};
+		53115DCC2704F03600E453DF /* MapViewControllerExtension */ = {
+			isa = PBXGroup;
+			children = (
 				5336CEDB27026E3600941403 /* MapViewController+MapDelegate.swift */,
 				5336CEDD27026FE500941403 /* MapViewController+WeatherExtension.swift */,
+			);
+			path = MapViewControllerExtension;
+			sourceTree = "<group>";
+		};
+		53FB580626F3B8380043F811 /* extensionViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				53115DCB2704F02200E453DF /* WheathreViewControllerExtension */,
+				53115DCC2704F03600E453DF /* MapViewControllerExtension */,
 			);
 			path = extensionViewControllers;
 			sourceTree = "<group>";
