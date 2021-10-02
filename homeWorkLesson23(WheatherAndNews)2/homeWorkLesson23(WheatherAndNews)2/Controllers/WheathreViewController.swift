@@ -18,7 +18,6 @@ class WheathreViewController: UIViewController {
     @IBOutlet weak var feelsLike: UILabel!
     @IBOutlet weak var cityNameLable: UILabel!
     @IBOutlet weak var lableFeelsLikeText: UILabel!
-    @IBOutlet weak var miniSearchButton: UIView!
     
     var followButton = SSBouncyButton()
     var player: AVPlayer?
@@ -79,4 +78,9 @@ class WheathreViewController: UIViewController {
         presentSearchAlertController()
     }
     
+    
+    
+    @IBAction func lookHistoryButton(_ sender: UIButton) {
+        
+    }
 }
