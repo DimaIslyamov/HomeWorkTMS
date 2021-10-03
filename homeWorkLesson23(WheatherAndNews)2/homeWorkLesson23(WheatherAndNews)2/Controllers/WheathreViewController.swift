@@ -78,9 +78,4 @@ class WheathreViewController: UIViewController {
         presentSearchAlertController()
     }
     
-    
-    
-    @IBAction func lookHistoryButton(_ sender: UIButton) {
-        
-    }
 }

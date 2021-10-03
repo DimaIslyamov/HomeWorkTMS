@@ -25,6 +25,9 @@
 		5336CEDE27026FE500941403 /* MapViewController+WeatherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336CEDD27026FE500941403 /* MapViewController+WeatherExtension.swift */; };
 		5350104A26F76F1A00AEC5D2 /* Rain - 20885.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5350104926F76F1A00AEC5D2 /* Rain - 20885.mp4 */; };
 		5350104C26F77C9600AEC5D2 /* zvuki-prirody.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5350104B26F77C9600AEC5D2 /* zvuki-prirody.mp3 */; };
+		537541EC270A01A3001855D9 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537541EB270A01A3001855D9 /* HistoryTableViewController.swift */; };
+		537541F2270A0265001855D9 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537541F0270A0264001855D9 /* HistoryTableViewCell.swift */; };
+		537541F3270A0265001855D9 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 537541F1270A0265001855D9 /* HistoryTableViewCell.xib */; };
 		538BA5F427085A0200BB0655 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BA5F327085A0200BB0655 /* RealmManager.swift */; };
 		538BA5F62708611700BB0655 /* UserHistoriSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BA5F52708611700BB0655 /* UserHistoriSearch.swift */; };
 		53CAFD1426FF0DFF00AEAD48 /* WheathreViewController+Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CAFD1326FF0DFF00AEAD48 /* WheathreViewController+Media.swift */; };
@@ -54,6 +57,9 @@
 		5336CEDD27026FE500941403 /* MapViewController+WeatherExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+WeatherExtension.swift"; sourceTree = "<group>"; };
 		5350104926F76F1A00AEC5D2 /* Rain - 20885.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rain - 20885.mp4"; sourceTree = "<group>"; };
 		5350104B26F77C9600AEC5D2 /* zvuki-prirody.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "zvuki-prirody.mp3"; sourceTree = "<group>"; };
+		537541EB270A01A3001855D9 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		537541F0270A0264001855D9 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		537541F1270A0265001855D9 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		538BA5F327085A0200BB0655 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		538BA5F52708611700BB0655 /* UserHistoriSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHistoriSearch.swift; sourceTree = "<group>"; };
 		53CAFD1326FF0DFF00AEAD48 /* WheathreViewController+Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheathreViewController+Media.swift"; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		530E3C3126F2604B00292BFE /* homeWorkLesson23(WheatherAndNews)2 */ = {
 			isa = PBXGroup;
 			children = (
+				537541EF270A024A001855D9 /* HIstoryTableCell */,
 				538BA5F12708594F00BB0655 /* RealmManager */,
 				530E3C5626F265DE00292BFE /* ModelWheathre */,
 				530E3C4B26F260F100292BFE /* Extensions */,
@@ -145,6 +152,7 @@
 				53CAFD1526FF0EB400AEAD48 /* TabBarViewController.swift */,
 				530E3C6726F274E100292BFE /* WheathreViewController.swift */,
 				53CAFD1726FF0EF900AEAD48 /* MapViewController.swift */,
+				537541EB270A01A3001855D9 /* HistoryTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -200,6 +208,15 @@
 				5336CEDD27026FE500941403 /* MapViewController+WeatherExtension.swift */,
 			);
 			path = MapViewControllerExtension;
+			sourceTree = "<group>";
+		};
+		537541EF270A024A001855D9 /* HIstoryTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				537541F0270A0264001855D9 /* HistoryTableViewCell.swift */,
+				537541F1270A0265001855D9 /* HistoryTableViewCell.xib */,
+			);
+			path = HIstoryTableCell;
 			sourceTree = "<group>";
 		};
 		538BA5F12708594F00BB0655 /* RealmManager */ = {
@@ -302,6 +319,7 @@
 				5350104A26F76F1A00AEC5D2 /* Rain - 20885.mp4 in Resources */,
 				530E3C3C26F2604F00292BFE /* Assets.xcassets in Resources */,
 				530E3C3A26F2604B00292BFE /* Main.storyboard in Resources */,
+				537541F3270A0265001855D9 /* HistoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				537541EC270A01A3001855D9 /* HistoryTableViewController.swift in Sources */,
 				530E3C3326F2604B00292BFE /* AppDelegate.swift in Sources */,
 				53CAFD1426FF0DFF00AEAD48 /* WheathreViewController+Media.swift in Sources */,
 				530E3C5E26F26E6F00292BFE /* UIView+CoreKit.swift in Sources */,
@@ -367,6 +386,7 @@
 				5336CEDE27026FE500941403 /* MapViewController+WeatherExtension.swift in Sources */,
 				530E3C5326F2657C00292BFE /* ApiKey.swift in Sources */,
 				530E3C5826F265EA00292BFE /* Wheather.swift in Sources */,
+				537541F2270A0265001855D9 /* HistoryTableViewCell.swift in Sources */,
 				53FB580926F3B87B0043F811 /* WheathreViewController+CorKit.swift in Sources */,
 				5336CEDA27026DCF00941403 /* CLPlacemark+CoreKit.swift in Sources */,
 				530E3C3526F2604B00292BFE /* SceneDelegate.swift in Sources */,
