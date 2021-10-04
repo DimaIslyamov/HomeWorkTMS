@@ -18,18 +18,18 @@ class RealmManager {
         
         do {
             try localRealm.write {
+//                localRealm.deleteAll()
                 localRealm.add(userHistory)
-                print("Added")
+                print("Added - do block")
             }
         }
         catch(let e) {
-            print(e)
+            print("what e ?? \(e)")
         }
     }
     
-    func getCityAndTemp() -> [UserHistoriSearch]{
+    func getCityAndTemp() -> Results<UserHistoriSearch>{
         let user = localRealm.objects(UserHistoriSearch.self)
-        
-        return user.shuffled()
+        return user
     }
 }

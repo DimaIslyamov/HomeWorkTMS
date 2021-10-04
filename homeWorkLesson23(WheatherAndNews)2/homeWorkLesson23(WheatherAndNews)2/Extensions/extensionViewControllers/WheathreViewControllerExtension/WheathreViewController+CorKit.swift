@@ -23,6 +23,7 @@ extension WheathreViewController {
             
             self.cityNameLable.text = i.city
             self.temperatureLable.text = "\(i.temp)°C"
+            self.tempInt = i.temp
             self.feelsLike.text = "\(i.tempFeelsLike)°C"
             
             switch i.forecastId {
@@ -67,6 +68,7 @@ extension WheathreViewController {
             }
             self.lableFeelsLikeText.text = "Feels Like"
             self.view.removeBlurView()
+            
         }
         
         let cancel = UIAlertAction(title: "Cancel",

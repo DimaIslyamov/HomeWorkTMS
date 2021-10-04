@@ -13,17 +13,62 @@ class HistoryTableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var notificationToken: NotificationToken?
+    
     var users: [UserHistoriSearch] = [] {
         didSet{
             tableView.reloadData()
         }
     }
     
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        notificationTokenObserver()
+    }
+    
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        notificationToken?.invalidate()
+        notificationToken = nil
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setuoTableView()
     }
+    
+    
+    
+    func notificationTokenObserver() {
+        notificationToken = RealmManager.shared.getCityAndTemp().observe(on: .main, { change in
+            switch change {
+            
+            case .initial(let collection):
+                self.users = collection.shuffled()
+                
+            case .update(let collection, let deletions, let insertions, let modifications):
+                self.users = collection.shuffled()
+                print("deletions \(deletions)")
+                print("insertions \(insertions)")
+                print("modifications \(modifications)")
+                break
+                
+            case .error(let error):
+                print(error.localizedDescription)
+            }
+        })
+    }
+    
+    
     
     func setuoTableView() {
         tableView.dataSource = self
@@ -37,17 +82,25 @@ class HistoryTableViewController: UIViewController {
 }
 
 
+
+
 extension HistoryTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return users.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell") as? HistoryTableViewCell else { return UITableViewCell() }
-//        cell.setup(by: persons[indexPath.row])
+        
+        cell.setupUserHistory(by: users[indexPath.row])
+        
         return cell
     }
 }
+
+
+
 
 extension HistoryTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

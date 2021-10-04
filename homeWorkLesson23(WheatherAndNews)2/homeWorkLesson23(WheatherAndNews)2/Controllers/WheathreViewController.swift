@@ -24,11 +24,13 @@ class WheathreViewController: UIViewController {
     var playerMusic: AVPlayer?
     
     var city = ""
+    var tempInt = 0
     
     var wheather: [Wheather] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.setWheather(self.wheather)
+                RealmManager.shared.createCityNameAndTemperature(cityName: self.city, temperature: self.tempInt)
             }
         }
     }
@@ -37,7 +39,6 @@ class WheathreViewController: UIViewController {
         super.viewWillAppear(animated)
          
         player?.play()
-        playerMusic?.play()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,8 +51,8 @@ class WheathreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setBackgraundVideoView()
-        setBackgroundMusic()
+//        setBackgraundVideoView()
+//        setBackgroundMusic()
         settuoForSSButton()
     }
     

@@ -11,6 +11,7 @@ import RealmSwift
 class UserHistoriSearch: Object {
     @Persisted var cityName: String = ""
     @Persisted var temperature: Int = 0
+    // добавить дату и время поиска
     
     
     convenience init(cityName: String, temperature: Int) {

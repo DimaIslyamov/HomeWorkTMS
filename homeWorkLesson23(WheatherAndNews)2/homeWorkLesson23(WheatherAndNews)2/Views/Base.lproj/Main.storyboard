@@ -74,7 +74,6 @@
                             <constraint firstItem="efP-lc-beD" firstAttribute="leading" secondItem="ETo-bY-azi" secondAttribute="leading" id="rBz-4v-JkJ"/>
                             <constraint firstItem="wZo-he-QWJ" firstAttribute="bottom" secondItem="fJM-lc-YWV" secondAttribute="bottom" id="wzx-4j-pW9"/>
                             <constraint firstItem="ETo-bY-azi" firstAttribute="trailing" secondItem="Y0R-vc-PV2" secondAttribute="trailing" constant="20" id="yPi-F1-gb8"/>
-                            <constraint firstItem="Y0R-vc-PV2" firstAttribute="width" secondItem="Wcb-Q4-Qwl" secondAttribute="width" multiplier="0.897436" id="ys4-j7-rZF"/>
                             <constraint firstItem="bg0-aK-ocl" firstAttribute="width" secondItem="Wcb-Q4-Qwl" secondAttribute="width" multiplier="0.738462" id="zfe-xu-dhs"/>
                         </constraints>
                     </view>
@@ -243,17 +242,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zBh-dJ-M9o">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <rect key="frame" x="0.0" y="75.333333333333314" width="390" height="685.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User History Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uI-Zo-aV8">
+                                <rect key="frame" x="6" y="44" width="378" height="31.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Pk-BY-Svl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zBh-dJ-M9o" firstAttribute="top" secondItem="E8e-v9-yFK" secondAttribute="top" id="4x5-jI-TV7"/>
-                            <constraint firstItem="zBh-dJ-M9o" firstAttribute="trailing" secondItem="2Pk-BY-Svl" secondAttribute="trailing" id="BQY-EP-E3O"/>
-                            <constraint firstItem="zBh-dJ-M9o" firstAttribute="leading" secondItem="2Pk-BY-Svl" secondAttribute="leading" id="HEa-OE-jgY"/>
-                            <constraint firstAttribute="bottom" secondItem="zBh-dJ-M9o" secondAttribute="bottom" id="psu-fl-FWU"/>
+                            <constraint firstItem="zBh-dJ-M9o" firstAttribute="bottom" secondItem="2Pk-BY-Svl" secondAttribute="bottom" id="HOs-3v-Uz7"/>
+                            <constraint firstItem="2Pk-BY-Svl" firstAttribute="trailing" secondItem="8uI-Zo-aV8" secondAttribute="trailing" constant="6" id="Yx8-mi-PiC"/>
+                            <constraint firstItem="zBh-dJ-M9o" firstAttribute="trailing" secondItem="2Pk-BY-Svl" secondAttribute="trailing" id="cCR-9b-fvg"/>
+                            <constraint firstItem="8uI-Zo-aV8" firstAttribute="top" secondItem="2Pk-BY-Svl" secondAttribute="top" id="hZW-2j-hbD"/>
+                            <constraint firstItem="zBh-dJ-M9o" firstAttribute="leading" secondItem="2Pk-BY-Svl" secondAttribute="leading" id="qgr-II-iTq"/>
+                            <constraint firstItem="8uI-Zo-aV8" firstAttribute="leading" secondItem="2Pk-BY-Svl" secondAttribute="leading" constant="6" id="sUx-xo-mqV"/>
+                            <constraint firstItem="zBh-dJ-M9o" firstAttribute="top" secondItem="8uI-Zo-aV8" secondAttribute="bottom" id="vdZ-SF-I5I"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="1Gq-Kz-zWq"/>
