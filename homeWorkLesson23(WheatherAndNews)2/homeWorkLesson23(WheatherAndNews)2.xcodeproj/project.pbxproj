@@ -30,6 +30,7 @@
 		537541F3270A0265001855D9 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 537541F1270A0265001855D9 /* HistoryTableViewCell.xib */; };
 		538BA5F427085A0200BB0655 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BA5F327085A0200BB0655 /* RealmManager.swift */; };
 		538BA5F62708611700BB0655 /* UserHistoriSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BA5F52708611700BB0655 /* UserHistoriSearch.swift */; };
+		539C35B8270DD24700467BEF /* HistoryTableViewController+TableViewDelegateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539C35B7270DD24700467BEF /* HistoryTableViewController+TableViewDelegateDataSource.swift */; };
 		53CAFD1426FF0DFF00AEAD48 /* WheathreViewController+Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CAFD1326FF0DFF00AEAD48 /* WheathreViewController+Media.swift */; };
 		53CAFD1626FF0EB400AEAD48 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CAFD1526FF0EB400AEAD48 /* TabBarViewController.swift */; };
 		53CAFD1826FF0EF900AEAD48 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CAFD1726FF0EF900AEAD48 /* MapViewController.swift */; };
@@ -62,6 +63,7 @@
 		537541F1270A0265001855D9 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		538BA5F327085A0200BB0655 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		538BA5F52708611700BB0655 /* UserHistoriSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHistoriSearch.swift; sourceTree = "<group>"; };
+		539C35B7270DD24700467BEF /* HistoryTableViewController+TableViewDelegateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryTableViewController+TableViewDelegateDataSource.swift"; sourceTree = "<group>"; };
 		53CAFD1326FF0DFF00AEAD48 /* WheathreViewController+Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheathreViewController+Media.swift"; sourceTree = "<group>"; };
 		53CAFD1526FF0EB400AEAD48 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		53CAFD1726FF0EF900AEAD48 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -120,13 +122,13 @@
 		530E3C3126F2604B00292BFE /* homeWorkLesson23(WheatherAndNews)2 */ = {
 			isa = PBXGroup;
 			children = (
-				537541EF270A024A001855D9 /* HIstoryTableCell */,
-				538BA5F12708594F00BB0655 /* RealmManager */,
-				530E3C5626F265DE00292BFE /* ModelWheathre */,
+				539C35AE270DBBDD00467BEF /* VIPER */,
 				530E3C4B26F260F100292BFE /* Extensions */,
-				530E3C4A26F260CE00292BFE /* HTTPManager */,
+				539C35B5270DC9B800467BEF /* Managers */,
+				539C35B4270DC9A000467BEF /* Models */,
 				530E3C4926F260C800292BFE /* Views */,
 				530E3C4826F260BA00292BFE /* Controllers */,
+				537541EF270A024A001855D9 /* HIstoryTableCell */,
 				530E3C4726F2608300292BFE /* SuportingFiles */,
 			);
 			path = "homeWorkLesson23(WheatherAndNews)2";
@@ -150,9 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				53CAFD1526FF0EB400AEAD48 /* TabBarViewController.swift */,
-				530E3C6726F274E100292BFE /* WheathreViewController.swift */,
-				53CAFD1726FF0EF900AEAD48 /* MapViewController.swift */,
-				537541EB270A01A3001855D9 /* HistoryTableViewController.swift */,
+				53115DCB2704F02200E453DF /* WheathreViewControllerExtension */,
+				53115DCC2704F03600E453DF /* MapViewControllerExtension */,
+				539C35B6270DD21D00467BEF /* HistoryTableViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,8 +180,9 @@
 		530E3C4B26F260F100292BFE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				53FB580726F3B8480043F811 /* extension-UI */,
-				53FB580626F3B8380043F811 /* extensionViewControllers */,
+				530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */,
+				530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */,
+				5336CED927026DCF00941403 /* CLPlacemark+CoreKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 		53115DCB2704F02200E453DF /* WheathreViewControllerExtension */ = {
 			isa = PBXGroup;
 			children = (
+				530E3C6726F274E100292BFE /* WheathreViewController.swift */,
 				53FB580826F3B87B0043F811 /* WheathreViewController+CorKit.swift */,
 				53CAFD1326FF0DFF00AEAD48 /* WheathreViewController+Media.swift */,
 			);
@@ -204,6 +208,7 @@
 		53115DCC2704F03600E453DF /* MapViewControllerExtension */ = {
 			isa = PBXGroup;
 			children = (
+				53CAFD1726FF0EF900AEAD48 /* MapViewController.swift */,
 				5336CEDB27026E3600941403 /* MapViewController+MapDelegate.swift */,
 				5336CEDD27026FE500941403 /* MapViewController+WeatherExtension.swift */,
 			);
@@ -222,7 +227,6 @@
 		538BA5F12708594F00BB0655 /* RealmManager */ = {
 			isa = PBXGroup;
 			children = (
-				538BA5F2270859E800BB0655 /* ModelRealm */,
 				538BA5F327085A0200BB0655 /* RealmManager.swift */,
 			);
 			path = RealmManager;
@@ -236,23 +240,78 @@
 			path = ModelRealm;
 			sourceTree = "<group>";
 		};
-		53FB580626F3B8380043F811 /* extensionViewControllers */ = {
+		539C35AE270DBBDD00467BEF /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				53115DCB2704F02200E453DF /* WheathreViewControllerExtension */,
-				53115DCC2704F03600E453DF /* MapViewControllerExtension */,
+				539C35B3270DBC3000467BEF /* View */,
+				539C35B0270DBBF700467BEF /* Interactor */,
+				539C35B1270DBC0200467BEF /* Presenter */,
+				539C35AF270DBBE800467BEF /* Entity */,
+				539C35B2270DBC2900467BEF /* Router */,
 			);
-			path = extensionViewControllers;
+			path = VIPER;
 			sourceTree = "<group>";
 		};
-		53FB580726F3B8480043F811 /* extension-UI */ = {
+		539C35AF270DBBE800467BEF /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */,
-				530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */,
-				5336CED927026DCF00941403 /* CLPlacemark+CoreKit.swift */,
 			);
-			path = "extension-UI";
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		539C35B0270DBBF700467BEF /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		539C35B1270DBC0200467BEF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		539C35B2270DBC2900467BEF /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		539C35B3270DBC3000467BEF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		539C35B4270DC9A000467BEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				538BA5F2270859E800BB0655 /* ModelRealm */,
+				530E3C5626F265DE00292BFE /* ModelWheathre */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		539C35B5270DC9B800467BEF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				538BA5F12708594F00BB0655 /* RealmManager */,
+				530E3C4A26F260CE00292BFE /* HTTPManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		539C35B6270DD21D00467BEF /* HistoryTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				537541EB270A01A3001855D9 /* HistoryTableViewController.swift */,
+				539C35B7270DD24700467BEF /* HistoryTableViewController+TableViewDelegateDataSource.swift */,
+			);
+			path = HistoryTableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +436,7 @@
 				53CAFD1426FF0DFF00AEAD48 /* WheathreViewController+Media.swift in Sources */,
 				530E3C5E26F26E6F00292BFE /* UIView+CoreKit.swift in Sources */,
 				538BA5F62708611700BB0655 /* UserHistoriSearch.swift in Sources */,
+				539C35B8270DD24700467BEF /* HistoryTableViewController+TableViewDelegateDataSource.swift in Sources */,
 				530E3C6826F274E100292BFE /* WheathreViewController.swift in Sources */,
 				53CAFD1626FF0EB400AEAD48 /* TabBarViewController.swift in Sources */,
 				530E3C5C26F2668A00292BFE /* ParseManager.swift in Sources */,

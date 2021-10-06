@@ -11,6 +11,7 @@ class HistoryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameCityLable: UILabel!
     @IBOutlet weak var tempLable: UILabel!
+    @IBOutlet weak var imageViewForCell: UIImageView!
     
     
     func setupUserHistory(by user: UserHistoriSearch) {

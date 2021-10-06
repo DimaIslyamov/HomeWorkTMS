@@ -20,8 +20,8 @@ class TabBarViewController: UITabBarController {
 
     func notificationCentreRequestAuthorization() {
         notificationCentre.getPendingNotificationRequests { request in
-            guard let _ = request.first(where: {$0.identifier == "5days_notificationRequest"}) else { return }
-            self.notificationCentre.removePendingNotificationRequests(withIdentifiers: ["5days_notificationRequest"])
+//            guard let _ = request.first(where: {$0.identifier == "5days_notificationRequest"}) else { return }
+//            self.notificationCentre.removePendingNotificationRequests(withIdentifiers: ["5days_notificationRequest"])
             print()
         }
         
@@ -35,10 +35,10 @@ class TabBarViewController: UITabBarController {
             content.body = "Узнай погоду на сегодня 🏖"
             
             // for test
-//            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20.0,
-//                                                            repeats: false)
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 432000.0,
-                                                            repeats: true)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20.0,
+                                                            repeats: false)
+//            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 432000.0,
+//                                                            repeats: true)
             let request = UNNotificationRequest(identifier: "5days_notificationRequest",
                                                 content: content,
                                                 trigger: trigger)

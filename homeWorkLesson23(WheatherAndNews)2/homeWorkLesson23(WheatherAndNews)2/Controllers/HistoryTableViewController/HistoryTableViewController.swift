@@ -14,6 +14,7 @@ class HistoryTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var notificationToken: NotificationToken?
+    var tableViewCell: HistoryTableViewCell?
     
     var users: [UserHistoriSearch] = [] {
         didSet{
@@ -78,32 +79,5 @@ class HistoryTableViewController: UIViewController {
         tableView.register(UINib(nibName: "HistoryTableViewCell",
                                  bundle: nil),
                            forCellReuseIdentifier: "HistoryTableViewCell")
-    }
-}
-
-
-
-
-extension HistoryTableViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell") as? HistoryTableViewCell else { return UITableViewCell() }
-        
-        cell.setupUserHistory(by: users[indexPath.row])
-        
-        return cell
-    }
-}
-
-
-
-
-extension HistoryTableViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 62.0
     }
 }
