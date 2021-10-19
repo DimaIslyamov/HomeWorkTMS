@@ -69,9 +69,9 @@
 		534D2D31269D760500052236 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		534D2D33269D80D600052236 /* ChessBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChessBoard.storyboard; sourceTree = "<group>"; };
 		534D2D35269D80F200052236 /* ChessBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoardController.swift; sourceTree = "<group>"; };
-		5350105526F7B22E00AEC5D2 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = en.lproj; path = "homeWorkLesson10/Suporting Files/en.lproj"; sourceTree = SOURCE_ROOT; };
-		5350105626F7B22E00AEC5D2 /* pl.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pl.lproj; path = "homeWorkLesson10/Suporting Files/pl.lproj"; sourceTree = SOURCE_ROOT; };
-		5350105726F7B22E00AEC5D2 /* ru.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ru.lproj; path = "homeWorkLesson10/Suporting Files/ru.lproj"; sourceTree = SOURCE_ROOT; };
+		5350105526F7B22E00AEC5D2 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = en.lproj; path = "homeWorkLesson10/Suporting Files/Localaized/en.lproj"; sourceTree = SOURCE_ROOT; };
+		5350105626F7B22E00AEC5D2 /* pl.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pl.lproj; path = "homeWorkLesson10/Suporting Files/Localaized/pl.lproj"; sourceTree = SOURCE_ROOT; };
+		5350105726F7B22E00AEC5D2 /* ru.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ru.lproj; path = "homeWorkLesson10/Suporting Files/Localaized/ru.lproj"; sourceTree = SOURCE_ROOT; };
 		5350105B26F7BA9100AEC5D2 /* String+Localaized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localaized.swift"; sourceTree = "<group>"; };
 		5353B5C926FC78B700888393 /* SaveNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNames.swift; sourceTree = "<group>"; };
 		5353B5CB26FC914400888393 /* ChessBoardController+Chessboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChessBoardController+Chessboard.swift"; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		534D2D2E269D759100052236 /* Suporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5350105426F7B1FC00AEC5D2 /* Localaized */,
+				53A0E36C271EF64F0087E7CF /* Localaized */,
 				534D2D1A269D757E00052236 /* AppDelegate.swift */,
 				534D2D1C269D757E00052236 /* SceneDelegate.swift */,
 				534D2D23269D758100052236 /* Assets.xcassets */,
@@ -229,16 +229,6 @@
 				53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		5350105426F7B1FC00AEC5D2 /* Localaized */ = {
-			isa = PBXGroup;
-			children = (
-				5350105526F7B22E00AEC5D2 /* en.lproj */,
-				5350105626F7B22E00AEC5D2 /* pl.lproj */,
-				5350105726F7B22E00AEC5D2 /* ru.lproj */,
-			);
-			path = Localaized;
 			sourceTree = "<group>";
 		};
 		5360ED0026C49BD300A0C0C6 /* BlackCheckersCollectionViewCell */ = {
@@ -291,6 +281,16 @@
 				53985BEA26E38295005B5714 /* SettingManager.swift */,
 			);
 			path = SettingManager;
+			sourceTree = "<group>";
+		};
+		53A0E36C271EF64F0087E7CF /* Localaized */ = {
+			isa = PBXGroup;
+			children = (
+				5350105526F7B22E00AEC5D2 /* en.lproj */,
+				5350105626F7B22E00AEC5D2 /* pl.lproj */,
+				5350105726F7B22E00AEC5D2 /* ru.lproj */,
+			);
+			path = Localaized;
 			sourceTree = "<group>";
 		};
 		53D8368726CA2CB800D34B1C /* CustomUI */ = {
@@ -487,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -543,7 +543,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
