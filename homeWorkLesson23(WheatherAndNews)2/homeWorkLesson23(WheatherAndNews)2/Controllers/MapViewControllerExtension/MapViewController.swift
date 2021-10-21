@@ -53,6 +53,7 @@ class MapViewController: UIViewController {
     }
     
     
+    
     func setupLocation(_ completion: (Bool) -> ()) {
         guard CLLocationManager.locationServicesEnabled() else {
             completion(false)
@@ -69,5 +70,36 @@ class MapViewController: UIViewController {
         }
     }
     
+    
+    
+    func showSettingsAlertController() {
+        let alert = UIAlertController(title: nil, message: "Вам нужно разрешить отслеживание вашей геопозиции, перейдите в настойки", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let settings = UIAlertAction(title: "Settings", style: .default) { _ in
+            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+            
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(settings)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
+    @IBAction func updateLocation(_ sender: UIButton) {
+        switch locationManager.authorizationStatus {
+        case .notDetermined:
+            locationManager.requestAlwaysAuthorization()
+        case .denied, .restricted:
+            showSettingsAlertController()
+            print("denied")
+        default: break
+        }
+    }
 
 }

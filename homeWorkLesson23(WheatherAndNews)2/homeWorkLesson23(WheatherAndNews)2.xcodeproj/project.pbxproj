@@ -101,6 +101,53 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		530387932721702300AD822E /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				530387982721705300AD822E /* View */,
+				530387972721704600AD822E /* Iteractor */,
+				530387962721703E00AD822E /* Presenter */,
+				530387952721703500AD822E /* Entity */,
+				530387942721702D00AD822E /* Router */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		530387942721702D00AD822E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		530387952721703500AD822E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		530387962721703E00AD822E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		530387972721704600AD822E /* Iteractor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Iteractor;
+			sourceTree = "<group>";
+		};
+		530387982721705300AD822E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		530E3C2626F2604B00292BFE = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +169,7 @@
 		530E3C3126F2604B00292BFE /* homeWorkLesson23(WheatherAndNews)2 */ = {
 			isa = PBXGroup;
 			children = (
-				539C35AE270DBBDD00467BEF /* VIPER */,
+				530387932721702300AD822E /* VIPER */,
 				530E3C4B26F260F100292BFE /* Extensions */,
 				539C35B5270DC9B800467BEF /* Managers */,
 				539C35B4270DC9A000467BEF /* Models */,
@@ -238,53 +285,6 @@
 				538BA5F52708611700BB0655 /* UserHistoriSearch.swift */,
 			);
 			path = ModelRealm;
-			sourceTree = "<group>";
-		};
-		539C35AE270DBBDD00467BEF /* VIPER */ = {
-			isa = PBXGroup;
-			children = (
-				539C35B3270DBC3000467BEF /* View */,
-				539C35B0270DBBF700467BEF /* Interactor */,
-				539C35B1270DBC0200467BEF /* Presenter */,
-				539C35AF270DBBE800467BEF /* Entity */,
-				539C35B2270DBC2900467BEF /* Router */,
-			);
-			path = VIPER;
-			sourceTree = "<group>";
-		};
-		539C35AF270DBBE800467BEF /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		539C35B0270DBBF700467BEF /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		539C35B1270DBC0200467BEF /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		539C35B2270DBC2900467BEF /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		539C35B3270DBC3000467BEF /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		539C35B4270DC9A000467BEF /* Models */ = {
