@@ -57,7 +57,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="location.slash.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="updateLocation:" destination="4a2-Sf-byS" eventType="touchUpInside" id="WEw-3q-PK4"/>
+                                    <action selector="updateLocation:" destination="4a2-Sf-byS" eventType="touchUpInside" id="Alc-za-7ww"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    func getViewController(from id: String) -> UIViewController? {
+    static func getViewController(from id: String) -> UIViewController? {
         let storyboard = UIStoryboard(name: id, bundle: nil)
         guard let currentVC = storyboard.instantiateInitialViewController() else { return nil }
         return currentVC
