@@ -7,16 +7,19 @@
 
 import UIKit
 import AlamofireNetworkActivityLogger
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         NetworkActivityLogger.shared.startLogging()
         NetworkActivityLogger.shared.level = .debug
+        FirebaseApp.configure()
+        
         return true
     }
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B441D0A210AEDCBCFA1AD11 /* Pods_homeWorkLesson23_WheatherAndNews_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CBEA93B16922496262CC02 /* Pods_homeWorkLesson23_WheatherAndNews_2.framework */; };
 		5303879C2723FEA100AD822E /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5303879B2723FEA100AD822E /* SettingsManager.swift */; };
+		530387A0272494E600AD822E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5303879F272494E600AD822E /* GoogleService-Info.plist */; };
 		530E3C3326F2604B00292BFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C3226F2604B00292BFE /* AppDelegate.swift */; };
 		530E3C3526F2604B00292BFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C3426F2604B00292BFE /* SceneDelegate.swift */; };
 		530E3C3A26F2604B00292BFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 530E3C3826F2604B00292BFE /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		3A941F44A5EE65A138B6CED0 /* Pods-homeWorkLesson23(WheatherAndNews)2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeWorkLesson23(WheatherAndNews)2.debug.xcconfig"; path = "Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)2/Pods-homeWorkLesson23(WheatherAndNews)2.debug.xcconfig"; sourceTree = "<group>"; };
 		5303879B2723FEA100AD822E /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		5303879F272494E600AD822E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		530E3C2F26F2604B00292BFE /* homeWorkLesson23(WheatherAndNews)2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "homeWorkLesson23(WheatherAndNews)2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		530E3C3226F2604B00292BFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		530E3C3426F2604B00292BFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				530E3C3226F2604B00292BFE /* AppDelegate.swift */,
 				530E3C3426F2604B00292BFE /* SceneDelegate.swift */,
 				530E3C3B26F2604F00292BFE /* Assets.xcassets */,
+				5303879F272494E600AD822E /* GoogleService-Info.plist */,
 				530E3C4026F2604F00292BFE /* Info.plist */,
 				530E3C5226F2657C00292BFE /* ApiKey.swift */,
 				5350104926F76F1A00AEC5D2 /* Rain - 20885.mp4 */,
@@ -390,6 +393,7 @@
 				530E3C3C26F2604F00292BFE /* Assets.xcassets in Resources */,
 				530E3C3A26F2604B00292BFE /* Main.storyboard in Resources */,
 				537541F3270A0265001855D9 /* HistoryTableViewCell.xib in Resources */,
+				530387A0272494E600AD822E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
