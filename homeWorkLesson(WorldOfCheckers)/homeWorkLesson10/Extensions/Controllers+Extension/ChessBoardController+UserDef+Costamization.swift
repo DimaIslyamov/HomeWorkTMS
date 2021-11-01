@@ -26,10 +26,11 @@ extension ChessBoardController {
     }
     
     func setDataFromUserDefaults() {
-        self.countSec = SettingManager.shared.saveTimerSec
-        self.countMin = SettingManager.shared.saveTimerMin
-        self.player1 = SettingManager.shared.savePlayerOne ?? "Anton"
-        self.player2 = SettingManager.shared.savePlayerTwo ?? "Lera"
+        countSec = SettingManager.shared.saveTimerSec
+        countMin = SettingManager.shared.saveTimerMin
+        player1 = SettingManager.shared.savePlayerOne ?? "Anton"
+        player2 = SettingManager.shared.savePlayerTwo ?? "Lera"
+//        playersLable?.text = (current == .white) ? "\(player1) move" : "\(player2) move"
     }
     
     

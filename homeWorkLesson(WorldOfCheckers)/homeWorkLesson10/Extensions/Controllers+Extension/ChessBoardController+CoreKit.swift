@@ -86,13 +86,16 @@ extension ChessBoardController {
             player1 = randomName.randomElement() ?? ""
             player2 = (player1 == randomName[0]) ?self.randomName[1] : randomName[0]
             playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
+            
+            guard let name = nameOnePlayers, name != "" else {return}
+            playersLable.text = name
         }
     }
     
     
     func saveNames() {
         let data = try? NSKeyedArchiver.archivedData(withRootObject: getNames, requiringSecureCoding: true)
-         let fileURL = documentDirectory.appendingPathComponent(Keys.namePlayers.rawValue)
+         let _ = documentDirectory.appendingPathComponent(Keys.namePlayers.rawValue)
         try? data?.write(to: URL.saveNameSSURL())
     }
     

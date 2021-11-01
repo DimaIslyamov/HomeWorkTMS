@@ -49,10 +49,10 @@ class SettingManager {
     var saveNamePlayers: [SaveNames] {
         set {
             let data = try? NSKeyedArchiver.archivedData(withRootObject: Keys.namePlayers.rawValue, requiringSecureCoding: true)
-            try? data?.write(to: URL.saveNameURL())
+            try? data?.write(to: URL.saveNameSSURL())
         }
         get {
-            guard let data = FileManager.default.contents(atPath: URL.saveNameURL().absoluteString.replacingOccurrences(of: "file://", with: "")),
+            guard let data = FileManager.default.contents(atPath: URL.saveNameSSURL().absoluteString.replacingOccurrences(of: "file://", with: "")),
                   let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [SaveNames] else {
                 return []
             }

@@ -50,6 +50,7 @@ class ChessBoardController: UIViewController {
     var getNames: [SaveNames] = [SaveNames(nameOne: "", nameTwo: "")]
     var names: [SaveNames] = []
     var randomName: [String] = []
+    var nameOnePlayers: String?
     
     
     // MARK: - Жизненный цикл
@@ -67,6 +68,7 @@ class ChessBoardController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         localaized()
+        playersLable.isHidden = false
     }
     
     
