@@ -158,10 +158,9 @@ extension ChessBoardController {
         let cell = checker.superview
         chessboard.subviews.forEach { cellForMove in
             guard cellForMove.subviews.isEmpty, cellForMove.backgroundColor == .black, let startCell = cell else { return }
-            let diff1 = current == .white ? -4 : +4
-            let diff2 = current == .white ? -5 : +5
+            let diff1 = current == .white ? -7 : 7
+            let diff2 = current == .white ? -9 : 9
             if cellForMove.tag == startCell.tag + diff1 || cellForMove.tag == startCell.tag + diff2 {
-//                cellForMove.backgroundColor = #colorLiteral(red: 0.1639071378, green: 0.1639071378, blue: 0.1639071378, alpha: 1)
                 cellForMove.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
                 cellForMove.layer.borderWidth = 3
                 cellsMove.append(cellForMove)
@@ -169,7 +168,6 @@ extension ChessBoardController {
         }
     }
 }
-
 
 
 

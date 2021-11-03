@@ -28,13 +28,11 @@ extension ChessBoardController {
                                                   y: sizeColumn * CGFloat(i),
                                                   width: sizeColumn,
                                                   height: sizeColumn))
-                column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
-                column.tag = ((i + j) % 2) == 0 ? 0 : tagCell
-                if ((i + j) % 2) == 1 {
-                    tagCell += 1
-                    column.tag = tagCell
-                }
+                column.backgroundColor = ((j + i) % 2) == 0 ? .clear : .black
+                column.tag = tagCell
+                
                 chessboard.addSubview(column)
+                tagCell += 1
                 
                 guard i < 3 || i > 4, column.backgroundColor == .black else { continue }
                 

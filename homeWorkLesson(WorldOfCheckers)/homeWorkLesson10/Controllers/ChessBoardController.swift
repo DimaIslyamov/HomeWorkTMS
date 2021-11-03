@@ -152,7 +152,7 @@ class ChessBoardController: UIViewController {
             
             guard let newCell = currentCells, let cell = sender.view else { return }
             newCell.addSubview(cell)
-            
+            cellsMove.removeAll()
             current = current == .white ? .black : .white
             playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
             cellsMove.removeAll()
