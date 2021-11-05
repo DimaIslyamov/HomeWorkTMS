@@ -44,6 +44,8 @@ class ChessBoardController: UIViewController {
     var cellCheckers: [CellCheckers] = []
     var cellsMove: [UIView] = []
     var current: Chekers = .black
+    var mass: [(checker: Int, cell: Int, checkerBeaten: Int)] = []
+    var canFight: Bool = false
     
     var player1 = ""
     var player2 = ""
@@ -98,7 +100,34 @@ class ChessBoardController: UIViewController {
         timerLable.textAlignment = .center
     }
     
-    
+    /*
+     @objc func longGesture(_ sender: UILongPressGestureRecognizer) {
+         guard let checker = sender.view, (currentChecker == .white && checker.tag < 12) || (currentChecker == .pink && checker.tag >= 12) else { return }
+         switch sender.state {
+         case .began:
+             if canFight == false {
+                 cellsForMove.removeAll()
+                 move(for: checker)
+             }
+             
+             UIView.animate(withDuration: 0.3) {
+                 checker.transform = (checker.transform.scaledBy(x: 1.5, y: 1.5))
+             }
+             
+         case .ended:
+             UIView.animate(withDuration: 0.3) {
+                 checker.transform = .identity
+             }
+             
+             if canFight == false {
+                 self.board.subviews.forEach { i in
+                     i.layer.borderWidth = 0
+                 }
+             }
+         default: break
+         }
+     }
+     */
     
     @objc func longPressGesture(_ sender: UILongPressGestureRecognizer) {
         guard let checker = sender.view, checker.tag == current.rawValue else { return }
@@ -109,7 +138,7 @@ class ChessBoardController: UIViewController {
                 checker.transform = checker.transform.scaledBy(x: 2.7, y: 2.7)
             }
             cellsMove.removeAll()
-            moving(for: checker)
+            forMovingCheckers(for: checker)
             
         case .ended:
             UIView.animate(withDuration: 0.3) {
@@ -126,6 +155,77 @@ class ChessBoardController: UIViewController {
         
     }
     
+    /*
+     @objc func punGesture(_ sender: UIPanGestureRecognizer) {
+         guard let checker = sender.view, (currentChecker == .white && checker.tag < 12) || (currentChecker == .pink && checker.tag >= 12) else { return }
+         
+         let location = sender.location(in: board)
+         let translation = sender.translation(in: board)
+         
+         
+         switch sender.state {
+         case .changed:
+             guard let cell = sender.view?.superview, let cellOrignin = sender.view?.frame.origin else {return}
+             board.bringSubviewToFront(cell)
+             sender.view?.frame.origin = CGPoint(x: cellOrignin.x + translation.x,
+                                                 y: cellOrignin.y + translation.y)
+             sender.setTranslation(.zero, in: board)
+             
+         case .ended:
+             var currentCell: UIView? = nil //клетка на которой заканчивается движение
+             var currentBeatenChecker: Int? = nil //шашка которую будем бить
+             
+             cellsForMove.forEach { cell in
+                 if canFight == true {
+                     mass.forEach { tuple in
+                         if checker.tag == tuple.checker, cell.tag == tuple.cell, cell.frame.contains(location) {
+                             currentCell = cell
+                             currentBeatenChecker = tuple.checkerBeaten
+                         }
+                     }
+                 } else {
+                     if cell.frame.contains(location) {
+                         currentCell = cell
+                     }
+                 }
+             }
+             sender.view?.frame.origin = CGPoint(x: 5, y: 5)
+             guard let newCell = currentCell, let checker = sender.view else {  return }
+             
+             newCell.addSubview(checker)
+             
+             board.subviews.forEach { cell in
+                 cell.subviews.first(where: {$0.tag == currentBeatenChecker})?.removeFromSuperview()
+             }
+             if canFight == true {
+                 canFight = false
+                 cellsForMove.removeAll()
+                 mass.removeAll()
+                 Fight()
+                 self.board.subviews.forEach { i in
+                     i.layer.borderWidth = 0
+                 }
+                 if canFight == true {
+                     mass.removeAll(where: {$0.checker != checker.tag })
+                     board.subviews.forEach { i in
+                         i.layer.borderWidth = 0
+                     }
+                     if mass.isEmpty {
+                         canFight = false
+                     }
+                 }
+             }
+             if canFight == false {
+                 currentChecker = currentChecker == .white ? .pink : .white
+                 labelName.text = (currentChecker == .white) ? "\(playerWhite)'s turn"  : "\(playerPink)'s turn"
+                 Fight()
+             }
+             chekWinner ()
+             
+         default: break
+         }
+     }
+     */
     
     @objc func panGesture(_ sender: UIPanGestureRecognizer) {
         guard sender.view?.tag == current.rawValue else { return }

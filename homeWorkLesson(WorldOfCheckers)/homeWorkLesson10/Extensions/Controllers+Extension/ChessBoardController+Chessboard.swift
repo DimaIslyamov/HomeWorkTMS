@@ -40,6 +40,8 @@ extension ChessBoardController {
                 checkerImage.isUserInteractionEnabled = true
                 checkerImage.image = UIImage(named: i < 3 ? (SettingManager.shared.saveBlackChecker) ?? "" : (SettingManager.shared.saveWhiteChecker) ?? "")
                 checkerImage.tag = i < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
+                checkerImage.tag = tagChecker
+                tagChecker += 1
                 column.addSubview(checkerImage)
                 
                 let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
