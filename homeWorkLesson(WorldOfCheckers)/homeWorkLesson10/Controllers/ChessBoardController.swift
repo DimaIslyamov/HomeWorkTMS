@@ -43,7 +43,7 @@ class ChessBoardController: UIViewController {
     
     var cellCheckers: [CellCheckers] = []
     var cellsMove: [UIView] = []
-    var current: Chekers = .black
+    var current: Chekers = .white
     var mass: [(checker: Int, cell: Int, checkerBeaten: Int)] = []
     var canFight: Bool = false
     
@@ -138,7 +138,8 @@ class ChessBoardController: UIViewController {
     @objc func panGesture(_ sender: UIPanGestureRecognizer) {
 //        guard sender.view?.tag == current.rawValue else { return }
         guard let checker = sender.view,
-              (current == .white && checker.tag < 12) || (current == .black && checker.tag >= 12) else { return }
+              (current == .white && checker.tag < 12) || (current == .black && checker.tag >= 12)
+        else { return }
         
         let location = sender.location(in: chessboard)
         let translation = sender.translation(in: chessboard)
@@ -173,13 +174,6 @@ class ChessBoardController: UIViewController {
                 }
             }
             
-//            cellsMove.forEach { value in
-//                if value.frame.contains(location) {
-//                    currentCells = value
-//                    cellsMove.removeAll()
-//                }
-//            }
-            
             sender.view?.frame.origin = CGPoint(x: 5, y: 5)
             guard let newCell = currentCells, let checker = sender.view else { return }
             newCell.addSubview(checker)
@@ -192,33 +186,25 @@ class ChessBoardController: UIViewController {
                 cellsMove.removeAll()
                 mass.removeAll()
                 forHittingCheckers()
-                chessboard.subviews.forEach { (value) in
+                self.chessboard.subviews.forEach { (value) in
                     value.layer.borderWidth = 0
                 }
-            }
-            if canFight == true {
-                mass.removeAll(where: {$0.checker != checker.tag})
-                chessboard.subviews.forEach { (value) in
-                    value.layer.borderWidth = 0
+                if canFight == true {
+                    mass.removeAll(where: {$0.checker != checker.tag})
+                    chessboard.subviews.forEach { (value) in
+                        value.layer.borderWidth = 0
+                    }
+                    if mass.isEmpty {
+                        canFight = false
+                    }
                 }
-                if mass.isEmpty {
-                    canFight = false
-                }
             }
+            
             if canFight == false {
                 current = current == .white ? .black : .white
                 playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
                 forHittingCheckers()
             }
-            
-            // функция для победы
-            
-//            cellsMove.removeAll()
-            
-//            current = current == .white ? .black : .white
-//            playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
-            
-//            cellsMove.removeAll()
         
         default: break
         }

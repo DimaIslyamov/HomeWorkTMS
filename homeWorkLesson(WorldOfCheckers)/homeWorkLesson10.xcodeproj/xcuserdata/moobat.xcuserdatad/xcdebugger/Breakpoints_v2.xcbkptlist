@@ -295,17 +295,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C3E5E476-99DD-4BD7-9811-70D477055B93"
-            shouldBeEnabled = "Yes"
+            uuid = "2315FC2A-5DC5-4F20-91FE-E58BCD2496DF"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "homeWorkLesson10/Extensions/Controllers+Extension/ChessBoardController+Chessboard.swift"
+            filePath = "homeWorkLesson10/Controllers/ChessBoardController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "ChessBoardController"
-            landmarkType = "21">
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "longPressGesture(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FCD64A2-ADF2-42E7-9078-C6220FDAADED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homeWorkLesson10/Controllers/ChessBoardController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "panGesture(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

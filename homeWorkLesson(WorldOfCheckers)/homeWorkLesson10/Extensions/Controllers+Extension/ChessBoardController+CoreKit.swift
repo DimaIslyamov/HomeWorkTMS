@@ -158,8 +158,8 @@ extension ChessBoardController {
         let cell = checker.superview
         chessboard.subviews.forEach { cellForMove in
             guard cellForMove.subviews.isEmpty, cellForMove.backgroundColor == .black, let startCell = cell else { return }
-            let diff1 = current == .white ? -7 : 7
-            let diff2 = current == .white ? -9 : 9
+            let diff1 = current == .white ? 7 : -7
+            let diff2 = current == .white ? 9 : -9
             if cellForMove.tag == startCell.tag + diff1 || cellForMove.tag == startCell.tag + diff2 {
                 cellForMove.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
                 cellForMove.layer.borderWidth = 3
@@ -196,7 +196,7 @@ extension ChessBoardController {
                                 cell.layer.borderWidth = 3
                                 cellsMove.append(cell)
                                 canFight = true
-                                mass.append((checker: movingChecker.checkerTag!, cell: cell.tag, checkerBeaten: checkerForHitting.checkerTag ?? 0))
+                                mass.append((checker: movingChecker.checkerTag!, cell: cell.tag, checkerBeaten: checkerForHitting.checkerTag!))
                             }
                         }
                     }
@@ -217,7 +217,7 @@ extension ChessBoardController {
                         chessboard.subviews.forEach { (cell) in
                             guard let checkerForHitting = hittingsCheckers else { return }
                             
-                            if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == movingChecker.cellTag! - 2 * (movingChecker.cellTag! - hittingChecker.cellTag!) {
+                            if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == movingChecker.cellTag! - 2 * (movingChecker.cellTag! - checkerForHitting.cellTag!) {
                                 
                                 cell.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
                                 cell.layer.borderWidth = 3

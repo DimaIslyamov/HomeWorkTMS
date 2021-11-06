@@ -38,8 +38,8 @@ extension ChessBoardController {
                 
                 let checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: sizeColumn - 10, height: sizeColumn - 10))
                 checkerImage.isUserInteractionEnabled = true
-                checkerImage.image = UIImage(named: i < 3 ? (SettingManager.shared.saveBlackChecker) ?? "" : (SettingManager.shared.saveWhiteChecker) ?? "")
-                checkerImage.tag = i < 3 ? Chekers.black.rawValue : Chekers.white.rawValue
+                checkerImage.image = UIImage(named: i < 3 ? (SettingManager.shared.saveWhiteChecker) ?? "" : (SettingManager.shared.saveBlackChecker) ?? "")
+                checkerImage.tag = i < 3 ? Chekers.white.rawValue : Chekers.black.rawValue
                 checkerImage.tag = tagChecker
                 tagChecker += 1
                 column.addSubview(checkerImage)
@@ -94,20 +94,22 @@ extension ChessBoardController {
                                                   width: sizeColumn,
                                                   height: sizeColumn))
                 column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
-                column.tag = ((i + j) % 2) == 0 ? 0 : tagCell
-                if ((i + j) % 2) == 1 {
-                    tagCell += 1
-                    column.tag = tagCell
-                }
+                column.tag = tagCell
+//                column.tag = ((i + j) % 2) == 0 ? 0 : tagCell
+//                if ((i + j) % 2) == 1 {
+//                    tagCell += 1
+//                    column.tag = tagCell
+//                }
                 chessboard.addSubview(column)
+                tagCell += 1
                 
                 
                 for value in cellCheckers {
                     if column.tag == value.cellTag {
                         let checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: sizeColumn - 10, height: sizeColumn - 10))
                         checkerImage.isUserInteractionEnabled = true
-                        checkerImage.image = UIImage(named: value.checkerTag == 1 ? (SettingManager.shared.saveBlackChecker) ?? "" : (SettingManager.shared.saveWhiteChecker) ?? "")
-                        checkerImage.tag = value.checkerTag == 1 ? Chekers.black.rawValue : Chekers.white.rawValue
+                        checkerImage.image = UIImage(named: value.checkerTag == 1 ? (SettingManager.shared.saveWhiteChecker) ?? "" : (SettingManager.shared.saveBlackChecker) ?? "")
+                        checkerImage.tag = value.checkerTag == 1 ? Chekers.white.rawValue : Chekers.black.rawValue
                         column.addSubview(checkerImage)
                         
                         let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
