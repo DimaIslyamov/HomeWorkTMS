@@ -10,11 +10,11 @@ import UIKit
 extension Date {
     var currentDate: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy"
+        dateFormatter.dateFormat = "MMM d, yyyy"
         return dateFormatter.string(from: self)
     }
     
-    func getCurrentDate(from dateFormat: String = "dd MMMM yyyy") -> String{
+    func getCurrentDate(from dateFormat: String = "MMM d, yyyy") -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
         return dateFormatter.string(from: self)

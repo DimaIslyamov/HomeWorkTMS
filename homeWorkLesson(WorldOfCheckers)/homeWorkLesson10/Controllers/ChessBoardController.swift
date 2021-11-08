@@ -22,8 +22,9 @@ class ChessBoardController: UIViewController {
     @IBOutlet weak var backButtonOutlet: UIButton!
     @IBOutlet weak var backgraoundImage: UIImageView!
     @IBOutlet weak var lableForBackground: UILabel!
-    @IBOutlet weak var dateLable: UILabel!
+//    @IBOutlet weak var dateLable: UILabel!
     @IBOutlet weak var playersLable: UILabel!
+    @IBOutlet weak var timerAndDateLable: UILabel!
     
     
     // MARK: - Переменные и Константы
@@ -39,6 +40,7 @@ class ChessBoardController: UIViewController {
     var tagChecker: Int = 0
     
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    let fileManager = FileManager.default
     let userDef = UserDefaults.standard
     
     var cellCheckers: [CellCheckers] = []
@@ -63,7 +65,6 @@ class ChessBoardController: UIViewController {
         view.addSubview(setBackground(with: "GameArtas"))
         backgraoundImage.contentMode = .scaleAspectFill
         backButtonFuncCostamize()
-        dateLable.text = Date().getCurrentDate()
     }
     
     
@@ -87,25 +88,18 @@ class ChessBoardController: UIViewController {
     // MARK: - Objc Методы и Жесты
     
      @objc func timerFunc() {
-        var sec: String
-        var min: String
         countSec += 1
         if countSec == 60 {
             countSec = 0
             countMin += 1
         }
-        sec = countSec < 10 ? ": 0\(countSec)" : ": \(countSec)"
-        min = countMin < 10 ? "0\(countMin) " : "\(countMin) "
-        timerLable.text = min + sec
-        timerLable.textAlignment = .center
+        timerAndDateLable.text = "\(countMin)min : \(countSec)sec\n" + "Today: \(Date().getCurrentDate())"
     }
-    
     
     
     @objc func longPressGesture(_ sender: UILongPressGestureRecognizer) {
         guard let checker = sender.view,
               (current == .white && checker.tag < 12) || (current == .black && checker.tag >= 12) else { return }
-//        guard let checker = sender.view, checker.tag == current.rawValue else { return }
         switch sender.state {
         case .began:
             if canFight == false {
@@ -115,8 +109,6 @@ class ChessBoardController: UIViewController {
             UIView.animate(withDuration: 0.3) {
                 checker.transform = checker.transform.scaledBy(x: 2.7, y: 2.7)
             }
-//            cellsMove.removeAll()
-//            forMovingCheckers(for: checker)
             
         case .ended:
             UIView.animate(withDuration: 0.3) {
@@ -136,7 +128,6 @@ class ChessBoardController: UIViewController {
     
     
     @objc func panGesture(_ sender: UIPanGestureRecognizer) {
-//        guard sender.view?.tag == current.rawValue else { return }
         guard let checker = sender.view,
               (current == .white && checker.tag < 12) || (current == .black && checker.tag >= 12)
         else { return }
@@ -205,6 +196,7 @@ class ChessBoardController: UIViewController {
                 playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
                 forHittingCheckers()
             }
+            forCheckerWinner()
         
         default: break
         }
@@ -222,7 +214,7 @@ class ChessBoardController: UIViewController {
                                actions: UIAlertAction(title: "Выйти и сохранить партию",
                                                       style: .default,
                                                       handler: { _ in
-                                                        self.saveDataToUserDefaults()
+                                                        self.saveDataToSettingManager()
                                                         self.saveBatch()
                                                         self.navigationController?.popViewController(animated: true)
                                                         

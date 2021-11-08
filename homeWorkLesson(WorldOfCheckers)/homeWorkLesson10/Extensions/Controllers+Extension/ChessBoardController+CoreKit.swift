@@ -114,45 +114,11 @@ extension ChessBoardController {
     func createTimer() {
         timer = Timer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
-        
-        let attrs: [NSAttributedString.Key: Any] = [ .foregroundColor : UIColor.systemYellow,
-                                                     .font: UIFont(name: "StyleScript-Regular", size: 35) ?? "" ]
-
-        let timerView = UIView(frame: CGRect(x: view.center.x, y: 130, width: 170, height: 50))
-        timerView.center.x = view.center.x
-        timerView.backgroundColor = #colorLiteral(red: 0.1176470588, green: 0.337254902, blue: 0.5019607843, alpha: 1)
-        timerView.layer.cornerRadius = 15
-        timerView.layer.borderWidth = 3
-        timerView.layer.borderColor = UIColor.black.cgColor
-        
-        timerView.layer.shadowColor = UIColor.black.cgColor
-        timerView.layer.shadowRadius = 7
-        timerView.layer.shadowOpacity = 0.9
-        timerView.layer.shadowOffset = CGSize(width: 10, height: 10)
-        
-        view.addSubview(timerView)
-
-        timerLable = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 130, height: 50)))
-        timerLable.frame.origin.x += 20
-
-        if countMin > 0 || countSec > 0 {
-            var sec: String
-            var min: String
-            sec = countSec < 10 ? ": 0\(countSec)" : ": \(countSec)"
-            min = countMin < 10 ? "0\(countMin) " : "\(countMin) "
-            timerLable.attributedText = NSAttributedString(string: min + sec, attributes: attrs)
-        } else {
-            timerLable.attributedText = NSAttributedString(string: "0\(countMin) : 0\(countSec)", attributes: attrs)
-        }
-
-        timerLable.textAlignment = .center
-        timerView.addSubview(timerLable)
-        view.addSubview(chessboard)
     }
     
     
     
-    // MARK: - Moving and Hitting метод
+    // MARK: - Moving метод
     
     func forMovingCheckers(for checker: UIView) {
         let cell = checker.superview
@@ -168,6 +134,9 @@ extension ChessBoardController {
         }
     }
     
+    
+    
+    // MARK: - Hitting метод
     
     func forHittingCheckers() {
         saveBatch()
@@ -229,6 +198,50 @@ extension ChessBoardController {
                     }
                 }
             }
+        }
+    }
+    
+    
+    // MARK: - Func for Winner
+    
+    func forCheckerWinner() {
+        saveBatch()
+        guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
+        let arrayOfCheckers = cellCheckers
+        var playerWhiteCheckers: Int = 0
+        var playerBlackCheckers: Int = 0
+        var playerWhoIsAWinner: String = ""
+        
+        arrayOfCheckers.forEach { (checker) in
+            guard let checkerTag = checker.checkerTag, checkerTag < 12 else { return playerBlackCheckers += 1}
+            playerWhiteCheckers += 1
+        }
+        
+        playerWhoIsAWinner = ( playerWhiteCheckers == 0) ? "\(player1)" : ""
+        playerWhoIsAWinner = ( playerBlackCheckers == 0) ? "\(player2)" : ""
+        
+        if playerWhoIsAWinner != "" {
+            timer?.invalidate()
+            timer = nil
+            
+            presentAlertController(with: "The Winner is",
+                                   massage: "\(playerWhoIsAWinner), match time: \(countMin)min \(countSec)sec ",
+                                   actions: UIAlertAction(title: "Заново",
+                                                          style: .default,
+                                                          handler: { _ in
+                                                            try? self.fileManager.removeItem(at: self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue))
+                                                            self.removeDataFromUserDefaults()
+                                                            self.createTimer()
+                                                            self.createChessboard()
+                                                            self.navigationController?.pushViewController(vc, animated: true)
+                                                            self.openAlertForPlayersName()
+                                                          }),
+                                   UIAlertAction(title: "Закончить",
+                                                 style: .default,
+                                                 handler: { _ in
+                                                    self.removeDataFromUserDefaults()
+                                                    self.navigationController?.popViewController(animated: true)
+                                                 }))
         }
     }
 }

@@ -19,7 +19,7 @@ class RootViewController: UIViewController {
     // MARK: - Переменные и Константы
     
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    var saveTimerCheckers: CellCheckers = CellCheckers()
+//    var saveTimerCheckers: CellCheckers = CellCheckers()
     
     
     // MARK: - Жизненный цикл
@@ -80,16 +80,16 @@ extension RootViewController: CustomButtonDelegate {
                                                           style: .default,
                                                           handler: { _ in
                                                             vc.cellCheckers = SettingManager.shared.saveCellsCheckers
-                                                            vc.setDataFromUserDefaults()
+                                                            vc.setDataFromSettingManager()
                                                             vc.createTimer()
                                                             vc.createSaveChessboard()
-                                                            do {
-                                                                let fileURL = self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
-                                                                try FileManager.default.removeItem(at: fileURL)
-                                                            } catch {
-                                                                print("error")
-                                                                vc.cellCheckers.removeAll()
-                                                            }
+//                                                            do {
+//                                                                let fileURL = self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
+//                                                                try FileManager.default.removeItem(at: fileURL)
+//                                                            } catch {
+//                                                                print("error")
+//                                                                vc.cellCheckers.removeAll()
+//                                                            }
                                                             self.navigationController?.pushViewController(vc, animated: true)
                                                           }),
 

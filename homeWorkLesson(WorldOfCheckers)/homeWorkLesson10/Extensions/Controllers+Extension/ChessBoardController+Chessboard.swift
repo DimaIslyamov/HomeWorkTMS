@@ -58,18 +58,16 @@ extension ChessBoardController {
     
     
     
-    
     // MARK: - методы сохранения и создания партии(сохраненной) - надо как то сделать один !!
     
     func saveBatch() {
-        chessboard.subviews.forEach { cell in
+        cellCheckers = []
+        chessboard.subviews.forEach { (cell) in
             if !cell.subviews.isEmpty {
-             let position: CellCheckers = CellCheckers()
-                position.cellTag = cell.tag
-                cell.subviews.forEach { checker in
-                    position.checkerTag = checker.tag
+                cell.subviews.forEach { (checker) in
+                    let value = CellCheckers(cellTag: cell.tag, checkerTag: checker.tag)
+                    cellCheckers.append(value)
                 }
-                cellCheckers.append(position)
             }
         }
         SettingManager.shared.saveCellsCheckers = self.cellCheckers
@@ -93,13 +91,8 @@ extension ChessBoardController {
                                                   y: sizeColumn * CGFloat(i),
                                                   width: sizeColumn,
                                                   height: sizeColumn))
-                column.backgroundColor = ((i + j) % 2) == 0 ? .clear : .black
+                column.backgroundColor = ((j + i) % 2) == 0 ? .clear : .black
                 column.tag = tagCell
-//                column.tag = ((i + j) % 2) == 0 ? 0 : tagCell
-//                if ((i + j) % 2) == 1 {
-//                    tagCell += 1
-//                    column.tag = tagCell
-//                }
                 chessboard.addSubview(column)
                 tagCell += 1
                 
@@ -110,6 +103,8 @@ extension ChessBoardController {
                         checkerImage.isUserInteractionEnabled = true
                         checkerImage.image = UIImage(named: value.checkerTag == 1 ? (SettingManager.shared.saveWhiteChecker) ?? "" : (SettingManager.shared.saveBlackChecker) ?? "")
                         checkerImage.tag = value.checkerTag == 1 ? Chekers.white.rawValue : Chekers.black.rawValue
+                        checkerImage.tag = tagChecker
+                        tagChecker += 1
                         column.addSubview(checkerImage)
                         
                         let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -186,18 +186,29 @@ Simple checkers only move forward to the next square. Ladies can walk back and f
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="H0L-JA-k1t" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="0bT-8x-R2e"/>
+                            <constraint firstItem="wK6-fd-fR4" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.0345982" id="471-kp-b1E"/>
                             <constraint firstItem="MUH-d5-74k" firstAttribute="top" secondItem="VCV-pf-a7W" secondAttribute="bottom" id="4Dg-9V-zb1"/>
+                            <constraint firstItem="Y8X-tN-O5N" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="1.6875" id="4YN-G3-4L3"/>
+                            <constraint firstItem="H0L-JA-k1t" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.0803571" id="5eM-hC-2kO"/>
                             <constraint firstItem="rvR-7I-3iY" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="6nZ-Jg-dUk"/>
                             <constraint firstItem="MUH-d5-74k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="73K-le-sfh"/>
                             <constraint firstAttribute="bottom" secondItem="MUH-d5-74k" secondAttribute="bottom" id="94J-G9-Y0m"/>
                             <constraint firstAttribute="bottom" secondItem="rvR-7I-3iY" secondAttribute="bottom" id="DgH-f2-V5h"/>
                             <constraint firstItem="rvR-7I-3iY" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="E3a-Ds-LYT"/>
                             <constraint firstItem="VCV-pf-a7W" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Etn-DJ-jQm"/>
+                            <constraint firstItem="HQX-rl-TWf" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.142857" id="MQ2-2i-gPG"/>
                             <constraint firstItem="rvR-7I-3iY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ofl-2N-kGC"/>
+                            <constraint firstItem="W42-Ua-38Z" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.363839" id="UJv-WX-Om3"/>
+                            <constraint firstItem="eu7-Ug-176" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.49442" id="V7x-rj-JXP"/>
                             <constraint firstItem="VCV-pf-a7W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Xnj-Ip-OKw"/>
+                            <constraint firstItem="U3E-YF-PIy" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.180804" id="Zjm-si-BCp"/>
+                            <constraint firstItem="Y8X-tN-O5N" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="jos-82-jmn"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rvR-7I-3iY" secondAttribute="trailing" id="lpm-Rf-Ij1"/>
                             <constraint firstItem="VCV-pf-a7W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sqd-o5-8mk"/>
                             <constraint firstItem="MUH-d5-74k" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="w2K-83-yaT"/>
+                            <constraint firstItem="U3E-YF-PIy" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.756039" id="yf9-Zl-U0b"/>
+                            <constraint firstItem="mRW-6F-xWJ" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.123884" id="zlQ-Kp-gAP"/>
                         </constraints>
                     </view>
                     <connections>

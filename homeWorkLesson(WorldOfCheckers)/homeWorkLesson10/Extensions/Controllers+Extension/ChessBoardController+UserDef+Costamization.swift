@@ -11,11 +11,12 @@ extension ChessBoardController {
     
     // MARK: - Сохранение UserDefaults для таймера
     
-    func saveDataToUserDefaults() {
+    func saveDataToSettingManager() {
         SettingManager.shared.saveTimerSec = self.countSec
         SettingManager.shared.saveTimerMin = self.countMin
         SettingManager.shared.savePlayerOne = self.player1
         SettingManager.shared.savePlayerTwo = self.player2
+        
     }
     
     func removeDataFromUserDefaults() {
@@ -25,12 +26,11 @@ extension ChessBoardController {
         userDef.removeObject(forKey: Keys.player2.rawValue)
     }
     
-    func setDataFromUserDefaults() {
+    func setDataFromSettingManager() {
         countSec = SettingManager.shared.saveTimerSec
         countMin = SettingManager.shared.saveTimerMin
         player1 = SettingManager.shared.savePlayerOne ?? "Anton"
         player2 = SettingManager.shared.savePlayerTwo ?? "Lera"
-//        playersLable?.text = (current == .white) ? "\(player1) move" : "\(player2) move"
     }
     
     

@@ -16,9 +16,9 @@ class CellCheckers: NSObject, NSCoding, NSSecureCoding {
     var imageForBlackChecker: UIImageView?
     var imageForWhiteChecker: UIImageView?
     
-    override init() {
-        super.init()
-        
+    init(cellTag: Int?, checkerTag: Int?) {
+         self.cellTag = cellTag
+         self.checkerTag = checkerTag
     }
 
     func encode(with coder: NSCoder) { // кодировка
