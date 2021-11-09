@@ -9,7 +9,52 @@ import UIKit
 
 extension ChessBoardController {
     
-    // MARK: - Сохранение UserDefaults для таймера
+    // MARK: - func for Save
+    
+    func saveBatch() {
+        cellCheckers = []
+        chessboard.subviews.forEach { (cell) in
+            if !cell.subviews.isEmpty {
+                cell.subviews.forEach { (checker) in
+                    let value = CellCheckers(cellTag: cell.tag, checkerTag: checker.tag)
+                    cellCheckers.append(value)
+                }
+            }
+        }
+        SettingManager.shared.saveCellsCheckers = self.cellCheckers
+    }
+    
+    
+    // MARK: - получение и сохраненние миени игроков
+    
+    func getSetAndRandomNames() {
+        self.names = SettingManager.shared.saveNamePlayers
+        
+        self.names.forEach { value in
+            self.randomName.append(value.nameOne)
+            self.randomName.append(value.nameTwo)
+        }
+        
+        if !FileManager.default.fileExists(atPath: documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue).path) {
+            player1 = randomName.randomElement() ?? ""
+            player2 = (player1 == randomName[0]) ?self.randomName[1] : randomName[0]
+            playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
+            
+            guard let name = nameOnePlayers, name != "" else {return}
+            playersLable.text = name
+        }
+    }
+    
+    
+    func saveNames() {
+        let data = try? NSKeyedArchiver.archivedData(withRootObject: getNames, requiringSecureCoding: true)
+        let _ = documentDirectory.appendingPathComponent(Keys.namePlayers.rawValue)
+        try? data?.write(to: URL.saveNameSSURL())
+    }
+    
+    
+    
+    // MARK: - Сохранение UserDefaults and SettingManager
     
     func saveDataToSettingManager() {
         SettingManager.shared.saveTimerSec = self.countSec
@@ -32,6 +77,7 @@ extension ChessBoardController {
         player1 = SettingManager.shared.savePlayerOne ?? "Anton"
         player2 = SettingManager.shared.savePlayerTwo ?? "Lera"
     }
+    
     
     
     // MARK: - Методы костамизации доски и кнопки назад

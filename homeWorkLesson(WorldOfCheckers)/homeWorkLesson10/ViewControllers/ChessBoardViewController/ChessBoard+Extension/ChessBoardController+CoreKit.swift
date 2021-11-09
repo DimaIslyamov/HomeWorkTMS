@@ -30,7 +30,7 @@ extension ChessBoardController {
             textField.placeholder = "Игрок 2"
             textField.returnKeyType = .done
         }
-
+        
         let saveAction = UIAlertAction(title: "Подтвердить", style: .default, handler: { _ in
             guard let fields = alertController.textFields, fields.count == 2 else { return }
             
@@ -63,41 +63,16 @@ extension ChessBoardController {
             (action : UIAlertAction!) -> Void in
             self.navigationController?.popViewController(animated: true)
         })
-
+        
         alertController.addAction(cancelAction)
         alertController.addAction(saveAction)
         alertController.preferredAction = saveAction
-
+        
         self.present(alertController, animated: true, completion: nil)
     }
     
     
-    // MARK: - получение и сохраненние миени игроков
     
-    func getSetAndRandomNames() {
-        self.names = SettingManager.shared.saveNamePlayers
-        
-        self.names.forEach { value in
-            self.randomName.append(value.nameOne)
-            self.randomName.append(value.nameTwo)
-        }
-        
-        if !FileManager.default.fileExists(atPath: documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue).path) {
-            player1 = randomName.randomElement() ?? ""
-            player2 = (player1 == randomName[0]) ?self.randomName[1] : randomName[0]
-            playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
-            
-            guard let name = nameOnePlayers, name != "" else {return}
-            playersLable.text = name
-        }
-    }
-    
-    
-    func saveNames() {
-        let data = try? NSKeyedArchiver.archivedData(withRootObject: getNames, requiringSecureCoding: true)
-         let _ = documentDirectory.appendingPathComponent(Keys.namePlayers.rawValue)
-        try? data?.write(to: URL.saveNameSSURL())
-    }
     
     
     // MARK: - Создание Таймера
@@ -114,134 +89,5 @@ extension ChessBoardController {
     func createTimer() {
         timer = Timer(timeInterval: 1.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
-    }
-    
-    
-    
-    // MARK: - Moving метод
-    
-    func forMovingCheckers(for checker: UIView) {
-        let cell = checker.superview
-        chessboard.subviews.forEach { cellForMove in
-            guard cellForMove.subviews.isEmpty, cellForMove.backgroundColor == .black, let startCell = cell else { return }
-            let diff1 = current == .white ? 7 : -7
-            let diff2 = current == .white ? 9 : -9
-            if cellForMove.tag == startCell.tag + diff1 || cellForMove.tag == startCell.tag + diff2 {
-                cellForMove.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-                cellForMove.layer.borderWidth = 3
-                cellsMove.append(cellForMove)
-            }
-        }
-    }
-    
-    
-    
-    // MARK: - Hitting метод
-    
-    func forHittingCheckers() {
-        saveBatch()
-        
-        let arrayOfChecker = cellCheckers
-        var movingsCheckers: CellCheckers? = nil
-        var hittingsCheckers: CellCheckers? = nil
-        
-        if current == .white {
-            arrayOfChecker.forEach { (checker) in
-                movingsCheckers = (checker.checkerTag! < 12) ? checker : nil
-                arrayOfChecker.forEach { (hittingChecker) in
-                    
-                    guard let movingChecker = movingsCheckers else { return }
-                    
-                    if hittingChecker.checkerTag! >= 12 && (hittingChecker.cellTag == movingChecker.cellTag! + 9 || hittingChecker.cellTag == movingChecker.cellTag! + 7 || hittingChecker.cellTag == movingChecker.cellTag! - 9 || hittingChecker.cellTag == movingChecker.cellTag! - 7) {
-                        
-                        hittingsCheckers = hittingChecker
-                        
-                        chessboard.subviews.forEach { (cell) in
-                            guard let checkerForHitting = hittingsCheckers else { return }
-                            
-                            if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == movingChecker.cellTag! - 2 * (movingChecker.cellTag! - hittingChecker.cellTag!) {
-                                
-                                cell.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-                                cell.layer.borderWidth = 3
-                                cellsMove.append(cell)
-                                canFight = true
-                                mass.append((checker: movingChecker.checkerTag!, cell: cell.tag, checkerBeaten: checkerForHitting.checkerTag!))
-                            }
-                        }
-                    }
-                }
-            }
-            
-        } else {
-            arrayOfChecker.forEach { (checker) in
-                movingsCheckers = (checker.checkerTag! >= 12) ? checker : nil
-                arrayOfChecker.forEach { (hittingChecker) in
-                    
-                    guard let movingChecker = movingsCheckers else { return }
-                    
-                    if hittingChecker.checkerTag! < 12 && (hittingChecker.cellTag == movingChecker.cellTag! + 9 || hittingChecker.cellTag == movingChecker.cellTag! + 7 || hittingChecker.cellTag == movingChecker.cellTag! - 9 || hittingChecker.cellTag == movingChecker.cellTag! - 7) {
-                        
-                        hittingsCheckers = hittingChecker
-                        
-                        chessboard.subviews.forEach { (cell) in
-                            guard let checkerForHitting = hittingsCheckers else { return }
-                            
-                            if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == movingChecker.cellTag! - 2 * (movingChecker.cellTag! - checkerForHitting.cellTag!) {
-                                
-                                cell.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-                                cell.layer.borderWidth = 3
-                                cellsMove.append(cell)
-                                canFight = true
-                                mass.append((checker: movingChecker.checkerTag!, cell: cell.tag, checkerBeaten: checkerForHitting.checkerTag ?? 0))
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    
-    // MARK: - Func for Winner
-    
-    func forCheckerWinner() {
-        saveBatch()
-        guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
-        let arrayOfCheckers = cellCheckers
-        var playerWhiteCheckers: Int = 0
-        var playerBlackCheckers: Int = 0
-        var playerWhoIsAWinner: String = ""
-        
-        arrayOfCheckers.forEach { (checker) in
-            guard let checkerTag = checker.checkerTag, checkerTag < 12 else { return playerBlackCheckers += 1}
-            playerWhiteCheckers += 1
-        }
-        
-        playerWhoIsAWinner = ( playerWhiteCheckers == 0) ? "\(player1)" : ""
-        playerWhoIsAWinner = ( playerBlackCheckers == 0) ? "\(player2)" : ""
-        
-        if playerWhoIsAWinner != "" {
-            timer?.invalidate()
-            timer = nil
-            
-            presentAlertController(with: "The Winner is",
-                                   massage: "\(playerWhoIsAWinner), match time: \(countMin)min \(countSec)sec ",
-                                   actions: UIAlertAction(title: "Заново",
-                                                          style: .default,
-                                                          handler: { _ in
-                                                            try? self.fileManager.removeItem(at: self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue))
-                                                            self.removeDataFromUserDefaults()
-                                                            self.createTimer()
-                                                            self.createChessboard()
-                                                            self.navigationController?.pushViewController(vc, animated: true)
-                                                            self.openAlertForPlayersName()
-                                                          }),
-                                   UIAlertAction(title: "Закончить",
-                                                 style: .default,
-                                                 handler: { _ in
-                                                    self.removeDataFromUserDefaults()
-                                                    self.navigationController?.popViewController(animated: true)
-                                                 }))
-        }
     }
 }

@@ -22,7 +22,6 @@ class ChessBoardController: UIViewController {
     @IBOutlet weak var backButtonOutlet: UIButton!
     @IBOutlet weak var backgraoundImage: UIImageView!
     @IBOutlet weak var lableForBackground: UILabel!
-//    @IBOutlet weak var dateLable: UILabel!
     @IBOutlet weak var playersLable: UILabel!
     @IBOutlet weak var timerAndDateLable: UILabel!
     
@@ -71,7 +70,7 @@ class ChessBoardController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         localaized()
-        playersLable.isHidden = false
+        //        playersLable.isHidden = false
     }
     
     
@@ -87,7 +86,7 @@ class ChessBoardController: UIViewController {
     
     // MARK: - Objc Методы и Жесты
     
-     @objc func timerFunc() {
+    @objc func timerFunc() {
         countSec += 1
         if countSec == 60 {
             countSec = 0
@@ -106,12 +105,12 @@ class ChessBoardController: UIViewController {
                 cellsMove.removeAll()
                 forMovingCheckers(for: checker)
             }
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.2) {
                 checker.transform = checker.transform.scaledBy(x: 2.7, y: 2.7)
             }
             
         case .ended:
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.2) {
                 checker.transform = .identity
             }
             if canFight == false {
@@ -143,7 +142,6 @@ class ChessBoardController: UIViewController {
                                                 y: cellOrigin.y + translation.y)
             sender.setTranslation(.zero, in: chessboard)
             
-            // MARK: - ENDED
         case .ended:
             var currentCells: UIView? = nil
             var currentHittingChecker: Int? = nil
@@ -178,12 +176,12 @@ class ChessBoardController: UIViewController {
                 mass.removeAll()
                 forHittingCheckers()
                 self.chessboard.subviews.forEach { (value) in
-                    value.layer.borderWidth = 0
+                    //                    value.layer.borderWidth = 0
                 }
                 if canFight == true {
                     mass.removeAll(where: {$0.checker != checker.tag})
                     chessboard.subviews.forEach { (value) in
-                        value.layer.borderWidth = 0
+                        //                        value.layer.borderWidth = 0
                     }
                     if mass.isEmpty {
                         canFight = false
@@ -197,7 +195,7 @@ class ChessBoardController: UIViewController {
                 forHittingCheckers()
             }
             forCheckerWinner()
-        
+            
         default: break
         }
     }
@@ -218,13 +216,13 @@ class ChessBoardController: UIViewController {
                                                         self.saveBatch()
                                                         self.navigationController?.popViewController(animated: true)
                                                         
-                                }), UIAlertAction(title: "Выйти и не сохранять партию",
-                                                  style: .default,
-                                                  handler: { _ in
-                                                    self.removeDataFromUserDefaults()
-                                                    self.navigationController?.popViewController(animated: true)
-                                                  }))
-        }
+                                                      }), UIAlertAction(title: "Выйти и не сохранять партию",
+                                                                        style: .default,
+                                                                        handler: { _ in
+                                                                            self.removeDataFromUserDefaults()
+                                                                            self.navigationController?.popViewController(animated: true)
+                                                                        }))
+    }
     
     
     @IBAction func chooseBackground(_ sender: UISwitch) {

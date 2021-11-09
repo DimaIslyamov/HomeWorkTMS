@@ -58,21 +58,7 @@ extension ChessBoardController {
     
     
     
-    // MARK: - методы сохранения и создания партии(сохраненной) - надо как то сделать один !!
-    
-    func saveBatch() {
-        cellCheckers = []
-        chessboard.subviews.forEach { (cell) in
-            if !cell.subviews.isEmpty {
-                cell.subviews.forEach { (checker) in
-                    let value = CellCheckers(cellTag: cell.tag, checkerTag: checker.tag)
-                    cellCheckers.append(value)
-                }
-            }
-        }
-        SettingManager.shared.saveCellsCheckers = self.cellCheckers
-    }
-    
+    // MARK: - Метод создания save партии
     
     func createSaveChessboard() {
         chessboardCostamization()
