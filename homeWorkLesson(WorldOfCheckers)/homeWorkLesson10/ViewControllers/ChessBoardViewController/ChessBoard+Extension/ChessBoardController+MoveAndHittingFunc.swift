@@ -17,8 +17,8 @@ extension ChessBoardController {
             let diff1 = current == .white ? 7 : -7
             let diff2 = current == .white ? 9 : -9
             if cellForMove.tag == startCell.tag + diff1 || cellForMove.tag == startCell.tag + diff2 {
-                cellForMove.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-                cellForMove.layer.borderWidth = 3
+//                cellForMove.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+//                cellForMove.layer.borderWidth = 3
                 cellsMove.append(cellForMove)
             }
         }
@@ -51,8 +51,6 @@ extension ChessBoardController {
                             
                             if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == movingChecker.cellTag! - 2 * (movingChecker.cellTag! - hittingChecker.cellTag!) {
                                 
-                                cell.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-                                cell.layer.borderWidth = 3
                                 cellsMove.append(cell)
                                 canFight = true
                                 mass.append((checker: movingChecker.checkerTag!, cell: cell.tag, checkerBeaten: checkerForHitting.checkerTag!))
@@ -78,8 +76,6 @@ extension ChessBoardController {
                             
                             if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == movingChecker.cellTag! - 2 * (movingChecker.cellTag! - checkerForHitting.cellTag!) {
                                 
-                                cell.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-                                cell.layer.borderWidth = 3
                                 cellsMove.append(cell)
                                 canFight = true
                                 mass.append((checker: movingChecker.checkerTag!, cell: cell.tag, checkerBeaten: checkerForHitting.checkerTag!))
@@ -96,7 +92,7 @@ extension ChessBoardController {
     
     func forCheckerWinner() {
         saveBatch()
-        guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
+//        guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
         let arrayOfCheckers = cellCheckers
         var playerWhiteCheckers: Int = 0
         var playerBlackCheckers: Int = 0

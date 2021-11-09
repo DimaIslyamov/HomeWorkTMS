@@ -176,12 +176,12 @@ class ChessBoardController: UIViewController {
                 mass.removeAll()
                 forHittingCheckers()
                 self.chessboard.subviews.forEach { (value) in
-                    value.layer.borderWidth = 0
+                    
                 }
                 if canFight == true {
                     mass.removeAll(where: {$0.checker != checker.tag})
                     chessboard.subviews.forEach { (value) in
-                        value.layer.borderWidth = 0
+                        
                     }
                     if mass.isEmpty {
                         canFight = false
