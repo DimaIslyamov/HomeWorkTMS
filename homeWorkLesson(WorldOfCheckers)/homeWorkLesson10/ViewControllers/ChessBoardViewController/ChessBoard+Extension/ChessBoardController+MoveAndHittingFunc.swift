@@ -114,22 +114,18 @@ extension ChessBoardController {
             timer?.invalidate()
             timer = nil
             
-            presentAlertController(with: "The Winner is",
-                                   massage: "\(playerWhoIsAWinner), match time: \(countMin)min \(countSec)sec ",
+            presentAlertController(with: "The Winner is \(playerWhoIsAWinner)",
+                                   massage: "Match time: \(countMin)min \(countSec)sec ",
                                    actions: UIAlertAction(title: "Заново",
                                                           style: .default,
                                                           handler: { _ in
-                                                            try? self.fileManager.removeItem(at: self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue))
-                                                            self.removeDataFromUserDefaults()
-                                                            self.createTimer()
-                                                            self.createChessboard()
-                                                            self.navigationController?.pushViewController(vc, animated: true)
-                                                            self.openAlertForPlayersName()
+                                                            
+                                                            
                                                           }),
                                    UIAlertAction(title: "Закончить",
                                                  style: .default,
                                                  handler: { _ in
-                                                    
+                                                    try? self.fileManager.removeItem(at: self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue))
                                                     self.removeDataFromUserDefaults()
                                                     self.navigationController?.popViewController(animated: true)
                                                  }))

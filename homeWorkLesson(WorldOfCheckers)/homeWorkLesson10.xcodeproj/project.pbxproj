@@ -177,9 +177,9 @@
 		5347397B273A740600B9E61D /* ChessBoard+Extension */ = {
 			isa = PBXGroup;
 			children = (
-				53031EC926CADA2500483567 /* ChessBoardController+CoreKit.swift */,
 				53473982273A7B1000B9E61D /* ChessBoardController+MoveAndHittingFunc.swift */,
 				5353B5CB26FC914400888393 /* ChessBoardController+Chessboard.swift */,
+				53031EC926CADA2500483567 /* ChessBoardController+CoreKit.swift */,
 				53985BEC26E3A663005B5714 /* ChessBoardController+UserDef+Costamization.swift */,
 			);
 			path = "ChessBoard+Extension";
