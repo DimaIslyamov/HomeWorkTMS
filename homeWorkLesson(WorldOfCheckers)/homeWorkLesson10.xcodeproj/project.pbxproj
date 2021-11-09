@@ -129,7 +129,7 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		5315ACB026DA5542003CD6FE /* UI+Extension */ = {
+		5333EB1326A9E4F600B7411D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				53F8A5FD26B9EA2400166BD2 /* UIViewController+CoreKit.swift */,
@@ -138,27 +138,76 @@
 				5315ACB226DA55C0003CD6FE /* Date+Format.swift */,
 				5350105B26F7BA9100AEC5D2 /* String+Localaized.swift */,
 			);
-			path = "UI+Extension";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
-		5315ACB126DA5554003CD6FE /* Controllers+Extension */ = {
+		53473978273A73BE00B9E61D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				53473979273A73D100B9E61D /* RootViewController */,
+				5347397A273A73E700B9E61D /* ChessBoardViewController */,
+				5347397C273A742500B9E61D /* ScoreViewController */,
+				5347397D273A742F00B9E61D /* SettingsViewController */,
+				5347397E273A743700B9E61D /* AboutViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		53473979273A73D100B9E61D /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				534D2D31269D760500052236 /* RootViewController.swift */,
+				534D2D20269D757E00052236 /* Main.storyboard */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		5347397A273A73E700B9E61D /* ChessBoardViewController */ = {
+			isa = PBXGroup;
+			children = (
+				534D2D35269D80F200052236 /* ChessBoardController.swift */,
+				534D2D33269D80D600052236 /* ChessBoard.storyboard */,
+				5347397B273A740600B9E61D /* ChessBoard+Extension */,
+			);
+			path = ChessBoardViewController;
+			sourceTree = "<group>";
+		};
+		5347397B273A740600B9E61D /* ChessBoard+Extension */ = {
 			isa = PBXGroup;
 			children = (
 				53031EC926CADA2500483567 /* ChessBoardController+CoreKit.swift */,
 				5353B5CB26FC914400888393 /* ChessBoardController+Chessboard.swift */,
 				53985BEC26E3A663005B5714 /* ChessBoardController+UserDef+Costamization.swift */,
-				5315ACB426DA5BB8003CD6FE /* SettingViewController+Extension.swift */,
 			);
-			path = "Controllers+Extension";
+			path = "ChessBoard+Extension";
 			sourceTree = "<group>";
 		};
-		5333EB1326A9E4F600B7411D /* Extensions */ = {
+		5347397C273A742500B9E61D /* ScoreViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5315ACB126DA5554003CD6FE /* Controllers+Extension */,
-				5315ACB026DA5542003CD6FE /* UI+Extension */,
+				5333EB0B26A8983A00B7411D /* ScoreViewController.swift */,
+				537B185A26AC2AEB0026D73C /* Score.storyboard */,
 			);
-			path = Extensions;
+			path = ScoreViewController;
+			sourceTree = "<group>";
+		};
+		5347397D273A742F00B9E61D /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5333EB0D26A8984C00B7411D /* SettingsViewController.swift */,
+				5315ACB426DA5BB8003CD6FE /* SettingViewController+Extension.swift */,
+				537B185C26AC2AF40026D73C /* Settings.storyboard */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		5347397E273A743700B9E61D /* AboutViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */,
+				53F8A5FF26B9ED7E00166BD2 /* About.storyboard */,
+			);
+			path = AboutViewController;
 			sourceTree = "<group>";
 		};
 		534D2D0E269D757E00052236 = {
@@ -180,15 +229,13 @@
 		534D2D19269D757E00052236 /* homeWorkLesson10 */ = {
 			isa = PBXGroup;
 			children = (
+				53473978273A73BE00B9E61D /* ViewControllers */,
+				5333EB1326A9E4F600B7411D /* Extensions */,
 				53985BE926E3826B005B5714 /* SettingManager */,
+				538624BC26C9232300C6DE36 /* Classes */,
 				53D8368726CA2CB800D34B1C /* CustomUI */,
 				5368592F26C9A06900420AF7 /* Choose Checkers */,
-				538624BC26C9232300C6DE36 /* Classes */,
-				53133FAD26B171900042379D /* Fonts */,
 				538EA4C626C34554001D13B5 /* Keys */,
-				5333EB1326A9E4F600B7411D /* Extensions */,
-				534D2D30269D75C400052236 /* Controllers */,
-				534D2D2F269D75B700052236 /* Views */,
 				534D2D2E269D759100052236 /* Suporting Files */,
 			);
 			path = homeWorkLesson10;
@@ -198,37 +245,14 @@
 			isa = PBXGroup;
 			children = (
 				53A0E36C271EF64F0087E7CF /* Localaized */,
+				53133FAD26B171900042379D /* Fonts */,
 				534D2D1A269D757E00052236 /* AppDelegate.swift */,
 				534D2D1C269D757E00052236 /* SceneDelegate.swift */,
+				534D2D25269D758100052236 /* LaunchScreen.storyboard */,
 				534D2D23269D758100052236 /* Assets.xcassets */,
 				534D2D28269D758100052236 /* Info.plist */,
 			);
 			path = "Suporting Files";
-			sourceTree = "<group>";
-		};
-		534D2D2F269D75B700052236 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				534D2D20269D757E00052236 /* Main.storyboard */,
-				534D2D33269D80D600052236 /* ChessBoard.storyboard */,
-				537B185A26AC2AEB0026D73C /* Score.storyboard */,
-				537B185C26AC2AF40026D73C /* Settings.storyboard */,
-				53F8A5FF26B9ED7E00166BD2 /* About.storyboard */,
-				534D2D25269D758100052236 /* LaunchScreen.storyboard */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		534D2D30269D75C400052236 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				534D2D31269D760500052236 /* RootViewController.swift */,
-				534D2D35269D80F200052236 /* ChessBoardController.swift */,
-				5333EB0B26A8983A00B7411D /* ScoreViewController.swift */,
-				5333EB0D26A8984C00B7411D /* SettingsViewController.swift */,
-				53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		5360ED0026C49BD300A0C0C6 /* BlackCheckersCollectionViewCell */ = {
