@@ -12,7 +12,6 @@
         <!--Item-->
         <scene sceneID="q8T-Va-hpF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cx8-8q-o8I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="rFq-mh-gv7" customClass="HistoryTableViewController" customModule="homeWorkLesson23_WheatherAndNews_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HpO-ay-eK0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -73,6 +72,7 @@
                         <outlet property="tableView" destination="aJa-Wi-Rgg" id="Q6I-K1-QHx"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cx8-8q-o8I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="127.53623188405798" y="-291.29464285714283"/>
         </scene>
