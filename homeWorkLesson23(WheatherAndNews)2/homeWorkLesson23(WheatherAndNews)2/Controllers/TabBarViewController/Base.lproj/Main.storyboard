@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sdf-1c-bfO">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--WeatherStoryboard-->
+        <scene sceneID="7Hj-7v-5Yc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WeatherStoryboard" id="qSC-TM-dso" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Qnh-hS-vPW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H8o-9G-4B7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2701" y="-66"/>
+        </scene>
+        <!--AppleMapStoryboard-->
+        <scene sceneID="LlV-VK-0n0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AppleMapStoryboard" id="7vn-1l-svu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="kkY-ql-0ga"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rdg-gf-BTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2701" y="3"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="X5V-ID-Hyp">
+            <objects>
+                <tabBarController id="sdf-1c-bfO" customClass="TabBarViewController" customModule="homeWorkLesson23_WheatherAndNews_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6db-HD-dW7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qSC-TM-dso" kind="relationship" relationship="viewControllers" id="Cgn-8y-451"/>
+                        <segue destination="7vn-1l-svu" kind="relationship" relationship="viewControllers" id="dZl-2o-n3N"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9Y-DO-oBu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3388" y="3"/>
+        </scene>
+    </scenes>
+</document>

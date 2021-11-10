@@ -79,4 +79,9 @@ class WheathreViewController: UIViewController {
         presentSearchAlertController()
     }
     
+    
+    @IBAction func historySearchButton(_ sender: UIButton) {
+        guard let vc = UIViewController.getViewController(from: "HistoryTableViewStoryboard") else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

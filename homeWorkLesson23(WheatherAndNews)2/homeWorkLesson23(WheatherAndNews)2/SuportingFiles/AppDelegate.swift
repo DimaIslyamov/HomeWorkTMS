@@ -8,6 +8,7 @@
 import UIKit
 import AlamofireNetworkActivityLogger
 import Firebase
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        GMSServices.provideAPIKey("AIzaSyARoDLqgIwQlwaBwbG_Gs8ez4h08-ggRR8")
         NetworkActivityLogger.shared.startLogging()
         NetworkActivityLogger.shared.level = .debug
         FirebaseApp.configure()

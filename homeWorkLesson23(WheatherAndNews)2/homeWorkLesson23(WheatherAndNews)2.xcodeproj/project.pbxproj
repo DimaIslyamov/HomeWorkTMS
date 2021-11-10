@@ -22,6 +22,11 @@
 		530E3C5E26F26E6F00292BFE /* UIView+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */; };
 		530E3C6026F26E9600292BFE /* UIViewController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */; };
 		530E3C6826F274E100292BFE /* WheathreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530E3C6726F274E100292BFE /* WheathreViewController.swift */; };
+		532EAAEE273BCBAF00A9CCFB /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532EAAED273BCBAF00A9CCFB /* GoogleMapsViewController.swift */; };
+		532EAAF1273BCBC400A9CCFB /* GoogleMapsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532EAAF0273BCBC400A9CCFB /* GoogleMapsStoryboard.storyboard */; };
+		532EAAF7273BD31D00A9CCFB /* AppleMapStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532EAAF6273BD31D00A9CCFB /* AppleMapStoryboard.storyboard */; };
+		532EAAFB273BD35800A9CCFB /* HistoryTableViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532EAAFA273BD35800A9CCFB /* HistoryTableViewStoryboard.storyboard */; };
+		532EAB01273BE84900A9CCFB /* WeatherStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532EAB00273BE84900A9CCFB /* WeatherStoryboard.storyboard */; };
 		5336CEDA27026DCF00941403 /* CLPlacemark+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336CED927026DCF00941403 /* CLPlacemark+CoreKit.swift */; };
 		5336CEDC27026E3600941403 /* MapViewController+MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336CEDB27026E3600941403 /* MapViewController+MapDelegate.swift */; };
 		5336CEDE27026FE500941403 /* MapViewController+WeatherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336CEDD27026FE500941403 /* MapViewController+WeatherExtension.swift */; };
@@ -57,6 +62,11 @@
 		530E3C5D26F26E6F00292BFE /* UIView+CoreKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CoreKit.swift"; sourceTree = "<group>"; };
 		530E3C5F26F26E9600292BFE /* UIViewController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreKit.swift"; sourceTree = "<group>"; };
 		530E3C6726F274E100292BFE /* WheathreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheathreViewController.swift; sourceTree = "<group>"; };
+		532EAAED273BCBAF00A9CCFB /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
+		532EAAF0273BCBC400A9CCFB /* GoogleMapsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoogleMapsStoryboard.storyboard; sourceTree = "<group>"; };
+		532EAAF6273BD31D00A9CCFB /* AppleMapStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppleMapStoryboard.storyboard; sourceTree = "<group>"; };
+		532EAAFA273BD35800A9CCFB /* HistoryTableViewStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryTableViewStoryboard.storyboard; sourceTree = "<group>"; };
+		532EAB00273BE84900A9CCFB /* WeatherStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeatherStoryboard.storyboard; sourceTree = "<group>"; };
 		5336CED927026DCF00941403 /* CLPlacemark+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLPlacemark+CoreKit.swift"; sourceTree = "<group>"; };
 		5336CEDB27026E3600941403 /* MapViewController+MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MapDelegate.swift"; sourceTree = "<group>"; };
 		5336CEDD27026FE500941403 /* MapViewController+WeatherExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+WeatherExtension.swift"; sourceTree = "<group>"; };
@@ -185,7 +195,6 @@
 				530E3C4B26F260F100292BFE /* Extensions */,
 				539C35B5270DC9B800467BEF /* Managers */,
 				539C35B4270DC9A000467BEF /* Models */,
-				530E3C4926F260C800292BFE /* Views */,
 				530E3C4826F260BA00292BFE /* Controllers */,
 				537541EF270A024A001855D9 /* HIstoryTableCell */,
 				530E3C4726F2608300292BFE /* SuportingFiles */,
@@ -196,6 +205,7 @@
 		530E3C4726F2608300292BFE /* SuportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				530E3C3D26F2604F00292BFE /* LaunchScreen.storyboard */,
 				530E3C3226F2604B00292BFE /* AppDelegate.swift */,
 				530E3C3426F2604B00292BFE /* SceneDelegate.swift */,
 				530E3C3B26F2604F00292BFE /* Assets.xcassets */,
@@ -211,21 +221,12 @@
 		530E3C4826F260BA00292BFE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				53CAFD1526FF0EB400AEAD48 /* TabBarViewController.swift */,
+				532EAAF9273BD32B00A9CCFB /* TabBarViewController */,
 				53115DCB2704F02200E453DF /* WheathreViewControllerExtension */,
 				53115DCC2704F03600E453DF /* MapViewControllerExtension */,
-				539C35B6270DD21D00467BEF /* HistoryTableViewController */,
+				532EAAD5273BC24700A9CCFB /* GoogleMapViewController */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		530E3C4926F260C800292BFE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				530E3C3826F2604B00292BFE /* Main.storyboard */,
-				530E3C3D26F2604F00292BFE /* LaunchScreen.storyboard */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		530E3C4A26F260CE00292BFE /* HTTPManager */ = {
@@ -258,9 +259,11 @@
 		53115DCB2704F02200E453DF /* WheathreViewControllerExtension */ = {
 			isa = PBXGroup;
 			children = (
+				539C35B6270DD21D00467BEF /* HistoryTableViewController */,
 				530E3C6726F274E100292BFE /* WheathreViewController.swift */,
 				53FB580826F3B87B0043F811 /* WheathreViewController+CorKit.swift */,
 				53CAFD1326FF0DFF00AEAD48 /* WheathreViewController+Media.swift */,
+				532EAB00273BE84900A9CCFB /* WeatherStoryboard.storyboard */,
 			);
 			path = WheathreViewControllerExtension;
 			sourceTree = "<group>";
@@ -271,8 +274,27 @@
 				53CAFD1726FF0EF900AEAD48 /* MapViewController.swift */,
 				5336CEDB27026E3600941403 /* MapViewController+MapDelegate.swift */,
 				5336CEDD27026FE500941403 /* MapViewController+WeatherExtension.swift */,
+				532EAAF6273BD31D00A9CCFB /* AppleMapStoryboard.storyboard */,
 			);
 			path = MapViewControllerExtension;
+			sourceTree = "<group>";
+		};
+		532EAAD5273BC24700A9CCFB /* GoogleMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				532EAAED273BCBAF00A9CCFB /* GoogleMapsViewController.swift */,
+				532EAAF0273BCBC400A9CCFB /* GoogleMapsStoryboard.storyboard */,
+			);
+			path = GoogleMapViewController;
+			sourceTree = "<group>";
+		};
+		532EAAF9273BD32B00A9CCFB /* TabBarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53CAFD1526FF0EB400AEAD48 /* TabBarViewController.swift */,
+				530E3C3826F2604B00292BFE /* Main.storyboard */,
+			);
+			path = TabBarViewController;
 			sourceTree = "<group>";
 		};
 		537541EF270A024A001855D9 /* HIstoryTableCell */ = {
@@ -324,6 +346,7 @@
 			children = (
 				537541EB270A01A3001855D9 /* HistoryTableViewController.swift */,
 				539C35B7270DD24700467BEF /* HistoryTableViewController+TableViewDelegateDataSource.swift */,
+				532EAAFA273BD35800A9CCFB /* HistoryTableViewStoryboard.storyboard */,
 			);
 			path = HistoryTableViewController;
 			sourceTree = "<group>";
@@ -340,6 +363,7 @@
 				530E3C2C26F2604B00292BFE /* Frameworks */,
 				530E3C2D26F2604B00292BFE /* Resources */,
 				6BC30D921C354775B7362B4D /* [CP] Embed Pods Frameworks */,
+				5A3B17D0590FF9A7A0144557 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -390,10 +414,14 @@
 				530E3C3F26F2604F00292BFE /* LaunchScreen.storyboard in Resources */,
 				5350104C26F77C9600AEC5D2 /* zvuki-prirody.mp3 in Resources */,
 				5350104A26F76F1A00AEC5D2 /* Rain - 20885.mp4 in Resources */,
+				532EAAF7273BD31D00A9CCFB /* AppleMapStoryboard.storyboard in Resources */,
 				530E3C3C26F2604F00292BFE /* Assets.xcassets in Resources */,
 				530E3C3A26F2604B00292BFE /* Main.storyboard in Resources */,
+				532EAAF1273BCBC400A9CCFB /* GoogleMapsStoryboard.storyboard in Resources */,
+				532EAAFB273BD35800A9CCFB /* HistoryTableViewStoryboard.storyboard in Resources */,
 				537541F3270A0265001855D9 /* HistoryTableViewCell.xib in Resources */,
 				530387A0272494E600AD822E /* GoogleService-Info.plist in Resources */,
+				532EAB01273BE84900A9CCFB /* WeatherStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +448,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A3B17D0590FF9A7A0144557 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)2/Pods-homeWorkLesson23(WheatherAndNews)2-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)2/Pods-homeWorkLesson23(WheatherAndNews)2-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-homeWorkLesson23(WheatherAndNews)2/Pods-homeWorkLesson23(WheatherAndNews)2-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6BC30D921C354775B7362B4D /* [CP] Embed Pods Frameworks */ = {
@@ -465,6 +510,7 @@
 				53FB580926F3B87B0043F811 /* WheathreViewController+CorKit.swift in Sources */,
 				5336CEDA27026DCF00941403 /* CLPlacemark+CoreKit.swift in Sources */,
 				530E3C3526F2604B00292BFE /* SceneDelegate.swift in Sources */,
+				532EAAEE273BCBAF00A9CCFB /* GoogleMapsViewController.swift in Sources */,
 				5336CEDC27026E3600941403 /* MapViewController+MapDelegate.swift in Sources */,
 				5303879C2723FEA100AD822E /* SettingsManager.swift in Sources */,
 				530E3C5A26F2664700292BFE /* HttpManager.swift in Sources */,
