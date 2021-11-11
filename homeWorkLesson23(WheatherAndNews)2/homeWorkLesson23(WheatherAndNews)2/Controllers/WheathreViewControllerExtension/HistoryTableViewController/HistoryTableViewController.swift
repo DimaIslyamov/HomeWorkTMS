@@ -83,6 +83,6 @@ class HistoryTableViewController: UIViewController {
     
     
     @IBAction func backButton(_ sender: UIButton) {
-        
+        self.navigationController?.popViewController(animated: true)
     }
 }
