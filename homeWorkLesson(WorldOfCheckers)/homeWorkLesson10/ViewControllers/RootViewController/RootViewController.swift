@@ -80,9 +80,9 @@ extension RootViewController: CustomButtonDelegate {
                                                           style: .default,
                                                           handler: { _ in
                                                             vc.cellCheckers = SettingManager.shared.saveCellsCheckers
-                                                            vc.setDataFromSettingManager()
                                                             vc.createTimer()
                                                             vc.createSaveChessboard()
+                                                            vc.setDataFromSettingManager()
 //                                                            do {
 //                                                                let fileURL = self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue)
 //                                                                try FileManager.default.removeItem(at: fileURL)

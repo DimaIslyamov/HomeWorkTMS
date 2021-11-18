@@ -21,7 +21,7 @@ extension ChessBoardController {
                 }
             }
         }
-        SettingManager.shared.saveCellsCheckers = self.cellCheckers 
+        SettingManager.shared.saveCellsCheckers = self.cellCheckers
     }
     
     
@@ -61,7 +61,6 @@ extension ChessBoardController {
         SettingManager.shared.saveTimerMin = self.countMin
         SettingManager.shared.savePlayerOne = self.player1
         SettingManager.shared.savePlayerTwo = self.player2
-        
     }
     
     func removeDataFromUserDefaults() {
@@ -76,6 +75,7 @@ extension ChessBoardController {
         countMin = SettingManager.shared.saveTimerMin
         player1 = SettingManager.shared.savePlayerOne ?? "Anton"
         player2 = SettingManager.shared.savePlayerTwo ?? "Lera"
+        playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
     }
     
     

@@ -71,7 +71,6 @@ class ChessBoardController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         localaized()
-        //        playersLable.isHidden = false
     }
     
     
