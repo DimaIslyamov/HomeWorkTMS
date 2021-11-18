@@ -29,6 +29,7 @@ class ChessBoardController: UIViewController {
     // MARK: - Переменные и Константы
     
     var chessboard = UIImageView()
+    var checkerImage: UIImageView!
     
     var countSec: Int = 0
     var countMin: Int = 0

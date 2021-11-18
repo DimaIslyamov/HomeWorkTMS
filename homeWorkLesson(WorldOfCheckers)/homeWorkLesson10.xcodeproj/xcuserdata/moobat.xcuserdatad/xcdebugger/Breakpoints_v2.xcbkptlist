@@ -244,5 +244,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E64D0CFD-1FB0-43F7-B466-F52D7F5B1212"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homeWorkLesson10/Keys/Keys.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "Keys"
+            landmarkType = "13">
+            <Locations>
+               <Location
+                  uuid = "E64D0CFD-1FB0-43F7-B466-F52D7F5B1212 - 578667679cf8ab32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "homeWorkLesson10.Keys.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;homeWorkLesson10.Keys&gt;"
+                  moduleName = "homeWorkLesson10"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/moobat/HomeWorkTMS/homeWorkLesson(WorldOfCheckers)/homeWorkLesson10/Keys/Keys.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "89">
+               </Location>
+               <Location
+                  uuid = "E64D0CFD-1FB0-43F7-B466-F52D7F5B1212 - 4b04f27b76cdd716"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "homeWorkLesson10.Keys.rawValue.getter : Swift.String"
+                  moduleName = "homeWorkLesson10"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/moobat/HomeWorkTMS/homeWorkLesson(WorldOfCheckers)/homeWorkLesson10/Keys/Keys.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CDA74DC2-1052-408E-A68C-2D66C12EADCD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homeWorkLesson10/ViewControllers/RootViewController/RootViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "buttonDidTap(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

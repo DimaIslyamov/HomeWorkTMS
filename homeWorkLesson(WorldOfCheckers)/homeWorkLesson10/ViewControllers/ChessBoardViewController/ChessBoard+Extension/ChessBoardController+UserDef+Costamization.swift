@@ -21,7 +21,7 @@ extension ChessBoardController {
                 }
             }
         }
-        SettingManager.shared.saveCellsCheckers = self.cellCheckers
+        SettingManager.shared.saveCellsCheckers = self.cellCheckers 
     }
     
     
