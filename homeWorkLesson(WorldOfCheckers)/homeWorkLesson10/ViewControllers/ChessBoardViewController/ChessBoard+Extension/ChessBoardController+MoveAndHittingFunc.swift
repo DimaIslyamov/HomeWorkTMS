@@ -37,23 +37,23 @@ extension ChessBoardController {
         
         if current == .white {
             arrayOfChecker.forEach { (checker) in
-                movingsCheckers = (checker.checkerTag! < 12) ? checker : nil
+                movingsCheckers = (checker.tagChecker! < 12) ? checker : nil
                 arrayOfChecker.forEach { (hittingChecker) in
                     
                     guard let movingChecker = movingsCheckers else { return }
                     
-                    if hittingChecker.checkerTag! >= 12 && (hittingChecker.cellTag == movingChecker.cellTag! + 9 || hittingChecker.cellTag == movingChecker.cellTag! + 7 || hittingChecker.cellTag == movingChecker.cellTag! - 9 || hittingChecker.cellTag == movingChecker.cellTag! - 7) {
+                    if hittingChecker.tagChecker! >= 12 && (hittingChecker.tagCell == movingChecker.tagCell! + 9 || hittingChecker.tagCell == movingChecker.tagCell! + 7 || hittingChecker.tagCell == movingChecker.tagCell! - 9 || hittingChecker.tagCell == movingChecker.tagCell! - 7) {
                         
                         hittingsCheckers = hittingChecker
                         
                         chessboard.subviews.forEach { (cell) in
                             guard let checkerForHitting = hittingsCheckers else { return }
                             
-                            if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == movingChecker.cellTag! - 2 * (movingChecker.cellTag! - hittingChecker.cellTag!) {
+                            if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == movingChecker.tagCell! - 2 * (movingChecker.tagCell! - hittingChecker.tagCell!) {
                                 
                                 cellsMove.append(cell)
                                 canFight = true
-                                mass.append((checker: movingChecker.checkerTag!, cell: cell.tag, checkerBeaten: checkerForHitting.checkerTag!))
+                                mass.append((checker: movingChecker.tagChecker!, cell: cell.tag, checkerBeaten: checkerForHitting.tagChecker!))
                             }
                         }
                     }
@@ -62,23 +62,23 @@ extension ChessBoardController {
             
         } else {
             arrayOfChecker.forEach { (checker) in
-                movingsCheckers = (checker.checkerTag! >= 12) ? checker : nil
+                movingsCheckers = (checker.tagChecker! >= 12) ? checker : nil
                 arrayOfChecker.forEach { (hittingChecker) in
                     
                     guard let movingChecker = movingsCheckers else { return }
                     
-                    if hittingChecker.checkerTag! < 12 && (hittingChecker.cellTag == movingChecker.cellTag! + 9 || hittingChecker.cellTag == movingChecker.cellTag! + 7 || hittingChecker.cellTag == movingChecker.cellTag! - 9 || hittingChecker.cellTag == movingChecker.cellTag! - 7) {
+                    if hittingChecker.tagChecker! < 12 && (hittingChecker.tagCell == movingChecker.tagCell! + 9 || hittingChecker.tagCell == movingChecker.tagCell! + 7 || hittingChecker.tagCell == movingChecker.tagCell! - 9 || hittingChecker.tagCell == movingChecker.tagCell! - 7) {
                         
                         hittingsCheckers = hittingChecker
                         
                         chessboard.subviews.forEach { (cell) in
                             guard let checkerForHitting = hittingsCheckers else { return }
                             
-                            if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == movingChecker.cellTag! - 2 * (movingChecker.cellTag! - checkerForHitting.cellTag!) {
+                            if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == movingChecker.tagCell! - 2 * (movingChecker.tagCell! - checkerForHitting.tagCell!) {
                                 
                                 cellsMove.append(cell)
                                 canFight = true
-                                mass.append((checker: movingChecker.checkerTag!, cell: cell.tag, checkerBeaten: checkerForHitting.checkerTag!))
+                                mass.append((checker: movingChecker.tagChecker!, cell: cell.tag, checkerBeaten: checkerForHitting.tagChecker!))
                             }
                         }
                     }
@@ -99,7 +99,7 @@ extension ChessBoardController {
         var playerWhoIsAWinner: String = ""
         
         arrayOfCheckers.forEach { (checker) in
-            guard let checkerTag = checker.checkerTag, checkerTag < 12 else { return playerBlackCheckers += 1}
+            guard let checkerTag = checker.tagChecker, checkerTag < 12 else { return playerBlackCheckers += 1 }
             playerWhiteCheckers += 1
         }
         

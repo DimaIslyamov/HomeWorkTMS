@@ -106,7 +106,7 @@ class ChessBoardController: UIViewController {
                 forMovingCheckers(for: checker)
             }
             UIView.animate(withDuration: 0.2) {
-                checker.transform = checker.transform.scaledBy(x: 2.7, y: 2.7)
+                checker.transform = checker.transform.scaledBy(x: 1.7, y: 1.7)
             }
             
         case .ended:
@@ -154,11 +154,13 @@ class ChessBoardController: UIViewController {
                            cell.frame.contains(location) {
                             currentCells = cell
                             currentHittingChecker = tagtuple.checkerBeaten
+//                            print("bamccc")
                         }
                     }
                 } else {
                     if cell.frame.contains(location) {
                         currentCells = cell
+//                        print("move")
                     }
                 }
             }
@@ -169,6 +171,7 @@ class ChessBoardController: UIViewController {
             
             chessboard.subviews.forEach { (value) in
                 value.subviews.first(where: {$0.tag == currentHittingChecker})?.removeFromSuperview()
+//                print("\(value)")
             }
             if canFight == true {
                 canFight = false
@@ -176,12 +179,18 @@ class ChessBoardController: UIViewController {
                 mass.removeAll()
                 forHittingCheckers()
                 self.chessboard.subviews.forEach { (value) in
-                    
+                    value.layer.borderWidth = 0
+                    forCheckerWinner()
+                    // down
+//                    print("canfight == tru { = false \(value)")
                 }
                 if canFight == true {
                     mass.removeAll(where: {$0.checker != checker.tag})
                     chessboard.subviews.forEach { (value) in
-                        
+                        value.layer.borderWidth = 0
+                        forCheckerWinner()
+                        // up
+//                        print("canfight == tru { != checker.tag \(value)")
                     }
                     if mass.isEmpty {
                         canFight = false
@@ -190,11 +199,12 @@ class ChessBoardController: UIViewController {
             }
             
             if canFight == false {
+//                forCheckerWinner()
                 current = current == .white ? .black : .white
                 playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
                 forHittingCheckers()
             }
-            forCheckerWinner()
+            
             
         default: break
         }

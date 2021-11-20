@@ -90,11 +90,11 @@ extension ChessBoardController {
                 
                 
                 for value in cellCheckers {
-                    if column.tag == value.cellTag {
+                    if column.tag == value.tagCell {
                         checkerImage = UIImageView(frame: CGRect(x: 5, y: 5, width: sizeColumn - 10, height: sizeColumn - 10))
                         checkerImage.isUserInteractionEnabled = true
-                        checkerImage.image = UIImage(named: value.checkerTag == 1 ? (SettingManager.shared.saveWhiteChecker) ?? "" : (SettingManager.shared.saveBlackChecker) ?? "")
-                        checkerImage.tag = value.checkerTag == 1 ? Chekers.white.rawValue : Chekers.black.rawValue
+                        checkerImage.image = UIImage(named: value.tagChecker == 1 ? (SettingManager.shared.saveWhiteChecker) ?? "" : (SettingManager.shared.saveBlackChecker) ?? "")
+                        checkerImage.tag = value.tagChecker == 1 ? Chekers.white.rawValue : Chekers.black.rawValue
                         checkerImage.tag = counterCheker
                         counterCheker += 1
                         column.addSubview(checkerImage)
@@ -108,9 +108,9 @@ extension ChessBoardController {
                     }
                 }
                 
-                if let checker = cellCheckers.first(where: {$0.cellTag == column.tag}) {
-                    checkerImage.image = UIImage(named: (checker.checkerTag ?? 0 < 12 ? (SettingManager.shared.saveWhiteChecker) : (SettingManager.shared.saveBlackChecker)) ?? "")
-                    checkerImage.tag = checker.checkerTag ?? 0
+                if let checker = cellCheckers.first(where: {$0.tagCell == column.tag}) {
+                    checkerImage.image = UIImage(named: (checker.tagChecker ?? 0 < 12 ? (SettingManager.shared.saveWhiteChecker) : (SettingManager.shared.saveBlackChecker)) ?? "")
+                    checkerImage.tag = checker.tagChecker ?? 0
                     column.addSubview(checkerImage)
                 }
             }
