@@ -12,7 +12,7 @@ class SettingManager {
     
     var currentLanguageCode: String {
         set { UserDefaults.standard.setValue(newValue, forKey: Keys.currentLanguageCode.rawValue) }
-        get { return UserDefaults.standard.string(forKey:Keys.currentLanguageCode.rawValue) ?? "en" }
+        get { UserDefaults.standard.string(forKey:Keys.currentLanguageCode.rawValue) ?? "en" }
     }
     
     var saveWhiteChecker: String? {
@@ -23,6 +23,11 @@ class SettingManager {
     var saveBlackChecker: String? {
         set { UserDefaults.standard.setValue(newValue, forKey: Keys.checkerImageBlack.rawValue) }
         get { UserDefaults.standard.string(forKey: Keys.checkerImageBlack.rawValue) }
+    }
+    
+    var saveCheckerMove: Int? {
+        set { UserDefaults.standard.setValue(newValue, forKeyPath: Keys.currentChecker.rawValue) }
+        get { UserDefaults.standard.integer(forKey: Keys.currentChecker.rawValue) }
     }
     
     var saveTimerSec: Int {

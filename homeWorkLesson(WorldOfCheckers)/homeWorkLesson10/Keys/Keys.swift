@@ -9,6 +9,7 @@ import Foundation
 
 enum Keys: String {
     case cellAndChecker = "cellAndChecker_"
+    case currentChecker = "currentChecker_"
 //    для тагов
     case cellTag = "cellTag_"
     case checkerTag = "checkerTag_"

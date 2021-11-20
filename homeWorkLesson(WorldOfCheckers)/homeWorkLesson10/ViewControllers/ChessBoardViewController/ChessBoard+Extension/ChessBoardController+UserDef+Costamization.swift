@@ -30,14 +30,14 @@ extension ChessBoardController {
     func getSetAndRandomNames() {
         self.names = SettingManager.shared.saveNamePlayers
         
-        self.names.forEach { value in
-            self.randomName.append(value.nameOne)
-            self.randomName.append(value.nameTwo)
+        names.forEach { value in
+            randomName.append(value.nameOne)
+            randomName.append(value.nameTwo)
         }
         
-        if !FileManager.default.fileExists(atPath: documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue).path) {
+        if !fileManager.fileExists(atPath: documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue).path) {
             player1 = randomName.randomElement() ?? ""
-            player2 = (player1 == randomName[0]) ?self.randomName[1] : randomName[0]
+            player2 = (player1 == randomName[0]) ? randomName[1] : randomName[0]
             playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
             
             guard let name = nameOnePlayers, name != "" else {return}
@@ -61,6 +61,7 @@ extension ChessBoardController {
         SettingManager.shared.saveTimerMin = self.countMin
         SettingManager.shared.savePlayerOne = self.player1
         SettingManager.shared.savePlayerTwo = self.player2
+        SettingManager.shared.saveCheckerMove = current.rawValue
     }
     
     func removeDataFromUserDefaults() {
@@ -73,6 +74,7 @@ extension ChessBoardController {
     func setDataFromSettingManager() {
         countSec = SettingManager.shared.saveTimerSec
         countMin = SettingManager.shared.saveTimerMin
+        current = SettingManager.shared.saveCheckerMove == 0 ? .white : .black
         player1 = SettingManager.shared.savePlayerOne ?? "Anton"
         player2 = SettingManager.shared.savePlayerTwo ?? "Lera"
         playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
