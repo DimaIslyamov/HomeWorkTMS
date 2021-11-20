@@ -74,9 +74,9 @@ extension RootViewController: CustomButtonDelegate {
         case newGameButton:
             guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
             presentAlertController(with: nil,
-                                   massage: "Начать новую партию или продолжить старую?",
+                                   massage: "Start_new_or_continue".localaized,
                                    preferredStyle: .alert,
-                                   actions: UIAlertAction(title: "Продолжить партию",
+                                   actions: UIAlertAction(title: "Continue_game".localaized,
                                                           style: .default,
                                                           handler: { _ in
                                                             vc.cellCheckers = SettingManager.shared.saveCellsCheckers
@@ -93,7 +93,7 @@ extension RootViewController: CustomButtonDelegate {
                                                             self.navigationController?.pushViewController(vc, animated: true)
                                                           }),
 
-                                   UIAlertAction(title: "Начать новую партию",
+                                   UIAlertAction(title: "New_game".localaized,
                                                  style: .default,
                                                  handler: { _ in
                                                     vc.removeDataFromUserDefaults()

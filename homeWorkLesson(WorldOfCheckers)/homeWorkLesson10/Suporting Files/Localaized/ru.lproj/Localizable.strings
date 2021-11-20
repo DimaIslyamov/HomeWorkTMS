@@ -28,3 +28,23 @@
 "End Game_button_text" = "Выйти";
 "Move:_text_lable" = "Ход:";
 "Original / Task 19_text" = "Оригинал/Дз19";
+
+// cancel
+"Cancel_" = "Отмена";
+
+// alerControllers enter players name Localaized
+"Enter_players_names" = "Введите имена игроков";
+"player_one" = "игрок 1";
+"player_two" = "игрок 2";
+"Confirm_" = "Подтвердить";
+"Enter_names_of_two_players" = "Введите двоих игроков";
+
+// alertController new game or old Localaized
+"Start_new_or_continue" = "Начать новую партию или продолжить старую?";
+"Continue_game" = "Продолжить партию";
+"New_game" = "Начать новую партию";
+
+// alert for out game
+"Want_to_go_out" = "Вы действительно хотите выйти из игры?";
+"save_the_game" = "Выйти и сохранить партию";
+"dont_save_game" = "Выйти и не сохранять партию";

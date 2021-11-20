@@ -29,3 +29,23 @@
 "End Game_button_text" = "Wyloguj";
 //"Move:_text_lable" = "";
 "Original / Task 19_text" = "Oryginał/Dz19";
+
+// cancel
+"Cancel_" = "Anulowanie";
+
+// alerControllers enter players name Localaized
+"Enter_players_names" = "Wpisz imiona graczy";
+"player_one" = "gracz 1";
+"player_two" = "gracz 2";
+"Confirm_" = "Potwierdzać";
+"Enter_names_of_two_players" = "Wprowadź dwóch graczy";
+
+// alertController new game or old Localaized
+"Start_new_or_continue" = "Rozpocznij nową grę lub kontynuuj";
+"Continue_game" = "Kontynuuj grę";
+"New_game" = "Nowa gra";
+
+// alert for out game
+"Want_to_go_out" = "Czy na pewno chcesz wyjść z gry?";
+"save_the_game" = "Zapisz grę";
+"dont_save_game" = "Nie zapisuj gry";

@@ -17,8 +17,7 @@ extension ChessBoardController {
             let diff1 = current == .white ? 7 : -7
             let diff2 = current == .white ? 9 : -9
             if cellForMove.tag == startCell.tag + diff1 || cellForMove.tag == startCell.tag + diff2 {
-//                cellForMove.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-//                cellForMove.layer.borderWidth = 3
+                
                 cellsMove.append(cellForMove)
             }
         }
@@ -116,6 +115,7 @@ extension ChessBoardController {
                                                           style: .default,
                                                           handler: { _ in
                                                             
+                                                            // ????
                                                             
                                                           }),
                                    UIAlertAction(title: "Закончить",

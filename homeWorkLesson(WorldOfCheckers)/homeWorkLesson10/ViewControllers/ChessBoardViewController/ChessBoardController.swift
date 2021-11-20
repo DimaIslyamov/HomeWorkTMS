@@ -154,13 +154,11 @@ class ChessBoardController: UIViewController {
                            cell.frame.contains(location) {
                             currentCells = cell
                             currentHittingChecker = tagtuple.checkerBeaten
-//                            print("bamccc")
                         }
                     }
                 } else {
                     if cell.frame.contains(location) {
                         currentCells = cell
-//                        print("move")
                     }
                 }
             }
@@ -171,7 +169,6 @@ class ChessBoardController: UIViewController {
             
             chessboard.subviews.forEach { (value) in
                 value.subviews.first(where: {$0.tag == currentHittingChecker})?.removeFromSuperview()
-//                print("\(value)")
             }
             if canFight == true {
                 canFight = false
@@ -180,17 +177,11 @@ class ChessBoardController: UIViewController {
                 forHittingCheckers()
                 self.chessboard.subviews.forEach { (value) in
                     value.layer.borderWidth = 0
-                    forCheckerWinner()
-                    // down
-//                    print("canfight == tru { = false \(value)")
                 }
                 if canFight == true {
                     mass.removeAll(where: {$0.checker != checker.tag})
                     chessboard.subviews.forEach { (value) in
                         value.layer.borderWidth = 0
-                        forCheckerWinner()
-                        // up
-//                        print("canfight == tru { != checker.tag \(value)")
                     }
                     if mass.isEmpty {
                         canFight = false
@@ -199,12 +190,11 @@ class ChessBoardController: UIViewController {
             }
             
             if canFight == false {
-//                forCheckerWinner()
                 current = current == .white ? .black : .white
                 playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
                 forHittingCheckers()
             }
-            
+            forCheckerWinner()
             
         default: break
         }
@@ -217,16 +207,16 @@ class ChessBoardController: UIViewController {
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         presentAlertController(with: nil,
-                               massage: "Вы действительно хотите выйти из игры?",
+                               massage: "Want_to_go_out".localaized,
                                preferredStyle: .alert,
-                               actions: UIAlertAction(title: "Выйти и сохранить партию",
+                               actions: UIAlertAction(title: "save_the_game".localaized,
                                                       style: .default,
                                                       handler: { _ in
                                                         self.saveDataToSettingManager()
                                                         self.saveBatch()
                                                         self.navigationController?.popViewController(animated: true)
                                                         
-                                                      }), UIAlertAction(title: "Выйти и не сохранять партию",
+                                                      }), UIAlertAction(title: "dont_save_game".localaized,
                                                                         style: .default,
                                                                         handler: { _ in
                                                                             self.removeDataFromUserDefaults()

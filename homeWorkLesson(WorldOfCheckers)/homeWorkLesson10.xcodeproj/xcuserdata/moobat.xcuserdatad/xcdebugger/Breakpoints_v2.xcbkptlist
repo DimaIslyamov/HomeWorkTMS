@@ -334,8 +334,8 @@
             filePath = "homeWorkLesson10/ViewControllers/ChessBoardViewController/ChessBoard+Extension/ChessBoardController+MoveAndHittingFunc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "forCheckerWinner()"
             landmarkType = "7">
          </BreakpointContent>

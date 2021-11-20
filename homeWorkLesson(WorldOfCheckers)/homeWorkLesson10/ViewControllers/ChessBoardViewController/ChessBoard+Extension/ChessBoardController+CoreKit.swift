@@ -21,17 +21,17 @@ extension ChessBoardController {
     func openAlertForPlayersName(){
         view.addBlurView()
         self.stopTimer()
-        let alertController = UIAlertController(title: "Введите имена игроков", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Enter_players_names".localaized, message: "", preferredStyle: .alert)
         alertController.addTextField { (textField) in
-            textField.placeholder = "Игрок 1"
+            textField.placeholder = "player_one".localaized
             textField.returnKeyType = .next
         }
         alertController.addTextField { (textField) in
-            textField.placeholder = "Игрок 2"
+            textField.placeholder = "player_two".localaized
             textField.returnKeyType = .done
         }
         
-        let saveAction = UIAlertAction(title: "Подтвердить", style: .default, handler: { _ in
+        let saveAction = UIAlertAction(title: "Confirm_".localaized, style: .default, handler: { _ in
             guard let fields = alertController.textFields, fields.count == 2 else { return }
             
             let firstTextField = fields[0]
@@ -40,7 +40,7 @@ extension ChessBoardController {
             guard let firstField = firstTextField.text, !firstField.isEmpty,
                   let secondField = secondTextField.text, !secondField.isEmpty else {
                 
-                let alertController = UIAlertController(title: "Введите двоих игроков", message: nil, preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Enter_names_of_two_players".localaized, message: nil, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "Ok", style: .cancel) { _ in
                     self.navigationController?.popViewController(animated: true)
                     self.view.removeBlurView()
@@ -59,7 +59,7 @@ extension ChessBoardController {
             self.view.removeBlurView()
         })
         
-        let cancelAction = UIAlertAction(title: "Отмена", style: .default, handler: {
+        let cancelAction = UIAlertAction(title: "Cancel_".localaized, style: .default, handler: {
             (action : UIAlertAction!) -> Void in
             self.navigationController?.popViewController(animated: true)
         })

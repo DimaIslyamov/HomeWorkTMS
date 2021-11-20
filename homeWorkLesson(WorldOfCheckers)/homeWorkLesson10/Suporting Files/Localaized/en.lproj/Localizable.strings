@@ -28,3 +28,23 @@
 "End Game_button_text" = "End Game";
 "Move:_text_lable" = "Move:";
 "Original / Task 19_text" = "Original/Task19";
+
+// cancel
+"Cancel_" = "Cancel";
+
+// alerController enter players name Localaized
+"Enter_players_names" = "Enter the names of players";
+"player_one" = "player one";
+"player_two" = "player two";
+"Confirm_" = "Confirm";
+"Enter_names_of_two_players" = "Enter the names of two players";
+
+// alertController new game or old Localaized
+"Start_new_or_continue" = "Start a new game or continue?";
+"Continue_game" = "Continue the game";
+"New_game" = "New Game";
+
+// alert for out game
+"Want_to_go_out" = "Are you sure you want to quit the game?";
+"save_the_game" = "Exit and save the game";
+"dont_save_game" = "Quit and do not save the game";
