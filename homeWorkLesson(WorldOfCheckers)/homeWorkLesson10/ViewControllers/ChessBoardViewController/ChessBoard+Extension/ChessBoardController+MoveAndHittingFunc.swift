@@ -140,19 +140,17 @@ extension ChessBoardController {
             guard cellMoove.subviews.isEmpty, cellMoove.backgroundColor == .black,  let startCell = cell else { return }
             
             if cellMoove.tag == startCell.tag - step1 || cellMoove.tag == startCell.tag - step2 || cellMoove.tag == startCell.tag - step3 || cellMoove.tag == startCell.tag - step4 {
-                cellMoove.layer.borderWidth = 3
-                cellMoove.layer.borderColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+                
                 cellsMove.append(cellMoove)
                 
                 let step: Int = startCell.tag - cellMoove.tag
                 var nextCell: Int = cellMoove.tag - step
                 
-                while nextCell > 0, nextCell < 64 {
+                while nextCell > -1, nextCell < 64 {
                     var findNextCell: Bool = false
                     chessboard.subviews.forEach { cell in
                         if cell.tag == nextCell, cell.subviews.isEmpty, cell.backgroundColor == .black {
-                            cellMoove.layer.borderWidth = 3
-                            cellMoove.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+                            
                             cellsMove.append(cell)
                             
                             findNextCell = true
@@ -186,7 +184,7 @@ extension ChessBoardController {
                        (queenChecker.tagCell! - hittingChecker.tagCell!) % 7 == 0 {
                         steps = -7
                     }
-                    if (queenChecker.tagCell! - hittingChecker.tagCell!) < 0,
+                    if (queenChecker.tagCell! - hittingChecker.tagCell!) > 0,
                        (queenChecker.tagCell! - hittingChecker.tagCell!) % 7 == 0 {
                         steps = 7
                     }
@@ -194,7 +192,7 @@ extension ChessBoardController {
                        (queenChecker.tagCell! - hittingChecker.tagCell!) % 9 == 0 {
                         steps = -9
                     }
-                    if (queenChecker.tagCell! - hittingChecker.tagCell!) < 0,
+                    if (queenChecker.tagCell! - hittingChecker.tagCell!) > 0,
                        (queenChecker.tagCell! - hittingChecker.tagCell!) % 9 == 0 {
                         steps = 9
                     }
@@ -218,8 +216,7 @@ extension ChessBoardController {
                                 
                                 chessboard.subviews.forEach { cell in
                                     if cell.tag == nextCell, cell.subviews.isEmpty, cell.backgroundColor == .black {
-                                        cell.layer.borderWidth = 3
-                                        cell.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+                                        
                                         cellsMove.append(cell)
                                         
                                         mass.append((checker: queenChecker.tagChecker!, cell: cell.tag, checkerBeaten: hittingChecker.tagChecker!))
@@ -264,7 +261,7 @@ extension ChessBoardController {
                        (queenChecker.tagCell! - hittingChecker.tagCell!) % 7 == 0 {
                         steps = -7
                     }
-                    if (queenChecker.tagCell! - hittingChecker.tagCell!) < 0,
+                    if (queenChecker.tagCell! - hittingChecker.tagCell!) > 0,
                        (queenChecker.tagCell! - hittingChecker.tagCell!) % 7 == 0 {
                         steps = 7
                     }
@@ -272,7 +269,7 @@ extension ChessBoardController {
                        (queenChecker.tagCell! - hittingChecker.tagCell!) % 9 == 0 {
                         steps = -9
                     }
-                    if (queenChecker.tagCell! - hittingChecker.tagCell!) < 0,
+                    if (queenChecker.tagCell! - hittingChecker.tagCell!) > 0,
                        (queenChecker.tagCell! - hittingChecker.tagCell!) % 9 == 0 {
                         steps = 9
                     }
@@ -291,13 +288,11 @@ extension ChessBoardController {
                             var nextCell: Int = cell.tag - steps
                             
                             while nextCell > -1, nextCell < 64 {
-                                
                                 var findNextCell: Bool = false
                                 
                                 chessboard.subviews.forEach { cell in
                                     if cell.tag == nextCell, cell.subviews.isEmpty, cell.backgroundColor == .black {
-                                        cell.layer.borderWidth = 3
-                                        cell.layer.borderColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+                                        
                                         cellsMove.append(cell)
                                         
                                         mass.append((checker: queenChecker.tagChecker!, cell: cell.tag, checkerBeaten: hittingChecker.tagChecker!))
