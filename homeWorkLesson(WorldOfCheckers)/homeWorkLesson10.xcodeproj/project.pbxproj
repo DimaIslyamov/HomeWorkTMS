@@ -17,7 +17,7 @@
 		5315ACB526DA5BB8003CD6FE /* SettingViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315ACB426DA5BB8003CD6FE /* SettingViewController+Extension.swift */; };
 		5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0B26A8983A00B7411D /* ScoreViewController.swift */; };
 		5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0D26A8984C00B7411D /* SettingsViewController.swift */; };
-		53473983273A7B1100B9E61D /* ChessBoardController+MoveAndHittingFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53473982273A7B1000B9E61D /* ChessBoardController+MoveAndHittingFunc.swift */; };
+		53473983273A7B1100B9E61D /* ChessBoardController+MoveFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53473982273A7B1000B9E61D /* ChessBoardController+MoveFunc.swift */; };
 		534D2D1B269D757E00052236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D1A269D757E00052236 /* AppDelegate.swift */; };
 		534D2D1D269D757E00052236 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D2D1C269D757E00052236 /* SceneDelegate.swift */; };
 		534D2D22269D757E00052236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534D2D20269D757E00052236 /* Main.storyboard */; };
@@ -44,6 +44,7 @@
 		53985BEB26E38295005B5714 /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53985BEA26E38295005B5714 /* SettingManager.swift */; };
 		53985BED26E3A663005B5714 /* ChessBoardController+UserDef+Costamization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53985BEC26E3A663005B5714 /* ChessBoardController+UserDef+Costamization.swift */; };
 		53B9837226D3BF1C002F4D4C /* URL+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B9837126D3BF1C002F4D4C /* URL+CoreKit.swift */; };
+		53E248C0274EFEFE00298CF8 /* ChessBoardController+HittingFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E248BF274EFEFE00298CF8 /* ChessBoardController+HittingFunc.swift */; };
 		53F8A5FE26B9EA2400166BD2 /* UIViewController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8A5FD26B9EA2400166BD2 /* UIViewController+CoreKit.swift */; };
 		53F8A60026B9ED7E00166BD2 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F8A5FF26B9ED7E00166BD2 /* About.storyboard */; };
 		53F8A60226B9EDAF00166BD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */; };
@@ -60,7 +61,7 @@
 		5315ACB426DA5BB8003CD6FE /* SettingViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingViewController+Extension.swift"; sourceTree = "<group>"; };
 		5333EB0B26A8983A00B7411D /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		5333EB0D26A8984C00B7411D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		53473982273A7B1000B9E61D /* ChessBoardController+MoveAndHittingFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChessBoardController+MoveAndHittingFunc.swift"; sourceTree = "<group>"; };
+		53473982273A7B1000B9E61D /* ChessBoardController+MoveFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChessBoardController+MoveFunc.swift"; sourceTree = "<group>"; };
 		534D2D17269D757E00052236 /* homeWorkLesson10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homeWorkLesson10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534D2D1A269D757E00052236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		534D2D1C269D757E00052236 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		53985BEA26E38295005B5714 /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
 		53985BEC26E3A663005B5714 /* ChessBoardController+UserDef+Costamization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChessBoardController+UserDef+Costamization.swift"; sourceTree = "<group>"; };
 		53B9837126D3BF1C002F4D4C /* URL+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+CoreKit.swift"; sourceTree = "<group>"; };
+		53E248BF274EFEFE00298CF8 /* ChessBoardController+HittingFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChessBoardController+HittingFunc.swift"; sourceTree = "<group>"; };
 		53F8A5FD26B9EA2400166BD2 /* UIViewController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreKit.swift"; sourceTree = "<group>"; };
 		53F8A5FF26B9ED7E00166BD2 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		53F8A60126B9EDAF00166BD2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -178,7 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				5353B5CB26FC914400888393 /* ChessBoardController+Chessboard.swift */,
-				53473982273A7B1000B9E61D /* ChessBoardController+MoveAndHittingFunc.swift */,
+				53473982273A7B1000B9E61D /* ChessBoardController+MoveFunc.swift */,
+				53E248BF274EFEFE00298CF8 /* ChessBoardController+HittingFunc.swift */,
 				53985BEC26E3A663005B5714 /* ChessBoardController+UserDef+Costamization.swift */,
 				53031EC926CADA2500483567 /* ChessBoardController+CoreKit.swift */,
 			);
@@ -418,10 +421,11 @@
 				534D2D1D269D757E00052236 /* SceneDelegate.swift in Sources */,
 				5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */,
 				5368593726C9BFD900420AF7 /* CustomButton.swift in Sources */,
+				53E248C0274EFEFE00298CF8 /* ChessBoardController+HittingFunc.swift in Sources */,
 				538EA4C526C31722001D13B5 /* UIView+CoreKit.swift in Sources */,
 				5360ED0326C49C0300A0C0C6 /* SettingsCollectionViewCell.swift in Sources */,
 				53031ECA26CADA2500483567 /* ChessBoardController+CoreKit.swift in Sources */,
-				53473983273A7B1100B9E61D /* ChessBoardController+MoveAndHittingFunc.swift in Sources */,
+				53473983273A7B1100B9E61D /* ChessBoardController+MoveFunc.swift in Sources */,
 				53985BEB26E38295005B5714 /* SettingManager.swift in Sources */,
 				534D2D32269D760500052236 /* RootViewController.swift in Sources */,
 				5350105C26F7BA9100AEC5D2 /* String+Localaized.swift in Sources */,
