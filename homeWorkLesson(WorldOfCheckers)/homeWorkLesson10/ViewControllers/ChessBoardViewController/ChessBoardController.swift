@@ -164,25 +164,24 @@ class ChessBoardController: UIViewController {
             }
             
             sender.view?.frame.origin = CGPoint(x: 5, y: 5)
+            
             guard let newCell = currentCells, let checker = sender.view else { return }
             newCell.addSubview(checker)
             
             chessboard.subviews.forEach { (value) in
                 value.subviews.first(where: {$0.tag == currentHittingChecker})?.removeFromSuperview()
             }
+            createQueenOfCheckers()
+            
             if canFight == true {
                 canFight = false
                 cellsMove.removeAll()
                 mass.removeAll()
-                forHittingCheckers()
-                self.chessboard.subviews.forEach { (value) in
-                    value.layer.borderWidth = 0
-                }
+                forHittingChekers()
+                
                 if canFight == true {
                     mass.removeAll(where: {$0.checker != checker.tag})
-                    chessboard.subviews.forEach { (value) in
-                        value.layer.borderWidth = 0
-                    }
+                    
                     if mass.isEmpty {
                         canFight = false
                     }
@@ -192,9 +191,8 @@ class ChessBoardController: UIViewController {
             if canFight == false {
                 current = current == .white ? .black : .white
                 playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
-                forHittingCheckers()
+                forHittingChekers()
             }
-            forCheckerWinner()
             
         default: break
         }

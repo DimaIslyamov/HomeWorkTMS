@@ -13,6 +13,7 @@ enum Keys: String {
 //    для тагов
     case cellTag = "cellTag_"
     case checkerTag = "checkerTag_"
+    case queen = "queen_"
 //    для images шашек и backgrounda
     case checkerImageBlack = "checkerImageBlack_"
     case checkerImageWhite = "checkerImageWhite_"

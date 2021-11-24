@@ -41,7 +41,7 @@
 
 // alertController new game or old Localaized
 "Start_new_or_continue" = "Start a new game or continue?";
-"Continue_game" = "Continue the game";
+"Continue_game" = "Continue";
 "New_game" = "New Game";
 
 // alert for out game
