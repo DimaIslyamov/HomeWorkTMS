@@ -177,7 +177,8 @@ class ChessBoardController: UIViewController {
                 canFight = false
                 cellsMove.removeAll()
                 mass.removeAll()
-                forHittingChekers()
+//                forHittingChekers()
+                forHittingCheckers()
                 
                 if canFight == true {
                     mass.removeAll(where: {$0.checker != checker.tag})
@@ -191,7 +192,8 @@ class ChessBoardController: UIViewController {
             if canFight == false {
                 current = current == .white ? .black : .white
                 playersLable.text = (current == .white) ? "\(player1) move" : "\(player2) move"
-                forHittingChekers()
+//                forHittingChekers()
+                forHittingCheckers()
             }
             
         default: break

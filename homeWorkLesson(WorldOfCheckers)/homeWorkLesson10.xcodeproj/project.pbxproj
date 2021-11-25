@@ -37,6 +37,8 @@
 		5360ED0426C49C0300A0C0C6 /* SettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5360ED0226C49C0300A0C0C6 /* SettingsCollectionViewCell.xib */; };
 		5368593726C9BFD900420AF7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5368593626C9BFD900420AF7 /* CustomButton.swift */; };
 		5368593926C9C04700420AF7 /* CustomButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5368593826C9C04700420AF7 /* CustomButton.xib */; };
+		5376135227503E0E00E24305 /* CoreDataResultModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5376135027503E0E00E24305 /* CoreDataResultModel.xcdatamodeld */; };
+		537613552750494500E24305 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537613542750494500E24305 /* CoreDataManager.swift */; };
 		537B185B26AC2AEB0026D73C /* Score.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185A26AC2AEB0026D73C /* Score.storyboard */; };
 		537B185D26AC2AF40026D73C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537B185C26AC2AF40026D73C /* Settings.storyboard */; };
 		538EA4C526C31722001D13B5 /* UIView+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */; };
@@ -83,6 +85,8 @@
 		5360ED0226C49C0300A0C0C6 /* SettingsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCollectionViewCell.xib; sourceTree = "<group>"; };
 		5368593626C9BFD900420AF7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5368593826C9C04700420AF7 /* CustomButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomButton.xib; sourceTree = "<group>"; };
+		5376135127503E0E00E24305 /* CoreDataResultModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataResultModel.xcdatamodel; sourceTree = "<group>"; };
+		537613542750494500E24305 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		537B185A26AC2AEB0026D73C /* Score.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Score.storyboard; sourceTree = "<group>"; };
 		537B185C26AC2AF40026D73C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		538EA4C426C31722001D13B5 /* UIView+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CoreKit.swift"; sourceTree = "<group>"; };
@@ -235,10 +239,11 @@
 		534D2D19269D757E00052236 /* homeWorkLesson10 */ = {
 			isa = PBXGroup;
 			children = (
-				53473978273A73BE00B9E61D /* ViewControllers */,
 				5333EB1326A9E4F600B7411D /* Extensions */,
 				53985BE926E3826B005B5714 /* SettingManager */,
-				538624BC26C9232300C6DE36 /* Classes */,
+				5376134E27503D3A00E24305 /* CoreDataManager */,
+				53473978273A73BE00B9E61D /* ViewControllers */,
+				538624BC26C9232300C6DE36 /* Model */,
 				53D8368726CA2CB800D34B1C /* CustomUI */,
 				5368592F26C9A06900420AF7 /* Choose Checkers */,
 				538EA4C626C34554001D13B5 /* Keys */,
@@ -257,6 +262,7 @@
 				534D2D25269D758100052236 /* LaunchScreen.storyboard */,
 				534D2D23269D758100052236 /* Assets.xcassets */,
 				534D2D28269D758100052236 /* Info.plist */,
+				5376135027503E0E00E24305 /* CoreDataResultModel.xcdatamodeld */,
 			);
 			path = "Suporting Files";
 			sourceTree = "<group>";
@@ -288,13 +294,21 @@
 			path = CostomButtonForRootVC;
 			sourceTree = "<group>";
 		};
-		538624BC26C9232300C6DE36 /* Classes */ = {
+		5376134E27503D3A00E24305 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				537613542750494500E24305 /* CoreDataManager.swift */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		538624BC26C9232300C6DE36 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				5360ECFE26C46CE400A0C0C6 /* CellCheckers.swift */,
 				5353B5C926FC78B700888393 /* SaveNames.swift */,
 			);
-			path = Classes;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		538EA4C626C34554001D13B5 /* Keys */ = {
@@ -434,6 +448,7 @@
 				5353B5CA26FC78B700888393 /* SaveNames.swift in Sources */,
 				53B9837226D3BF1C002F4D4C /* URL+CoreKit.swift in Sources */,
 				53F8A5FE26B9EA2400166BD2 /* UIViewController+CoreKit.swift in Sources */,
+				5376135227503E0E00E24305 /* CoreDataResultModel.xcdatamodeld in Sources */,
 				53985BED26E3A663005B5714 /* ChessBoardController+UserDef+Costamization.swift in Sources */,
 				5360ECFF26C46CE400A0C0C6 /* CellCheckers.swift in Sources */,
 				53F8A60226B9EDAF00166BD2 /* AboutViewController.swift in Sources */,
@@ -441,6 +456,7 @@
 				5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */,
 				538EA4C826C34583001D13B5 /* Keys.swift in Sources */,
 				5315ACB526DA5BB8003CD6FE /* SettingViewController+Extension.swift in Sources */,
+				537613552750494500E24305 /* CoreDataManager.swift in Sources */,
 				53031ED426CB07B300483567 /* CustomButtonForAbout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +663,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5376135027503E0E00E24305 /* CoreDataResultModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5376135127503E0E00E24305 /* CoreDataResultModel.xcdatamodel */,
+			);
+			currentVersion = 5376135127503E0E00E24305 /* CoreDataResultModel.xcdatamodel */;
+			path = CoreDataResultModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 534D2D0F269D757E00052236 /* Project object */;
 }

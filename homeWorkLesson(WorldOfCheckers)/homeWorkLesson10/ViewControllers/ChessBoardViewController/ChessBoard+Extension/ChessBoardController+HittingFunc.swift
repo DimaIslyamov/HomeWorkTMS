@@ -8,69 +8,61 @@
 import UIKit
 
 extension ChessBoardController {
-    func forHittingChekers() {
-        let arrayOfCheckers = saveBatch()
+    func forHittingCheckers() {
+       saveBatch()
+        
+        let arrayOfCheckers = cellCheckers
         
         if current == .white {
-            forHittingWhiteCheckers(arrayOfCheckers)
-        } else {
-            forHittingBlackCheckers(arrayOfCheckers)
-        }
-    }
-    
-    
-    
-    func forHittingWhiteCheckers(_ arrayOfCheckers: [CellCheckers]) {
-        arrayOfCheckers.forEach { (checker) in
             
-            if checker.tagChecker! < 12 {
-                if checker.queen == false {
-                    arrayOfCheckers.forEach { (hittingChecker) in
-                        
-                        if hittingChecker.tagChecker! >= 12 && (hittingChecker.tagCell == checker.tagCell! + 9 || hittingChecker.tagCell == checker.tagCell! + 7 || hittingChecker.tagCell == checker.tagCell! - 9 || hittingChecker.tagCell == checker.tagCell! - 7) {
+            arrayOfCheckers.forEach { (checker) in
+                
+                if checker.tagChecker! < 12 {
+                    if checker.queen == false {
+                        arrayOfCheckers.forEach { (hittingChecker) in
                             
-                            chessboard.subviews.forEach { (cell) in
+                            if hittingChecker.tagChecker! >= 12 && (hittingChecker.tagCell == checker.tagCell! + 9 || hittingChecker.tagCell == checker.tagCell! + 7 || hittingChecker.tagCell == checker.tagCell! - 9 || hittingChecker.tagCell == checker.tagCell! - 7) {
                                 
-                                if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == checker.tagCell! - 2 * (checker.tagCell! - hittingChecker.tagCell!) {
+                                chessboard.subviews.forEach { (cell) in
                                     
-                                    cellsMove.append(cell)
-                                    canFight = true
-                                    mass.append((checker: checker.tagChecker!, cell: cell.tag, checkerBeaten: hittingChecker.tagChecker!))
+                                    if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == checker.tagCell! - 2 * (checker.tagCell! - hittingChecker.tagCell!) {
+                                        
+                                        cellsMove.append(cell)
+                                        canFight = true
+                                        mass.append((checker: checker.tagChecker!, cell: cell.tag, checkerBeaten: hittingChecker.tagChecker!))
+                                    }
                                 }
                             }
                         }
+                    } else {
+                        forHittingWhiteQueen(queenChecker: checker, arrayOfChecker: arrayOfCheckers)
                     }
-                } else {
-                    forHittingWhiteQueen(queenChecker: checker, arrayOfChecker: arrayOfCheckers)
                 }
             }
-        }
-    }
-    
-    
-    
-    func forHittingBlackCheckers(_ arrayOfCheckers: [CellCheckers]) {
-        arrayOfCheckers.forEach { (checker) in
+        } else {
             
-            if checker.tagChecker! >= 12 {
-                if checker.queen == false {
-                    arrayOfCheckers.forEach { (hittingChecker) in
-                        
-                        if hittingChecker.tagChecker! < 12 && (hittingChecker.tagCell == checker.tagCell! + 9 || hittingChecker.tagCell == checker.tagCell! + 7 || hittingChecker.tagCell == checker.tagCell! - 9 || hittingChecker.tagCell == checker.tagCell! - 7) {
+            arrayOfCheckers.forEach { (checker) in
+                
+                if checker.tagChecker! >= 12 {
+                    if checker.queen == false {
+                        arrayOfCheckers.forEach { (hittingChecker) in
                             
-                            chessboard.subviews.forEach { (cell) in
+                            if hittingChecker.tagChecker! < 12 && (hittingChecker.tagCell == checker.tagCell! + 9 || hittingChecker.tagCell == checker.tagCell! + 7 || hittingChecker.tagCell == checker.tagCell! - 9 || hittingChecker.tagCell == checker.tagCell! - 7) {
                                 
-                                if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == checker.tagCell! - 2 * (checker.tagCell! - hittingChecker.tagCell!) {
+                                chessboard.subviews.forEach { (cell) in
                                     
-                                    cellsMove.append(cell)
-                                    canFight = true
-                                    mass.append((checker: checker.tagChecker!, cell: cell.tag, checkerBeaten: hittingChecker.tagChecker!))
+                                    if cell.subviews.isEmpty, cell.backgroundColor == .black, cell.tag == checker.tagCell! - 2 * (checker.tagCell! - hittingChecker.tagCell!) {
+                                        
+                                        cellsMove.append(cell)
+                                        canFight = true
+                                        mass.append((checker: checker.tagChecker!, cell: cell.tag, checkerBeaten: hittingChecker.tagChecker!))
+                                    }
                                 }
                             }
                         }
+                    } else {
+                        forHittingBlackQueen(queenChecker: checker, arrayOfChecker: arrayOfCheckers)
                     }
-                } else {
-                    forHittingBlackQueen(queenChecker: checker, arrayOfChecker: arrayOfCheckers)
                 }
             }
         }

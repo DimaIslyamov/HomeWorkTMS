@@ -66,7 +66,10 @@ extension ChessBoardController {
     
     
     func createQueenOfCheckers() {
-        let arrayOfCheckers = saveBatch()
+        saveBatch()
+        
+        let arrayOfCheckers = cellCheckers
+//        let arrayOfCheckers = saveBatch()
         var checkerTag: Int? = nil
         var checkerTagBlack: Int? = nil
         

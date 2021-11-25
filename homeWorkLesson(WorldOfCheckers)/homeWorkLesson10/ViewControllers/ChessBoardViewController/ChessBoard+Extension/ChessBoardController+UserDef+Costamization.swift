@@ -11,23 +11,22 @@ extension ChessBoardController {
     
     // MARK: - func for Save
     
-    func saveBatch() -> [CellCheckers] {
+    func saveBatch() {
         cellCheckers = []
-        chessboard.subviews.forEach { (cell) in
-            if !cell.subviews.isEmpty {
-                cell.subviews.forEach { (checker) in
-                    if !checker.subviews.isEmpty {
-                        let value = CellCheckers(cellTag: cell.tag, checkerTag: checker.tag, queen: true)
+        chessboard.subviews.forEach { cell in
+            if !cell.subviews.isEmpty{
+                cell.subviews.forEach { cheker in
+                    if !cheker.subviews.isEmpty {
+                        let value = CellCheckers(cellTag: cell.tag, checkerTag: cheker.tag, queen: true)
                         cellCheckers.append(value)
                     } else {
-                        let value = CellCheckers(cellTag: cell.tag, checkerTag: checker.tag, queen: false)
+                        let value = CellCheckers(cellTag: cell.tag, checkerTag: cheker.tag, queen: false)
                         cellCheckers.append(value)
                     }
                 }
             }
         }
         SettingManager.shared.saveCellsCheckers = self.cellCheckers
-        return cellCheckers
     }
     
     
