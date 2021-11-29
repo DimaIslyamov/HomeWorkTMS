@@ -23,6 +23,8 @@ extension PlayerDB {
     
     func convert(by player: Player_mDB) {
         self.playerName = player.name
+        self.colorChecker = player.checkerColor
+        self.winner = player.champion
     }
 
 }

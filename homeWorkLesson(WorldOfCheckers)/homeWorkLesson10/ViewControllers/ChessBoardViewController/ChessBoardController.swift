@@ -56,6 +56,11 @@ class ChessBoardController: UIViewController {
     var randomName: [String] = []
     var nameOnePlayers: String?
     
+    var players: [Player_mDB] = []
+    var gameOver: Bool = false
+    
+    let dateFormater = DateFormatter()
+    
     
     // MARK: - Жизненный цикл
     
@@ -172,6 +177,7 @@ class ChessBoardController: UIViewController {
                 value.subviews.first(where: {$0.tag == currentHittingChecker})?.removeFromSuperview()
             }
             createQueenOfCheckers()
+            congratulations()
             
             if canFight == true {
                 canFight = false

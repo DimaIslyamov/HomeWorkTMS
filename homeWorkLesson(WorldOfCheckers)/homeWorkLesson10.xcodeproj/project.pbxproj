@@ -15,6 +15,8 @@
 		53133FAF26B171A50042379D /* StyleScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53133FAE26B171A50042379D /* StyleScript-Regular.ttf */; };
 		5315ACB326DA55C0003CD6FE /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315ACB226DA55C0003CD6FE /* Date+Format.swift */; };
 		5315ACB526DA5BB8003CD6FE /* SettingViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315ACB426DA5BB8003CD6FE /* SettingViewController+Extension.swift */; };
+		531C04842754F01300F8C757 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C04822754F01300F8C757 /* ScoreTableViewCell.swift */; };
+		531C04852754F01300F8C757 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531C04832754F01300F8C757 /* ScoreTableViewCell.xib */; };
 		5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0B26A8983A00B7411D /* ScoreViewController.swift */; };
 		5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0D26A8984C00B7411D /* SettingsViewController.swift */; };
 		53473983273A7B1100B9E61D /* ChessBoardController+MoveFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53473982273A7B1000B9E61D /* ChessBoardController+MoveFunc.swift */; };
@@ -67,6 +69,8 @@
 		53133FAE26B171A50042379D /* StyleScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "StyleScript-Regular.ttf"; sourceTree = "<group>"; };
 		5315ACB226DA55C0003CD6FE /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		5315ACB426DA5BB8003CD6FE /* SettingViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingViewController+Extension.swift"; sourceTree = "<group>"; };
+		531C04822754F01300F8C757 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
+		531C04832754F01300F8C757 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
 		5333EB0B26A8983A00B7411D /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		5333EB0D26A8984C00B7411D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		53473982273A7B1000B9E61D /* ChessBoardController+MoveFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChessBoardController+MoveFunc.swift"; sourceTree = "<group>"; };
@@ -149,6 +153,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		531C04812754EFDB00F8C757 /* ScoreTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				531C04822754F01300F8C757 /* ScoreTableViewCell.swift */,
+				531C04832754F01300F8C757 /* ScoreTableViewCell.xib */,
+			);
+			path = ScoreTableViewCell;
+			sourceTree = "<group>";
+		};
 		5333EB1326A9E4F600B7411D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +220,7 @@
 		5347397C273A742500B9E61D /* ScoreViewController */ = {
 			isa = PBXGroup;
 			children = (
+				531C04812754EFDB00F8C757 /* ScoreTableViewCell */,
 				5333EB0B26A8983A00B7411D /* ScoreViewController.swift */,
 				537B185A26AC2AEB0026D73C /* Score.storyboard */,
 			);
@@ -429,6 +443,7 @@
 				5360ED0426C49C0300A0C0C6 /* SettingsCollectionViewCell.xib in Resources */,
 				5350105A26F7B22F00AEC5D2 /* ru.lproj in Resources */,
 				53F8A60026B9ED7E00166BD2 /* About.storyboard in Resources */,
+				531C04852754F01300F8C757 /* ScoreTableViewCell.xib in Resources */,
 				53133FAF26B171A50042379D /* StyleScript-Regular.ttf in Resources */,
 				534D2D34269D80D600052236 /* ChessBoard.storyboard in Resources */,
 				537B185D26AC2AF40026D73C /* Settings.storyboard in Resources */,
@@ -478,6 +493,7 @@
 				5353B5CC26FC914400888393 /* ChessBoardController+Chessboard.swift in Sources */,
 				53593FAE2754DF5A00155B91 /* PlayerDB+CoreDataProperties.swift in Sources */,
 				5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */,
+				531C04842754F01300F8C757 /* ScoreTableViewCell.swift in Sources */,
 				538EA4C826C34583001D13B5 /* Keys.swift in Sources */,
 				5315ACB526DA5BB8003CD6FE /* SettingViewController+Extension.swift in Sources */,
 				537613552750494500E24305 /* CoreDataManager.swift in Sources */,
