@@ -159,59 +159,19 @@ extension ChessBoardController {
             timer?.invalidate()
             timer = nil
             
-            guard gameOver == false else {
-            presentAlertController(with: "The Winner is ",
+            guard gameOver == true else {
+            presentAlertController(with: "Congratulations!!",
                                    massage: "Match time: \(countMin)min \(countSec)sec ",
                                    actions: UIAlertAction(title: "Закончить",
                                                           style: .default,
                                                           handler: { _ in
-                                                            self.dismiss(animated: true, completion: nil)
-//                                                            try? self.fileManager.removeItem(at: self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue))
-//                                                            self.removeDataFromUserDefaults()
-//                                                            self.navigationController?.popViewController(animated: true)
+//                                                            self.dismiss(animated: true, completion: nil)
+                                                            try? self.fileManager.removeItem(at: self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue))
+                                                            self.removeDataFromUserDefaults()
+                                                            self.navigationController?.popViewController(animated: true)
                                                           }))
             return
             }
-            gameOver = true
         }
     }
-    //    func forCheckerWinner() {
-    //        //        saveBatch()
-    //        //        guard let vc = getViewController(from: "ChessBoard") as? ChessBoardController  else { return }
-    //        let arrayOfCheckers = cellCheckers
-    //        var playerWhiteCheckers: Int = 0
-    //        var playerBlackCheckers: Int = 0
-    //        var playerWhoIsAWinner: String = ""
-    //
-    //        arrayOfCheckers.forEach { (checker) in
-    //            guard let checkerTag = checker.tagChecker,
-    //                  checkerTag < 12 else { return playerWhiteCheckers += 1 }
-    //            playerBlackCheckers += 1
-    //        }
-    //
-    //        playerWhoIsAWinner = ( playerWhiteCheckers == 0) ? "\(player1)" : ""
-    //        playerWhoIsAWinner = ( playerBlackCheckers == 0) ? "\(player2)" : ""
-    //
-    //        if playerWhoIsAWinner != "" {
-    //            timer?.invalidate()
-    //            timer = nil
-    //
-    //            presentAlertController(with: "The Winner is \(playerWhoIsAWinner)",
-    //                                   massage: "Match time: \(countMin)min \(countSec)sec ",
-    //                                   actions: UIAlertAction(title: "Заново",
-    //                                                          style: .default,
-    //                                                          handler: { _ in
-    //
-    //                                                            // ????
-    //
-    //                                                          }),
-    //                                   UIAlertAction(title: "Закончить",
-    //                                                 style: .default,
-    //                                                 handler: { _ in
-    //                                                    try? self.fileManager.removeItem(at: self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue))
-    //                                                    self.removeDataFromUserDefaults()
-    //                                                    self.navigationController?.popViewController(animated: true)
-    //                                                 }))
-    //        }
-    //    }
 }

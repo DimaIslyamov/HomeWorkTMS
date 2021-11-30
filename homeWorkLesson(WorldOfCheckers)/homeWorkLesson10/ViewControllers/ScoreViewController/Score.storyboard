@@ -79,9 +79,11 @@
                                     <constraint firstAttribute="height" constant="44" id="pGJ-KS-xkJ"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gQt-Ik-jg9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gQt-Ik-jg9">
                                 <rect key="frame" x="20" y="96" width="374" height="675"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -101,9 +103,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backButtonOutlet" destination="Hlf-T7-WFl" id="NAs-Hz-LbD"/>
-                        <outlet property="buttonView" destination="JxT-UJ-Fxa" id="EnK-On-XcQ"/>
+                        <outlet property="backButtonOutlet" destination="Hlf-T7-WFl" id="QQI-Ic-dK8"/>
+                        <outlet property="clearButtonOutlet" destination="lSM-g6-uJx" id="Y1V-jL-kYv"/>
                         <outlet property="tableView" destination="gQt-Ik-jg9" id="Axa-o8-zQB"/>
+                        <outletCollection property="buttonViewCollection" destination="JxT-UJ-Fxa" collectionClass="NSMutableArray" id="WAc-fb-mJ8"/>
+                        <outletCollection property="buttonViewCollection" destination="Ge5-k0-EPG" collectionClass="NSMutableArray" id="W4o-5w-5wV"/>
+                        <outletCollection property="buttonOutletCollection" destination="Hlf-T7-WFl" collectionClass="NSMutableArray" id="dit-X5-hpQ"/>
+                        <outletCollection property="buttonOutletCollection" destination="lSM-g6-uJx" collectionClass="NSMutableArray" id="vsz-DT-8TS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -113,9 +119,6 @@
     </scenes>
     <resources>
         <image name="ScoreArtas" width="405.5" height="530"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

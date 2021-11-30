@@ -17,6 +17,7 @@
 		5315ACB526DA5BB8003CD6FE /* SettingViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315ACB426DA5BB8003CD6FE /* SettingViewController+Extension.swift */; };
 		531C04842754F01300F8C757 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C04822754F01300F8C757 /* ScoreTableViewCell.swift */; };
 		531C04852754F01300F8C757 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531C04832754F01300F8C757 /* ScoreTableViewCell.xib */; };
+		531C04892756732900F8C757 /* ScoreViewController+ExtensionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C04882756732900F8C757 /* ScoreViewController+ExtensionTableView.swift */; };
 		5333EB0C26A8983A00B7411D /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0B26A8983A00B7411D /* ScoreViewController.swift */; };
 		5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333EB0D26A8984C00B7411D /* SettingsViewController.swift */; };
 		53473983273A7B1100B9E61D /* ChessBoardController+MoveFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53473982273A7B1000B9E61D /* ChessBoardController+MoveFunc.swift */; };
@@ -71,6 +72,7 @@
 		5315ACB426DA5BB8003CD6FE /* SettingViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingViewController+Extension.swift"; sourceTree = "<group>"; };
 		531C04822754F01300F8C757 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		531C04832754F01300F8C757 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
+		531C04882756732900F8C757 /* ScoreViewController+ExtensionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreViewController+ExtensionTableView.swift"; sourceTree = "<group>"; };
 		5333EB0B26A8983A00B7411D /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		5333EB0D26A8984C00B7411D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		53473982273A7B1000B9E61D /* ChessBoardController+MoveFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChessBoardController+MoveFunc.swift"; sourceTree = "<group>"; };
@@ -220,9 +222,10 @@
 		5347397C273A742500B9E61D /* ScoreViewController */ = {
 			isa = PBXGroup;
 			children = (
-				531C04812754EFDB00F8C757 /* ScoreTableViewCell */,
 				5333EB0B26A8983A00B7411D /* ScoreViewController.swift */,
+				531C04882756732900F8C757 /* ScoreViewController+ExtensionTableView.swift */,
 				537B185A26AC2AEB0026D73C /* Score.storyboard */,
+				531C04812754EFDB00F8C757 /* ScoreTableViewCell */,
 			);
 			path = ScoreViewController;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5315ACB326DA55C0003CD6FE /* Date+Format.swift in Sources */,
+				531C04892756732900F8C757 /* ScoreViewController+ExtensionTableView.swift in Sources */,
 				534D2D1B269D757E00052236 /* AppDelegate.swift in Sources */,
 				534D2D1D269D757E00052236 /* SceneDelegate.swift in Sources */,
 				5333EB0E26A8984C00B7411D /* SettingsViewController.swift in Sources */,

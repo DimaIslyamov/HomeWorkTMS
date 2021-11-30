@@ -20,6 +20,14 @@
 
 // score view controller
 "Back_button_score" = "Back";
+"clear_button_score" = "Clear";
+"player_one" = "Player one: ";
+"player_two" = "Player two: ";
+"color_of_checkers" = "Color of checker: ";
+"victory_lable_text" = "Victory";
+"defeated_lable_text" = "Defeated";
+"checker_color_play_black" = "Black";
+"checer_color_play_white" = "White";
 
 // about view controller
 "Back_button_about" = "Back";

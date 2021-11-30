@@ -20,6 +20,14 @@
 
 // score view controller
 "Back_button_score" = "Назад";
+"clear_button_score" = "Удалить";
+"player_one" = "Игрок 1: ";
+"player_two" = "Игрок 2: ";
+"color_of_checkers" = "Цвет шашки: ";
+"victory_lable_text" = "Победа";
+"defeated_lable_text" = "Лузер";
+"checker_color_play_black" = "Черные";
+"checer_color_play_white" = "Белые";
 
 // about view controller
 "Back_button_about" = "Назад";

@@ -21,6 +21,14 @@
 
 // score view controller
 "Back_button_score" = "Plecy";
+"clear_button_score" = "Kasować";
+"player_one" = "Gracz 1: ";
+"player_two" = "Gracz 2: ";
+"color_of_checkers" = "Kolor szachownicy: ";
+"victory_lable_text" = "Zwycięstwo";
+"defeated_lable_text" = "Nieudacznik";
+"checker_color_play_black" = "Czarny";
+"checer_color_play_white" = "biały";
 
 // about view controller
 "Back_button_about" = "Plecy";

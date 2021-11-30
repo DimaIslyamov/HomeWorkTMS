@@ -10,8 +10,10 @@ import UIKit
 class ScoreViewController: UIViewController {
     // MARK: - @OUTLETS
     
-    @IBOutlet weak var buttonView: UIView!
+    @IBOutlet var buttonViewCollection: [UIView]!
+    @IBOutlet var buttonOutletCollection: [UIButton]!
     @IBOutlet weak var backButtonOutlet: UIButton!
+    @IBOutlet weak var clearButtonOutlet: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -46,20 +48,24 @@ class ScoreViewController: UIViewController {
     
     func localaized() {
         backButtonOutlet.setTitle("Back_button_score".localaized, for: .normal)
+        clearButtonOutlet.setTitle("clear_button_score".localaized, for: .normal)
     }
     
     
     func backButtonCostamization() {
-        buttonView.layer.cornerRadius = 12
+        buttonOutletCollection.forEach { (button) in
+            button.layer.borderWidth = 2
+            button.layer.borderColor = UIColor.black.cgColor
+            button.layer.cornerRadius = 12
+        }
         
-        backButtonOutlet.layer.borderWidth = 2
-        backButtonOutlet.layer.borderColor = UIColor.black.cgColor
-        backButtonOutlet.layer.cornerRadius = 12
-        
-        buttonView.layer.shadowColor = UIColor.black.cgColor
-        buttonView.layer.shadowRadius = 4
-        buttonView.layer.shadowOpacity = 0.9
-        buttonView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        buttonViewCollection.forEach { (view) in
+            view.layer.cornerRadius = 12
+            view.layer.shadowColor = UIColor.black.cgColor
+            view.layer.shadowRadius = 4
+            view.layer.shadowOpacity = 0.9
+            view.layer.shadowOffset = CGSize(width: 5, height: 5)
+        }
     }
     
     
@@ -75,28 +81,5 @@ class ScoreViewController: UIViewController {
         CoreDataManager.shatred.deletAllData()
         dataSource = []
         tableView.reloadData()
-    }
-}
-
-
-extension ScoreViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ScoreTableViewCell") as? ScoreTableViewCell else { return UITableViewCell() }
-        
-        cell.setData(with: dataSource[indexPath.row])
-        
-        return cell
-    }
-    
-    
-}
-
-extension ScoreViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
     }
 }

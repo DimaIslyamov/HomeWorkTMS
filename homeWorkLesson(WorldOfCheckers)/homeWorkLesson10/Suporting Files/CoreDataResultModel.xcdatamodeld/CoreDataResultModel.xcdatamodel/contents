@@ -2,16 +2,16 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="GameDB" representedClassName="GameDB" syncable="YES">
         <attribute name="gameDate" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="playerDB" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerDB" inverseName="gameDB" inverseEntity="PlayerDB"/>
+        <relationship name="playerDB" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PlayerDB" inverseName="gameDB" inverseEntity="PlayerDB"/>
     </entity>
     <entity name="PlayerDB" representedClassName="PlayerDB" syncable="YES">
         <attribute name="colorChecker" attributeType="String"/>
         <attribute name="playerName" attributeType="String"/>
         <attribute name="winner" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <relationship name="gameDB" maxCount="1" deletionRule="Nullify" destinationEntity="GameDB" inverseName="playerDB" inverseEntity="GameDB"/>
+        <relationship name="gameDB" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameDB" inverseName="playerDB" inverseEntity="GameDB"/>
     </entity>
     <elements>
-        <element name="PlayerDB" positionX="-3998.087097167969" positionY="-2279.385772705078" width="128" height="103"/>
-        <element name="GameDB" positionX="-3741.851013183594" positionY="-2277.864318847656" width="128" height="73"/>
+        <element name="GameDB" positionX="-4543.6455078125" positionY="-3105.85903930664" width="128" height="73"/>
+        <element name="PlayerDB" positionX="-4206.574768066406" positionY="-3238.810028076172" width="128" height="103"/>
     </elements>
 </model>
