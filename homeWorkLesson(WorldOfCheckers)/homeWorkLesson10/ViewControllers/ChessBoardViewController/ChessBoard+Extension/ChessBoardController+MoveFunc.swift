@@ -69,7 +69,6 @@ extension ChessBoardController {
         saveBatch()
         
         let arrayOfCheckers = cellCheckers
-        //        let arrayOfCheckers = saveBatch()
         var checkerTag: Int? = nil
         var checkerTagBlack: Int? = nil
         
@@ -165,7 +164,6 @@ extension ChessBoardController {
                                    actions: UIAlertAction(title: "Закончить",
                                                           style: .default,
                                                           handler: { _ in
-//                                                            self.dismiss(animated: true, completion: nil)
                                                             try? self.fileManager.removeItem(at: self.documentDirectory.appendingPathComponent(Keys.cellAndChecker.rawValue))
                                                             self.removeDataFromUserDefaults()
                                                             self.navigationController?.popViewController(animated: true)

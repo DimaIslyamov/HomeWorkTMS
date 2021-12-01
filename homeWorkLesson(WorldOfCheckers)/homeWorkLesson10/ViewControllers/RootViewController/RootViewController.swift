@@ -19,7 +19,6 @@ class RootViewController: UIViewController {
     // MARK: - Переменные и Константы
     
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-//    var saveTimerCheckers: CellCheckers = CellCheckers()
     
     
     // MARK: - Жизненный цикл

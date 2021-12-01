@@ -59,18 +59,4 @@ class ScoreTableViewCell: UITableViewCell {
         self.colorFirstPlayer.text = colorFirstPlayer.text == "black" ? "checker_color_play_black".localaized : "checer_color_play_white".localaized
         self.colorSecondPlayer.text = colorSecondPlayer.text == "black" ? "checker_color_play_black".localaized : "checer_color_play_white".localaized
     }
-
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        dateGame.text = ""
-        playerTwoName.text = ""
-        playerTwoName.text = ""
-        colorFirstPlayer.text = ""
-        colorSecondPlayer.text = ""
-        winerPlayerOne.text = ""
-        winerPlayerTwo.text = ""
-    }
-    
 }

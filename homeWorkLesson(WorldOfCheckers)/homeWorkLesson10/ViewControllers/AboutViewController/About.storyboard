@@ -68,7 +68,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="326" id="VYg-wb-2CE"/>
                                                 </constraints>
-                                                <string key="text">Checkers is a logical board game for two players, which consists in moving checkers in a certain way along the cells of the checkerboard. During the game, each player owns checkers of the same color: black or white (sometimes other colors, one of which is considered dark, and the other - light). The goal of the game is to take all the opponent's checkers or to deprive them of the opportunity to move (to lock them in). There are several variants of checkers, differing in the rules and sizes of the playing field.</string>
+                                                <string key="text">Checkers is a logical board game for two players, which consists in moving checkers in a certain way along the cells of the checkerboard. During the game, each player owns checkers of the same color: black or white (sometimes other colors, one of which is considered dark, and the other - light). The goal of the game is to take all the opponent's checkers or to deprive them of the opportunity to move (to lock them in). There are several variants of checkers.</string>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="18"/>
                                                 <color key="textColor" red="0.78909066890000001" green="0.77365149769999997" blue="0.53805182770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -78,12 +78,11 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="443" id="z3a-T4-Uyu"/>
                                                 </constraints>
-                                                <string key="text">The basic rules of the game that apply to all variants of checkers:
+                                                <mutableString key="text">The basic rules of the game that apply to all variants of checkers:
 
 All checkers participating in the game are exposed before the start of the game on the board. Further, they move along the fields of the board and can be removed from it in the event of a fight with an opponent's checker.
 It is imperative to take a checker that is under attack. Exception: "Siberian Checkers".
-There are only two types of checkers: simple and kings. At the beginning of the game, all checkers are simple. A simple checker can turn into a king if it reaches the last opposite horizontal row of the board (lady square).
-Simple checkers only move forward to the next square. Ladies can walk back and forth</string>
+There are only two types of checkers: simple and kings. At the beginning of the game, all checkers are simple. A simple checker can turn into a king if it reaches the last opposite horizontal row of the board.</mutableString>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="18"/>
                                                 <color key="textColor" red="0.78909066890000001" green="0.77365149769999997" blue="0.53805182770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -99,7 +98,7 @@ Simple checkers only move forward to the next square. Ladies can walk back and f
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="72" id="dxS-HJ-RDK"/>
                                                 </constraints>
-                                                <string key="text">Checkers belongs to the category of so-called checker-type games, which includes a wide variety of board games for two to four players, which are played on a lined board with equivalent chips.</string>
+                                                <string key="text">Checkers belongs to the category of so-called checker-type games, which includes a wide variety of board games for two to four players, which.</string>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
                                                 <color key="textColor" red="0.78909066890000001" green="0.77365149769999997" blue="0.53805182770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>

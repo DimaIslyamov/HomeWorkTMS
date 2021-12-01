@@ -10,8 +10,8 @@
 "Back_buuton_text" = "Plecy";
 "Sound_off/on_text" = "Dźwięk off/on";
 "Background replacement_text" = "Wymiana tła";
-"Choose Black Checkers_text" = "Wybierz czarne warcaby";
-"Choose White Checkers_text" = "Wybierz białe warcaby";
+"Choose Black Checkers_text" = "Wybierz czarne";
+"Choose White Checkers_text" = "Wybierz białe";
 
 
 // main view controller

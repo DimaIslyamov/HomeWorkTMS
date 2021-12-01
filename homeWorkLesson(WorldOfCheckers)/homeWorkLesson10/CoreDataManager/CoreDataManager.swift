@@ -67,8 +67,8 @@ class CoreDataManager {
     
     func deletAllData() {
         do {
-            let games = try? persistentContainer.viewContext.fetch(GameDB.fetchRequest())
-            games?.forEach { (game) in
+            let games = try persistentContainer.viewContext.fetch(GameDB.fetchRequest())
+            games.forEach { (game) in
                 guard let game = game as? GameDB else { return }
                 persistentContainer.viewContext.delete(game)
                 saveContext()
